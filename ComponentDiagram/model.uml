@@ -3,4 +3,24 @@
   <packageImport xmi:type="uml:PackageImport" xmi:id="_FymE0JdGEeWw6bEKfWC9gg">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
+  <packagedElement xmi:type="uml:Component" xmi:id="_ewFyQJdIEeWw6bEKfWC9gg" name="Frontend"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_pIctMJdIEeWw6bEKfWC9gg" name="Booking">
+    <packagedElement xmi:type="uml:Usage" xmi:id="_Bg77AJdJEeWw6bEKfWC9gg" client="_pIctMJdIEeWw6bEKfWC9gg" supplier="_2cq8UJdIEeWw6bEKfWC9gg"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_YC1aoJdJEeWw6bEKfWC9gg" client="_pIctMJdIEeWw6bEKfWC9gg" supplier="_NIdXwJdJEeWw6bEKfWC9gg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_pYAzMJdIEeWw6bEKfWC9gg" name="Database"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_pfy2MJdIEeWw6bEKfWC9gg" name="Maintenance">
+    <packagedElement xmi:type="uml:Usage" xmi:id="_EqcpoJdJEeWw6bEKfWC9gg" client="_pfy2MJdIEeWw6bEKfWC9gg" supplier="_29cHEJdIEeWw6bEKfWC9gg"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_ZDxTMJdJEeWw6bEKfWC9gg" client="_pfy2MJdIEeWw6bEKfWC9gg" supplier="_NIdXwJdJEeWw6bEKfWC9gg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_2cq8UJdIEeWw6bEKfWC9gg" name="BookingProvider"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_29cHEJdIEeWw6bEKfWC9gg" name="MaintenanceProvider"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_CHiA8JdJEeWw6bEKfWC9gg" client="_2cq8UJdIEeWw6bEKfWC9gg" supplier="_ewFyQJdIEeWw6bEKfWC9gg"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_DMXiEJdJEeWw6bEKfWC9gg" client="_29cHEJdIEeWw6bEKfWC9gg" supplier="_ewFyQJdIEeWw6bEKfWC9gg"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_NIdXwJdJEeWw6bEKfWC9gg" name="DatabaseInterface"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_W8000JdJEeWw6bEKfWC9gg" client="_NIdXwJdJEeWw6bEKfWC9gg" supplier="_pYAzMJdIEeWw6bEKfWC9gg"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_bffHsJdJEeWw6bEKfWC9gg" name="ExternalServicesProvider"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_fO8cAJdJEeWw6bEKfWC9gg" client="_bffHsJdJEeWw6bEKfWC9gg" supplier="_pIctMJdIEeWw6bEKfWC9gg"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_gSY2AJdJEeWw6bEKfWC9gg" name="External services"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_i1bagJdJEeWw6bEKfWC9gg" client="_bffHsJdJEeWw6bEKfWC9gg" supplier="_gSY2AJdJEeWw6bEKfWC9gg"/>
 </uml:Model>
