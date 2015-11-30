@@ -245,4 +245,44 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_R4T2cJdnEeW_2em-0w3Fbg" name="status" type="_MDReEJdZEeW_2em-0w3Fbg"/>
     </ownedOperation>
   </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_3uC3EJdoEeWm4YpQIfs83w" name="Interaction1">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_6leXMJdoEeWm4YpQIfs83w" name="" type="_Ew4PgJdOEeW_2em-0w3Fbg"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_78xhUJdoEeWm4YpQIfs83w" name="" type="_e6180JdgEeW_2em-0w3Fbg"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_NvdN4JdrEeWm4YpQIfs83w" name="" type="_S3mAoJdQEeW_2em-0w3Fbg"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_RxoC0JdrEeWm4YpQIfs83w" name="" type="_943j8JdPEeW_2em-0w3Fbg"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_jwkUoJdrEeWm4YpQIfs83w" name="" type="_7pMnYJdPEeW_2em-0w3Fbg"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_6ldwIJdoEeWm4YpQIfs83w" name="" represents="_6leXMJdoEeWm4YpQIfs83w" coveredBy="_Fh1sMJdrEeWm4YpQIfs83w _CGejIJdsEeWm4YpQIfs83w"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_78w6QJdoEeWm4YpQIfs83w" name="" represents="_78xhUJdoEeWm4YpQIfs83w" coveredBy="_Fh2TQJdrEeWm4YpQIfs83w _CGfKMJdsEeWm4YpQIfs83w"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_RxnbwJdrEeWm4YpQIfs83w" name="" represents="_RxoC0JdrEeWm4YpQIfs83w"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_jwjtkJdrEeWm4YpQIfs83w" name="" represents="_jwkUoJdrEeWm4YpQIfs83w"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_CGfKMJdsEeWm4YpQIfs83w" name="createBooking_MessageRecv" covered="_78w6QJdoEeWm4YpQIfs83w" message="_CGd8EJdsEeWm4YpQIfs83w"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Fh1sMJdrEeWm4YpQIfs83w" name="searchRooms_MessageSend" covered="_6ldwIJdoEeWm4YpQIfs83w" message="_FhuXcJdrEeWm4YpQIfs83w"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Fh2TQJdrEeWm4YpQIfs83w" name="searchRooms_MessageRecv" covered="_78w6QJdoEeWm4YpQIfs83w" message="_FhuXcJdrEeWm4YpQIfs83w"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_CGejIJdsEeWm4YpQIfs83w" name="createBooking_MessageSend" covered="_6ldwIJdoEeWm4YpQIfs83w" message="_CGd8EJdsEeWm4YpQIfs83w"/>
+    <message xmi:type="uml:Message" xmi:id="_FhuXcJdrEeWm4YpQIfs83w" name="searchRooms_Message" receiveEvent="_Fh2TQJdrEeWm4YpQIfs83w" sendEvent="_Fh1sMJdrEeWm4YpQIfs83w" signature="_lFZlIJdhEeW_2em-0w3Fbg"/>
+    <message xmi:type="uml:Message" xmi:id="_CGd8EJdsEeWm4YpQIfs83w" name="createBooking_Message" receiveEvent="_CGfKMJdsEeWm4YpQIfs83w" sendEvent="_CGejIJdsEeWm4YpQIfs83w" signature="_Bwrd0JdiEeW_2em-0w3Fbg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_gcCMUJdsEeWm4YpQIfs83w" name="Interaction2">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_8L0tIJdsEeWm4YpQIfs83w" name="" type="_Ew4PgJdOEeW_2em-0w3Fbg"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_9Kc4kJdsEeWm4YpQIfs83w" name="" type="_e6180JdgEeW_2em-0w3Fbg"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="__TaJIJdsEeWm4YpQIfs83w" name="" type="_7pMnYJdPEeW_2em-0w3Fbg"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_8L0GEJdsEeWm4YpQIfs83w" name="" represents="_8L0tIJdsEeWm4YpQIfs83w" coveredBy="_D1vr4JdtEeWm4YpQIfs83w _XRwYoJdtEeWm4YpQIfs83w _Iuxa4JduEeWm4YpQIfs83w _QmHxoJduEeWm4YpQIfs83w"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_9KcRgJdsEeWm4YpQIfs83w" name="" represents="_9Kc4kJdsEeWm4YpQIfs83w" coveredBy="_D1wS8JdtEeWm4YpQIfs83w _IuyB8JduEeWm4YpQIfs83w _QmIYsJduEeWm4YpQIfs83w"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="__TZiEJdsEeWm4YpQIfs83w" name="" represents="__TaJIJdsEeWm4YpQIfs83w" coveredBy="_XRw_sJdtEeWm4YpQIfs83w"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_D1vr4JdtEeWm4YpQIfs83w" name="getBooking_MessageSend" covered="_8L0GEJdsEeWm4YpQIfs83w" message="_D1vE0JdtEeWm4YpQIfs83w"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_D1wS8JdtEeWm4YpQIfs83w" name="getBooking_MessageRecv" covered="_9KcRgJdsEeWm4YpQIfs83w" message="_D1vE0JdtEeWm4YpQIfs83w"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_QmIYsJduEeWm4YpQIfs83w" name="createKeyCard_MessageRecv" covered="_9KcRgJdsEeWm4YpQIfs83w" message="_QmGjgJduEeWm4YpQIfs83w"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_XRwYoJdtEeWm4YpQIfs83w" name="setCreditcard_MessageSend" covered="_8L0GEJdsEeWm4YpQIfs83w" message="_XRvKgJdtEeWm4YpQIfs83w"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_XRw_sJdtEeWm4YpQIfs83w" name="setCreditcard_MessageRecv" covered="__TZiEJdsEeWm4YpQIfs83w" message="_XRvKgJdtEeWm4YpQIfs83w"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_QmHxoJduEeWm4YpQIfs83w" name="createKeyCard_MessageSend" covered="_8L0GEJdsEeWm4YpQIfs83w" message="_QmGjgJduEeWm4YpQIfs83w"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Iuxa4JduEeWm4YpQIfs83w" name="checkIn_MessageSend" covered="_8L0GEJdsEeWm4YpQIfs83w" message="_IuwMwJduEeWm4YpQIfs83w"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_IuyB8JduEeWm4YpQIfs83w" name="checkIn_MessageRecv" covered="_9KcRgJdsEeWm4YpQIfs83w" message="_IuwMwJduEeWm4YpQIfs83w"/>
+    <message xmi:type="uml:Message" xmi:id="_D1vE0JdtEeWm4YpQIfs83w" name="getBooking_Message" receiveEvent="_D1wS8JdtEeWm4YpQIfs83w" sendEvent="_D1vr4JdtEeWm4YpQIfs83w" signature="_6apHkJdlEeW_2em-0w3Fbg"/>
+    <message xmi:type="uml:Message" xmi:id="_XRvKgJdtEeWm4YpQIfs83w" name="setCreditcard_Message" receiveEvent="_XRw_sJdtEeWm4YpQIfs83w" sendEvent="_XRwYoJdtEeWm4YpQIfs83w" signature="_z9XFoJdmEeW_2em-0w3Fbg"/>
+    <message xmi:type="uml:Message" xmi:id="_IuwMwJduEeWm4YpQIfs83w" name="checkIn_Message" receiveEvent="_IuyB8JduEeWm4YpQIfs83w" sendEvent="_Iuxa4JduEeWm4YpQIfs83w" signature="_9MY2cJdlEeW_2em-0w3Fbg"/>
+    <message xmi:type="uml:Message" xmi:id="_QmGjgJduEeWm4YpQIfs83w" name="createKeyCard_Message" receiveEvent="_QmIYsJduEeWm4YpQIfs83w" sendEvent="_QmHxoJduEeWm4YpQIfs83w" signature="_94knAJdlEeW_2em-0w3Fbg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_Lyxh8JdvEeWm4YpQIfs83w" name="Interaction3"/>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_NrnS4JdvEeWm4YpQIfs83w" name="Interaction4"/>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_RpwjcJdvEeWm4YpQIfs83w" name="Interaction5"/>
 </uml:Model>
