@@ -161,4 +161,22 @@
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
   </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_e6180JdgEeW_2em-0w3Fbg" name="BookingController">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_lFZlIJdhEeW_2em-0w3Fbg" name="searchRooms">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_AyA2IJdiEeW_2em-0w3Fbg" name="rooms" type="_S3mAoJdQEeW_2em-0w3Fbg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Bwrd0JdiEeW_2em-0w3Fbg" name="createBooking"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_EsOB4JdiEeW_2em-0w3Fbg" name="sendConfirmation"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_GS-kUJdiEeW_2em-0w3Fbg" name="updateBooking"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_gA2ioJdgEeW_2em-0w3Fbg" name="ManagementController">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_S9ZogJdiEeW_2em-0w3Fbg" name="registerDiscount"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Vlg6QJdiEeW_2em-0w3Fbg" name="registerCostable"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_X5eg8JdiEeW_2em-0w3Fbg" name="updateCostable"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_hJ2LAJdgEeW_2em-0w3Fbg" name="MaintenanceController">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Or2TwJdiEeW_2em-0w3Fbg" name="roomStack" visibility="private" type="_S3mAoJdQEeW_2em-0w3Fbg"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_KrW50JdiEeW_2em-0w3Fbg" name="addToStack"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_L04GoJdiEeW_2em-0w3Fbg" name="setStatus"/>
+  </packagedElement>
 </uml:Model>
