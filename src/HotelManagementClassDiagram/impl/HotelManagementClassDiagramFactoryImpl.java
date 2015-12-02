@@ -1,0 +1,337 @@
+/**
+ */
+package HotelManagementClassDiagram.impl;
+
+import HotelManagementClassDiagram.*;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model <b>Factory</b>.
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl implements HotelManagementClassDiagramFactory {
+	/**
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static HotelManagementClassDiagramFactory init() {
+		try {
+			HotelManagementClassDiagramFactory theHotelManagementClassDiagramFactory = (HotelManagementClassDiagramFactory)EPackage.Registry.INSTANCE.getEFactory(HotelManagementClassDiagramPackage.eNS_URI);
+			if (theHotelManagementClassDiagramFactory != null) {
+				return theHotelManagementClassDiagramFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new HotelManagementClassDiagramFactoryImpl();
+	}
+
+	/**
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HotelManagementClassDiagramFactoryImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EObject create(EClass eClass) {
+		switch (eClass.getClassifierID()) {
+			case HotelManagementClassDiagramPackage.EMPLOYEE: return createEmployee();
+			case HotelManagementClassDiagramPackage.EMPLOYEE_TYPE: return createEmployeeType();
+			case HotelManagementClassDiagramPackage.BOOKING: return createBooking();
+			case HotelManagementClassDiagramPackage.CREDITCARD: return createCreditcard();
+			case HotelManagementClassDiagramPackage.CUSTOMER: return createCustomer();
+			case HotelManagementClassDiagramPackage.ADDON: return createAddon();
+			case HotelManagementClassDiagramPackage.ROOM: return createRoom();
+			case HotelManagementClassDiagramPackage.BILL: return createBill();
+			case HotelManagementClassDiagramPackage.DISCOUNT: return createDiscount();
+			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER: return createBookingController();
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER: return createManagementController();
+			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER: return createMaintenanceController();
+			case HotelManagementClassDiagramPackage.HOTEL: return createHotel();
+			case HotelManagementClassDiagramPackage.DB_INTERFACE: return createDBInterface();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case HotelManagementClassDiagramPackage.ETYPE:
+				return createETypeFromString(eDataType, initialValue);
+			case HotelManagementClassDiagramPackage.CLEANING_STATUS:
+				return createCleaningStatusFromString(eDataType, initialValue);
+			case HotelManagementClassDiagramPackage.ROOM_TYPE:
+				return createRoomTypeFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case HotelManagementClassDiagramPackage.ETYPE:
+				return convertETypeToString(eDataType, instanceValue);
+			case HotelManagementClassDiagramPackage.CLEANING_STATUS:
+				return convertCleaningStatusToString(eDataType, instanceValue);
+			case HotelManagementClassDiagramPackage.ROOM_TYPE:
+				return convertRoomTypeToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Employee createEmployee() {
+		EmployeeImpl employee = new EmployeeImpl();
+		return employee;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EmployeeType createEmployeeType() {
+		EmployeeTypeImpl employeeType = new EmployeeTypeImpl();
+		return employeeType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Booking createBooking() {
+		BookingImpl booking = new BookingImpl();
+		return booking;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Creditcard createCreditcard() {
+		CreditcardImpl creditcard = new CreditcardImpl();
+		return creditcard;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Customer createCustomer() {
+		CustomerImpl customer = new CustomerImpl();
+		return customer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Addon createAddon() {
+		AddonImpl addon = new AddonImpl();
+		return addon;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Room createRoom() {
+		RoomImpl room = new RoomImpl();
+		return room;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Bill createBill() {
+		BillImpl bill = new BillImpl();
+		return bill;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Discount createDiscount() {
+		DiscountImpl discount = new DiscountImpl();
+		return discount;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BookingController createBookingController() {
+		BookingControllerImpl bookingController = new BookingControllerImpl();
+		return bookingController;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ManagementController createManagementController() {
+		ManagementControllerImpl managementController = new ManagementControllerImpl();
+		return managementController;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MaintenanceController createMaintenanceController() {
+		MaintenanceControllerImpl maintenanceController = new MaintenanceControllerImpl();
+		return maintenanceController;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Hotel createHotel() {
+		HotelImpl hotel = new HotelImpl();
+		return hotel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DBInterface createDBInterface() {
+		DBInterfaceImpl dbInterface = new DBInterfaceImpl();
+		return dbInterface;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EType createETypeFromString(EDataType eDataType, String initialValue) {
+		EType result = EType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertETypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CleaningStatus createCleaningStatusFromString(EDataType eDataType, String initialValue) {
+		CleaningStatus result = CleaningStatus.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertCleaningStatusToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoomType createRoomTypeFromString(EDataType eDataType, String initialValue) {
+		RoomType result = RoomType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRoomTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HotelManagementClassDiagramPackage getHotelManagementClassDiagramPackage() {
+		return (HotelManagementClassDiagramPackage)getEPackage();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @deprecated
+	 * @generated
+	 */
+	@Deprecated
+	public static HotelManagementClassDiagramPackage getPackage() {
+		return HotelManagementClassDiagramPackage.eINSTANCE;
+	}
+
+} //HotelManagementClassDiagramFactoryImpl

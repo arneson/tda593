@@ -42,9 +42,6 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_f3tVEJddEeW_2em-0w3Fbg" name="checkedOut" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
     </ownedAttribute>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_z9XFoJdmEeW_2em-0w3Fbg" name="setCreditcard">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_8KxzAJdmEeW_2em-0w3Fbg" name="card" type="_s04WIJddEeW_2em-0w3Fbg"/>
-    </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_3YtLIJdmEeW_2em-0w3Fbg" name="createBill">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_-pKhAJdmEeW_2em-0w3Fbg" name="bill" type="_BnrYAJdQEeW_2em-0w3Fbg" direction="return"/>
     </ownedOperation>
@@ -266,4 +263,27 @@
   <packagedElement xmi:type="uml:Dependency" xmi:id="_lCjx4Jd0EeW_2em-0w3Fbg" client="_hJ2LAJdgEeW_2em-0w3Fbg" supplier="_S3mAoJdQEeW_2em-0w3Fbg"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_tu0XYJd0EeW_2em-0w3Fbg" client="_gA2ioJdgEeW_2em-0w3Fbg" supplier="_P3JucJdQEeW_2em-0w3Fbg"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_u5vSYJd0EeW_2em-0w3Fbg" client="_LUZ8UJN8EeW_3Yt58t3sgQ" supplier="_OeItEJdQEeW_2em-0w3Fbg"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_pS-PIJjdEeWMUqN6Tq0AMQ" name="Hotel">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_yqG9oJjdEeWMUqN6Tq0AMQ" name="name" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_3o7BAJjdEeWMUqN6Tq0AMQ" name="address" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_8v0pYJjdEeWMUqN6Tq0AMQ" name="rating" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_LMR4oJjuEeW90dH2IAXwHw" name="authenticate">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_0pP7IJjuEeW90dH2IAXwHw" name="login">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_3vghcJjuEeW90dH2IAXwHw" name="password">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_MpGb8JjuEeW90dH2IAXwHw" name="getBookingController"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_QZBDQJjuEeW90dH2IAXwHw" name="getManagementController"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_ehc9kJjuEeW90dH2IAXwHw" name="getMaintenanceController"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_VWI30JjeEeWMUqN6Tq0AMQ" name="DBInterface"/>
 </uml:Model>
