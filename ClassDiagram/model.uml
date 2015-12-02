@@ -52,12 +52,27 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_aEbtwJjwEeW90dH2IAXwHw" name="addRoom">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_cnCNYJjwEeW90dH2IAXwHw" name="room" type="_S3mAoJdQEeW_2em-0w3Fbg"/>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_eQMjkJjwEeW90dH2IAXwHw" name="removeAddon"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_gCfnoJjwEeW90dH2IAXwHw" name="removeRoom"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_hJ4GcJjwEeW90dH2IAXwHw" name="generateBill"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_kRcUUJjwEeW90dH2IAXwHw" name="pay"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_mCYtgJjwEeW90dH2IAXwHw" name="addDiscount"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_nakBYJjwEeW90dH2IAXwHw" name="removeDiscount"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_eQMjkJjwEeW90dH2IAXwHw" name="removeAddon">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_CZxZ0JjxEeW90dH2IAXwHw" name="addon" type="_E_WecJdQEeW_2em-0w3Fbg"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_gCfnoJjwEeW90dH2IAXwHw" name="removeRoom">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_EB1j0JjxEeW90dH2IAXwHw" name="room" type="_S3mAoJdQEeW_2em-0w3Fbg"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_hJ4GcJjwEeW90dH2IAXwHw" name="generateBill">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_R2SyMJjxEeW90dH2IAXwHw" name="bill" type="_BnrYAJdQEeW_2em-0w3Fbg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_kRcUUJjwEeW90dH2IAXwHw" name="pay">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ZSSpsJjxEeW90dH2IAXwHw" name="bill" type="_BnrYAJdQEeW_2em-0w3Fbg"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_eNUZQJjxEeW90dH2IAXwHw" name="completed" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_mCYtgJjwEeW90dH2IAXwHw" name="addDiscount">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_hdaRAJjxEeW90dH2IAXwHw" name="discount" type="_P3JucJdQEeW_2em-0w3Fbg"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_nakBYJjwEeW90dH2IAXwHw" name="removeDiscount">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_kIdiAJjxEeW90dH2IAXwHw" name="discount" type="_P3JucJdQEeW_2em-0w3Fbg"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_943j8JdPEeW_2em-0w3Fbg" name="Customer">
     <generalization xmi:type="uml:Generalization" xmi:id="_cPbl0JdoEeW_2em-0w3Fbg" general="_t7VSwJdbEeW_2em-0w3Fbg"/>
@@ -93,6 +108,7 @@
     </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_E_WecJdQEeW_2em-0w3Fbg" name="Addon">
+    <generalization xmi:type="uml:Generalization" xmi:id="_w8bjwJjxEeW90dH2IAXwHw" general="_rkYhAJjxEeW90dH2IAXwHw"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_huNrEJdaEeW_2em-0w3Fbg" name="name" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
@@ -105,6 +121,8 @@
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_XF9S8JdaEeW_2em-0w3Fbg" name="discount" visibility="private" type="_P3JucJdQEeW_2em-0w3Fbg"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_7gqXgJjxEeW90dH2IAXwHw" name="addDiscount"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_911fIJjxEeW90dH2IAXwHw" name="removeDiscount"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_P3JucJdQEeW_2em-0w3Fbg" name="Discount">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_346oIJdZEeW_2em-0w3Fbg" name="isPercentage" visibility="private">
@@ -306,4 +324,12 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_ehc9kJjuEeW90dH2IAXwHw" name="getMaintenanceController"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_VWI30JjeEeWMUqN6Tq0AMQ" name="DBInterface"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_rkYhAJjxEeW90dH2IAXwHw" name="Extra">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_zNwtMJjxEeW90dH2IAXwHw" name="name">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_2Hf6cJjxEeW90dH2IAXwHw" name="description">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
 </uml:Model>
