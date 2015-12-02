@@ -11,9 +11,15 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_3mrhQJdcEeW_2em-0w3Fbg" name="bookingId" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_35Ya0JdcEeW_2em-0w3Fbg" name="from" visibility="private"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_4LuIAJdcEeW_2em-0w3Fbg" name="to" visibility="private"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_4e_CQJdcEeW_2em-0w3Fbg" name="created" visibility="private"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_35Ya0JdcEeW_2em-0w3Fbg" name="from" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_4LuIAJdcEeW_2em-0w3Fbg" name="to" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_4e_CQJdcEeW_2em-0w3Fbg" name="created" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_4y3nkJdcEeW_2em-0w3Fbg" name="creditcard" visibility="private" type="_s04WIJddEeW_2em-0w3Fbg"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_5eCEcJdcEeW_2em-0w3Fbg" name="customer" visibility="private" type="_943j8JdPEeW_2em-0w3Fbg"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_5xYeQJdcEeW_2em-0w3Fbg" name="addons" visibility="private" isStatic="true" type="_E_WecJdQEeW_2em-0w3Fbg">
@@ -89,7 +95,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_XF9S8JdaEeW_2em-0w3Fbg" name="discount" visibility="private" type="_P3JucJdQEeW_2em-0w3Fbg"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_P3JucJdQEeW_2em-0w3Fbg" name="Discount">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_346oIJdZEeW_2em-0w3Fbg" name="isPrecentage" visibility="private">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_346oIJdZEeW_2em-0w3Fbg" name="isPercentage" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_HKpFwJdaEeW_2em-0w3Fbg" name="amount" visibility="private">
@@ -157,7 +163,9 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_xXj3IJddEeW_2em-0w3Fbg" name="cardNumber" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_zR-8cJddEeW_2em-0w3Fbg" name="expirationDate" visibility="private"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_zR-8cJddEeW_2em-0w3Fbg" name="expirationDate" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_0ydQsJddEeW_2em-0w3Fbg" name="cvcCode" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
     </ownedAttribute>
