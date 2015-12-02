@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_LUZ8UJN8EeW_3Yt58t3sgQ" name="HotelManagementClassDiagram">
-  <packagedElement xmi:type="uml:Class" xmi:id="_a__LcJdNEeW_2em-0w3Fbg" name="Hotel">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_c9JbsJdNEeW_2em-0w3Fbg" name="name" visibility="private">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_eup1kJdNEeW_2em-0w3Fbg" name="adress" visibility="private">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-    </ownedAttribute>
-  </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_Ew4PgJdOEeW_2em-0w3Fbg" name="Employee">
     <generalization xmi:type="uml:Generalization" xmi:id="_g8ACoJdoEeW_2em-0w3Fbg" general="_t7VSwJdbEeW_2em-0w3Fbg"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_NyjEUJdOEeW_2em-0w3Fbg" name="salary" visibility="private">
@@ -125,7 +117,6 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_xpZe8JdmEeW_2em-0w3Fbg" name="status" type="_MDReEJdZEeW_2em-0w3Fbg"/>
     </ownedOperation>
   </packagedElement>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_ZrkO0JdQEeW_2em-0w3Fbg" name="DBInterface"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_KN_mMJdTEeW_2em-0w3Fbg" name="EmployeeType">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_PVV6gJdTEeW_2em-0w3Fbg" name="type" visibility="private" type="_InaQoJdYEeW_2em-0w3Fbg"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_XpV-wJdYEeW_2em-0w3Fbg" name="acessLevel" visibility="private">
@@ -260,4 +251,11 @@
   <packagedElement xmi:type="uml:Dependency" xmi:id="_oOG6IJdvEeW_2em-0w3Fbg" client="_7pMnYJdPEeW_2em-0w3Fbg" supplier="_S3mAoJdQEeW_2em-0w3Fbg"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_TybDoJdwEeW_2em-0w3Fbg" client="_7pMnYJdPEeW_2em-0w3Fbg" supplier="_E_WecJdQEeW_2em-0w3Fbg"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_lnK3oJdwEeW_2em-0w3Fbg" client="_BnrYAJdQEeW_2em-0w3Fbg" supplier="_LUZ8UJN8EeW_3Yt58t3sgQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_WdT1MJdzEeW_2em-0w3Fbg" client="_e6180JdgEeW_2em-0w3Fbg" supplier="_7pMnYJdPEeW_2em-0w3Fbg"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_Y4KuEJdzEeW_2em-0w3Fbg" client="_LUZ8UJN8EeW_3Yt58t3sgQ" supplier="_S3mAoJdQEeW_2em-0w3Fbg"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_tHE3YJdzEeW_2em-0w3Fbg" client="_LUZ8UJN8EeW_3Yt58t3sgQ" supplier="_JTGcgJdZEeW_2em-0w3Fbg"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_iFDe8Jd0EeW_2em-0w3Fbg" client="_LUZ8UJN8EeW_3Yt58t3sgQ" supplier="_MDReEJdZEeW_2em-0w3Fbg"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_lCjx4Jd0EeW_2em-0w3Fbg" client="_hJ2LAJdgEeW_2em-0w3Fbg" supplier="_S3mAoJdQEeW_2em-0w3Fbg"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_tu0XYJd0EeW_2em-0w3Fbg" client="_gA2ioJdgEeW_2em-0w3Fbg" supplier="_P3JucJdQEeW_2em-0w3Fbg"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_u5vSYJd0EeW_2em-0w3Fbg" client="_LUZ8UJN8EeW_3Yt58t3sgQ" supplier="_OeItEJdQEeW_2em-0w3Fbg"/>
 </uml:Model>
