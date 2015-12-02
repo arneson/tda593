@@ -5,7 +5,11 @@ package HotelManagementClassDiagram.impl;
 import HotelManagementClassDiagram.Customer;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 
+import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -174,6 +178,17 @@ public class CustomerImpl extends PersonImpl implements Customer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void addBonusPoints(int bonusPoints) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -245,6 +260,21 @@ public class CustomerImpl extends PersonImpl implements Customer {
 				return MISC_INFO_EDEFAULT == null ? miscInfo != null : !MISC_INFO_EDEFAULT.equals(miscInfo);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case HotelManagementClassDiagramPackage.CUSTOMER___ADD_BONUS_POINTS__INT:
+				addBonusPoints((Integer)arguments.get(0));
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

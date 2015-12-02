@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link HotelManagementClassDiagram.Bill#getTotalPrice <em>Total Price</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Bill#getCustomer <em>Customer</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Bill#getValueAddedTax <em>Value Added Tax</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Bill#isFinal <em>Final</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBill()
@@ -119,5 +120,31 @@ public interface Bill extends EObject {
 	 * @generated
 	 */
 	void setValueAddedTax(double value);
+
+	/**
+	 * Returns the value of the '<em><b>Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Final</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Final</em>' attribute.
+	 * @see #setFinal(boolean)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBill_Final()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isFinal();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Bill#isFinal <em>Final</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Final</em>' attribute.
+	 * @see #isFinal()
+	 * @generated
+	 */
+	void setFinal(boolean value);
 
 } // Bill

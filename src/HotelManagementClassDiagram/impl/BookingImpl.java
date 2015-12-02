@@ -7,6 +7,7 @@ import HotelManagementClassDiagram.Bill;
 import HotelManagementClassDiagram.Booking;
 import HotelManagementClassDiagram.Creditcard;
 import HotelManagementClassDiagram.Customer;
+import HotelManagementClassDiagram.Discount;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.Room;
 
@@ -544,7 +545,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Bill createBill() {
+	public void checkIn() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -555,7 +556,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void getCreditcard(Creditcard creditcard) {
+	public Bill checkOut() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -566,7 +567,84 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addAddons(Addon addons) {
+	public void addAddon(Addon addon) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addRoom(Room room) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void removeAddon(Addon addon) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void removeRoom(Room room) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Bill generateBill() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean pay(Bill bill) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addDiscount(Discount discount) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void removeDiscount(Discount discount) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -753,13 +831,32 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HotelManagementClassDiagramPackage.BOOKING___CREATE_BILL:
-				return createBill();
-			case HotelManagementClassDiagramPackage.BOOKING___GET_CREDITCARD__CREDITCARD:
-				getCreditcard((Creditcard)arguments.get(0));
+			case HotelManagementClassDiagramPackage.BOOKING___CHECK_IN:
+				checkIn();
 				return null;
-			case HotelManagementClassDiagramPackage.BOOKING___ADD_ADDONS__ADDON:
-				addAddons((Addon)arguments.get(0));
+			case HotelManagementClassDiagramPackage.BOOKING___CHECK_OUT:
+				return checkOut();
+			case HotelManagementClassDiagramPackage.BOOKING___ADD_ADDON__ADDON:
+				addAddon((Addon)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.BOOKING___ADD_ROOM__ROOM:
+				addRoom((Room)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.BOOKING___REMOVE_ADDON__ADDON:
+				removeAddon((Addon)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.BOOKING___REMOVE_ROOM__ROOM:
+				removeRoom((Room)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.BOOKING___GENERATE_BILL:
+				return generateBill();
+			case HotelManagementClassDiagramPackage.BOOKING___PAY__BILL:
+				return pay((Bill)arguments.get(0));
+			case HotelManagementClassDiagramPackage.BOOKING___ADD_DISCOUNT__DISCOUNT:
+				addDiscount((Discount)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.BOOKING___REMOVE_DISCOUNT__DISCOUNT:
+				removeDiscount((Discount)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

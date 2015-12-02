@@ -5,9 +5,13 @@ package HotelManagementClassDiagram.impl;
 import HotelManagementClassDiagram.Creditcard;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 
+import java.lang.reflect.InvocationTargetException;
+
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -219,6 +223,17 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validate() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -300,6 +315,20 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 				return OWNER_EDEFAULT == null ? owner != null : !OWNER_EDEFAULT.equals(owner);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case HotelManagementClassDiagramPackage.CREDITCARD___VALIDATE:
+				return validate();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

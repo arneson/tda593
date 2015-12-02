@@ -63,6 +63,7 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 			case HotelManagementClassDiagramPackage.CREDITCARD: return createCreditcard();
 			case HotelManagementClassDiagramPackage.CUSTOMER: return createCustomer();
 			case HotelManagementClassDiagramPackage.ADDON: return createAddon();
+			case HotelManagementClassDiagramPackage.EXTRA: return createExtra();
 			case HotelManagementClassDiagramPackage.ROOM: return createRoom();
 			case HotelManagementClassDiagramPackage.BILL: return createBill();
 			case HotelManagementClassDiagramPackage.DISCOUNT: return createDiscount();
@@ -71,6 +72,7 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER: return createMaintenanceController();
 			case HotelManagementClassDiagramPackage.HOTEL: return createHotel();
 			case HotelManagementClassDiagramPackage.DB_INTERFACE: return createDBInterface();
+			case HotelManagementClassDiagramPackage.BOOKED_ROOM: return createBookedRoom();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -86,10 +88,10 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 		switch (eDataType.getClassifierID()) {
 			case HotelManagementClassDiagramPackage.ETYPE:
 				return createETypeFromString(eDataType, initialValue);
-			case HotelManagementClassDiagramPackage.CLEANING_STATUS:
-				return createCleaningStatusFromString(eDataType, initialValue);
 			case HotelManagementClassDiagramPackage.ROOM_TYPE:
 				return createRoomTypeFromString(eDataType, initialValue);
+			case HotelManagementClassDiagramPackage.CLEANING_STATUS:
+				return createCleaningStatusFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -105,10 +107,10 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 		switch (eDataType.getClassifierID()) {
 			case HotelManagementClassDiagramPackage.ETYPE:
 				return convertETypeToString(eDataType, instanceValue);
-			case HotelManagementClassDiagramPackage.CLEANING_STATUS:
-				return convertCleaningStatusToString(eDataType, instanceValue);
 			case HotelManagementClassDiagramPackage.ROOM_TYPE:
 				return convertRoomTypeToString(eDataType, instanceValue);
+			case HotelManagementClassDiagramPackage.CLEANING_STATUS:
+				return convertCleaningStatusToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -172,6 +174,16 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 	public Addon createAddon() {
 		AddonImpl addon = new AddonImpl();
 		return addon;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Extra createExtra() {
+		ExtraImpl extra = new ExtraImpl();
+		return extra;
 	}
 
 	/**
@@ -259,6 +271,16 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public BookedRoom createBookedRoom() {
+		BookedRoomImpl bookedRoom = new BookedRoomImpl();
+		return bookedRoom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EType createETypeFromString(EDataType eDataType, String initialValue) {
 		EType result = EType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -279,26 +301,6 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CleaningStatus createCleaningStatusFromString(EDataType eDataType, String initialValue) {
-		CleaningStatus result = CleaningStatus.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertCleaningStatusToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public RoomType createRoomTypeFromString(EDataType eDataType, String initialValue) {
 		RoomType result = RoomType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -311,6 +313,26 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 	 * @generated
 	 */
 	public String convertRoomTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CleaningStatus createCleaningStatusFromString(EDataType eDataType, String initialValue) {
+		CleaningStatus result = CleaningStatus.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertCleaningStatusToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

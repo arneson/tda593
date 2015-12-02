@@ -130,4 +130,12 @@ public interface Creditcard extends EObject {
 	 */
 	void setOwner(String value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	boolean validate();
+
 } // Creditcard

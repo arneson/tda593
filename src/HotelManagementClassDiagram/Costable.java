@@ -74,4 +74,20 @@ public interface Costable extends EObject {
 	 */
 	void setDiscount(Discount value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void addDiscount();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void removeDiscount();
+
 } // Costable

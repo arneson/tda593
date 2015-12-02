@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link HotelManagementClassDiagram.impl.BillImpl#getTotalPrice <em>Total Price</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BillImpl#getCustomer <em>Customer</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BillImpl#getValueAddedTax <em>Value Added Tax</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.BillImpl#isFinal <em>Final</em>}</li>
  * </ul>
  *
  * @generated
@@ -97,6 +98,26 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * @ordered
 	 */
 	protected double valueAddedTax = VALUE_ADDED_TAX_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isFinal() <em>Final</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isFinal()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean FINAL_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isFinal() <em>Final</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isFinal()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean final_ = FINAL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,6 +235,27 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isFinal() {
+		return final_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFinal(boolean newFinal) {
+		boolean oldFinal = final_;
+		final_ = newFinal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BILL__FINAL, oldFinal, final_));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -226,6 +268,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return basicGetCustomer();
 			case HotelManagementClassDiagramPackage.BILL__VALUE_ADDED_TAX:
 				return getValueAddedTax();
+			case HotelManagementClassDiagramPackage.BILL__FINAL:
+				return isFinal();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -252,6 +296,9 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			case HotelManagementClassDiagramPackage.BILL__VALUE_ADDED_TAX:
 				setValueAddedTax((Double)newValue);
 				return;
+			case HotelManagementClassDiagramPackage.BILL__FINAL:
+				setFinal((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -276,6 +323,9 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			case HotelManagementClassDiagramPackage.BILL__VALUE_ADDED_TAX:
 				setValueAddedTax(VALUE_ADDED_TAX_EDEFAULT);
 				return;
+			case HotelManagementClassDiagramPackage.BILL__FINAL:
+				setFinal(FINAL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -296,6 +346,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return customer != null;
 			case HotelManagementClassDiagramPackage.BILL__VALUE_ADDED_TAX:
 				return valueAddedTax != VALUE_ADDED_TAX_EDEFAULT;
+			case HotelManagementClassDiagramPackage.BILL__FINAL:
+				return final_ != FINAL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -314,6 +366,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 		result.append(totalPrice);
 		result.append(", valueAddedTax: ");
 		result.append(valueAddedTax);
+		result.append(", final: ");
+		result.append(final_);
 		result.append(')');
 		return result.toString();
 	}

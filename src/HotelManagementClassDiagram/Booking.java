@@ -331,25 +331,81 @@ public interface Booking extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void checkIn();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	Bill createBill();
+	Bill checkOut();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model creditcardRequired="true" creditcardOrdered="false"
+	 * @model addonRequired="true" addonOrdered="false"
 	 * @generated
 	 */
-	void getCreditcard(Creditcard creditcard);
+	void addAddon(Addon addon);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model addonsRequired="true" addonsOrdered="false"
+	 * @model roomRequired="true" roomOrdered="false"
 	 * @generated
 	 */
-	void addAddons(Addon addons);
+	void addRoom(Room room);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model addonRequired="true" addonOrdered="false"
+	 * @generated
+	 */
+	void removeAddon(Addon addon);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model roomRequired="true" roomOrdered="false"
+	 * @generated
+	 */
+	void removeRoom(Room room);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	Bill generateBill();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" billRequired="true" billOrdered="false"
+	 * @generated
+	 */
+	boolean pay(Bill bill);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model discountRequired="true" discountOrdered="false"
+	 * @generated
+	 */
+	void addDiscount(Discount discount);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model discountRequired="true" discountOrdered="false"
+	 * @generated
+	 */
+	void removeDiscount(Discount discount);
 
 } // Booking

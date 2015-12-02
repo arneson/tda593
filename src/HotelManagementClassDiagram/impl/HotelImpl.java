@@ -5,7 +5,11 @@ package HotelManagementClassDiagram.impl;
 import HotelManagementClassDiagram.Hotel;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 
+import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -175,6 +179,50 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void authenticate(String login, String password) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void getBookingController() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void getManagementController() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void getMaintenanceController() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -246,6 +294,30 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 				return rating != RATING_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case HotelManagementClassDiagramPackage.HOTEL___AUTHENTICATE__STRING_STRING:
+				authenticate((String)arguments.get(0), (String)arguments.get(1));
+				return null;
+			case HotelManagementClassDiagramPackage.HOTEL___GET_BOOKING_CONTROLLER:
+				getBookingController();
+				return null;
+			case HotelManagementClassDiagramPackage.HOTEL___GET_MANAGEMENT_CONTROLLER:
+				getManagementController();
+				return null;
+			case HotelManagementClassDiagramPackage.HOTEL___GET_MAINTENANCE_CONTROLLER:
+				getMaintenanceController();
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

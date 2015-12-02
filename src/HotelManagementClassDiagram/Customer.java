@@ -100,4 +100,12 @@ public interface Customer extends Person {
 	 */
 	void setMiscInfo(String value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model bonusPointsRequired="true" bonusPointsOrdered="false"
+	 * @generated
+	 */
+	void addBonusPoints(int bonusPoints);
+
 } // Customer

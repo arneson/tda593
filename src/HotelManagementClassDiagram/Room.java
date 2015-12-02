@@ -15,11 +15,15 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link HotelManagementClassDiagram.Room#getNumber <em>Number</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Room#getRoomNumber <em>Room Number</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Room#getSize <em>Size</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Room#getCleaningStatus <em>Cleaning Status</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Room#getRoomType <em>Room Type</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Room#getMiscInfo <em>Misc Info</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Room#getInternalComment <em>Internal Comment</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Room#isBooked <em>Booked</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Room#getMaxNbrPeople <em>Max Nbr People</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Room#isUnderCleaning <em>Under Cleaning</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Room#isUnderRepair <em>Under Repair</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Room#getTypes <em>Types</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Room#getRoomName <em>Room Name</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom()
@@ -28,30 +32,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Room extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Number</b></em>' attribute.
+	 * Returns the value of the '<em><b>Room Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Number</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Room Number</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Number</em>' attribute.
-	 * @see #setNumber(int)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_Number()
+	 * @return the value of the '<em>Room Number</em>' attribute.
+	 * @see #setRoomNumber(int)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_RoomNumber()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	int getNumber();
+	int getRoomNumber();
 
 	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Room#getNumber <em>Number</em>}' attribute.
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Room#getRoomNumber <em>Room Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Number</em>' attribute.
-	 * @see #getNumber()
+	 * @param value the new value of the '<em>Room Number</em>' attribute.
+	 * @see #getRoomNumber()
 	 * @generated
 	 */
-	void setNumber(int value);
+	void setRoomNumber(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Size</b></em>' attribute.
@@ -62,12 +66,12 @@ public interface Room extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Size</em>' attribute.
-	 * @see #setSize(int)
+	 * @see #setSize(double)
 	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_Size()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	int getSize();
+	double getSize();
 
 	/**
 	 * Sets the value of the '{@link HotelManagementClassDiagram.Room#getSize <em>Size</em>}' attribute.
@@ -77,70 +81,171 @@ public interface Room extends EObject {
 	 * @see #getSize()
 	 * @generated
 	 */
-	void setSize(int value);
+	void setSize(double value);
 
 	/**
-	 * Returns the value of the '<em><b>Cleaning Status</b></em>' attribute.
-	 * The literals are from the enumeration {@link HotelManagementClassDiagram.CleaningStatus}.
+	 * Returns the value of the '<em><b>Internal Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Cleaning Status</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Internal Comment</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cleaning Status</em>' attribute.
-	 * @see HotelManagementClassDiagram.CleaningStatus
-	 * @see #setCleaningStatus(CleaningStatus)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_CleaningStatus()
+	 * @return the value of the '<em>Internal Comment</em>' attribute.
+	 * @see #setInternalComment(String)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_InternalComment()
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getInternalComment();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Room#getInternalComment <em>Internal Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Internal Comment</em>' attribute.
+	 * @see #getInternalComment()
+	 * @generated
+	 */
+	void setInternalComment(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Booked</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Booked</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Booked</em>' attribute.
+	 * @see #setBooked(boolean)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_Booked()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	CleaningStatus getCleaningStatus();
+	boolean isBooked();
 
 	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Room#getCleaningStatus <em>Cleaning Status</em>}' attribute.
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Room#isBooked <em>Booked</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cleaning Status</em>' attribute.
-	 * @see HotelManagementClassDiagram.CleaningStatus
-	 * @see #getCleaningStatus()
+	 * @param value the new value of the '<em>Booked</em>' attribute.
+	 * @see #isBooked()
 	 * @generated
 	 */
-	void setCleaningStatus(CleaningStatus value);
+	void setBooked(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Room Type</b></em>' attribute list.
+	 * Returns the value of the '<em><b>Max Nbr People</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.Integer}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Nbr People</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Nbr People</em>' attribute list.
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_MaxNbrPeople()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<Integer> getMaxNbrPeople();
+
+	/**
+	 * Returns the value of the '<em><b>Under Cleaning</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Under Cleaning</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Under Cleaning</em>' attribute.
+	 * @see #setUnderCleaning(boolean)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_UnderCleaning()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isUnderCleaning();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Room#isUnderCleaning <em>Under Cleaning</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Under Cleaning</em>' attribute.
+	 * @see #isUnderCleaning()
+	 * @generated
+	 */
+	void setUnderCleaning(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Under Repair</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Under Repair</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Under Repair</em>' attribute.
+	 * @see #setUnderRepair(boolean)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_UnderRepair()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isUnderRepair();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Room#isUnderRepair <em>Under Repair</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Under Repair</em>' attribute.
+	 * @see #isUnderRepair()
+	 * @generated
+	 */
+	void setUnderRepair(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Types</b></em>' attribute list.
 	 * The list contents are of type {@link HotelManagementClassDiagram.RoomType}.
 	 * The literals are from the enumeration {@link HotelManagementClassDiagram.RoomType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Room Type</em>' attribute list isn't clear,
+	 * If the meaning of the '<em>Types</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Room Type</em>' attribute list.
+	 * @return the value of the '<em>Types</em>' attribute list.
 	 * @see HotelManagementClassDiagram.RoomType
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_RoomType()
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_Types()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	EList<RoomType> getRoomType();
+	EList<RoomType> getTypes();
 
 	/**
-	 * Returns the value of the '<em><b>Misc Info</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Room Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Misc Info</em>' attribute list isn't clear,
+	 * If the meaning of the '<em>Room Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Misc Info</em>' attribute list.
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_MiscInfo()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @return the value of the '<em>Room Name</em>' attribute.
+	 * @see #setRoomName(String)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_RoomName()
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
 	 * @generated
 	 */
-	EList<String> getMiscInfo();
+	String getRoomName();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Room#getRoomName <em>Room Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Room Name</em>' attribute.
+	 * @see #getRoomName()
+	 * @generated
+	 */
+	void setRoomName(String value);
 
 	/**
 	 * <!-- begin-user-doc -->
