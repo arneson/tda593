@@ -63,6 +63,11 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_q2OGgJdcEeW_2em-0w3Fbg" name="miscInfo" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_XsatgJjwEeWQB-I7Xm36yA" name="addBonusPoints">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_b0eIAJjwEeWQB-I7Xm36yA" name="bonusPoints">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </ownedParameter>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_BnrYAJdQEeW_2em-0w3Fbg" name="Bill">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_3byKwJdaEeW_2em-0w3Fbg" name="costables" visibility="private" isStatic="true" type="_OeItEJdQEeW_2em-0w3Fbg">
@@ -169,6 +174,11 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_2s_qwJddEeW_2em-0w3Fbg" name="owner" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_j5Mo4JjvEeWQB-I7Xm36yA" name="validate" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_UVbjkJjwEeWQB-I7Xm36yA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </ownedParameter>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_e6180JdgEeW_2em-0w3Fbg" name="BookingController">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_lFZlIJdhEeW_2em-0w3Fbg" name="searchRooms">
