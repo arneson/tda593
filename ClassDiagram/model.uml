@@ -42,15 +42,22 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_f3tVEJddEeW_2em-0w3Fbg" name="checkedOut" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
     </ownedAttribute>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_3YtLIJdmEeW_2em-0w3Fbg" name="createBill">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_-pKhAJdmEeW_2em-0w3Fbg" name="bill" type="_BnrYAJdQEeW_2em-0w3Fbg" direction="return"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_iW1eQJjvEeW90dH2IAXwHw" name="checkIn"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_6CIO4JjvEeW90dH2IAXwHw" name="checkOut">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_K9YPEJjwEeW90dH2IAXwHw" name="bill" type="_BnrYAJdQEeW_2em-0w3Fbg" direction="return"/>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_4l4I4JdmEeW_2em-0w3Fbg" name="getCreditcard">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_B-SpwJdnEeW_2em-0w3Fbg" name="creditcard" type="_s04WIJddEeW_2em-0w3Fbg"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_7RBD4JjvEeW90dH2IAXwHw" name="addAddon">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_XRnA0JjwEeW90dH2IAXwHw" name="addon" type="_E_WecJdQEeW_2em-0w3Fbg"/>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_BokfIJdsEeW_2em-0w3Fbg" name="addAddons">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_FpxqwJdsEeW_2em-0w3Fbg" name="addons" type="_E_WecJdQEeW_2em-0w3Fbg"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_aEbtwJjwEeW90dH2IAXwHw" name="addRoom">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_cnCNYJjwEeW90dH2IAXwHw" name="room" type="_S3mAoJdQEeW_2em-0w3Fbg"/>
     </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_eQMjkJjwEeW90dH2IAXwHw" name="removeAddon"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_gCfnoJjwEeW90dH2IAXwHw" name="removeRoom"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_hJ4GcJjwEeW90dH2IAXwHw" name="generateBill"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_kRcUUJjwEeW90dH2IAXwHw" name="pay"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_mCYtgJjwEeW90dH2IAXwHw" name="addDiscount"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_nakBYJjwEeW90dH2IAXwHw" name="removeDiscount"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_943j8JdPEeW_2em-0w3Fbg" name="Customer">
     <generalization xmi:type="uml:Generalization" xmi:id="_cPbl0JdoEeW_2em-0w3Fbg" general="_t7VSwJdbEeW_2em-0w3Fbg"/>
@@ -75,6 +82,9 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_DxPEgJdbEeW_2em-0w3Fbg" name="customer" visibility="private" type="_943j8JdPEeW_2em-0w3Fbg"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_EXcI4JdbEeW_2em-0w3Fbg" name="valueAddedTax" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_L1Q5UJjwEeW90dH2IAXwHw" name="final">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
     </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_E_WecJdQEeW_2em-0w3Fbg" name="Addon">
