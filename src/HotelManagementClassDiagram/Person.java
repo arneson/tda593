@@ -14,8 +14,14 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link HotelManagementClassDiagram.Person#getName <em>Name</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Person#getAdress <em>Adress</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Person#getSSNumber <em>SS Number</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Person#getPhoneNumber <em>Phone Number</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Person#getStreet <em>Street</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Person#getCity <em>City</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Person#getPostalCode <em>Postal Code</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Person#getCountry <em>Country</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Person#getGender <em>Gender</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Person#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getPerson()
@@ -50,30 +56,30 @@ public interface Person extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Adress</b></em>' attribute.
+	 * Returns the value of the '<em><b>SS Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Adress</em>' attribute isn't clear,
+	 * If the meaning of the '<em>SS Number</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Adress</em>' attribute.
-	 * @see #setAdress(String)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getPerson_Adress()
+	 * @return the value of the '<em>SS Number</em>' attribute.
+	 * @see #setSSNumber(String)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getPerson_SSNumber()
 	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
 	 * @generated
 	 */
-	String getAdress();
+	String getSSNumber();
 
 	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Person#getAdress <em>Adress</em>}' attribute.
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Person#getSSNumber <em>SS Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Adress</em>' attribute.
-	 * @see #getAdress()
+	 * @param value the new value of the '<em>SS Number</em>' attribute.
+	 * @see #getSSNumber()
 	 * @generated
 	 */
-	void setAdress(String value);
+	void setSSNumber(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Phone Number</b></em>' attribute.
@@ -100,5 +106,161 @@ public interface Person extends EObject {
 	 * @generated
 	 */
 	void setPhoneNumber(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Street</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Street</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Street</em>' attribute.
+	 * @see #setStreet(String)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getPerson_Street()
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getStreet();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Person#getStreet <em>Street</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Street</em>' attribute.
+	 * @see #getStreet()
+	 * @generated
+	 */
+	void setStreet(String value);
+
+	/**
+	 * Returns the value of the '<em><b>City</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>City</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>City</em>' attribute.
+	 * @see #setCity(String)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getPerson_City()
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getCity();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Person#getCity <em>City</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>City</em>' attribute.
+	 * @see #getCity()
+	 * @generated
+	 */
+	void setCity(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Postal Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Postal Code</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Postal Code</em>' attribute.
+	 * @see #setPostalCode(String)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getPerson_PostalCode()
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getPostalCode();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Person#getPostalCode <em>Postal Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Postal Code</em>' attribute.
+	 * @see #getPostalCode()
+	 * @generated
+	 */
+	void setPostalCode(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Country</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Country</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Country</em>' attribute.
+	 * @see #setCountry(String)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getPerson_Country()
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getCountry();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Person#getCountry <em>Country</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Country</em>' attribute.
+	 * @see #getCountry()
+	 * @generated
+	 */
+	void setCountry(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Gender</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Gender</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Gender</em>' attribute.
+	 * @see #setGender(String)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getPerson_Gender()
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getGender();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Person#getGender <em>Gender</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Gender</em>' attribute.
+	 * @see #getGender()
+	 * @generated
+	 */
+	void setGender(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Title</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Title</em>' attribute.
+	 * @see #setTitle(String)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getPerson_Title()
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getTitle();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Person#getTitle <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Title</em>' attribute.
+	 * @see #getTitle()
+	 * @generated
+	 */
+	void setTitle(String value);
 
 } // Person

@@ -12,8 +12,8 @@ package HotelManagementClassDiagram;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link HotelManagementClassDiagram.Employee#getSalary <em>Salary</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Employee#getEmployeeType <em>Employee Type</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Employee#getEmployeeID <em>Employee ID</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getEmployee()
@@ -21,32 +21,6 @@ package HotelManagementClassDiagram;
  * @generated
  */
 public interface Employee extends Person {
-	/**
-	 * Returns the value of the '<em><b>Salary</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Salary</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Salary</em>' attribute.
-	 * @see #setSalary(double)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getEmployee_Salary()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	double getSalary();
-
-	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Employee#getSalary <em>Salary</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Salary</em>' attribute.
-	 * @see #getSalary()
-	 * @generated
-	 */
-	void setSalary(double value);
-
 	/**
 	 * Returns the value of the '<em><b>Employee Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -72,5 +46,31 @@ public interface Employee extends Person {
 	 * @generated
 	 */
 	void setEmployeeType(EmployeeType value);
+
+	/**
+	 * Returns the value of the '<em><b>Employee ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Employee ID</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Employee ID</em>' attribute.
+	 * @see #setEmployeeID(int)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getEmployee_EmployeeID()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	int getEmployeeID();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Employee#getEmployeeID <em>Employee ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Employee ID</em>' attribute.
+	 * @see #getEmployeeID()
+	 * @generated
+	 */
+	void setEmployeeID(int value);
 
 } // Employee

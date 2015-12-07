@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link HotelManagementClassDiagram.Hotel#getName <em>Name</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Hotel#getAddress <em>Address</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Hotel#getRating <em>Rating</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Hotel#getRank <em>Rank</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getHotel()
@@ -76,30 +76,30 @@ public interface Hotel extends EObject {
 	void setAddress(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Rating</b></em>' attribute.
+	 * Returns the value of the '<em><b>Rank</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Rating</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Rank</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rating</em>' attribute.
-	 * @see #setRating(int)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getHotel_Rating()
+	 * @return the value of the '<em>Rank</em>' attribute.
+	 * @see #setRank(double)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getHotel_Rank()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	int getRating();
+	double getRank();
 
 	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Hotel#getRating <em>Rating</em>}' attribute.
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Hotel#getRank <em>Rank</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rating</em>' attribute.
-	 * @see #getRating()
+	 * @param value the new value of the '<em>Rank</em>' attribute.
+	 * @see #getRank()
 	 * @generated
 	 */
-	void setRating(int value);
+	void setRank(double value);
 
 	/**
 	 * <!-- begin-user-doc -->

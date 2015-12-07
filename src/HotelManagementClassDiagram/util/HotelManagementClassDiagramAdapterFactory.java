@@ -96,10 +96,6 @@ public class HotelManagementClassDiagramAdapterFactory extends AdapterFactoryImp
 				return createAddonAdapter();
 			}
 			@Override
-			public Adapter caseExtra(Extra object) {
-				return createExtraAdapter();
-			}
-			@Override
 			public Adapter caseRoom(Room object) {
 				return createRoomAdapter();
 			}
@@ -130,10 +126,6 @@ public class HotelManagementClassDiagramAdapterFactory extends AdapterFactoryImp
 			@Override
 			public Adapter caseHotel(Hotel object) {
 				return createHotelAdapter();
-			}
-			@Override
-			public Adapter caseDBInterface(DBInterface object) {
-				return createDBInterfaceAdapter();
 			}
 			@Override
 			public Adapter caseBookedRoom(BookedRoom object) {
@@ -258,20 +250,6 @@ public class HotelManagementClassDiagramAdapterFactory extends AdapterFactoryImp
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link HotelManagementClassDiagram.Extra <em>Extra</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see HotelManagementClassDiagram.Extra
-	 * @generated
-	 */
-	public Adapter createExtraAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link HotelManagementClassDiagram.Room <em>Room</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -380,20 +358,6 @@ public class HotelManagementClassDiagramAdapterFactory extends AdapterFactoryImp
 	 * @generated
 	 */
 	public Adapter createHotelAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link HotelManagementClassDiagram.DBInterface <em>DB Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see HotelManagementClassDiagram.DBInterface
-	 * @generated
-	 */
-	public Adapter createDBInterfaceAdapter() {
 		return null;
 	}
 

@@ -76,15 +76,6 @@ public interface HotelManagementClassDiagramFactory extends EFactory {
 	Addon createAddon();
 
 	/**
-	 * Returns a new object of class '<em>Extra</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Extra</em>'.
-	 * @generated
-	 */
-	Extra createExtra();
-
-	/**
 	 * Returns a new object of class '<em>Room</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -146,15 +137,6 @@ public interface HotelManagementClassDiagramFactory extends EFactory {
 	 * @generated
 	 */
 	Hotel createHotel();
-
-	/**
-	 * Returns a new object of class '<em>DB Interface</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>DB Interface</em>'.
-	 * @generated
-	 */
-	DBInterface createDBInterface();
 
 	/**
 	 * Returns a new object of class '<em>Booked Room</em>'.

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
-    modelDirectory="/ClassDiagram/src" modelPluginID="ClassDiagram"
-    modelName="Model" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="8.0" copyrightFields="false"
-    operationReflection="true" importOrganizing="true">
+    modelDirectory="/Diagrams/src" modelPluginID="Diagrams" modelName="Model"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.uml2.uml.ecore.importer"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="OPPOSITE_ROLE_NAMES" value="IGNORE"/>
     <details key="DUPLICATE_FEATURES" value="DISCARD"/>
@@ -49,37 +48,46 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="HotelManagementClassDiagram.ecore#//CleaningStatus/Busy"/>
     </genEnums>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="HotelManagementClassDiagram.ecore#//Employee">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Employee/salary"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference HotelManagementClassDiagram.ecore#//Employee/employeeType"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Employee/employeeID"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="HotelManagementClassDiagram.ecore#//Person">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Person/name"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Person/adress"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Person/SSNumber"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Person/phoneNumber"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Person/street"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Person/city"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Person/postalCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Person/country"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Person/gender"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Person/title"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="HotelManagementClassDiagram.ecore#//EmployeeType">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//EmployeeType/type"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//EmployeeType/acessLevel"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//EmployeeType/workRate"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//EmployeeType/salary"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="HotelManagementClassDiagram.ecore#//Booking">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Booking/bookingId"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Booking/from"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Booking/to"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Booking/startDate"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Booking/endDate"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Booking/created"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference HotelManagementClassDiagram.ecore#//Booking/creditcard"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference HotelManagementClassDiagram.ecore#//Booking/creditCard"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference HotelManagementClassDiagram.ecore#//Booking/customer"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference HotelManagementClassDiagram.ecore#//Booking/addons"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference HotelManagementClassDiagram.ecore#//Booking/rooms"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference HotelManagementClassDiagram.ecore#//Booking/bookedRooms"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Booking/internalComments"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Booking/externalComments"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Booking/checkedIn"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Booking/checkedOut"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference HotelManagementClassDiagram.ecore#//Booking/paymentMaster"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//Booking/checkIn"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//Booking/checkOut"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//Booking/addAddon">
@@ -106,24 +114,24 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="HotelManagementClassDiagram.ecore#//Creditcard">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Creditcard/cardNumber"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Creditcard/number"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Creditcard/expirationDate"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Creditcard/cvcCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Creditcard/cvc"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Creditcard/owner"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//Creditcard/validate"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="HotelManagementClassDiagram.ecore#//Customer">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Customer/customerId"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Customer/customerID"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Customer/bonusPoints"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Customer/miscInfo"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Customer/rank"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//Customer/addBonusPoints">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//Customer/addBonusPoints/bonusPoints"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="HotelManagementClassDiagram.ecore#//Addon"/>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="HotelManagementClassDiagram.ecore#//Extra">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Extra/name"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Extra/description"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="HotelManagementClassDiagram.ecore#//Addon">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Addon/name"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Addon/description"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="HotelManagementClassDiagram.ecore#//Room">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Room/roomNumber"/>
@@ -149,7 +157,7 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Bill/final"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="HotelManagementClassDiagram.ecore#//Costable">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Costable/cost"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Costable/price"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference HotelManagementClassDiagram.ecore#//Costable/discount"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//Costable/addDiscount"/>
@@ -197,6 +205,15 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//ManagementController/updateCostable">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/updateCostable/costable"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//ManagementController/modifyBooking">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/modifyBooking/booking"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//ManagementController/setDateSpecificPrices">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/setDateSpecificPrices/costable"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/setDateSpecificPrices/startDate"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/setDateSpecificPrices/endDate"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/setDateSpecificPrices/priceChange"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="HotelManagementClassDiagram.ecore#//MaintenanceController">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -208,11 +225,17 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//MaintenanceController/setStatus/room"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//MaintenanceController/setStatus/status"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//MaintenanceController/notifyWorker">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//MaintenanceController/notifyWorker/worker"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//MaintenanceController/removeFromStack">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//MaintenanceController/removeFromStack/room"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="HotelManagementClassDiagram.ecore#//Hotel">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Hotel/name"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Hotel/address"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Hotel/rating"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Hotel/rank"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//Hotel/authenticate">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//Hotel/authenticate/login"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//Hotel/authenticate/password"/>
@@ -221,14 +244,9 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//Hotel/getManagementController"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//Hotel/getMaintenanceController"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="HotelManagementClassDiagram.ecore#//DBInterface"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="HotelManagementClassDiagram.ecore#//BookedRoom">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference HotelManagementClassDiagram.ecore#//BookedRoom/addons"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference HotelManagementClassDiagram.ecore#//BookedRoom/room"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference HotelManagementClassDiagram.ecore#//BookedRoom/extras"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//BookedRoom/addAddon">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//BookedRoom/addAddon/addon"/>
       </genOperations>

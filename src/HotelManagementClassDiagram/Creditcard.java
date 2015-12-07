@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link HotelManagementClassDiagram.Creditcard#getCardNumber <em>Card Number</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Creditcard#getNumber <em>Number</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Creditcard#getExpirationDate <em>Expiration Date</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Creditcard#getCvcCode <em>Cvc Code</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Creditcard#getCvc <em>Cvc</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Creditcard#getOwner <em>Owner</em>}</li>
  * </ul>
  *
@@ -27,30 +27,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Creditcard extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Card Number</b></em>' attribute.
+	 * Returns the value of the '<em><b>Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Card Number</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Number</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Card Number</em>' attribute.
-	 * @see #setCardNumber(long)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getCreditcard_CardNumber()
+	 * @return the value of the '<em>Number</em>' attribute.
+	 * @see #setNumber(long)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getCreditcard_Number()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	long getCardNumber();
+	long getNumber();
 
 	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Creditcard#getCardNumber <em>Card Number</em>}' attribute.
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Creditcard#getNumber <em>Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Card Number</em>' attribute.
-	 * @see #getCardNumber()
+	 * @param value the new value of the '<em>Number</em>' attribute.
+	 * @see #getNumber()
 	 * @generated
 	 */
-	void setCardNumber(long value);
+	void setNumber(long value);
 
 	/**
 	 * Returns the value of the '<em><b>Expiration Date</b></em>' attribute.
@@ -79,30 +79,30 @@ public interface Creditcard extends EObject {
 	void setExpirationDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Cvc Code</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cvc</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Cvc Code</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Cvc</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cvc Code</em>' attribute.
-	 * @see #setCvcCode(int)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getCreditcard_CvcCode()
+	 * @return the value of the '<em>Cvc</em>' attribute.
+	 * @see #setCvc(int)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getCreditcard_Cvc()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	int getCvcCode();
+	int getCvc();
 
 	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Creditcard#getCvcCode <em>Cvc Code</em>}' attribute.
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Creditcard#getCvc <em>Cvc</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cvc Code</em>' attribute.
-	 * @see #getCvcCode()
+	 * @param value the new value of the '<em>Cvc</em>' attribute.
+	 * @see #getCvc()
 	 * @generated
 	 */
-	void setCvcCode(int value);
+	void setCvc(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Owner</b></em>' attribute.

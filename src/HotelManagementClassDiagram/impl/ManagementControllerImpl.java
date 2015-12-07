@@ -2,12 +2,15 @@
  */
 package HotelManagementClassDiagram.impl;
 
+import HotelManagementClassDiagram.Booking;
 import HotelManagementClassDiagram.Costable;
 import HotelManagementClassDiagram.Discount;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.ManagementController;
 
 import java.lang.reflect.InvocationTargetException;
+
+import java.util.Date;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -80,6 +83,28 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void modifyBooking(Booking booking) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDateSpecificPrices(Costable costable, Date startDate, Date endDate, double priceChange) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
@@ -91,6 +116,12 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 				return null;
 			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___UPDATE_COSTABLE__COSTABLE:
 				updateCostable((Costable)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___MODIFY_BOOKING__BOOKING:
+				modifyBooking((Booking)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___SET_DATE_SPECIFIC_PRICES__COSTABLE_DATE_DATE_DOUBLE:
+				setDateSpecificPrices((Costable)arguments.get(0), (Date)arguments.get(1), (Date)arguments.get(2), (Double)arguments.get(3));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

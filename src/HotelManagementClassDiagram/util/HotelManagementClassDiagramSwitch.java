@@ -107,13 +107,6 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 			case HotelManagementClassDiagramPackage.ADDON: {
 				Addon addon = (Addon)theEObject;
 				T result = caseAddon(addon);
-				if (result == null) result = caseExtra(addon);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HotelManagementClassDiagramPackage.EXTRA: {
-				Extra extra = (Extra)theEObject;
-				T result = caseExtra(extra);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -162,12 +155,6 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 			case HotelManagementClassDiagramPackage.HOTEL: {
 				Hotel hotel = (Hotel)theEObject;
 				T result = caseHotel(hotel);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HotelManagementClassDiagramPackage.DB_INTERFACE: {
-				DBInterface dbInterface = (DBInterface)theEObject;
-				T result = caseDBInterface(dbInterface);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -288,21 +275,6 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Extra</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Extra</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseExtra(Extra object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Room</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -419,21 +391,6 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseHotel(Hotel object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>DB Interface</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>DB Interface</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDBInterface(DBInterface object) {
 		return null;
 	}
 

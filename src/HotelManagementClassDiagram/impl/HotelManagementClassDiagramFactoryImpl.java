@@ -63,7 +63,6 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 			case HotelManagementClassDiagramPackage.CREDITCARD: return createCreditcard();
 			case HotelManagementClassDiagramPackage.CUSTOMER: return createCustomer();
 			case HotelManagementClassDiagramPackage.ADDON: return createAddon();
-			case HotelManagementClassDiagramPackage.EXTRA: return createExtra();
 			case HotelManagementClassDiagramPackage.ROOM: return createRoom();
 			case HotelManagementClassDiagramPackage.BILL: return createBill();
 			case HotelManagementClassDiagramPackage.DISCOUNT: return createDiscount();
@@ -71,7 +70,6 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER: return createManagementController();
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER: return createMaintenanceController();
 			case HotelManagementClassDiagramPackage.HOTEL: return createHotel();
-			case HotelManagementClassDiagramPackage.DB_INTERFACE: return createDBInterface();
 			case HotelManagementClassDiagramPackage.BOOKED_ROOM: return createBookedRoom();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -181,16 +179,6 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Extra createExtra() {
-		ExtraImpl extra = new ExtraImpl();
-		return extra;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Room createRoom() {
 		RoomImpl room = new RoomImpl();
 		return room;
@@ -254,16 +242,6 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 	public Hotel createHotel() {
 		HotelImpl hotel = new HotelImpl();
 		return hotel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DBInterface createDBInterface() {
-		DBInterfaceImpl dbInterface = new DBInterfaceImpl();
-		return dbInterface;
 	}
 
 	/**

@@ -55,4 +55,20 @@ public interface MaintenanceController extends EObject {
 	 */
 	void setStatus(Room room, CleaningStatus status);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model workerRequired="true" workerOrdered="false"
+	 * @generated
+	 */
+	void notifyWorker(EmployeeType worker);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model roomRequired="true" roomOrdered="false"
+	 * @generated
+	 */
+	void removeFromStack(Room room);
+
 } // MaintenanceController

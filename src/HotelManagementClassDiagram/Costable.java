@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link HotelManagementClassDiagram.Costable#getCost <em>Cost</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Costable#getPrice <em>Price</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Costable#getDiscount <em>Discount</em>}</li>
  * </ul>
  *
@@ -23,30 +23,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Costable extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Cost</b></em>' attribute.
+	 * Returns the value of the '<em><b>Price</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Cost</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Price</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cost</em>' attribute.
-	 * @see #setCost(double)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getCostable_Cost()
+	 * @return the value of the '<em>Price</em>' attribute.
+	 * @see #setPrice(double)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getCostable_Price()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	double getCost();
+	double getPrice();
 
 	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Costable#getCost <em>Cost</em>}' attribute.
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Costable#getPrice <em>Price</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cost</em>' attribute.
-	 * @see #getCost()
+	 * @param value the new value of the '<em>Price</em>' attribute.
+	 * @see #getPrice()
 	 * @generated
 	 */
-	void setCost(double value);
+	void setPrice(double value);
 
 	/**
 	 * Returns the value of the '<em><b>Discount</b></em>' reference.

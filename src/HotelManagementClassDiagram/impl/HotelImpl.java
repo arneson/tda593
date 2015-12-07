@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link HotelManagementClassDiagram.impl.HotelImpl#getName <em>Name</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.HotelImpl#getAddress <em>Address</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.impl.HotelImpl#getRating <em>Rating</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.HotelImpl#getRank <em>Rank</em>}</li>
  * </ul>
  *
  * @generated
@@ -73,24 +73,24 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	protected String address = ADDRESS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRating() <em>Rating</em>}' attribute.
+	 * The default value of the '{@link #getRank() <em>Rank</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRating()
+	 * @see #getRank()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int RATING_EDEFAULT = 0;
+	protected static final double RANK_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getRating() <em>Rating</em>}' attribute.
+	 * The cached value of the '{@link #getRank() <em>Rank</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRating()
+	 * @see #getRank()
 	 * @generated
 	 * @ordered
 	 */
-	protected int rating = RATING_EDEFAULT;
+	protected double rank = RANK_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,8 +158,8 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getRating() {
-		return rating;
+	public double getRank() {
+		return rank;
 	}
 
 	/**
@@ -167,11 +167,11 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRating(int newRating) {
-		int oldRating = rating;
-		rating = newRating;
+	public void setRank(double newRank) {
+		double oldRank = rank;
+		rank = newRank;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.HOTEL__RATING, oldRating, rating));
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.HOTEL__RANK, oldRank, rank));
 	}
 
 	/**
@@ -230,8 +230,8 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 				return getName();
 			case HotelManagementClassDiagramPackage.HOTEL__ADDRESS:
 				return getAddress();
-			case HotelManagementClassDiagramPackage.HOTEL__RATING:
-				return getRating();
+			case HotelManagementClassDiagramPackage.HOTEL__RANK:
+				return getRank();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -250,8 +250,8 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 			case HotelManagementClassDiagramPackage.HOTEL__ADDRESS:
 				setAddress((String)newValue);
 				return;
-			case HotelManagementClassDiagramPackage.HOTEL__RATING:
-				setRating((Integer)newValue);
+			case HotelManagementClassDiagramPackage.HOTEL__RANK:
+				setRank((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -271,8 +271,8 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 			case HotelManagementClassDiagramPackage.HOTEL__ADDRESS:
 				setAddress(ADDRESS_EDEFAULT);
 				return;
-			case HotelManagementClassDiagramPackage.HOTEL__RATING:
-				setRating(RATING_EDEFAULT);
+			case HotelManagementClassDiagramPackage.HOTEL__RANK:
+				setRank(RANK_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -290,8 +290,8 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case HotelManagementClassDiagramPackage.HOTEL__ADDRESS:
 				return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
-			case HotelManagementClassDiagramPackage.HOTEL__RATING:
-				return rating != RATING_EDEFAULT;
+			case HotelManagementClassDiagramPackage.HOTEL__RANK:
+				return rank != RANK_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -334,8 +334,8 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 		result.append(name);
 		result.append(", address: ");
 		result.append(address);
-		result.append(", rating: ");
-		result.append(rating);
+		result.append(", rank: ");
+		result.append(rank);
 		result.append(')');
 		return result.toString();
 	}

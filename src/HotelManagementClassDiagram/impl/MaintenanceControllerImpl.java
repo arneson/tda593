@@ -3,6 +3,7 @@
 package HotelManagementClassDiagram.impl;
 
 import HotelManagementClassDiagram.CleaningStatus;
+import HotelManagementClassDiagram.EmployeeType;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.MaintenanceController;
 import HotelManagementClassDiagram.Room;
@@ -101,6 +102,28 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void notifyWorker(EmployeeType worker) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void removeFromStack(Room room) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -169,6 +192,12 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 				return null;
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___SET_STATUS__ROOM_CLEANINGSTATUS:
 				setStatus((Room)arguments.get(0), (CleaningStatus)arguments.get(1));
+				return null;
+			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___NOTIFY_WORKER__EMPLOYEETYPE:
+				notifyWorker((EmployeeType)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___REMOVE_FROM_STACK__ROOM:
+				removeFromStack((Room)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

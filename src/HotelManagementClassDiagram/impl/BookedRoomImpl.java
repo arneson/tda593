@@ -4,22 +4,15 @@ package HotelManagementClassDiagram.impl;
 
 import HotelManagementClassDiagram.Addon;
 import HotelManagementClassDiagram.BookedRoom;
-import HotelManagementClassDiagram.Extra;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
-import HotelManagementClassDiagram.Room;
 
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
@@ -32,8 +25,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link HotelManagementClassDiagram.impl.BookedRoomImpl#getAddons <em>Addons</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.impl.BookedRoomImpl#getRoom <em>Room</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.impl.BookedRoomImpl#getExtras <em>Extras</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,26 +39,6 @@ public class BookedRoomImpl extends RoomImpl implements BookedRoom {
 	 * @ordered
 	 */
 	protected EList<Addon> addons;
-
-	/**
-	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoom()
-	 * @generated
-	 * @ordered
-	 */
-	protected Room room;
-
-	/**
-	 * The cached value of the '{@link #getExtras() <em>Extras</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExtras()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Extra> extras;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,56 +76,6 @@ public class BookedRoomImpl extends RoomImpl implements BookedRoom {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Room getRoom() {
-		if (room != null && room.eIsProxy()) {
-			InternalEObject oldRoom = (InternalEObject)room;
-			room = (Room)eResolveProxy(oldRoom);
-			if (room != oldRoom) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelManagementClassDiagramPackage.BOOKED_ROOM__ROOM, oldRoom, room));
-			}
-		}
-		return room;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Room basicGetRoom() {
-		return room;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRoom(Room newRoom) {
-		Room oldRoom = room;
-		room = newRoom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BOOKED_ROOM__ROOM, oldRoom, room));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Extra> getExtras() {
-		if (extras == null) {
-			extras = new EObjectResolvingEList<Extra>(Extra.class, this, HotelManagementClassDiagramPackage.BOOKED_ROOM__EXTRAS);
-		}
-		return extras;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public void addAddon(Addon addon) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -182,11 +103,6 @@ public class BookedRoomImpl extends RoomImpl implements BookedRoom {
 		switch (featureID) {
 			case HotelManagementClassDiagramPackage.BOOKED_ROOM__ADDONS:
 				return getAddons();
-			case HotelManagementClassDiagramPackage.BOOKED_ROOM__ROOM:
-				if (resolve) return getRoom();
-				return basicGetRoom();
-			case HotelManagementClassDiagramPackage.BOOKED_ROOM__EXTRAS:
-				return getExtras();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -204,13 +120,6 @@ public class BookedRoomImpl extends RoomImpl implements BookedRoom {
 				getAddons().clear();
 				getAddons().addAll((Collection<? extends Addon>)newValue);
 				return;
-			case HotelManagementClassDiagramPackage.BOOKED_ROOM__ROOM:
-				setRoom((Room)newValue);
-				return;
-			case HotelManagementClassDiagramPackage.BOOKED_ROOM__EXTRAS:
-				getExtras().clear();
-				getExtras().addAll((Collection<? extends Extra>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -226,12 +135,6 @@ public class BookedRoomImpl extends RoomImpl implements BookedRoom {
 			case HotelManagementClassDiagramPackage.BOOKED_ROOM__ADDONS:
 				getAddons().clear();
 				return;
-			case HotelManagementClassDiagramPackage.BOOKED_ROOM__ROOM:
-				setRoom((Room)null);
-				return;
-			case HotelManagementClassDiagramPackage.BOOKED_ROOM__EXTRAS:
-				getExtras().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -246,10 +149,6 @@ public class BookedRoomImpl extends RoomImpl implements BookedRoom {
 		switch (featureID) {
 			case HotelManagementClassDiagramPackage.BOOKED_ROOM__ADDONS:
 				return addons != null && !addons.isEmpty();
-			case HotelManagementClassDiagramPackage.BOOKED_ROOM__ROOM:
-				return room != null;
-			case HotelManagementClassDiagramPackage.BOOKED_ROOM__EXTRAS:
-				return extras != null && !extras.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

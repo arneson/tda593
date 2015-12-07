@@ -26,9 +26,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link HotelManagementClassDiagram.impl.CreditcardImpl#getCardNumber <em>Card Number</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.CreditcardImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.CreditcardImpl#getExpirationDate <em>Expiration Date</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.impl.CreditcardImpl#getCvcCode <em>Cvc Code</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.CreditcardImpl#getCvc <em>Cvc</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.CreditcardImpl#getOwner <em>Owner</em>}</li>
  * </ul>
  *
@@ -36,24 +36,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class CreditcardImpl extends MinimalEObjectImpl.Container implements Creditcard {
 	/**
-	 * The default value of the '{@link #getCardNumber() <em>Card Number</em>}' attribute.
+	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCardNumber()
+	 * @see #getNumber()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final long CARD_NUMBER_EDEFAULT = 0L;
+	protected static final long NUMBER_EDEFAULT = 0L;
 
 	/**
-	 * The cached value of the '{@link #getCardNumber() <em>Card Number</em>}' attribute.
+	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCardNumber()
+	 * @see #getNumber()
 	 * @generated
 	 * @ordered
 	 */
-	protected long cardNumber = CARD_NUMBER_EDEFAULT;
+	protected long number = NUMBER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getExpirationDate() <em>Expiration Date</em>}' attribute.
@@ -76,24 +76,24 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 	protected Date expirationDate = EXPIRATION_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCvcCode() <em>Cvc Code</em>}' attribute.
+	 * The default value of the '{@link #getCvc() <em>Cvc</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCvcCode()
+	 * @see #getCvc()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int CVC_CODE_EDEFAULT = 0;
+	protected static final int CVC_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getCvcCode() <em>Cvc Code</em>}' attribute.
+	 * The cached value of the '{@link #getCvc() <em>Cvc</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCvcCode()
+	 * @see #getCvc()
 	 * @generated
 	 * @ordered
 	 */
-	protected int cvcCode = CVC_CODE_EDEFAULT;
+	protected int cvc = CVC_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOwner() <em>Owner</em>}' attribute.
@@ -139,8 +139,8 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public long getCardNumber() {
-		return cardNumber;
+	public long getNumber() {
+		return number;
 	}
 
 	/**
@@ -148,11 +148,11 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCardNumber(long newCardNumber) {
-		long oldCardNumber = cardNumber;
-		cardNumber = newCardNumber;
+	public void setNumber(long newNumber) {
+		long oldNumber = number;
+		number = newNumber;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.CREDITCARD__CARD_NUMBER, oldCardNumber, cardNumber));
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.CREDITCARD__NUMBER, oldNumber, number));
 	}
 
 	/**
@@ -181,8 +181,8 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getCvcCode() {
-		return cvcCode;
+	public int getCvc() {
+		return cvc;
 	}
 
 	/**
@@ -190,11 +190,11 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCvcCode(int newCvcCode) {
-		int oldCvcCode = cvcCode;
-		cvcCode = newCvcCode;
+	public void setCvc(int newCvc) {
+		int oldCvc = cvc;
+		cvc = newCvc;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.CREDITCARD__CVC_CODE, oldCvcCode, cvcCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.CREDITCARD__CVC, oldCvc, cvc));
 	}
 
 	/**
@@ -237,12 +237,12 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HotelManagementClassDiagramPackage.CREDITCARD__CARD_NUMBER:
-				return getCardNumber();
+			case HotelManagementClassDiagramPackage.CREDITCARD__NUMBER:
+				return getNumber();
 			case HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_DATE:
 				return getExpirationDate();
-			case HotelManagementClassDiagramPackage.CREDITCARD__CVC_CODE:
-				return getCvcCode();
+			case HotelManagementClassDiagramPackage.CREDITCARD__CVC:
+				return getCvc();
 			case HotelManagementClassDiagramPackage.CREDITCARD__OWNER:
 				return getOwner();
 		}
@@ -257,14 +257,14 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HotelManagementClassDiagramPackage.CREDITCARD__CARD_NUMBER:
-				setCardNumber((Long)newValue);
+			case HotelManagementClassDiagramPackage.CREDITCARD__NUMBER:
+				setNumber((Long)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_DATE:
 				setExpirationDate((Date)newValue);
 				return;
-			case HotelManagementClassDiagramPackage.CREDITCARD__CVC_CODE:
-				setCvcCode((Integer)newValue);
+			case HotelManagementClassDiagramPackage.CREDITCARD__CVC:
+				setCvc((Integer)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.CREDITCARD__OWNER:
 				setOwner((String)newValue);
@@ -281,14 +281,14 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HotelManagementClassDiagramPackage.CREDITCARD__CARD_NUMBER:
-				setCardNumber(CARD_NUMBER_EDEFAULT);
+			case HotelManagementClassDiagramPackage.CREDITCARD__NUMBER:
+				setNumber(NUMBER_EDEFAULT);
 				return;
 			case HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_DATE:
 				setExpirationDate(EXPIRATION_DATE_EDEFAULT);
 				return;
-			case HotelManagementClassDiagramPackage.CREDITCARD__CVC_CODE:
-				setCvcCode(CVC_CODE_EDEFAULT);
+			case HotelManagementClassDiagramPackage.CREDITCARD__CVC:
+				setCvc(CVC_EDEFAULT);
 				return;
 			case HotelManagementClassDiagramPackage.CREDITCARD__OWNER:
 				setOwner(OWNER_EDEFAULT);
@@ -305,12 +305,12 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HotelManagementClassDiagramPackage.CREDITCARD__CARD_NUMBER:
-				return cardNumber != CARD_NUMBER_EDEFAULT;
+			case HotelManagementClassDiagramPackage.CREDITCARD__NUMBER:
+				return number != NUMBER_EDEFAULT;
 			case HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_DATE:
 				return EXPIRATION_DATE_EDEFAULT == null ? expirationDate != null : !EXPIRATION_DATE_EDEFAULT.equals(expirationDate);
-			case HotelManagementClassDiagramPackage.CREDITCARD__CVC_CODE:
-				return cvcCode != CVC_CODE_EDEFAULT;
+			case HotelManagementClassDiagramPackage.CREDITCARD__CVC:
+				return cvc != CVC_EDEFAULT;
 			case HotelManagementClassDiagramPackage.CREDITCARD__OWNER:
 				return OWNER_EDEFAULT == null ? owner != null : !OWNER_EDEFAULT.equals(owner);
 		}
@@ -341,12 +341,12 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (cardNumber: ");
-		result.append(cardNumber);
+		result.append(" (number: ");
+		result.append(number);
 		result.append(", expirationDate: ");
 		result.append(expirationDate);
-		result.append(", cvcCode: ");
-		result.append(cvcCode);
+		result.append(", cvc: ");
+		result.append(cvc);
 		result.append(", owner: ");
 		result.append(owner);
 		result.append(')');

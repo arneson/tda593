@@ -23,33 +23,34 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link HotelManagementClassDiagram.impl.CustomerImpl#getCustomerId <em>Customer Id</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.CustomerImpl#getCustomerID <em>Customer ID</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.CustomerImpl#getBonusPoints <em>Bonus Points</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.CustomerImpl#getMiscInfo <em>Misc Info</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.CustomerImpl#getRank <em>Rank</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class CustomerImpl extends PersonImpl implements Customer {
 	/**
-	 * The default value of the '{@link #getCustomerId() <em>Customer Id</em>}' attribute.
+	 * The default value of the '{@link #getCustomerID() <em>Customer ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCustomerId()
+	 * @see #getCustomerID()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final int CUSTOMER_ID_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getCustomerId() <em>Customer Id</em>}' attribute.
+	 * The cached value of the '{@link #getCustomerID() <em>Customer ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCustomerId()
+	 * @see #getCustomerID()
 	 * @generated
 	 * @ordered
 	 */
-	protected int customerId = CUSTOMER_ID_EDEFAULT;
+	protected int customerID = CUSTOMER_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getBonusPoints() <em>Bonus Points</em>}' attribute.
@@ -92,6 +93,26 @@ public class CustomerImpl extends PersonImpl implements Customer {
 	protected String miscInfo = MISC_INFO_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getRank() <em>Rank</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRank()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double RANK_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getRank() <em>Rank</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRank()
+	 * @generated
+	 * @ordered
+	 */
+	protected double rank = RANK_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -115,8 +136,8 @@ public class CustomerImpl extends PersonImpl implements Customer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getCustomerId() {
-		return customerId;
+	public int getCustomerID() {
+		return customerID;
 	}
 
 	/**
@@ -124,11 +145,11 @@ public class CustomerImpl extends PersonImpl implements Customer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCustomerId(int newCustomerId) {
-		int oldCustomerId = customerId;
-		customerId = newCustomerId;
+	public void setCustomerID(int newCustomerID) {
+		int oldCustomerID = customerID;
+		customerID = newCustomerID;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.CUSTOMER__CUSTOMER_ID, oldCustomerId, customerId));
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.CUSTOMER__CUSTOMER_ID, oldCustomerID, customerID));
 	}
 
 	/**
@@ -178,6 +199,27 @@ public class CustomerImpl extends PersonImpl implements Customer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public double getRank() {
+		return rank;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRank(double newRank) {
+		double oldRank = rank;
+		rank = newRank;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.CUSTOMER__RANK, oldRank, rank));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void addBonusPoints(int bonusPoints) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -193,11 +235,13 @@ public class CustomerImpl extends PersonImpl implements Customer {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case HotelManagementClassDiagramPackage.CUSTOMER__CUSTOMER_ID:
-				return getCustomerId();
+				return getCustomerID();
 			case HotelManagementClassDiagramPackage.CUSTOMER__BONUS_POINTS:
 				return getBonusPoints();
 			case HotelManagementClassDiagramPackage.CUSTOMER__MISC_INFO:
 				return getMiscInfo();
+			case HotelManagementClassDiagramPackage.CUSTOMER__RANK:
+				return getRank();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,13 +255,16 @@ public class CustomerImpl extends PersonImpl implements Customer {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case HotelManagementClassDiagramPackage.CUSTOMER__CUSTOMER_ID:
-				setCustomerId((Integer)newValue);
+				setCustomerID((Integer)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.CUSTOMER__BONUS_POINTS:
 				setBonusPoints((Integer)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.CUSTOMER__MISC_INFO:
 				setMiscInfo((String)newValue);
+				return;
+			case HotelManagementClassDiagramPackage.CUSTOMER__RANK:
+				setRank((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -232,13 +279,16 @@ public class CustomerImpl extends PersonImpl implements Customer {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case HotelManagementClassDiagramPackage.CUSTOMER__CUSTOMER_ID:
-				setCustomerId(CUSTOMER_ID_EDEFAULT);
+				setCustomerID(CUSTOMER_ID_EDEFAULT);
 				return;
 			case HotelManagementClassDiagramPackage.CUSTOMER__BONUS_POINTS:
 				setBonusPoints(BONUS_POINTS_EDEFAULT);
 				return;
 			case HotelManagementClassDiagramPackage.CUSTOMER__MISC_INFO:
 				setMiscInfo(MISC_INFO_EDEFAULT);
+				return;
+			case HotelManagementClassDiagramPackage.CUSTOMER__RANK:
+				setRank(RANK_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -253,11 +303,13 @@ public class CustomerImpl extends PersonImpl implements Customer {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case HotelManagementClassDiagramPackage.CUSTOMER__CUSTOMER_ID:
-				return customerId != CUSTOMER_ID_EDEFAULT;
+				return customerID != CUSTOMER_ID_EDEFAULT;
 			case HotelManagementClassDiagramPackage.CUSTOMER__BONUS_POINTS:
 				return bonusPoints != BONUS_POINTS_EDEFAULT;
 			case HotelManagementClassDiagramPackage.CUSTOMER__MISC_INFO:
 				return MISC_INFO_EDEFAULT == null ? miscInfo != null : !MISC_INFO_EDEFAULT.equals(miscInfo);
+			case HotelManagementClassDiagramPackage.CUSTOMER__RANK:
+				return rank != RANK_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -287,12 +339,14 @@ public class CustomerImpl extends PersonImpl implements Customer {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (customerId: ");
-		result.append(customerId);
+		result.append(" (customerID: ");
+		result.append(customerID);
 		result.append(", bonusPoints: ");
 		result.append(bonusPoints);
 		result.append(", miscInfo: ");
 		result.append(miscInfo);
+		result.append(", rank: ");
+		result.append(rank);
 		result.append(')');
 		return result.toString();
 	}

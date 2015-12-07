@@ -37,17 +37,18 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getBookingId <em>Booking Id</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getFrom <em>From</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getTo <em>To</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getStartDate <em>Start Date</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getEndDate <em>End Date</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getCreated <em>Created</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getCreditcard <em>Creditcard</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getCreditCard <em>Credit Card</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getCustomer <em>Customer</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getAddons <em>Addons</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getRooms <em>Rooms</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getBookedRooms <em>Booked Rooms</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getInternalComments <em>Internal Comments</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getExternalComments <em>External Comments</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#isCheckedIn <em>Checked In</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#isCheckedOut <em>Checked Out</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getPaymentMaster <em>Payment Master</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,44 +75,44 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	protected int bookingId = BOOKING_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getFrom() <em>From</em>}' attribute.
+	 * The default value of the '{@link #getStartDate() <em>Start Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFrom()
+	 * @see #getStartDate()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Date FROM_EDEFAULT = null;
+	protected static final Date START_DATE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getFrom() <em>From</em>}' attribute.
+	 * The cached value of the '{@link #getStartDate() <em>Start Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFrom()
+	 * @see #getStartDate()
 	 * @generated
 	 * @ordered
 	 */
-	protected Date from = FROM_EDEFAULT;
+	protected Date startDate = START_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTo() <em>To</em>}' attribute.
+	 * The default value of the '{@link #getEndDate() <em>End Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTo()
+	 * @see #getEndDate()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Date TO_EDEFAULT = null;
+	protected static final Date END_DATE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getTo() <em>To</em>}' attribute.
+	 * The cached value of the '{@link #getEndDate() <em>End Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTo()
+	 * @see #getEndDate()
 	 * @generated
 	 * @ordered
 	 */
-	protected Date to = TO_EDEFAULT;
+	protected Date endDate = END_DATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCreated() <em>Created</em>}' attribute.
@@ -134,14 +135,14 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	protected Date created = CREATED_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCreditcard() <em>Creditcard</em>}' reference.
+	 * The cached value of the '{@link #getCreditCard() <em>Credit Card</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCreditcard()
+	 * @see #getCreditCard()
 	 * @generated
 	 * @ordered
 	 */
-	protected Creditcard creditcard;
+	protected Creditcard creditCard;
 
 	/**
 	 * The cached value of the '{@link #getCustomer() <em>Customer</em>}' reference.
@@ -164,14 +165,14 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	protected EList<Addon> addons;
 
 	/**
-	 * The cached value of the '{@link #getRooms() <em>Rooms</em>}' reference list.
+	 * The cached value of the '{@link #getBookedRooms() <em>Booked Rooms</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRooms()
+	 * @see #getBookedRooms()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Room> rooms;
+	protected EList<Room> bookedRooms;
 
 	/**
 	 * The default value of the '{@link #getInternalComments() <em>Internal Comments</em>}' attribute.
@@ -254,6 +255,16 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	protected boolean checkedOut = CHECKED_OUT_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getPaymentMaster() <em>Payment Master</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentMaster()
+	 * @generated
+	 * @ordered
+	 */
+	protected Customer paymentMaster;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -298,8 +309,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Date getFrom() {
-		return from;
+	public Date getStartDate() {
+		return startDate;
 	}
 
 	/**
@@ -307,11 +318,11 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFrom(Date newFrom) {
-		Date oldFrom = from;
-		from = newFrom;
+	public void setStartDate(Date newStartDate) {
+		Date oldStartDate = startDate;
+		startDate = newStartDate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BOOKING__FROM, oldFrom, from));
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BOOKING__START_DATE, oldStartDate, startDate));
 	}
 
 	/**
@@ -319,8 +330,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Date getTo() {
-		return to;
+	public Date getEndDate() {
+		return endDate;
 	}
 
 	/**
@@ -328,11 +339,11 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTo(Date newTo) {
-		Date oldTo = to;
-		to = newTo;
+	public void setEndDate(Date newEndDate) {
+		Date oldEndDate = endDate;
+		endDate = newEndDate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BOOKING__TO, oldTo, to));
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BOOKING__END_DATE, oldEndDate, endDate));
 	}
 
 	/**
@@ -361,16 +372,16 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Creditcard getCreditcard() {
-		if (creditcard != null && creditcard.eIsProxy()) {
-			InternalEObject oldCreditcard = (InternalEObject)creditcard;
-			creditcard = (Creditcard)eResolveProxy(oldCreditcard);
-			if (creditcard != oldCreditcard) {
+	public Creditcard getCreditCard() {
+		if (creditCard != null && creditCard.eIsProxy()) {
+			InternalEObject oldCreditCard = (InternalEObject)creditCard;
+			creditCard = (Creditcard)eResolveProxy(oldCreditCard);
+			if (creditCard != oldCreditCard) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelManagementClassDiagramPackage.BOOKING__CREDITCARD, oldCreditcard, creditcard));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelManagementClassDiagramPackage.BOOKING__CREDIT_CARD, oldCreditCard, creditCard));
 			}
 		}
-		return creditcard;
+		return creditCard;
 	}
 
 	/**
@@ -378,8 +389,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Creditcard basicGetCreditcard() {
-		return creditcard;
+	public Creditcard basicGetCreditCard() {
+		return creditCard;
 	}
 
 	/**
@@ -387,11 +398,11 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCreditcard(Creditcard newCreditcard) {
-		Creditcard oldCreditcard = creditcard;
-		creditcard = newCreditcard;
+	public void setCreditCard(Creditcard newCreditCard) {
+		Creditcard oldCreditCard = creditCard;
+		creditCard = newCreditCard;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BOOKING__CREDITCARD, oldCreditcard, creditcard));
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BOOKING__CREDIT_CARD, oldCreditCard, creditCard));
 	}
 
 	/**
@@ -449,11 +460,11 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Room> getRooms() {
-		if (rooms == null) {
-			rooms = new EObjectResolvingEList<Room>(Room.class, this, HotelManagementClassDiagramPackage.BOOKING__ROOMS);
+	public EList<Room> getBookedRooms() {
+		if (bookedRooms == null) {
+			bookedRooms = new EObjectResolvingEList<Room>(Room.class, this, HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS);
 		}
-		return rooms;
+		return bookedRooms;
 	}
 
 	/**
@@ -538,6 +549,44 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		checkedOut = newCheckedOut;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BOOKING__CHECKED_OUT, oldCheckedOut, checkedOut));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Customer getPaymentMaster() {
+		if (paymentMaster != null && paymentMaster.eIsProxy()) {
+			InternalEObject oldPaymentMaster = (InternalEObject)paymentMaster;
+			paymentMaster = (Customer)eResolveProxy(oldPaymentMaster);
+			if (paymentMaster != oldPaymentMaster) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelManagementClassDiagramPackage.BOOKING__PAYMENT_MASTER, oldPaymentMaster, paymentMaster));
+			}
+		}
+		return paymentMaster;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Customer basicGetPaymentMaster() {
+		return paymentMaster;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPaymentMaster(Customer newPaymentMaster) {
+		Customer oldPaymentMaster = paymentMaster;
+		paymentMaster = newPaymentMaster;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BOOKING__PAYMENT_MASTER, oldPaymentMaster, paymentMaster));
 	}
 
 	/**
@@ -660,22 +709,22 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		switch (featureID) {
 			case HotelManagementClassDiagramPackage.BOOKING__BOOKING_ID:
 				return getBookingId();
-			case HotelManagementClassDiagramPackage.BOOKING__FROM:
-				return getFrom();
-			case HotelManagementClassDiagramPackage.BOOKING__TO:
-				return getTo();
+			case HotelManagementClassDiagramPackage.BOOKING__START_DATE:
+				return getStartDate();
+			case HotelManagementClassDiagramPackage.BOOKING__END_DATE:
+				return getEndDate();
 			case HotelManagementClassDiagramPackage.BOOKING__CREATED:
 				return getCreated();
-			case HotelManagementClassDiagramPackage.BOOKING__CREDITCARD:
-				if (resolve) return getCreditcard();
-				return basicGetCreditcard();
+			case HotelManagementClassDiagramPackage.BOOKING__CREDIT_CARD:
+				if (resolve) return getCreditCard();
+				return basicGetCreditCard();
 			case HotelManagementClassDiagramPackage.BOOKING__CUSTOMER:
 				if (resolve) return getCustomer();
 				return basicGetCustomer();
 			case HotelManagementClassDiagramPackage.BOOKING__ADDONS:
 				return getAddons();
-			case HotelManagementClassDiagramPackage.BOOKING__ROOMS:
-				return getRooms();
+			case HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS:
+				return getBookedRooms();
 			case HotelManagementClassDiagramPackage.BOOKING__INTERNAL_COMMENTS:
 				return getInternalComments();
 			case HotelManagementClassDiagramPackage.BOOKING__EXTERNAL_COMMENTS:
@@ -684,6 +733,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return isCheckedIn();
 			case HotelManagementClassDiagramPackage.BOOKING__CHECKED_OUT:
 				return isCheckedOut();
+			case HotelManagementClassDiagramPackage.BOOKING__PAYMENT_MASTER:
+				if (resolve) return getPaymentMaster();
+				return basicGetPaymentMaster();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -700,17 +752,17 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case HotelManagementClassDiagramPackage.BOOKING__BOOKING_ID:
 				setBookingId((Integer)newValue);
 				return;
-			case HotelManagementClassDiagramPackage.BOOKING__FROM:
-				setFrom((Date)newValue);
+			case HotelManagementClassDiagramPackage.BOOKING__START_DATE:
+				setStartDate((Date)newValue);
 				return;
-			case HotelManagementClassDiagramPackage.BOOKING__TO:
-				setTo((Date)newValue);
+			case HotelManagementClassDiagramPackage.BOOKING__END_DATE:
+				setEndDate((Date)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__CREATED:
 				setCreated((Date)newValue);
 				return;
-			case HotelManagementClassDiagramPackage.BOOKING__CREDITCARD:
-				setCreditcard((Creditcard)newValue);
+			case HotelManagementClassDiagramPackage.BOOKING__CREDIT_CARD:
+				setCreditCard((Creditcard)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__CUSTOMER:
 				setCustomer((Customer)newValue);
@@ -719,9 +771,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				getAddons().clear();
 				getAddons().addAll((Collection<? extends Addon>)newValue);
 				return;
-			case HotelManagementClassDiagramPackage.BOOKING__ROOMS:
-				getRooms().clear();
-				getRooms().addAll((Collection<? extends Room>)newValue);
+			case HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS:
+				getBookedRooms().clear();
+				getBookedRooms().addAll((Collection<? extends Room>)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__INTERNAL_COMMENTS:
 				setInternalComments((String)newValue);
@@ -734,6 +786,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__CHECKED_OUT:
 				setCheckedOut((Boolean)newValue);
+				return;
+			case HotelManagementClassDiagramPackage.BOOKING__PAYMENT_MASTER:
+				setPaymentMaster((Customer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -750,17 +805,17 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case HotelManagementClassDiagramPackage.BOOKING__BOOKING_ID:
 				setBookingId(BOOKING_ID_EDEFAULT);
 				return;
-			case HotelManagementClassDiagramPackage.BOOKING__FROM:
-				setFrom(FROM_EDEFAULT);
+			case HotelManagementClassDiagramPackage.BOOKING__START_DATE:
+				setStartDate(START_DATE_EDEFAULT);
 				return;
-			case HotelManagementClassDiagramPackage.BOOKING__TO:
-				setTo(TO_EDEFAULT);
+			case HotelManagementClassDiagramPackage.BOOKING__END_DATE:
+				setEndDate(END_DATE_EDEFAULT);
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__CREATED:
 				setCreated(CREATED_EDEFAULT);
 				return;
-			case HotelManagementClassDiagramPackage.BOOKING__CREDITCARD:
-				setCreditcard((Creditcard)null);
+			case HotelManagementClassDiagramPackage.BOOKING__CREDIT_CARD:
+				setCreditCard((Creditcard)null);
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__CUSTOMER:
 				setCustomer((Customer)null);
@@ -768,8 +823,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case HotelManagementClassDiagramPackage.BOOKING__ADDONS:
 				getAddons().clear();
 				return;
-			case HotelManagementClassDiagramPackage.BOOKING__ROOMS:
-				getRooms().clear();
+			case HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS:
+				getBookedRooms().clear();
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__INTERNAL_COMMENTS:
 				setInternalComments(INTERNAL_COMMENTS_EDEFAULT);
@@ -782,6 +837,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__CHECKED_OUT:
 				setCheckedOut(CHECKED_OUT_EDEFAULT);
+				return;
+			case HotelManagementClassDiagramPackage.BOOKING__PAYMENT_MASTER:
+				setPaymentMaster((Customer)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -797,20 +855,20 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		switch (featureID) {
 			case HotelManagementClassDiagramPackage.BOOKING__BOOKING_ID:
 				return bookingId != BOOKING_ID_EDEFAULT;
-			case HotelManagementClassDiagramPackage.BOOKING__FROM:
-				return FROM_EDEFAULT == null ? from != null : !FROM_EDEFAULT.equals(from);
-			case HotelManagementClassDiagramPackage.BOOKING__TO:
-				return TO_EDEFAULT == null ? to != null : !TO_EDEFAULT.equals(to);
+			case HotelManagementClassDiagramPackage.BOOKING__START_DATE:
+				return START_DATE_EDEFAULT == null ? startDate != null : !START_DATE_EDEFAULT.equals(startDate);
+			case HotelManagementClassDiagramPackage.BOOKING__END_DATE:
+				return END_DATE_EDEFAULT == null ? endDate != null : !END_DATE_EDEFAULT.equals(endDate);
 			case HotelManagementClassDiagramPackage.BOOKING__CREATED:
 				return CREATED_EDEFAULT == null ? created != null : !CREATED_EDEFAULT.equals(created);
-			case HotelManagementClassDiagramPackage.BOOKING__CREDITCARD:
-				return creditcard != null;
+			case HotelManagementClassDiagramPackage.BOOKING__CREDIT_CARD:
+				return creditCard != null;
 			case HotelManagementClassDiagramPackage.BOOKING__CUSTOMER:
 				return customer != null;
 			case HotelManagementClassDiagramPackage.BOOKING__ADDONS:
 				return addons != null && !addons.isEmpty();
-			case HotelManagementClassDiagramPackage.BOOKING__ROOMS:
-				return rooms != null && !rooms.isEmpty();
+			case HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS:
+				return bookedRooms != null && !bookedRooms.isEmpty();
 			case HotelManagementClassDiagramPackage.BOOKING__INTERNAL_COMMENTS:
 				return INTERNAL_COMMENTS_EDEFAULT == null ? internalComments != null : !INTERNAL_COMMENTS_EDEFAULT.equals(internalComments);
 			case HotelManagementClassDiagramPackage.BOOKING__EXTERNAL_COMMENTS:
@@ -819,6 +877,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return checkedIn != CHECKED_IN_EDEFAULT;
 			case HotelManagementClassDiagramPackage.BOOKING__CHECKED_OUT:
 				return checkedOut != CHECKED_OUT_EDEFAULT;
+			case HotelManagementClassDiagramPackage.BOOKING__PAYMENT_MASTER:
+				return paymentMaster != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -874,10 +934,10 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (bookingId: ");
 		result.append(bookingId);
-		result.append(", from: ");
-		result.append(from);
-		result.append(", to: ");
-		result.append(to);
+		result.append(", startDate: ");
+		result.append(startDate);
+		result.append(", endDate: ");
+		result.append(endDate);
 		result.append(", created: ");
 		result.append(created);
 		result.append(", internalComments: ");

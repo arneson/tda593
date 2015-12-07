@@ -18,17 +18,18 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link HotelManagementClassDiagram.Booking#getBookingId <em>Booking Id</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Booking#getFrom <em>From</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Booking#getTo <em>To</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Booking#getStartDate <em>Start Date</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Booking#getEndDate <em>End Date</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Booking#getCreated <em>Created</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Booking#getCreditcard <em>Creditcard</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Booking#getCreditCard <em>Credit Card</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Booking#getCustomer <em>Customer</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Booking#getAddons <em>Addons</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Booking#getRooms <em>Rooms</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Booking#getBookedRooms <em>Booked Rooms</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Booking#getInternalComments <em>Internal Comments</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Booking#getExternalComments <em>External Comments</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Booking#isCheckedIn <em>Checked In</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Booking#isCheckedOut <em>Checked Out</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Booking#getPaymentMaster <em>Payment Master</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking()
@@ -63,56 +64,56 @@ public interface Booking extends EObject {
 	void setBookingId(int value);
 
 	/**
-	 * Returns the value of the '<em><b>From</b></em>' attribute.
+	 * Returns the value of the '<em><b>Start Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>From</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Start Date</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>From</em>' attribute.
-	 * @see #setFrom(Date)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking_From()
+	 * @return the value of the '<em>Start Date</em>' attribute.
+	 * @see #setStartDate(Date)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking_StartDate()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	Date getFrom();
+	Date getStartDate();
 
 	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Booking#getFrom <em>From</em>}' attribute.
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Booking#getStartDate <em>Start Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>From</em>' attribute.
-	 * @see #getFrom()
+	 * @param value the new value of the '<em>Start Date</em>' attribute.
+	 * @see #getStartDate()
 	 * @generated
 	 */
-	void setFrom(Date value);
+	void setStartDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>To</b></em>' attribute.
+	 * Returns the value of the '<em><b>End Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To</em>' attribute isn't clear,
+	 * If the meaning of the '<em>End Date</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To</em>' attribute.
-	 * @see #setTo(Date)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking_To()
+	 * @return the value of the '<em>End Date</em>' attribute.
+	 * @see #setEndDate(Date)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking_EndDate()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	Date getTo();
+	Date getEndDate();
 
 	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Booking#getTo <em>To</em>}' attribute.
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Booking#getEndDate <em>End Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To</em>' attribute.
-	 * @see #getTo()
+	 * @param value the new value of the '<em>End Date</em>' attribute.
+	 * @see #getEndDate()
 	 * @generated
 	 */
-	void setTo(Date value);
+	void setEndDate(Date value);
 
 	/**
 	 * Returns the value of the '<em><b>Created</b></em>' attribute.
@@ -141,30 +142,30 @@ public interface Booking extends EObject {
 	void setCreated(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Creditcard</b></em>' reference.
+	 * Returns the value of the '<em><b>Credit Card</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Creditcard</em>' reference isn't clear,
+	 * If the meaning of the '<em>Credit Card</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Creditcard</em>' reference.
-	 * @see #setCreditcard(Creditcard)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking_Creditcard()
+	 * @return the value of the '<em>Credit Card</em>' reference.
+	 * @see #setCreditCard(Creditcard)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking_CreditCard()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	Creditcard getCreditcard();
+	Creditcard getCreditCard();
 
 	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Booking#getCreditcard <em>Creditcard</em>}' reference.
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Booking#getCreditCard <em>Credit Card</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Creditcard</em>' reference.
-	 * @see #getCreditcard()
+	 * @param value the new value of the '<em>Credit Card</em>' reference.
+	 * @see #getCreditCard()
 	 * @generated
 	 */
-	void setCreditcard(Creditcard value);
+	void setCreditCard(Creditcard value);
 
 	/**
 	 * Returns the value of the '<em><b>Customer</b></em>' reference.
@@ -209,20 +210,20 @@ public interface Booking extends EObject {
 	EList<Addon> getAddons();
 
 	/**
-	 * Returns the value of the '<em><b>Rooms</b></em>' reference list.
+	 * Returns the value of the '<em><b>Booked Rooms</b></em>' reference list.
 	 * The list contents are of type {@link HotelManagementClassDiagram.Room}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Rooms</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Booked Rooms</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rooms</em>' reference list.
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking_Rooms()
+	 * @return the value of the '<em>Booked Rooms</em>' reference list.
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking_BookedRooms()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	EList<Room> getRooms();
+	EList<Room> getBookedRooms();
 
 	/**
 	 * Returns the value of the '<em><b>Internal Comments</b></em>' attribute.
@@ -327,6 +328,32 @@ public interface Booking extends EObject {
 	 * @generated
 	 */
 	void setCheckedOut(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Payment Master</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Payment Master</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Payment Master</em>' reference.
+	 * @see #setPaymentMaster(Customer)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking_PaymentMaster()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	Customer getPaymentMaster();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Booking#getPaymentMaster <em>Payment Master</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Payment Master</em>' reference.
+	 * @see #getPaymentMaster()
+	 * @generated
+	 */
+	void setPaymentMaster(Customer value);
 
 	/**
 	 * <!-- begin-user-doc -->
