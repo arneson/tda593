@@ -77,6 +77,14 @@ public class DiscountImpl extends MinimalEObjectImpl.Container implements Discou
 	}
 
 	/**
+	 * @generated NOT
+	 */
+	public DiscountImpl(boolean isPercentage, double amount){
+		this.isPercentage = isPercentage;
+		this.amount = amount;
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
