@@ -122,6 +122,15 @@ public class CustomerImpl extends PersonImpl implements Customer {
 	}
 
 	/**
+	 * @generated NOT
+	 */
+	public CustomerImpl(int id, String name, String city,String country, String gender, String phoneNumber, String postalCode,
+						String ssnumber, String street, String title){
+		super(name, title, gender, ssnumber, phoneNumber, country, city, postalCode, street);
+		this.customerID = id;
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
