@@ -1356,7 +1356,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGEMENT_CONTROLLER___REGISTER_DISCOUNT__DISCOUNT_COSTABLE = 0;
+	int MANAGEMENT_CONTROLLER___REGISTER_DISCOUNT__DISCOUNT = 0;
 
 	/**
 	 * The operation id for the '<em>Register Costable</em>' operation.
@@ -2984,14 +2984,14 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EClass getManagementController();
 
 	/**
-	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#registerDiscount(HotelManagementClassDiagram.Discount, HotelManagementClassDiagram.Costable) <em>Register Discount</em>}' operation.
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#registerDiscount(HotelManagementClassDiagram.Discount) <em>Register Discount</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Register Discount</em>' operation.
-	 * @see HotelManagementClassDiagram.ManagementController#registerDiscount(HotelManagementClassDiagram.Discount, HotelManagementClassDiagram.Costable)
+	 * @see HotelManagementClassDiagram.ManagementController#registerDiscount(HotelManagementClassDiagram.Discount)
 	 * @generated
 	 */
-	EOperation getManagementController__RegisterDiscount__Discount_Costable();
+	EOperation getManagementController__RegisterDiscount__Discount();
 
 	/**
 	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#registerCostable(HotelManagementClassDiagram.Costable) <em>Register Costable</em>}' operation.
@@ -4210,7 +4210,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MANAGEMENT_CONTROLLER___REGISTER_DISCOUNT__DISCOUNT_COSTABLE = eINSTANCE.getManagementController__RegisterDiscount__Discount_Costable();
+		EOperation MANAGEMENT_CONTROLLER___REGISTER_DISCOUNT__DISCOUNT = eINSTANCE.getManagementController__RegisterDiscount__Discount();
 
 		/**
 		 * The meta object literal for the '<em><b>Register Costable</b></em>' operation.

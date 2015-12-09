@@ -7,8 +7,6 @@ import HotelManagementClassDiagram.Costable;
 import HotelManagementClassDiagram.Discount;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.ManagementController;
-import Main.FakeDB;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Date;
@@ -51,9 +49,8 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerDiscount(Discount discount, Costable costable) {
+	public void registerDiscount(Discount discount) {
 		// TODO: implement this method
-		FakeDB.discounts.add(discount);
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
@@ -110,8 +107,8 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___REGISTER_DISCOUNT__DISCOUNT_COSTABLE:
-				registerDiscount((Discount)arguments.get(0), (Costable)arguments.get(1));
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___REGISTER_DISCOUNT__DISCOUNT:
+				registerDiscount((Discount)arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___REGISTER_COSTABLE__COSTABLE:
 				registerCostable((Costable)arguments.get(0));
