@@ -1,21 +1,23 @@
 ﻿TODO In Model (TIM):
 
 BILL:
-Varför finns en setTotalPrice? Ska detta ej beräknas från costables?
-Ska det gå att sätta customer eller ska detta lösas vid initialisering?
+Varför finns en setTotalPrice? Ska detta ej beräknas från costables? - CHECK
+Ska det gå att sätta customer eller ska detta lösas vid initialisering? - CHECK
 Ska det gå att sätta valuAddedTax?
 hur funkar final?
 måste ha en metod addCostables
 
 CREDITCARD:
-Ska creditcard ha en massa setters?
+Ska creditcard ha en massa setters? - CHECK
+Ta bort validate
 Creditcard borde ha Månad och dag istället för Date 
 
 EMPLOYEETYPE:
 Borde inte salary och workrate vara i Employee? Inte i employeetype?
 
 ROOM:
-Ta bort remove ”setCleanedStatus”
+Ta bort remove ”setCleanedStatus” - CHECK
+TA BORT CLEANINGSTATUS
 Varför är ”getMaxNbrOfPeople” en lista?
 
 BOOKEDROOM:
