@@ -66,6 +66,13 @@ public class BookedRoomImpl extends MinimalEObjectImpl.Container implements Book
 	}
 
 	/**
+	 * @generated NOT
+	 */
+	public BookedRoomImpl(Room room){
+		this.room = room;
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
