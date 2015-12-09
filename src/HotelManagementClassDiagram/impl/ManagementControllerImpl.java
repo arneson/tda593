@@ -51,7 +51,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void registerDiscount(Discount discount) {
 		FakeDB.discounts.add(discount);
@@ -60,7 +60,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void modifyBooking(Booking booking) {
 		for(int b = 0; b<FakeDB.bookings.size(); b++){
@@ -84,7 +84,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void registerRoom(Room room) {
 		FakeDB.rooms.add(room);
@@ -93,7 +93,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void registerAddon(Addon addon) {
 		FakeDB.addons.add(addon);
@@ -113,7 +113,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateAddon(Addon addon) {
 		for(int a = 0; a<FakeDB.addons.size(); a++){
