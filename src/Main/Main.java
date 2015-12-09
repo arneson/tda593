@@ -40,7 +40,7 @@ public class Main {
         }
 
         // Create 5 employees
-        String[] names = {"Arnold Schwarzeneger", "Erland Holmström", "Göran Andersson", "Dick Hjalmarsson", "Isabella Klarason"};
+        String[] names = {"Arnold Schwarzeneger", "Erland Holmstrï¿½m", "Gï¿½ran Andersson", "Dick Hjalmarsson", "Isabella Klarason"};
         String[] ssnumbers = {"851124-3111", "770401-2512", "810312-8181", "891212-9999", "671111-1111"};
         EType[] types = {EType.CLEANER, EType.RECEPTIONIST, EType.MANAGER};
         for (int i = 0; i < 5; i++)
@@ -50,7 +50,7 @@ public class Main {
             double salary = 20000.0 * (i+1)/4,
                 workrate = 0.2;
             String name = names[i],
-                city = "Trollhättan",
+                city = "Trollhï¿½ttan",
                 country = "Sweden",
                 gender = "Male",
                 phoneNumber = "0761-239913",
@@ -88,7 +88,7 @@ public class Main {
         {
             int id = i+1;
             String name = customerNames[i],
-                    city = "Trollhättan",
+                    city = "Trollhï¿½ttan",
                     country = "Sweden",
                     gender = "Male",
                     phoneNumber = "0761-239913",
