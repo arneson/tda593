@@ -25,11 +25,12 @@ public class Main {
 	public static void main(String[] args) {
         // Generate the fake data for testing
 		generateFakeData();
+		Hotel myHotel = new HotelImpl("C-R-A-P hotel");
 		
 		Scanner reader = new Scanner(System.in);
 		String command ="";
 		do{
-			System.out.println("Welcome to C-R-A-P hotels.");
+			System.out.println("Welcome to "+myHotel.getName()+".");
 			switch(command){
 				case CLI_HELP_COMMAND:
 					System.out.println();
@@ -43,9 +44,41 @@ public class Main {
 					System.out.println(CLI_BOOK_A_ROOM_COMMAND+" - book a room");
 					System.out.println(CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND+" - browse available room types");
 					System.out.println();
-					System.out.println("Choose an option: ");
+					System.out.print("Choose an option: ");
 					break;
 				case CLI_CHECKIN_COMMAND:
+					System.out.println();
+					System.out.println("CHECK IN");
+					System.out.println("##################");
+					int bookingId = -1;
+					do{
+						System.out.print("Please enter booking number: ");
+						bookingId = reader.nextInt();
+						Booking b = myHotel.getBookingController().getBooking(bookingId);
+						if(b!=null){
+							System.out.println("Booking found.");
+							System.out.print("Please enter credit card number: ");
+							long number = reader.nextLong();
+							System.out.print("Please enter cvc code: ");
+							int cvc = reader.nextInt();
+							System.out.print("Please enter expiration month: ");
+							int month = reader.nextInt();
+							System.out.print("Please enter expiration year: ");
+							int year = reader.nextInt();
+							System.out.print("Please cardholder's name: ");
+							String owner = reader.nextLine();
+							Creditcard card = new CreditcardImpl(number,cvc,month,year,owner);
+							b.setCreditCard(card);
+							myHotel.getBookingController().updateBooking(b);
+							myHotel.getBookingController().checkIn(b);
+							System.out.print("Booking successfully checked in: ");
+							
+						}else{
+							System.out.println("No booking with bookingId: "+bookingId+" found.");
+							bookingId =-1;
+						}
+						
+					}while(bookingId!=-1);
 					break;
 				case CLI_CHECKOUT_COMMAND:
 					break;

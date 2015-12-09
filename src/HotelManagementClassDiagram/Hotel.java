@@ -112,10 +112,11 @@ public interface Hotel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return 
 	 * @model kind="operation"
-	 * @generated
+	 * @generated NOT
 	 */
-	void getBookingController();
+	BookingController getBookingController();
 
 	/**
 	 * <!-- begin-user-doc -->

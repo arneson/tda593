@@ -3,6 +3,7 @@
 package HotelManagementClassDiagram.impl;
 
 import HotelManagementClassDiagram.BookedRoom;
+import HotelManagementClassDiagram.BookingController;
 import HotelManagementClassDiagram.Hotel;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 
@@ -102,7 +103,14 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	protected HotelImpl() {
 		super();
 	}
-
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HotelImpl(String name){
+		this.name = name;
+	}
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -190,12 +198,10 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void getBookingController() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public BookingController getBookingController() {
+		return new BookingControllerImpl();
 	}
 
 	/**

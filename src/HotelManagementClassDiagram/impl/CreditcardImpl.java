@@ -138,6 +138,18 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 	protected CreditcardImpl() {
 		super();
 	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public CreditcardImpl(long number, int cvc, int expirationMonth, int expirationYear, String owner) {
+		super();
+		this.number = number;
+		this.cvc = cvc;
+		this.expirationMonth = expirationMonth;
+		this.expirationDay = expirationYear;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->

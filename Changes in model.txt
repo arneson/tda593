@@ -11,6 +11,7 @@ CREDITCARD:
 Ska creditcard ha en massa setters? - CHECK
 Ta bort validate - CHECK
 Creditcard borde ha Månad och dag istället för Date - CHECK
+Creditcard borde ha Månad och År istället för Månad och Dag
 
 EMPLOYEETYPE:
 Borde inte salary och workrate vara i Employee? Inte i employeetype? - CHECK
@@ -50,6 +51,12 @@ Lägg till extra igen - enda skillnaden mellan denna och addon
 
 BOOKING:
 Listan med bookedRooms bör vara av typen BookedRoom och inte Room
+
+HOTEL:
+getBookingController skall returnera en BookingController.
+getMaintenanceController skall returnera en BookingMaintenance.
+getManagementController skall returnera en BookingManagement.
+Hotellet skall ha en av varje ovanstående kontrollers som instansvariabel.
 
 
 
