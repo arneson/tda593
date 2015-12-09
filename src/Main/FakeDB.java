@@ -13,11 +13,12 @@ public class FakeDB {
 	public static ArrayList<Customer> customers;
 	public static ArrayList<Employee> employees;
 	public static ArrayList<Discount> discounts;
-	public static void init(){
-		bookings = new ArrayList<Booking>();
-		rooms = new ArrayList<Room>();
-		customers = new ArrayList<Customer>();
-		employees = new ArrayList<Employee>();
-		discounts = new ArrayList<Discount>();
+
+	static {
+		bookings = new ArrayList<>();
+		rooms = new ArrayList<>();
+		customers = new ArrayList<>();
+		employees = new ArrayList<>();
+		discounts = new ArrayList<>();
 	}
 }
