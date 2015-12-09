@@ -49,24 +49,19 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void registerDiscount(Discount discount, Costable costable) {
-		// TODO: implement this method
+	public void registerDiscount(Discount discount) {
 		FakeDB.discounts.add(discount);
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void registerCostable(Costable costable) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		FakeDB.costables.add(costable);
 	}
 
 	/**
@@ -110,8 +105,8 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___REGISTER_DISCOUNT__DISCOUNT_COSTABLE:
-				registerDiscount((Discount)arguments.get(0), (Costable)arguments.get(1));
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___REGISTER_DISCOUNT__DISCOUNT:
+				registerDiscount((Discount)arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___REGISTER_COSTABLE__COSTABLE:
 				registerCostable((Costable)arguments.get(0));

@@ -1,4 +1,4 @@
-TODO In Model (TIM):
+﻿TODO In Model (TIM):
 
 BILL:
 Varför finns en setTotalPrice? Ska detta ej beräknas från costables? - CHECK
@@ -19,5 +19,18 @@ ROOM:
 Ta bort remove ”setCleanedStatus” - CHECK
 TA BORT CLEANINGSTATUS
 Varför är ”getMaxNbrOfPeople” en lista?
+
+BOOKEDROOM:
+Ej extenda ROOM utan istället innehålla ett room.
+	setRoom...
+
+BILL:
+paid boolean som instansvariabel
+
+BOOKING:
+Lista med discounts
+
+COSTABLE:
+Lista med discounts
 
 

@@ -20,10 +20,10 @@ public interface ManagementController extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model discountRequired="true" discountOrdered="false" costableRequired="true" costableOrdered="false"
+	 * @model discountRequired="true" discountOrdered="false"
 	 * @generated
 	 */
-	void registerDiscount(Discount discount, Costable costable);
+	void registerDiscount(Discount discount);
 
 	/**
 	 * <!-- begin-user-doc -->
