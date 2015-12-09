@@ -9,6 +9,7 @@ import HotelManagementClassDiagram.Discount;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.ManagementController;
 import HotelManagementClassDiagram.Room;
+import Main.FakeDB;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -72,12 +73,10 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setDateSpecificPrices(Costable costable, Date startDate, Date endDate, double priceChange) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException();		
 	}
 
 	/**
@@ -105,12 +104,14 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateRoom(Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (int i = 0; i < FakeDB.rooms.size(); i++) {
+			if (FakeDB.rooms.get(i).equals(room)) {
+				FakeDB.rooms.set(i, room);
+			}
+		}
 	}
 
 	/**
