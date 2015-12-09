@@ -9,7 +9,7 @@ import HotelManagementClassDiagram.Discount;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.ManagementController;
 import HotelManagementClassDiagram.Room;
-import Main.FakeDB;
+import main.FakeDB;
 
 import java.lang.reflect.InvocationTargetException;
 

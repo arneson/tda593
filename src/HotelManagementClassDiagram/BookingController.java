@@ -4,6 +4,7 @@ package HotelManagementClassDiagram;
 
 import java.util.Date;
 
+import HotelManagementClassDiagram.exceptions.NoSuchBookingException;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -55,7 +56,7 @@ public interface BookingController extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false" bookingIdRequired="true" bookingIdOrdered="false"
-	 * @generated
+	 * @generated NOT
 	 */
 	Booking getBooking(int bookingId);
 
