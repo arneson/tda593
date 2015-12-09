@@ -364,7 +364,7 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_KrW50JdiEeW_2em-0w3Fbg" name="addToStack">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_MaMn8JdnEeW_2em-0w3Fbg" name="room" type="_S3mAoJdQEeW_2em-0w3Fbg"/>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_L04GoJdiEeW_2em-0w3Fbg" name="setStatus">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_L04GoJdiEeW_2em-0w3Fbg" name="setCleanedStatus">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_P1HPoJdnEeW_2em-0w3Fbg" name="room" type="_S3mAoJdQEeW_2em-0w3Fbg"/>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_R4T2cJdnEeW_2em-0w3Fbg" name="status">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
@@ -378,6 +378,12 @@
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_zBbhYJ3TEeWmd6xZ8Eu3nw" name="getNextRoomToClean" concurrency="guarded">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_7miWAJ3TEeWmd6xZ8Eu3nw" name="room" type="_S3mAoJdQEeW_2em-0w3Fbg" direction="out"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_LqOEsJ6HEeWgYtB9i8LQew" name="setRepairedStatus">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_QqmOUJ6HEeWgYtB9i8LQew" name="room" type="_S3mAoJdQEeW_2em-0w3Fbg"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_TEOYIJ6HEeWgYtB9i8LQew" name="repaired">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </ownedParameter>
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_ucKUoJdrEeW_2em-0w3Fbg" client="_Ew4PgJdOEeW_2em-0w3Fbg" supplier="_KN_mMJdTEeW_2em-0w3Fbg"/>

@@ -1597,13 +1597,13 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int MAINTENANCE_CONTROLLER___ADD_TO_STACK__ROOM = 0;
 
 	/**
-	 * The operation id for the '<em>Set Status</em>' operation.
+	 * The operation id for the '<em>Set Cleaned Status</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAINTENANCE_CONTROLLER___SET_STATUS__ROOM_BOOLEAN = 1;
+	int MAINTENANCE_CONTROLLER___SET_CLEANED_STATUS__ROOM_BOOLEAN = 1;
 
 	/**
 	 * The operation id for the '<em>Notify Worker</em>' operation.
@@ -1633,13 +1633,22 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int MAINTENANCE_CONTROLLER___GET_NEXT_ROOM_TO_CLEAN__ROOM = 4;
 
 	/**
+	 * The operation id for the '<em>Set Repaired Status</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAINTENANCE_CONTROLLER___SET_REPAIRED_STATUS__ROOM_BOOLEAN = 5;
+
+	/**
 	 * The number of operations of the '<em>Maintenance Controller</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAINTENANCE_CONTROLLER_OPERATION_COUNT = 5;
+	int MAINTENANCE_CONTROLLER_OPERATION_COUNT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3108,14 +3117,14 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EOperation getMaintenanceController__AddToStack__Room();
 
 	/**
-	 * Returns the meta object for the '{@link HotelManagementClassDiagram.MaintenanceController#setStatus(HotelManagementClassDiagram.Room, boolean) <em>Set Status</em>}' operation.
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.MaintenanceController#setCleanedStatus(HotelManagementClassDiagram.Room, boolean) <em>Set Cleaned Status</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Set Status</em>' operation.
-	 * @see HotelManagementClassDiagram.MaintenanceController#setStatus(HotelManagementClassDiagram.Room, boolean)
+	 * @return the meta object for the '<em>Set Cleaned Status</em>' operation.
+	 * @see HotelManagementClassDiagram.MaintenanceController#setCleanedStatus(HotelManagementClassDiagram.Room, boolean)
 	 * @generated
 	 */
-	EOperation getMaintenanceController__SetStatus__Room_boolean();
+	EOperation getMaintenanceController__SetCleanedStatus__Room_boolean();
 
 	/**
 	 * Returns the meta object for the '{@link HotelManagementClassDiagram.MaintenanceController#notifyWorker(HotelManagementClassDiagram.EmployeeType) <em>Notify Worker</em>}' operation.
@@ -3146,6 +3155,16 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getMaintenanceController__GetNextRoomToClean__Room();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.MaintenanceController#setRepairedStatus(HotelManagementClassDiagram.Room, boolean) <em>Set Repaired Status</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Repaired Status</em>' operation.
+	 * @see HotelManagementClassDiagram.MaintenanceController#setRepairedStatus(HotelManagementClassDiagram.Room, boolean)
+	 * @generated
+	 */
+	EOperation getMaintenanceController__SetRepairedStatus__Room_boolean();
 
 	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Hotel <em>Hotel</em>}'.
@@ -4357,12 +4376,12 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EOperation MAINTENANCE_CONTROLLER___ADD_TO_STACK__ROOM = eINSTANCE.getMaintenanceController__AddToStack__Room();
 
 		/**
-		 * The meta object literal for the '<em><b>Set Status</b></em>' operation.
+		 * The meta object literal for the '<em><b>Set Cleaned Status</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MAINTENANCE_CONTROLLER___SET_STATUS__ROOM_BOOLEAN = eINSTANCE.getMaintenanceController__SetStatus__Room_boolean();
+		EOperation MAINTENANCE_CONTROLLER___SET_CLEANED_STATUS__ROOM_BOOLEAN = eINSTANCE.getMaintenanceController__SetCleanedStatus__Room_boolean();
 
 		/**
 		 * The meta object literal for the '<em><b>Notify Worker</b></em>' operation.
@@ -4387,6 +4406,14 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation MAINTENANCE_CONTROLLER___GET_NEXT_ROOM_TO_CLEAN__ROOM = eINSTANCE.getMaintenanceController__GetNextRoomToClean__Room();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Repaired Status</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MAINTENANCE_CONTROLLER___SET_REPAIRED_STATUS__ROOM_BOOLEAN = eINSTANCE.getMaintenanceController__SetRepairedStatus__Room_boolean();
 
 		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.HotelImpl <em>Hotel</em>}' class.

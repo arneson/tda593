@@ -77,56 +77,62 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addToStack(Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		roomStack.add(room);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void setStatus(Room room, boolean status) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void setCleanedStatus(Room room, boolean status) {
+		for (Room roomInstance : roomStack) {
+			if (roomInstance.equals(room)) {
+				room.setUnderCleaning(status);
+			}
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void notifyWorker(EmployeeType worker) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void removeFromStack(Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		roomStack.remove(room);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated 
 	 */
 	public void getNextRoomToClean(Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setRepairedStatus(Room room, boolean repaired) {
+		for (Room roomInstance : roomStack) {
+			if (roomInstance.equals(room)) {
+				room.setUnderRepair(repaired);
+			}
+		}
 	}
 
 	/**
@@ -200,8 +206,8 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___ADD_TO_STACK__ROOM:
 				addToStack((Room)arguments.get(0));
 				return null;
-			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___SET_STATUS__ROOM_BOOLEAN:
-				setStatus((Room)arguments.get(0), (Boolean)arguments.get(1));
+			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___SET_CLEANED_STATUS__ROOM_BOOLEAN:
+				setCleanedStatus((Room)arguments.get(0), (Boolean)arguments.get(1));
 				return null;
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___NOTIFY_WORKER__EMPLOYEETYPE:
 				notifyWorker((EmployeeType)arguments.get(0));
@@ -211,6 +217,9 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 				return null;
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___GET_NEXT_ROOM_TO_CLEAN__ROOM:
 				getNextRoomToClean((Room)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___SET_REPAIRED_STATUS__ROOM_BOOLEAN:
+				setRepairedStatus((Room)arguments.get(0), (Boolean)arguments.get(1));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
