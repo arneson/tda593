@@ -227,12 +227,10 @@ public class CustomerImpl extends PersonImpl implements Customer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addBonusPoints(int bonusPoints) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.bonusPoints += bonusPoints;
 	}
 
 	/**
