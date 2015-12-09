@@ -1179,7 +1179,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getManagementController__RegisterDiscount__Discount_Costable() {
+	public EOperation getManagementController__RegisterDiscount__Discount() {
 		return managementControllerEClass.getEOperations().get(0);
 	}
 
@@ -1646,7 +1646,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___ASSIGN_ROOM__ROOM);
 
 		managementControllerEClass = createEClass(MANAGEMENT_CONTROLLER);
-		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___REGISTER_DISCOUNT__DISCOUNT_COSTABLE);
+		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___REGISTER_DISCOUNT__DISCOUNT);
 		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___REGISTER_COSTABLE__COSTABLE);
 		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___UPDATE_COSTABLE__COSTABLE);
 		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___MODIFY_BOOKING__BOOKING);
@@ -1897,9 +1897,8 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 
 		initEClass(managementControllerEClass, ManagementController.class, "ManagementController", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getManagementController__RegisterDiscount__Discount_Costable(), null, "registerDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getManagementController__RegisterDiscount__Discount(), null, "registerDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getCostable(), "costable", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getManagementController__RegisterCostable__Costable(), null, "registerCostable", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getCostable(), "costable", 1, 1, IS_UNIQUE, !IS_ORDERED);
