@@ -47,6 +47,10 @@
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_r_paAJy9EeWOD_rmUUwMag" name="paymentMaster" visibility="private" type="_943j8JdPEeW_2em-0w3Fbg"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_sQrucJ5kEeWsRbM9FFS6Bw" name="discounts" type="_P3JucJdQEeW_2em-0w3Fbg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uJN9YJ5kEeWsRbM9FFS6Bw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uJPykJ5kEeWsRbM9FFS6Bw" value="*"/>
+    </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_iW1eQJjvEeW90dH2IAXwHw" name="checkIn"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_6CIO4JjvEeW90dH2IAXwHw" name="checkOut">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_K9YPEJjwEeW90dH2IAXwHw" name="bill" type="_BnrYAJdQEeW_2em-0w3Fbg" direction="return"/>
@@ -114,6 +118,9 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_L1Q5UJjwEeW90dH2IAXwHw" name="final" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_NHxVsJ5kEeWsRbM9FFS6Bw" name="paid">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+    </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_E_WecJdQEeW_2em-0w3Fbg" name="Addon">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_huNrEJdaEeW_2em-0w3Fbg" name="name" visibility="private">
@@ -127,7 +134,10 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_VN16wJdaEeW_2em-0w3Fbg" name="price" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_XF9S8JdaEeW_2em-0w3Fbg" name="discount" visibility="private" type="_P3JucJdQEeW_2em-0w3Fbg"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_XF9S8JdaEeW_2em-0w3Fbg" name="discounts" visibility="private" type="_P3JucJdQEeW_2em-0w3Fbg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5RYkoJ5kEeWsRbM9FFS6Bw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5RZywJ5kEeWsRbM9FFS6Bw" value="*"/>
+    </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_7gqXgJjxEeW90dH2IAXwHw" name="addDiscount"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_911fIJjxEeW90dH2IAXwHw" name="removeDiscount"/>
   </packagedElement>
@@ -156,8 +166,8 @@
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_WLfS8JdTEeW_2em-0w3Fbg" name="maxNbrPeople" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_t_QbYJdZEeW_2em-0w3Fbg"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_t_RCcJdZEeW_2em-0w3Fbg" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_t_QbYJdZEeW_2em-0w3Fbg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_t_RCcJdZEeW_2em-0w3Fbg" value="1"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_n_ycEJj1EeWQB-I7Xm36yA" name="underCleaning" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>

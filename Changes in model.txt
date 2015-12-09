@@ -16,19 +16,19 @@ Borde inte salary och workrate vara i Employee? Inte i employeetype?
 
 ROOM:
 Ta bort remove ”setCleanedStatus”
-Varför är ”getMaxNbrOfPeople” en lista?
+[KLAR] Varför är ”getMaxNbrOfPeople” en lista?
 
 BOOKEDROOM:
 Ej extenda ROOM utan istället innehålla ett room.
 	setRoom...
 
 BILL:
-paid boolean som instansvariabel
+[KLAR] paid boolean som instansvariabel 
 
 BOOKING:
-Lista med discounts
+[KLAR] Lista med discounts
 
 COSTABLE:
-Lista med discounts
+[KLAR] Lista med discounts
 
 
