@@ -2,17 +2,17 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.Booking;
-import HotelManagementClassDiagram.BookingController;
-import HotelManagementClassDiagram.Customer;
-import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
-import HotelManagementClassDiagram.Room;
-import HotelManagementClassDiagram.RoomType;
+import HotelManagementClassDiagram.*;
 
 import java.lang.reflect.InvocationTargetException;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import HotelManagementClassDiagram.exceptions.NoSuchBookingException;
+import main.FakeDB;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -49,12 +49,34 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<RoomType> searchAvailableRoomTypes(Date fromDate, Date toDate, int nbrOfAdults, int nbrOfChildren) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<RoomType> types = new BasicEList<>();
+		List<Room> rooms = getAvailableRooms(fromDate, toDate);
+		for (Room r : rooms) {
+			if (r.getMaxNbrPeople() >= (nbrOfAdults + nbrOfChildren)) {
+				for (RoomType rt : r.getTypes()) {
+					if (!types.contains(rt)) {
+						types.add(rt);
+					}
+				}
+			}
+		}
+		return types;
+	}
+
+	private List<Room> getAvailableRooms(Date fromDate, Date toDate) {
+		List<Room> rooms = new ArrayList<>(FakeDB.rooms);
+		List<Booking> booking = FakeDB.bookings;
+		for (Booking b : booking) {
+			if (fromDate.before(b.getEndDate()) || toDate.after(b.getStartDate())) {
+				for (BookedRoom br : b.getBookedRooms()) {
+					rooms.remove(br);
+				}
+			}
+		}
+		return rooms;
 	}
 
 	/**
@@ -93,12 +115,15 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Booking getBooking(int bookingId) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (Booking booking : FakeDB.bookings) {
+			if (bookingId == booking.getBookingId()) {
+				return booking;
+			}
+		}
+		return null;
 	}
 
 	/**
@@ -118,9 +143,7 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public void checkIn(Booking booking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		// TODO
 	}
 
 	/**
@@ -129,9 +152,7 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public void createKeyCard(Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		// TODO
 	}
 
 	/**
@@ -140,20 +161,16 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public void checkOut(Booking booking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		// TODO
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void saveCustomer(Customer customer) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		FakeDB.customers.add(customer);
 	}
 
 	/**
@@ -162,9 +179,11 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public void findCustomer(String ssNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (Customer customer : FakeDB.customers) {
+			if (customer.getSSNumber() == ssNumber) {
+				// TODO return customer;
+			}
+		}
 	}
 
 	/**
@@ -173,9 +192,7 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public void assignRoom(Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		// TODO
 	}
 
 	/**
