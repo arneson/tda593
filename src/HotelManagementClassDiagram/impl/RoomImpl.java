@@ -397,6 +397,16 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setCleanedStatus(CleaningStatus status) {
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException("This method is not implemented and should not be used")
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
