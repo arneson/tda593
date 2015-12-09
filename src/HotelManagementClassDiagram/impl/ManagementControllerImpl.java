@@ -9,7 +9,6 @@ import HotelManagementClassDiagram.Discount;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.ManagementController;
 import HotelManagementClassDiagram.Room;
-import Main.FakeDB;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -51,24 +50,23 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void registerDiscount(Discount discount) {
-		FakeDB.discounts.add(discount);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void modifyBooking(Booking booking) {
-		for(Booking b : FakeDB.bookings){
-			if(b.equals(booking)){
-				b = booking;
-				break;
-			}
-		}
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

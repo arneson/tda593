@@ -4,9 +4,9 @@ package HotelManagementClassDiagram.impl;
 
 import HotelManagementClassDiagram.Creditcard;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
-import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -161,29 +161,13 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setNumber(long newNumber) {
-		/*long oldNumber = number;
+		long oldNumber = number;
 		number = newNumber;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.CREDITCARD__NUMBER, oldNumber, number));
-		*/
-		throw new UnsupportedOperationException("This method is not implemented and should not be used");
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void setExpirationDate(Date newExpirationDate) {
-		/*Date oldExpirationDate = expirationDate;
-		expirationDate = newExpirationDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_DATE, oldExpirationDate, expirationDate));
-		*/
-		throw new UnsupportedOperationException("This method is not implemented and should not be used");
 	}
 
 	/**
@@ -198,15 +182,13 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setCvc(int newCvc) {
-		/*int oldCvc = cvc;
+		int oldCvc = cvc;
 		cvc = newCvc;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.CREDITCARD__CVC, oldCvc, cvc));
-		*/
-		throw new UnsupportedOperationException("This method is not implemented and should not be used");
 	}
 
 	/**
@@ -221,15 +203,13 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setOwner(String newOwner) {
-		/*String oldOwner = owner;
+		String oldOwner = owner;
 		owner = newOwner;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.CREDITCARD__OWNER, oldOwner, owner));
-		*/
-		throw new UnsupportedOperationException("This method is not implemented and should not be used");
 	}
 
 	/**

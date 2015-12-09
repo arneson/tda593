@@ -7,6 +7,8 @@ import HotelManagementClassDiagram.Costable;
 import HotelManagementClassDiagram.Customer;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 
+import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -34,6 +36,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link HotelManagementClassDiagram.impl.BillImpl#getCustomer <em>Customer</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BillImpl#getValueAddedTax <em>Value Added Tax</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BillImpl#isFinal <em>Final</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.BillImpl#isPaid <em>Paid</em>}</li>
  * </ul>
  *
  * @generated
@@ -120,6 +123,26 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	protected boolean final_ = FINAL_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #isPaid() <em>Paid</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isPaid()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean PAID_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isPaid() <em>Paid</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isPaid()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean paid = PAID_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -162,15 +185,13 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setTotalPrice(double newTotalPrice) {
-		/*double oldTotalPrice = totalPrice;
+		double oldTotalPrice = totalPrice;
 		totalPrice = newTotalPrice;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BILL__TOTAL_PRICE, oldTotalPrice, totalPrice));
-		*/
-		throw new UnsupportedOperationException("This method is not implemented and should not be used")
 	}
 
 	/**
@@ -202,15 +223,13 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setCustomer(Customer newCustomer) {
-		throw new UnsupportedOperationException("This method is not implemented and should not be used");
-		/*Customer oldCustomer = customer;
+		Customer oldCustomer = customer;
 		customer = newCustomer;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BILL__CUSTOMER, oldCustomer, customer));
-		*/
 	}
 
 	/**
@@ -260,6 +279,38 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isPaid() {
+		return paid;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPaid(boolean newPaid) {
+		boolean oldPaid = paid;
+		paid = newPaid;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BILL__PAID, oldPaid, paid));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addCostable(Costable costable) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -274,6 +325,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return getValueAddedTax();
 			case HotelManagementClassDiagramPackage.BILL__FINAL:
 				return isFinal();
+			case HotelManagementClassDiagramPackage.BILL__PAID:
+				return isPaid();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -303,6 +356,9 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			case HotelManagementClassDiagramPackage.BILL__FINAL:
 				setFinal((Boolean)newValue);
 				return;
+			case HotelManagementClassDiagramPackage.BILL__PAID:
+				setPaid((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -330,6 +386,9 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			case HotelManagementClassDiagramPackage.BILL__FINAL:
 				setFinal(FINAL_EDEFAULT);
 				return;
+			case HotelManagementClassDiagramPackage.BILL__PAID:
+				setPaid(PAID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -352,8 +411,25 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return valueAddedTax != VALUE_ADDED_TAX_EDEFAULT;
 			case HotelManagementClassDiagramPackage.BILL__FINAL:
 				return final_ != FINAL_EDEFAULT;
+			case HotelManagementClassDiagramPackage.BILL__PAID:
+				return paid != PAID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case HotelManagementClassDiagramPackage.BILL___ADD_COSTABLE__COSTABLE:
+				addCostable((Costable)arguments.get(0));
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -372,6 +448,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 		result.append(valueAddedTax);
 		result.append(", final: ");
 		result.append(final_);
+		result.append(", paid: ");
+		result.append(paid);
 		result.append(')');
 		return result.toString();
 	}

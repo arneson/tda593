@@ -190,9 +190,9 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Bill createBill() {
-		BillImpl bill = new BillImpl();
-		return bill;
+	public Discount createDiscount() {
+		DiscountImpl discount = new DiscountImpl();
+		return discount;
 	}
 
 	/**
@@ -200,9 +200,9 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Discount createDiscount() {
-		DiscountImpl discount = new DiscountImpl();
-		return discount;
+	public Bill createBill() {
+		BillImpl bill = new BillImpl();
+		return bill;
 	}
 
 	/**

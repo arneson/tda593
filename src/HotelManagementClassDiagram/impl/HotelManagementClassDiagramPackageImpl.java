@@ -109,6 +109,13 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass discountEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass billEClass = null;
 
 	/**
@@ -117,13 +124,6 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * @generated
 	 */
 	private EClass costableEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass discountEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -919,6 +919,33 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getDiscount() {
+		return discountEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDiscount_IsPercentage() {
+		return (EAttribute)discountEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDiscount_Amount() {
+		return (EAttribute)discountEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBill() {
 		return billEClass;
 	}
@@ -1029,33 +1056,6 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 */
 	public EOperation getCostable__RemoveDiscount() {
 		return costableEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDiscount() {
-		return discountEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDiscount_IsPercentage() {
-		return (EAttribute)discountEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDiscount_Amount() {
-		return (EAttribute)discountEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
