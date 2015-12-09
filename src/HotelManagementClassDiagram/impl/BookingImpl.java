@@ -2,21 +2,18 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.Addon;
-import HotelManagementClassDiagram.Bill;
-import HotelManagementClassDiagram.Booking;
-import HotelManagementClassDiagram.Creditcard;
-import HotelManagementClassDiagram.Customer;
-import HotelManagementClassDiagram.Discount;
-import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
-import HotelManagementClassDiagram.Room;
+import HotelManagementClassDiagram.*;
+
 import java.lang.reflect.InvocationTargetException;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.LinkedList;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -281,6 +278,18 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 */
 	protected BookingImpl() {
 		super();
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	public BookingImpl(int id, Customer customer, Date startDate, Date endDate, BookedRoom... rooms){
+		this.bookingId = id;
+		this.customer = customer;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.bookedRooms = new BasicEList<>();
+		this.bookedRooms.addAll(rooms);
 	}
 
 	/**

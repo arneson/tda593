@@ -114,6 +114,13 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 	}
 
 	/**
+	 * @generated NOT
+	 */
+	public EmployeeImpl(String name, String description, double price){
+
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
