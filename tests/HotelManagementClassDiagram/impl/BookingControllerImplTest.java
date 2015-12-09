@@ -1,13 +1,12 @@
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.Booking;
-import HotelManagementClassDiagram.BookingController;
-import HotelManagementClassDiagram.Customer;
-import HotelManagementClassDiagram.Room;
+import HotelManagementClassDiagram.*;
+import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -20,8 +19,8 @@ import static org.junit.Assert.*;
 public class BookingControllerImplTest {
 
 	BookingController bc;
-	Room r1;
-	Room r2;
+	BookedRoom r1;
+	BookedRoom r2;
 	Customer c1;
 	Customer c2;
 	Date d1;
@@ -33,22 +32,25 @@ public class BookingControllerImplTest {
 	public void setUp() throws Exception {
 		bc = new BookingControllerImpl();
 
-		r1 = new RoomImpl();
-		r2 = new RoomImpl();
+		r2 = new BookedRoomImpl(new RoomImpl("K", 10, 2, 2));
+		r1 = new BookedRoomImpl(new RoomImpl("N", 10, 1, 2));
 
-		c1 = new CustomerImpl();
-		c2 = new CustomerImpl();
+		c1 = new CustomerImpl(1, "Tim", "Götet", "Sweden", "Male", "073", "41322", "931022", "gata", "Mr");
+		c2 = new CustomerImpl(2, "Ti", "gä", "Suded", "Fem", "081", "41321", "931021", "gata2", "Ms");
 
 		d1 = new Date();
-		d2 = new Date();
+		d2 = new Date(2015, 11, 24, 1, 0);
 
-		b1 = new BookingImpl();
-		b2 = new BookingImpl();
+		b1 = new BookingImpl(1, c1, d1, d2, r1);
+		b2 = new BookingImpl(2, c2, d1, d2, r2);
 	}
 
 	@Test
 	public void testSearchAvailableRoomTypes() throws Exception {
-
+		EList<RoomType> list = this.bc.searchAvailableRoomTypes(d1, d2, 2, 0);
+		for (RoomType item : list) {
+			// assertEquals();
+		}
 	}
 
 	@Test
