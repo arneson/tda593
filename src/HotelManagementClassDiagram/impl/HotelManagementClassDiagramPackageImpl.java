@@ -1296,7 +1296,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getMaintenanceController__SetStatus__Room_boolean() {
+	public EOperation getMaintenanceController__SetCleanedStatus__Room_boolean() {
 		return maintenanceControllerEClass.getEOperations().get(1);
 	}
 
@@ -1325,6 +1325,15 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 */
 	public EOperation getMaintenanceController__GetNextRoomToClean__Room() {
 		return maintenanceControllerEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getMaintenanceController__SetRepairedStatus__Room_boolean() {
+		return maintenanceControllerEClass.getEOperations().get(5);
 	}
 
 	/**
@@ -1712,10 +1721,11 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		maintenanceControllerEClass = createEClass(MAINTENANCE_CONTROLLER);
 		createEReference(maintenanceControllerEClass, MAINTENANCE_CONTROLLER__ROOM_STACK);
 		createEOperation(maintenanceControllerEClass, MAINTENANCE_CONTROLLER___ADD_TO_STACK__ROOM);
-		createEOperation(maintenanceControllerEClass, MAINTENANCE_CONTROLLER___SET_STATUS__ROOM_BOOLEAN);
+		createEOperation(maintenanceControllerEClass, MAINTENANCE_CONTROLLER___SET_CLEANED_STATUS__ROOM_BOOLEAN);
 		createEOperation(maintenanceControllerEClass, MAINTENANCE_CONTROLLER___NOTIFY_WORKER__EMPLOYEETYPE);
 		createEOperation(maintenanceControllerEClass, MAINTENANCE_CONTROLLER___REMOVE_FROM_STACK__ROOM);
 		createEOperation(maintenanceControllerEClass, MAINTENANCE_CONTROLLER___GET_NEXT_ROOM_TO_CLEAN__ROOM);
+		createEOperation(maintenanceControllerEClass, MAINTENANCE_CONTROLLER___SET_REPAIRED_STATUS__ROOM_BOOLEAN);
 
 		hotelEClass = createEClass(HOTEL);
 		createEAttribute(hotelEClass, HOTEL__NAME);
@@ -1991,7 +2001,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		op = initEOperation(getMaintenanceController__AddToStack__Room(), null, "addToStack", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getMaintenanceController__SetStatus__Room_boolean(), null, "setStatus", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getMaintenanceController__SetCleanedStatus__Room_boolean(), null, "setCleanedStatus", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "status", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -2003,6 +2013,10 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 
 		op = initEOperation(getMaintenanceController__GetNextRoomToClean__Room(), null, "getNextRoomToClean", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getMaintenanceController__SetRepairedStatus__Room_boolean(), null, "setRepairedStatus", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "repaired", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(hotelEClass, Hotel.class, "Hotel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHotel_Name(), theTypesPackage.getString(), "name", null, 1, 1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

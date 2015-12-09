@@ -475,7 +475,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				setBooked((Boolean)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.ROOM__MAX_NBR_PEOPLE:
-				setMaxNbrPeople((Integer) newValue);
+				setMaxNbrPeople((Integer)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.ROOM__UNDER_CLEANING:
 				setUnderCleaning((Boolean)newValue);
@@ -485,7 +485,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return;
 			case HotelManagementClassDiagramPackage.ROOM__TYPES:
 				getTypes().clear();
-				getTypes().addAll((Collection<? extends RoomType>) newValue);
+				getTypes().addAll((Collection<? extends RoomType>)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.ROOM__ROOM_NAME:
 				setRoomName((String)newValue);
