@@ -71,4 +71,12 @@ public interface MaintenanceController extends EObject {
 	 */
 	void removeFromStack(Room room);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model roomRequired="true" roomOrdered="false"
+	 * @generated
+	 */
+	void getNextRoomToClean(Room room);
+
 } // MaintenanceController

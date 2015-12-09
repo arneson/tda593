@@ -165,6 +165,36 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case HotelManagementClassDiagramPackage.INTERACTION1: {
+				Interaction1 interaction1 = (Interaction1)theEObject;
+				T result = caseInteraction1(interaction1);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HotelManagementClassDiagramPackage.INTERACTION2: {
+				Interaction2 interaction2 = (Interaction2)theEObject;
+				T result = caseInteraction2(interaction2);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HotelManagementClassDiagramPackage.INTERACTION3: {
+				Interaction3 interaction3 = (Interaction3)theEObject;
+				T result = caseInteraction3(interaction3);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HotelManagementClassDiagramPackage.INTERACTION4: {
+				Interaction4 interaction4 = (Interaction4)theEObject;
+				T result = caseInteraction4(interaction4);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HotelManagementClassDiagramPackage.INTERACTION5: {
+				Interaction5 interaction5 = (Interaction5)theEObject;
+				T result = caseInteraction5(interaction5);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -406,6 +436,81 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBookedRoom(BookedRoom object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Interaction1</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Interaction1</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInteraction1(Interaction1 object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Interaction2</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Interaction2</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInteraction2(Interaction2 object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Interaction3</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Interaction3</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInteraction3(Interaction3 object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Interaction4</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Interaction4</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInteraction4(Interaction4 object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Interaction5</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Interaction5</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInteraction5(Interaction5 object) {
 		return null;
 	}
 

@@ -254,7 +254,10 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_e6180JdgEeW_2em-0w3Fbg" name="BookingController">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_lFZlIJdhEeW_2em-0w3Fbg" name="searchAvailableRoomTypes">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_AyA2IJdiEeW_2em-0w3Fbg" name="roomTypes" type="_JTGcgJdZEeW_2em-0w3Fbg" direction="return"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_AyA2IJdiEeW_2em-0w3Fbg" name="roomTypes" type="_JTGcgJdZEeW_2em-0w3Fbg" direction="return">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1_GyAJ5YEeWsRbM9FFS6Bw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1_KcYJ5YEeWsRbM9FFS6Bw" value="*"/>
+      </ownedParameter>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_svvMwJ3GEeWmd6xZ8Eu3nw" name="fromDate">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
       </ownedParameter>

@@ -4,11 +4,14 @@ package HotelManagementClassDiagram.impl;
 
 import HotelManagementClassDiagram.Booking;
 import HotelManagementClassDiagram.BookingController;
+import HotelManagementClassDiagram.Customer;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.Room;
 import HotelManagementClassDiagram.RoomType;
 
 import java.lang.reflect.InvocationTargetException;
+
+import java.util.Date;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -48,7 +51,7 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Room searchRooms() {
+	public EList<RoomType> searchAvailableRoomTypes(Date fromDate, Date toDate, int nbrOfAdults, int nbrOfChildren) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -147,12 +150,45 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void saveCustomer(Customer customer) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void findCustomer(String ssNumber) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void assignRoom(Room room) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___SEARCH_ROOMS:
-				return searchRooms();
+			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___SEARCH_AVAILABLE_ROOM_TYPES__DATE_DATE_INT_INT:
+				return searchAvailableRoomTypes((Date)arguments.get(0), (Date)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3));
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CREATE_BOOKING__ELIST:
 				return createBooking((EList<RoomType>)arguments.get(0));
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___SEND_CONFIRMATION__BOOKING:
@@ -171,6 +207,15 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 				return null;
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CHECK_OUT__BOOKING:
 				checkOut((Booking)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___SAVE_CUSTOMER__CUSTOMER:
+				saveCustomer((Customer)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___FIND_CUSTOMER__STRING:
+				findCustomer((String)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___ASSIGN_ROOM__ROOM:
+				assignRoom((Room)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
