@@ -29,7 +29,7 @@ public class Main {
 		Scanner reader = new Scanner(System.in);
 		String command ="";
 		do{
-			
+			System.out.println("Welcome to C-R-A-P hotels.");
 			switch(command){
 				case CLI_HELP_COMMAND:
 					System.out.println();
@@ -56,7 +56,6 @@ public class Main {
 				case CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND:
 					break;
 				default:
-					System.out.println("Welcome to C-R-A-P hotels.");
 					System.out.println("Enter "+CLI_HELP_COMMAND+" for a list of commands.");
 					System.out.println("Enter " + CLI_EXIT_COMMAND + " to exit.");
 					System.out.println("Choose an option: ");
