@@ -58,7 +58,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated 
 	 */
 	public void registerCostable(Costable costable) {
 		FakeDB.costables.add(costable);
@@ -75,12 +75,15 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void modifyBooking(Booking booking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for(Booking b : FakeDB.bookings){
+			if(b.equals(booking)){
+				b = booking;
+				break;
+			}
+		}
 	}
 
 	/**
