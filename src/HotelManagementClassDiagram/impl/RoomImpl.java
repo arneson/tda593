@@ -2,12 +2,9 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.CleaningStatus;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.Room;
 import HotelManagementClassDiagram.RoomType;
-
-import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
 
@@ -125,14 +122,24 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	protected boolean booked = BOOKED_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getMaxNbrPeople() <em>Max Nbr People</em>}' attribute list.
+	 * The default value of the '{@link #getMaxNbrPeople() <em>Max Nbr People</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMaxNbrPeople()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Integer> maxNbrPeople;
+	protected static final int MAX_NBR_PEOPLE_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getMaxNbrPeople() <em>Max Nbr People</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxNbrPeople()
+	 * @generated
+	 * @ordered
+	 */
+	protected int maxNbrPeople = MAX_NBR_PEOPLE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isUnderCleaning() <em>Under Cleaning</em>}' attribute.
@@ -312,11 +319,20 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Integer> getMaxNbrPeople() {
-		if (maxNbrPeople == null) {
-			maxNbrPeople = new EDataTypeUniqueEList<Integer>(Integer.class, this, HotelManagementClassDiagramPackage.ROOM__MAX_NBR_PEOPLE);
-		}
+	public int getMaxNbrPeople() {
 		return maxNbrPeople;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxNbrPeople(int newMaxNbrPeople) {
+		int oldMaxNbrPeople = maxNbrPeople;
+		maxNbrPeople = newMaxNbrPeople;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.ROOM__MAX_NBR_PEOPLE, oldMaxNbrPeople, maxNbrPeople));
 	}
 
 	/**
@@ -397,27 +413,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void setCleanedStatus(CleaningStatus status) {
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException("This method is not implemented and should not be used")
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCleanedStatus(CleaningStatus status) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -467,8 +462,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				setBooked((Boolean)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.ROOM__MAX_NBR_PEOPLE:
-				getMaxNbrPeople().clear();
-				getMaxNbrPeople().addAll((Collection<? extends Integer>)newValue);
+				setMaxNbrPeople((Integer)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.ROOM__UNDER_CLEANING:
 				setUnderCleaning((Boolean)newValue);
@@ -508,7 +502,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				setBooked(BOOKED_EDEFAULT);
 				return;
 			case HotelManagementClassDiagramPackage.ROOM__MAX_NBR_PEOPLE:
-				getMaxNbrPeople().clear();
+				setMaxNbrPeople(MAX_NBR_PEOPLE_EDEFAULT);
 				return;
 			case HotelManagementClassDiagramPackage.ROOM__UNDER_CLEANING:
 				setUnderCleaning(UNDER_CLEANING_EDEFAULT);
@@ -543,7 +537,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case HotelManagementClassDiagramPackage.ROOM__BOOKED:
 				return booked != BOOKED_EDEFAULT;
 			case HotelManagementClassDiagramPackage.ROOM__MAX_NBR_PEOPLE:
-				return maxNbrPeople != null && !maxNbrPeople.isEmpty();
+				return maxNbrPeople != MAX_NBR_PEOPLE_EDEFAULT;
 			case HotelManagementClassDiagramPackage.ROOM__UNDER_CLEANING:
 				return underCleaning != UNDER_CLEANING_EDEFAULT;
 			case HotelManagementClassDiagramPackage.ROOM__UNDER_REPAIR:
@@ -554,21 +548,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return ROOM_NAME_EDEFAULT == null ? roomName != null : !ROOM_NAME_EDEFAULT.equals(roomName);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case HotelManagementClassDiagramPackage.ROOM___SET_CLEANED_STATUS__CLEANINGSTATUS:
-				setCleanedStatus((CleaningStatus)arguments.get(0));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

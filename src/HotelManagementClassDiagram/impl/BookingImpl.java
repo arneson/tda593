@@ -2,8 +2,6 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.*;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.ArrayList;
@@ -11,6 +9,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.LinkedList;
 
+import HotelManagementClassDiagram.*;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.BasicEList;
@@ -289,7 +288,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.bookedRooms = new BasicEList<>();
-		this.bookedRooms.addAll(rooms);
+		//this.bookedRooms.addAll(rooms);
 	}
 
 	/**
@@ -623,100 +622,100 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void checkIn() {
 		// TODO: implement this method
-		this.checkedIn = true;
-
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public Bill checkOut() {
 		// TODO: implement this method
-        this.checkedOut = true;
-        Bill finalBill = this.generateBill();
-        finalBill.setFinal(true);
-        return finalBill;
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void addAddon(Addon addon) {
 		// TODO: implement this method
-        addons.add(addon);
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void addRoom(Room room) {
 		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void removeAddon(Addon addon) {
 		// TODO: implement this method
-        addons.remove(addon);
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void removeRoom(Room room) {
 		// TODO: implement this method
-
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public Bill generateBill() {
 		// TODO: implement this method
-        Bill bill = new BillImpl();
-        bill.setCustomer(customer);
-        bill.setFinal(false);
-
-
-        return bill;
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public boolean pay(Bill bill) {
 		// TODO: implement this method
-		//bill.setPaid(true);
-        return true;
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void addDiscount(Discount discount) {
 		// TODO: implement this method
-
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

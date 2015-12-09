@@ -51,7 +51,7 @@ public class BookedRoomImpl extends RoomImpl implements BookedRoom {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->l
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -74,27 +74,23 @@ public class BookedRoomImpl extends RoomImpl implements BookedRoom {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void addAddon(Addon addon) {
-		if (addon != null) {
-			addons.add(addon);
-		} else {
-			throw new IllegalArgumentException("Addon can't be null.");
-		}
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void removeAddon(Addon addon) {
-		if (addons.contains(addon)) {
-			addons.remove(addon);
-		} else {
-			throw new IllegalArgumentException("Addon does not exist.");
-		}
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
