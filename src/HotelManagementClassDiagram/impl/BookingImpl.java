@@ -2,8 +2,14 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.*;
-
+import HotelManagementClassDiagram.Addon;
+import HotelManagementClassDiagram.Bill;
+import HotelManagementClassDiagram.Booking;
+import HotelManagementClassDiagram.Creditcard;
+import HotelManagementClassDiagram.Customer;
+import HotelManagementClassDiagram.Discount;
+import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
+import HotelManagementClassDiagram.Room;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -42,6 +48,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#isCheckedIn <em>Checked In</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#isCheckedOut <em>Checked Out</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getPaymentMaster <em>Payment Master</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getDiscounts <em>Discounts</em>}</li>
  * </ul>
  *
  * @generated
@@ -256,6 +263,16 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @ordered
 	 */
 	protected Customer paymentMaster;
+
+	/**
+	 * The cached value of the '{@link #getDiscounts() <em>Discounts</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDiscounts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Discount> discounts;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -585,6 +602,18 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Discount> getDiscounts() {
+		if (discounts == null) {
+			discounts = new EObjectResolvingEList<Discount>(Discount.class, this, HotelManagementClassDiagramPackage.BOOKING__DISCOUNTS);
+		}
+		return discounts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public void checkIn() {
@@ -729,6 +758,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case HotelManagementClassDiagramPackage.BOOKING__PAYMENT_MASTER:
 				if (resolve) return getPaymentMaster();
 				return basicGetPaymentMaster();
+			case HotelManagementClassDiagramPackage.BOOKING__DISCOUNTS:
+				return getDiscounts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -783,6 +814,10 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case HotelManagementClassDiagramPackage.BOOKING__PAYMENT_MASTER:
 				setPaymentMaster((Customer)newValue);
 				return;
+			case HotelManagementClassDiagramPackage.BOOKING__DISCOUNTS:
+				getDiscounts().clear();
+				getDiscounts().addAll((Collection<? extends Discount>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -834,6 +869,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case HotelManagementClassDiagramPackage.BOOKING__PAYMENT_MASTER:
 				setPaymentMaster((Customer)null);
 				return;
+			case HotelManagementClassDiagramPackage.BOOKING__DISCOUNTS:
+				getDiscounts().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -872,6 +910,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return checkedOut != CHECKED_OUT_EDEFAULT;
 			case HotelManagementClassDiagramPackage.BOOKING__PAYMENT_MASTER:
 				return paymentMaster != null;
+			case HotelManagementClassDiagramPackage.BOOKING__DISCOUNTS:
+				return discounts != null && !discounts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -14,6 +14,8 @@ package HotelManagementClassDiagram;
  * <ul>
  *   <li>{@link HotelManagementClassDiagram.Employee#getEmployeeType <em>Employee Type</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Employee#getEmployeeID <em>Employee ID</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Employee#getWorkRate <em>Work Rate</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Employee#getSalary <em>Salary</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getEmployee()
@@ -72,6 +74,58 @@ public interface Employee extends Person {
 	 * @generated
 	 */
 	void setEmployeeID(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Work Rate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Work Rate</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Work Rate</em>' attribute.
+	 * @see #setWorkRate(int)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getEmployee_WorkRate()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	int getWorkRate();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Employee#getWorkRate <em>Work Rate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Work Rate</em>' attribute.
+	 * @see #getWorkRate()
+	 * @generated
+	 */
+	void setWorkRate(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Salary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Salary</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Salary</em>' attribute.
+	 * @see #setSalary(double)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getEmployee_Salary()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	double getSalary();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Employee#getSalary <em>Salary</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Salary</em>' attribute.
+	 * @see #getSalary()
+	 * @generated
+	 */
+	void setSalary(double value);
 
 	/**
 	 * <!-- begin-user-doc -->

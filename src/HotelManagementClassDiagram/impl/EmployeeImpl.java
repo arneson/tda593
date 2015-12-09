@@ -27,6 +27,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link HotelManagementClassDiagram.impl.EmployeeImpl#getEmployeeType <em>Employee Type</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.EmployeeImpl#getEmployeeID <em>Employee ID</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.EmployeeImpl#getWorkRate <em>Work Rate</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.EmployeeImpl#getSalary <em>Salary</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,6 +63,46 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 	 * @ordered
 	 */
 	protected int employeeID = EMPLOYEE_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getWorkRate() <em>Work Rate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkRate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int WORK_RATE_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getWorkRate() <em>Work Rate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkRate()
+	 * @generated
+	 * @ordered
+	 */
+	protected int workRate = WORK_RATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSalary() <em>Salary</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSalary()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double SALARY_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getSalary() <em>Salary</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSalary()
+	 * @generated
+	 * @ordered
+	 */
+	protected double salary = SALARY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -145,6 +187,48 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getWorkRate() {
+		return workRate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setWorkRate(int newWorkRate) {
+		int oldWorkRate = workRate;
+		workRate = newWorkRate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.EMPLOYEE__WORK_RATE, oldWorkRate, workRate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public double getSalary() {
+		return salary;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSalary(double newSalary) {
+		double oldSalary = salary;
+		salary = newSalary;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.EMPLOYEE__SALARY, oldSalary, salary));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void Booking() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -186,6 +270,10 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 				return basicGetEmployeeType();
 			case HotelManagementClassDiagramPackage.EMPLOYEE__EMPLOYEE_ID:
 				return getEmployeeID();
+			case HotelManagementClassDiagramPackage.EMPLOYEE__WORK_RATE:
+				return getWorkRate();
+			case HotelManagementClassDiagramPackage.EMPLOYEE__SALARY:
+				return getSalary();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,6 +291,12 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 				return;
 			case HotelManagementClassDiagramPackage.EMPLOYEE__EMPLOYEE_ID:
 				setEmployeeID((Integer)newValue);
+				return;
+			case HotelManagementClassDiagramPackage.EMPLOYEE__WORK_RATE:
+				setWorkRate((Integer)newValue);
+				return;
+			case HotelManagementClassDiagramPackage.EMPLOYEE__SALARY:
+				setSalary((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -222,6 +316,12 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 			case HotelManagementClassDiagramPackage.EMPLOYEE__EMPLOYEE_ID:
 				setEmployeeID(EMPLOYEE_ID_EDEFAULT);
 				return;
+			case HotelManagementClassDiagramPackage.EMPLOYEE__WORK_RATE:
+				setWorkRate(WORK_RATE_EDEFAULT);
+				return;
+			case HotelManagementClassDiagramPackage.EMPLOYEE__SALARY:
+				setSalary(SALARY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -238,6 +338,10 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 				return employeeType != null;
 			case HotelManagementClassDiagramPackage.EMPLOYEE__EMPLOYEE_ID:
 				return employeeID != EMPLOYEE_ID_EDEFAULT;
+			case HotelManagementClassDiagramPackage.EMPLOYEE__WORK_RATE:
+				return workRate != WORK_RATE_EDEFAULT;
+			case HotelManagementClassDiagramPackage.EMPLOYEE__SALARY:
+				return salary != SALARY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -275,6 +379,10 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (employeeID: ");
 		result.append(employeeID);
+		result.append(", workRate: ");
+		result.append(workRate);
+		result.append(", salary: ");
+		result.append(salary);
 		result.append(')');
 		return result.toString();
 	}

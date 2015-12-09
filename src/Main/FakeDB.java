@@ -3,6 +3,9 @@ import java.util.ArrayList;
 
 import HotelManagementClassDiagram.*;
 
+/**
+ * @generated NOT
+ */
 public class FakeDB {
 	public static ArrayList<Booking> bookings;
 	public static ArrayList<Room> rooms;

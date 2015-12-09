@@ -2,6 +2,7 @@
  */
 package HotelManagementClassDiagram;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link HotelManagementClassDiagram.Costable#getPrice <em>Price</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Costable#getDiscount <em>Discount</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Costable#getDiscounts <em>Discounts</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getCostable()
@@ -49,30 +50,20 @@ public interface Costable extends EObject {
 	void setPrice(double value);
 
 	/**
-	 * Returns the value of the '<em><b>Discount</b></em>' reference.
+	 * Returns the value of the '<em><b>Discounts</b></em>' reference list.
+	 * The list contents are of type {@link HotelManagementClassDiagram.Discount}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Discount</em>' reference isn't clear,
+	 * If the meaning of the '<em>Discounts</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Discount</em>' reference.
-	 * @see #setDiscount(Discount)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getCostable_Discount()
+	 * @return the value of the '<em>Discounts</em>' reference list.
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getCostable_Discounts()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	Discount getDiscount();
-
-	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Costable#getDiscount <em>Discount</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Discount</em>' reference.
-	 * @see #getDiscount()
-	 * @generated
-	 */
-	void setDiscount(Discount value);
+	EList<Discount> getDiscounts();
 
 	/**
 	 * <!-- begin-user-doc -->

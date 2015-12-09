@@ -23,8 +23,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link HotelManagementClassDiagram.impl.EmployeeTypeImpl#getType <em>Type</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.EmployeeTypeImpl#getAcessLevel <em>Acess Level</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.impl.EmployeeTypeImpl#getWorkRate <em>Work Rate</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.impl.EmployeeTypeImpl#getSalary <em>Salary</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,46 +67,6 @@ public class EmployeeTypeImpl extends MinimalEObjectImpl.Container implements Em
 	 * @ordered
 	 */
 	protected int acessLevel = ACESS_LEVEL_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getWorkRate() <em>Work Rate</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkRate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int WORK_RATE_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getWorkRate() <em>Work Rate</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkRate()
-	 * @generated
-	 * @ordered
-	 */
-	protected int workRate = WORK_RATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSalary() <em>Salary</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSalary()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double SALARY_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getSalary() <em>Salary</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSalary()
-	 * @generated
-	 * @ordered
-	 */
-	protected double salary = SALARY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,48 +134,6 @@ public class EmployeeTypeImpl extends MinimalEObjectImpl.Container implements Em
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getWorkRate() {
-		return workRate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setWorkRate(int newWorkRate) {
-		int oldWorkRate = workRate;
-		workRate = newWorkRate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.EMPLOYEE_TYPE__WORK_RATE, oldWorkRate, workRate));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public double getSalary() {
-		return salary;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSalary(double newSalary) {
-		double oldSalary = salary;
-		salary = newSalary;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.EMPLOYEE_TYPE__SALARY, oldSalary, salary));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -225,10 +141,6 @@ public class EmployeeTypeImpl extends MinimalEObjectImpl.Container implements Em
 				return getType();
 			case HotelManagementClassDiagramPackage.EMPLOYEE_TYPE__ACESS_LEVEL:
 				return getAcessLevel();
-			case HotelManagementClassDiagramPackage.EMPLOYEE_TYPE__WORK_RATE:
-				return getWorkRate();
-			case HotelManagementClassDiagramPackage.EMPLOYEE_TYPE__SALARY:
-				return getSalary();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -246,12 +158,6 @@ public class EmployeeTypeImpl extends MinimalEObjectImpl.Container implements Em
 				return;
 			case HotelManagementClassDiagramPackage.EMPLOYEE_TYPE__ACESS_LEVEL:
 				setAcessLevel((Integer)newValue);
-				return;
-			case HotelManagementClassDiagramPackage.EMPLOYEE_TYPE__WORK_RATE:
-				setWorkRate((Integer)newValue);
-				return;
-			case HotelManagementClassDiagramPackage.EMPLOYEE_TYPE__SALARY:
-				setSalary((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -271,12 +177,6 @@ public class EmployeeTypeImpl extends MinimalEObjectImpl.Container implements Em
 			case HotelManagementClassDiagramPackage.EMPLOYEE_TYPE__ACESS_LEVEL:
 				setAcessLevel(ACESS_LEVEL_EDEFAULT);
 				return;
-			case HotelManagementClassDiagramPackage.EMPLOYEE_TYPE__WORK_RATE:
-				setWorkRate(WORK_RATE_EDEFAULT);
-				return;
-			case HotelManagementClassDiagramPackage.EMPLOYEE_TYPE__SALARY:
-				setSalary(SALARY_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -293,10 +193,6 @@ public class EmployeeTypeImpl extends MinimalEObjectImpl.Container implements Em
 				return type != TYPE_EDEFAULT;
 			case HotelManagementClassDiagramPackage.EMPLOYEE_TYPE__ACESS_LEVEL:
 				return acessLevel != ACESS_LEVEL_EDEFAULT;
-			case HotelManagementClassDiagramPackage.EMPLOYEE_TYPE__WORK_RATE:
-				return workRate != WORK_RATE_EDEFAULT;
-			case HotelManagementClassDiagramPackage.EMPLOYEE_TYPE__SALARY:
-				return salary != SALARY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -315,10 +211,6 @@ public class EmployeeTypeImpl extends MinimalEObjectImpl.Container implements Em
 		result.append(type);
 		result.append(", acessLevel: ");
 		result.append(acessLevel);
-		result.append(", workRate: ");
-		result.append(workRate);
-		result.append(", salary: ");
-		result.append(salary);
 		result.append(')');
 		return result.toString();
 	}

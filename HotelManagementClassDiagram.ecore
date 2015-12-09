@@ -10,6 +10,10 @@
         lowerBound="1" eType="#//EmployeeType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="employeeID" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="workRate" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="salary" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Person" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
@@ -36,10 +40,6 @@
         eType="#//EType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="acessLevel" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="workRate" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="salary" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EType">
     <eLiterals name="Receptionist"/>
@@ -97,17 +97,20 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="paymentMaster" ordered="false"
         lowerBound="1" eType="#//Customer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="discounts" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Discount"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Creditcard">
-    <eOperations name="validate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expirationDate" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cvc" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="owner" ordered="false"
         lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expirationMonth" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expirationDay" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Customer" eSuperTypes="#//Person">
     <eOperations name="addBonusPoints" ordered="false" lowerBound="1">
@@ -129,9 +132,6 @@
         lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Room">
-    <eOperations name="setCleanedStatus" ordered="false" lowerBound="1">
-      <eParameters name="status" ordered="false" lowerBound="1" eType="#//CleaningStatus"/>
-    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomNumber" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" ordered="false" lowerBound="1"
@@ -141,7 +141,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="booked" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxNbrPeople" ordered="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="underCleaning" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="underRepair" ordered="false"
@@ -157,16 +157,16 @@
     <eLiterals name="Single" value="2"/>
     <eLiterals name="Suite" value="3"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="CleaningStatus">
-    <eLiterals name="Clean"/>
-    <eLiterals name="Needcleaning" value="1">
-      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <details key="originalName" value="Need cleaning"/>
-      </eAnnotations>
-    </eLiterals>
-    <eLiterals name="Busy" value="2"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Discount">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPercentage" ordered="false"
+        lowerBound="1" eType="ecore:EDataType types.ecore#//Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="amount" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Bill">
+    <eOperations name="addCostable" ordered="false" lowerBound="1">
+      <eParameters name="costable" ordered="false" lowerBound="1" eType="#//Costable"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="costables" ordered="false"
         lowerBound="1" upperBound="-1" eType="#//Costable"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalPrice" ordered="false"
@@ -177,20 +177,16 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="final" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paid" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Costable" abstract="true" interface="true">
     <eOperations name="addDiscount" ordered="false" lowerBound="1"/>
     <eOperations name="removeDiscount" ordered="false" lowerBound="1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="discount" ordered="false"
-        lowerBound="1" eType="#//Discount"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Discount">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPercentage" ordered="false"
-        lowerBound="1" eType="ecore:EDataType types.ecore#//Boolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="amount" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="discounts" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Discount"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BookingController">
     <eOperations name="searchAvailableRoomTypes" ordered="false" lowerBound="1" upperBound="-1"
@@ -239,12 +235,6 @@
     <eOperations name="registerDiscount" ordered="false" lowerBound="1">
       <eParameters name="discount" ordered="false" lowerBound="1" eType="#//Discount"/>
     </eOperations>
-    <eOperations name="registerCostable" ordered="false" lowerBound="1">
-      <eParameters name="costable" ordered="false" lowerBound="1" eType="#//Costable"/>
-    </eOperations>
-    <eOperations name="updateCostable" ordered="false" lowerBound="1">
-      <eParameters name="costable" ordered="false" lowerBound="1" eType="#//Costable"/>
-    </eOperations>
     <eOperations name="modifyBooking" ordered="false" lowerBound="1">
       <eParameters name="booking" ordered="false" lowerBound="1" eType="#//Booking"/>
     </eOperations>
@@ -254,6 +244,18 @@
       <eParameters name="endDate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
       <eParameters name="priceChange" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     </eOperations>
+    <eOperations name="registerRoom" ordered="false" lowerBound="1">
+      <eParameters name="room" ordered="false" lowerBound="1" eType="#//Room"/>
+    </eOperations>
+    <eOperations name="registerAddon" ordered="false" lowerBound="1">
+      <eParameters name="addon" ordered="false" lowerBound="1" eType="#//Addon"/>
+    </eOperations>
+    <eOperations name="updateRoom" ordered="false" lowerBound="1">
+      <eParameters name="room" ordered="false" lowerBound="1" eType="#//Room"/>
+    </eOperations>
+    <eOperations name="updateAddon" ordered="false" lowerBound="1">
+      <eParameters name="addon" ordered="false" lowerBound="1" eType="#//Addon"/>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MaintenanceController">
     <eOperations name="addToStack" ordered="false" lowerBound="1">
@@ -261,7 +263,7 @@
     </eOperations>
     <eOperations name="setStatus" ordered="false" lowerBound="1">
       <eParameters name="room" ordered="false" lowerBound="1" eType="#//Room"/>
-      <eParameters name="status" ordered="false" lowerBound="1" eType="#//CleaningStatus"/>
+      <eParameters name="status" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eOperations>
     <eOperations name="notifyWorker" ordered="false" lowerBound="1">
       <eParameters name="worker" ordered="false" lowerBound="1" eType="#//EmployeeType"/>

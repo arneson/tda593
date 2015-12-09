@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link HotelManagementClassDiagram.Bill#getCustomer <em>Customer</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Bill#getValueAddedTax <em>Value Added Tax</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Bill#isFinal <em>Final</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Bill#isPaid <em>Paid</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBill()
@@ -146,5 +147,39 @@ public interface Bill extends EObject {
 	 * @generated
 	 */
 	void setFinal(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Paid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Paid</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Paid</em>' attribute.
+	 * @see #setPaid(boolean)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBill_Paid()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isPaid();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Bill#isPaid <em>Paid</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Paid</em>' attribute.
+	 * @see #isPaid()
+	 * @generated
+	 */
+	void setPaid(boolean value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model costableRequired="true" costableOrdered="false"
+	 * @generated
+	 */
+	void addCostable(Costable costable);
 
 } // Bill

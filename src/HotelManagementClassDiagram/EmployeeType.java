@@ -15,8 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link HotelManagementClassDiagram.EmployeeType#getType <em>Type</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.EmployeeType#getAcessLevel <em>Acess Level</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.EmployeeType#getWorkRate <em>Work Rate</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.EmployeeType#getSalary <em>Salary</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getEmployeeType()
@@ -78,57 +76,5 @@ public interface EmployeeType extends EObject {
 	 * @generated
 	 */
 	void setAcessLevel(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Work Rate</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Work Rate</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Rate</em>' attribute.
-	 * @see #setWorkRate(int)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getEmployeeType_WorkRate()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	int getWorkRate();
-
-	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.EmployeeType#getWorkRate <em>Work Rate</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Work Rate</em>' attribute.
-	 * @see #getWorkRate()
-	 * @generated
-	 */
-	void setWorkRate(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Salary</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Salary</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Salary</em>' attribute.
-	 * @see #setSalary(double)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getEmployeeType_Salary()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	double getSalary();
-
-	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.EmployeeType#getSalary <em>Salary</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Salary</em>' attribute.
-	 * @see #getSalary()
-	 * @generated
-	 */
-	void setSalary(double value);
 
 } // EmployeeType

@@ -162,13 +162,15 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setTotalPrice(double newTotalPrice) {
-		double oldTotalPrice = totalPrice;
+		/*double oldTotalPrice = totalPrice;
 		totalPrice = newTotalPrice;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BILL__TOTAL_PRICE, oldTotalPrice, totalPrice));
+		*/
+		throw new UnsupportedOperationException("This method is not implemented and should not be used")
 	}
 
 	/**
@@ -200,13 +202,15 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setCustomer(Customer newCustomer) {
-		Customer oldCustomer = customer;
+		throw new UnsupportedOperationException("This method is not implemented and should not be used");
+		/*Customer oldCustomer = customer;
 		customer = newCustomer;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BILL__CUSTOMER, oldCustomer, customer));
+		*/
 	}
 
 	/**

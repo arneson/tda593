@@ -1,34 +1,38 @@
 ﻿TODO In Model (TIM):
 
 BILL:
-Varför finns en setTotalPrice? Ska detta ej beräknas från costables?
-Ska det gå att sätta customer eller ska detta lösas vid initialisering?
+Varför finns en setTotalPrice? Ska detta ej beräknas från costables? - CHECK
+Ska det gå att sätta customer eller ska detta lösas vid initialisering? - CHECK
 Ska det gå att sätta valuAddedTax?
 hur funkar final?
-måste ha en metod addCostables
+måste ha en metod addCostables - CHECK
 
 CREDITCARD:
-Ska creditcard ha en massa setters?
-Creditcard borde ha Månad och dag istället för Date 
+Ska creditcard ha en massa setters? - CHECK
+Ta bort validate - CHECK
+Creditcard borde ha Månad och dag istället för Date - CHECK
 
 EMPLOYEETYPE:
-Borde inte salary och workrate vara i Employee? Inte i employeetype?
+Borde inte salary och workrate vara i Employee? Inte i employeetype? - CHECK
 
 ROOM:
-Ta bort remove ”setCleanedStatus”
-Varför är ”getMaxNbrOfPeople” en lista?
+Ta bort remove ”setCleanedStatus” - CHECK
+Varför är ”getMaxNbrOfPeople” en lista? - CHECK
+Ta bort remove ”setCleanedStatus” - CHECK
+TA BORT CLEANINGSTATUS - CHECK
+Varför är ”getMaxNbrOfPeople” en lista? - CHECK
 
 BOOKEDROOM:
 Ej extenda ROOM utan istället innehålla ett room.
 	setRoom...
 
 BILL:
-paid boolean som instansvariabel
+paid boolean som instansvariabel - CHECK
 
 BOOKING:
-Lista med discounts
+Lista med discounts - CHECK
 
 COSTABLE:
-Lista med discounts
+Lista med discounts - CHECK
 
 

@@ -28,22 +28,6 @@ public interface ManagementController extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model costableRequired="true" costableOrdered="false"
-	 * @generated
-	 */
-	void registerCostable(Costable costable);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model costableRequired="true" costableOrdered="false"
-	 * @generated
-	 */
-	void updateCostable(Costable costable);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model bookingRequired="true" bookingOrdered="false"
 	 * @generated
 	 */
@@ -56,5 +40,37 @@ public interface ManagementController extends EObject {
 	 * @generated
 	 */
 	void setDateSpecificPrices(Costable costable, Date startDate, Date endDate, double priceChange);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model roomRequired="true" roomOrdered="false"
+	 * @generated
+	 */
+	void registerRoom(Room room);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model addonRequired="true" addonOrdered="false"
+	 * @generated
+	 */
+	void registerAddon(Addon addon);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model roomRequired="true" roomOrdered="false"
+	 * @generated
+	 */
+	void updateRoom(Room room);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model addonRequired="true" addonOrdered="false"
+	 * @generated
+	 */
+	void updateAddon(Addon addon);
 
 } // ManagementController
