@@ -70,9 +70,6 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 */
 	public void updateCostable(Costable costable) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
