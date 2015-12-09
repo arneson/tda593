@@ -72,7 +72,7 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int WORK_RATE_EDEFAULT = 0;
+	protected static final double WORK_RATE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getWorkRate() <em>Work Rate</em>}' attribute.
@@ -82,7 +82,7 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 	 * @generated
 	 * @ordered
 	 */
-	protected int workRate = WORK_RATE_EDEFAULT;
+	protected double workRate = WORK_RATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSalary() <em>Salary</em>}' attribute.
@@ -200,7 +200,7 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getWorkRate() {
+	public double getWorkRate() {
 		return workRate;
 	}
 
@@ -209,8 +209,8 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setWorkRate(int newWorkRate) {
-		int oldWorkRate = workRate;
+	public void setWorkRate(double newWorkRate) {
+		double oldWorkRate = workRate;
 		workRate = newWorkRate;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.EMPLOYEE__WORK_RATE, oldWorkRate, workRate));
@@ -306,7 +306,7 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 				setEmployeeID((Integer)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.EMPLOYEE__WORK_RATE:
-				setWorkRate((Integer)newValue);
+				setWorkRate((Double)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.EMPLOYEE__SALARY:
 				setSalary((Double)newValue);

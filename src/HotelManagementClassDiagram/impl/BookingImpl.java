@@ -2,14 +2,18 @@
  */
 package HotelManagementClassDiagram.impl;
 
+import HotelManagementClassDiagram.Addon;
+import HotelManagementClassDiagram.Bill;
+import HotelManagementClassDiagram.BookedRoom;
+import HotelManagementClassDiagram.Booking;
+import HotelManagementClassDiagram.Creditcard;
+import HotelManagementClassDiagram.Customer;
+import HotelManagementClassDiagram.Discount;
+import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
+import HotelManagementClassDiagram.Room;
 import java.lang.reflect.InvocationTargetException;
-
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
-import java.util.LinkedList;
-
-import HotelManagementClassDiagram.*;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.BasicEList;
@@ -168,7 +172,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Room> bookedRooms;
+	protected EList<BookedRoom> bookedRooms;
 
 	/**
 	 * The default value of the '{@link #getInternalComments() <em>Internal Comments</em>}' attribute.
@@ -478,9 +482,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Room> getBookedRooms() {
+	public EList<BookedRoom> getBookedRooms() {
 		if (bookedRooms == null) {
-			bookedRooms = new EObjectResolvingEList<Room>(Room.class, this, HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS);
+			bookedRooms = new EObjectResolvingEList<BookedRoom>(BookedRoom.class, this, HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS);
 		}
 		return bookedRooms;
 	}
@@ -805,7 +809,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS:
 				getBookedRooms().clear();
-				getBookedRooms().addAll((Collection<? extends Room>)newValue);
+				getBookedRooms().addAll((Collection<? extends BookedRoom>)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__INTERNAL_COMMENTS:
 				setInternalComments((String)newValue);

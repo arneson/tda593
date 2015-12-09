@@ -84,12 +84,12 @@ public interface Employee extends Person {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Work Rate</em>' attribute.
-	 * @see #setWorkRate(int)
+	 * @see #setWorkRate(double)
 	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getEmployee_WorkRate()
-	 * @model required="true" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	int getWorkRate();
+	double getWorkRate();
 
 	/**
 	 * Sets the value of the '{@link HotelManagementClassDiagram.Employee#getWorkRate <em>Work Rate</em>}' attribute.
@@ -99,7 +99,7 @@ public interface Employee extends Person {
 	 * @see #getWorkRate()
 	 * @generated
 	 */
-	void setWorkRate(int value);
+	void setWorkRate(double value);
 
 	/**
 	 * Returns the value of the '<em><b>Salary</b></em>' attribute.

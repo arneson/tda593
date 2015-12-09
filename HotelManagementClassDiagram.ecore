@@ -11,7 +11,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="employeeID" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="workRate" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="salary" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
@@ -86,7 +86,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="addons" ordered="false"
         upperBound="-1" eType="#//Addon"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bookedRooms" ordered="false"
-        lowerBound="1" upperBound="-1" eType="#//Room"/>
+        lowerBound="1" upperBound="-1" eType="#//BookedRoom"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalComments" ordered="false"
         lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="externalComments" ordered="false"
@@ -125,11 +125,24 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rank" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Addon">
+  <eClassifiers xsi:type="ecore:EClass" name="Addon" eSuperTypes="#//Extra"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Extra">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
         eType="ecore:EDataType types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
         lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BookedRoom">
+    <eOperations name="addAddon" ordered="false" lowerBound="1">
+      <eParameters name="addon" ordered="false" lowerBound="1" eType="#//Addon"/>
+    </eOperations>
+    <eOperations name="removeAddon" ordered="false" lowerBound="1">
+      <eParameters name="addon" ordered="false" lowerBound="1" eType="#//Addon"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="addons" ordered="false"
+        upperBound="-1" eType="#//Addon"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" lowerBound="1"
+        eType="#//Room"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Room">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomNumber" ordered="false"
@@ -291,16 +304,6 @@
         lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rank" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BookedRoom" eSuperTypes="#//Room">
-    <eOperations name="addAddon" ordered="false" lowerBound="1">
-      <eParameters name="addon" ordered="false" lowerBound="1" eType="#//Addon"/>
-    </eOperations>
-    <eOperations name="removeAddon" ordered="false" lowerBound="1">
-      <eParameters name="addon" ordered="false" lowerBound="1" eType="#//Addon"/>
-    </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="addons" ordered="false"
-        upperBound="-1" eType="#//Addon"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Interaction1">
     <eStructuralFeatures xsi:type="ecore:EReference" name="_" ordered="false" lowerBound="1"
