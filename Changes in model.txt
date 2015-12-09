@@ -36,3 +36,21 @@ COSTABLE:
 Lista med discounts - CHECK
 
 
+EMPLOYEE:
+Workrate bör vara en double (från 0 till 1 som då representerar %)
+Gender bör vara en enum så man kan lägga till fler osv
+	Med
+		Male
+		Female
+		Other
+
+EXTRA:
+Lägg till extra igen - enda skillnaden mellan denna och addon
+är att extra inte kostar något
+
+BOOKING:
+Listan med bookedRooms bör vara av typen BookedRoom och inte Room
+
+
+
+
