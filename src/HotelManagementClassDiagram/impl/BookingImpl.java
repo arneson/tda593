@@ -996,5 +996,35 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		result.append(')');
 		return result.toString();
 	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + bookingId;
+		return result;
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		BookingImpl other = (BookingImpl) obj;
+		if (bookingId != other.bookingId)
+			return false;
+		return true;
+	}
 
 } //BookingImpl

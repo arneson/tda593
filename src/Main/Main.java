@@ -7,16 +7,62 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * @generated NOT
  */
 public class Main {
-
+	
+	static final String CLI_EXIT_COMMAND= "exit";
+	static final String CLI_HELP_COMMAND= "help";
+	static final String CLI_CHECKIN_COMMAND= "checkin";
+	static final String CLI_CHECKOUT_COMMAND= "checkout";
+	static final String CLI_NEW_CUSTOMER_COMMAND= "new customer";
+	static final String CLI_BOOK_A_ROOM_COMMAND= "book";
+	static final String CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND= "browse available";
+	
 	public static void main(String[] args) {
         // Generate the fake data for testing
 		generateFakeData();
-
+		
+		Scanner reader = new Scanner(System.in);
+		String command ="";
+		do{
+			System.out.println("Welcome to C-R-A-P hotels.");
+			switch(command){
+				case CLI_HELP_COMMAND:
+					System.out.println();
+					System.out.println("HELP - List of commands.");
+					System.out.println("##########################");
+					System.out.println("exit - exit the program");
+					System.out.println("help - show list of commands");
+					System.out.println(CLI_CHECKIN_COMMAND+" - check in a booking");
+					System.out.println(CLI_CHECKOUT_COMMAND+" - check out a booking");
+					System.out.println(CLI_NEW_CUSTOMER_COMMAND+" - create a new customer");
+					System.out.println(CLI_BOOK_A_ROOM_COMMAND+" - book a room");
+					System.out.println(CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND+" - browse available room types");
+					System.out.println();
+					System.out.println("Choose an option: ");
+					break;
+				case CLI_CHECKIN_COMMAND:
+					break;
+				case CLI_CHECKOUT_COMMAND:
+					break;
+				case CLI_NEW_CUSTOMER_COMMAND:
+					break;
+				case CLI_BOOK_A_ROOM_COMMAND:
+					break;
+				case CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND:
+					break;
+				default:
+					System.out.println("Enter "+CLI_HELP_COMMAND+" for a list of commands.");
+					System.out.println("Enter " + CLI_EXIT_COMMAND + " to exit.");
+					System.out.println("Choose an option: ");
+					break;
+			}
+			command = reader.nextLine();
+		}while(!command.equalsIgnoreCase(CLI_EXIT_COMMAND));
 
 	}
 

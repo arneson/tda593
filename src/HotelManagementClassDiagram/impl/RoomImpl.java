@@ -475,7 +475,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				setBooked((Boolean)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.ROOM__MAX_NBR_PEOPLE:
-				setMaxNbrPeople((Integer) newValue);
+				setMaxNbrPeople((Integer)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.ROOM__UNDER_CLEANING:
 				setUnderCleaning((Boolean)newValue);
@@ -485,7 +485,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return;
 			case HotelManagementClassDiagramPackage.ROOM__TYPES:
 				getTypes().clear();
-				getTypes().addAll((Collection<? extends RoomType>) newValue);
+				getTypes().addAll((Collection<? extends RoomType>)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.ROOM__ROOM_NAME:
 				setRoomName((String)newValue);
@@ -594,5 +594,36 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		result.append(')');
 		return result.toString();
 	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + roomNumber;
+		return result;
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		RoomImpl other = (RoomImpl) obj;
+		if (roomNumber != other.roomNumber)
+			return false;
+		return true;
+	}
+	
 
 } //RoomImpl
