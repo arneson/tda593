@@ -1,4 +1,4 @@
-﻿TODO In Model (TIM):
+TODO In Model (TIM):
 
 BILL:
 Varför finns en setTotalPrice? Ska detta ej beräknas från costables? - CHECK
@@ -50,6 +50,15 @@ Lägg till extra igen - enda skillnaden mellan denna och addon
 
 BOOKING:
 Listan med bookedRooms bör vara av typen BookedRoom och inte Room
+
+BOOKINGCONTROLLER:
+sendConfirmation, ska den finnas? Ta bort!
+confirm vad ska denna göra?
+checkIn hur funkar den?
+checkOut hur funkar den?
+createKeyCard? ska den finnas? Ta bort!
+findCustomer är void, bör returnera en customer.
+assignRoom, hur ska den funka?
 
 
 
