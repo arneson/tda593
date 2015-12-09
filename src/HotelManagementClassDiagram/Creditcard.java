@@ -2,8 +2,6 @@
  */
 package HotelManagementClassDiagram;
 
-import java.util.Date;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,9 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link HotelManagementClassDiagram.Creditcard#getNumber <em>Number</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Creditcard#getExpirationDate <em>Expiration Date</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Creditcard#getCvc <em>Cvc</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Creditcard#getOwner <em>Owner</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Creditcard#getExpirationMonth <em>Expiration Month</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Creditcard#getExpirationDay <em>Expiration Day</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getCreditcard()
@@ -51,32 +50,6 @@ public interface Creditcard extends EObject {
 	 * @generated
 	 */
 	void setNumber(long value);
-
-	/**
-	 * Returns the value of the '<em><b>Expiration Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Expiration Date</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Expiration Date</em>' attribute.
-	 * @see #setExpirationDate(Date)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getCreditcard_ExpirationDate()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	Date getExpirationDate();
-
-	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Creditcard#getExpirationDate <em>Expiration Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Expiration Date</em>' attribute.
-	 * @see #getExpirationDate()
-	 * @generated
-	 */
-	void setExpirationDate(Date value);
 
 	/**
 	 * Returns the value of the '<em><b>Cvc</b></em>' attribute.
@@ -131,11 +104,55 @@ public interface Creditcard extends EObject {
 	void setOwner(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Expiration Month</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Expiration Month</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Expiration Month</em>' attribute.
+	 * @see #setExpirationMonth(int)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getCreditcard_ExpirationMonth()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	boolean validate();
+	int getExpirationMonth();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Creditcard#getExpirationMonth <em>Expiration Month</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Expiration Month</em>' attribute.
+	 * @see #getExpirationMonth()
+	 * @generated
+	 */
+	void setExpirationMonth(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Expiration Day</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Expiration Day</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Expiration Day</em>' attribute.
+	 * @see #setExpirationDay(int)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getCreditcard_ExpirationDay()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	int getExpirationDay();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Creditcard#getExpirationDay <em>Expiration Day</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Expiration Day</em>' attribute.
+	 * @see #getExpirationDay()
+	 * @generated
+	 */
+	void setExpirationDay(int value);
 
 } // Creditcard

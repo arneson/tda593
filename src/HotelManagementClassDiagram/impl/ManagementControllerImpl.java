@@ -2,11 +2,13 @@
  */
 package HotelManagementClassDiagram.impl;
 
+import HotelManagementClassDiagram.Addon;
 import HotelManagementClassDiagram.Booking;
 import HotelManagementClassDiagram.Costable;
 import HotelManagementClassDiagram.Discount;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.ManagementController;
+import HotelManagementClassDiagram.Room;
 import Main.FakeDB;
 
 import java.lang.reflect.InvocationTargetException;
@@ -58,23 +60,6 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated 
-	 */
-	public void registerCostable(Costable costable) {
-		FakeDB.costables.add(costable);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void updateCostable(Costable costable) {
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public void modifyBooking(Booking booking) {
@@ -102,23 +87,73 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void registerRoom(Room room) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void registerAddon(Addon addon) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void updateRoom(Room room) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void updateAddon(Addon addon) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___REGISTER_DISCOUNT__DISCOUNT:
 				registerDiscount((Discount)arguments.get(0));
 				return null;
-			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___REGISTER_COSTABLE__COSTABLE:
-				registerCostable((Costable)arguments.get(0));
-				return null;
-			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___UPDATE_COSTABLE__COSTABLE:
-				updateCostable((Costable)arguments.get(0));
-				return null;
 			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___MODIFY_BOOKING__BOOKING:
 				modifyBooking((Booking)arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___SET_DATE_SPECIFIC_PRICES__COSTABLE_DATE_DATE_DOUBLE:
 				setDateSpecificPrices((Costable)arguments.get(0), (Date)arguments.get(1), (Date)arguments.get(2), (Double)arguments.get(3));
+				return null;
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___REGISTER_ROOM__ROOM:
+				registerRoom((Room)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___REGISTER_ADDON__ADDON:
+				registerAddon((Addon)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___UPDATE_ROOM__ROOM:
+				updateRoom((Room)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___UPDATE_ADDON__ADDON:
+				updateAddon((Addon)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

@@ -277,13 +277,31 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int EMPLOYEE__EMPLOYEE_ID = PERSON_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Work Rate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPLOYEE__WORK_RATE = PERSON_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Salary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPLOYEE__SALARY = PERSON_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Employee</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYEE_FEATURE_COUNT = PERSON_FEATURE_COUNT + 2;
+	int EMPLOYEE_FEATURE_COUNT = PERSON_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Booking</em>' operation.
@@ -350,31 +368,13 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int EMPLOYEE_TYPE__ACESS_LEVEL = 1;
 
 	/**
-	 * The feature id for the '<em><b>Work Rate</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPLOYEE_TYPE__WORK_RATE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Salary</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPLOYEE_TYPE__SALARY = 3;
-
-	/**
 	 * The number of structural features of the '<em>Employee Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYEE_TYPE_FEATURE_COUNT = 4;
+	int EMPLOYEE_TYPE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Employee Type</em>' class.
@@ -513,13 +513,22 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int BOOKING__PAYMENT_MASTER = 12;
 
 	/**
+	 * The feature id for the '<em><b>Discounts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__DISCOUNTS = 13;
+
+	/**
 	 * The number of structural features of the '<em>Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_FEATURE_COUNT = 13;
+	int BOOKING_FEATURE_COUNT = 14;
 
 	/**
 	 * The operation id for the '<em>Check In</em>' operation.
@@ -640,22 +649,13 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int CREDITCARD__NUMBER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Expiration Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDITCARD__EXPIRATION_DATE = 1;
-
-	/**
 	 * The feature id for the '<em><b>Cvc</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREDITCARD__CVC = 2;
+	int CREDITCARD__CVC = 1;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' attribute.
@@ -664,7 +664,25 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDITCARD__OWNER = 3;
+	int CREDITCARD__OWNER = 2;
+
+	/**
+	 * The feature id for the '<em><b>Expiration Month</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDITCARD__EXPIRATION_MONTH = 3;
+
+	/**
+	 * The feature id for the '<em><b>Expiration Day</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDITCARD__EXPIRATION_DAY = 4;
 
 	/**
 	 * The number of structural features of the '<em>Creditcard</em>' class.
@@ -673,16 +691,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDITCARD_FEATURE_COUNT = 4;
-
-	/**
-	 * The operation id for the '<em>Validate</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDITCARD___VALIDATE = 0;
+	int CREDITCARD_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Creditcard</em>' class.
@@ -691,7 +700,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDITCARD_OPERATION_COUNT = 1;
+	int CREDITCARD_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.CustomerImpl <em>Customer</em>}' class.
@@ -940,7 +949,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int ROOM__BOOKED = 3;
 
 	/**
-	 * The feature id for the '<em><b>Max Nbr People</b></em>' attribute list.
+	 * The feature id for the '<em><b>Max Nbr People</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -994,22 +1003,13 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int ROOM_FEATURE_COUNT = 9;
 
 	/**
-	 * The operation id for the '<em>Set Cleaned Status</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM___SET_CLEANED_STATUS__CLEANINGSTATUS = 0;
-
-	/**
 	 * The number of operations of the '<em>Room</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_OPERATION_COUNT = 1;
+	int ROOM_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.BillImpl <em>Bill</em>}' class.
@@ -1019,7 +1019,63 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getBill()
 	 * @generated
 	 */
-	int BILL = 8;
+	int BILL = 9;
+
+	/**
+	 * The meta object id for the '{@link HotelManagementClassDiagram.Costable <em>Costable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see HotelManagementClassDiagram.Costable
+	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getCostable()
+	 * @generated
+	 */
+	int COSTABLE = 10;
+
+	/**
+	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.DiscountImpl <em>Discount</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see HotelManagementClassDiagram.impl.DiscountImpl
+	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getDiscount()
+	 * @generated
+	 */
+	int DISCOUNT = 8;
+
+	/**
+	 * The feature id for the '<em><b>Is Percentage</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCOUNT__IS_PERCENTAGE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Amount</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCOUNT__AMOUNT = 1;
+
+	/**
+	 * The number of structural features of the '<em>Discount</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCOUNT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Discount</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCOUNT_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Costables</b></em>' reference list.
@@ -1067,13 +1123,31 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int BILL__FINAL = 4;
 
 	/**
+	 * The feature id for the '<em><b>Paid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL__PAID = 5;
+
+	/**
 	 * The number of structural features of the '<em>Bill</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_FEATURE_COUNT = 5;
+	int BILL_FEATURE_COUNT = 6;
+
+	/**
+	 * The operation id for the '<em>Add Costable</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL___ADD_COSTABLE__COSTABLE = 0;
 
 	/**
 	 * The number of operations of the '<em>Bill</em>' class.
@@ -1082,17 +1156,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link HotelManagementClassDiagram.Costable <em>Costable</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see HotelManagementClassDiagram.Costable
-	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getCostable()
-	 * @generated
-	 */
-	int COSTABLE = 9;
+	int BILL_OPERATION_COUNT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Price</b></em>' attribute.
@@ -1104,13 +1168,13 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int COSTABLE__PRICE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Discount</b></em>' reference.
+	 * The feature id for the '<em><b>Discounts</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COSTABLE__DISCOUNT = 1;
+	int COSTABLE__DISCOUNTS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Costable</em>' class.
@@ -1147,52 +1211,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int COSTABLE_OPERATION_COUNT = 2;
-
-	/**
-	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.DiscountImpl <em>Discount</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see HotelManagementClassDiagram.impl.DiscountImpl
-	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getDiscount()
-	 * @generated
-	 */
-	int DISCOUNT = 10;
-
-	/**
-	 * The feature id for the '<em><b>Is Percentage</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT__IS_PERCENTAGE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Amount</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT__AMOUNT = 1;
-
-	/**
-	 * The number of structural features of the '<em>Discount</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Discount</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.BookingControllerImpl <em>Booking Controller</em>}' class.
@@ -1359,31 +1377,13 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int MANAGEMENT_CONTROLLER___REGISTER_DISCOUNT__DISCOUNT = 0;
 
 	/**
-	 * The operation id for the '<em>Register Costable</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGEMENT_CONTROLLER___REGISTER_COSTABLE__COSTABLE = 1;
-
-	/**
-	 * The operation id for the '<em>Update Costable</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGEMENT_CONTROLLER___UPDATE_COSTABLE__COSTABLE = 2;
-
-	/**
 	 * The operation id for the '<em>Modify Booking</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGEMENT_CONTROLLER___MODIFY_BOOKING__BOOKING = 3;
+	int MANAGEMENT_CONTROLLER___MODIFY_BOOKING__BOOKING = 1;
 
 	/**
 	 * The operation id for the '<em>Set Date Specific Prices</em>' operation.
@@ -1392,7 +1392,43 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGEMENT_CONTROLLER___SET_DATE_SPECIFIC_PRICES__COSTABLE_DATE_DATE_DOUBLE = 4;
+	int MANAGEMENT_CONTROLLER___SET_DATE_SPECIFIC_PRICES__COSTABLE_DATE_DATE_DOUBLE = 2;
+
+	/**
+	 * The operation id for the '<em>Register Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGEMENT_CONTROLLER___REGISTER_ROOM__ROOM = 3;
+
+	/**
+	 * The operation id for the '<em>Register Addon</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGEMENT_CONTROLLER___REGISTER_ADDON__ADDON = 4;
+
+	/**
+	 * The operation id for the '<em>Update Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGEMENT_CONTROLLER___UPDATE_ROOM__ROOM = 5;
+
+	/**
+	 * The operation id for the '<em>Update Addon</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGEMENT_CONTROLLER___UPDATE_ADDON__ADDON = 6;
 
 	/**
 	 * The number of operations of the '<em>Management Controller</em>' class.
@@ -1401,7 +1437,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGEMENT_CONTROLLER_OPERATION_COUNT = 5;
+	int MANAGEMENT_CONTROLLER_OPERATION_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.MaintenanceControllerImpl <em>Maintenance Controller</em>}' class.
@@ -1447,7 +1483,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAINTENANCE_CONTROLLER___SET_STATUS__ROOM_CLEANINGSTATUS = 1;
+	int MAINTENANCE_CONTROLLER___SET_STATUS__ROOM_BOOLEAN = 1;
 
 	/**
 	 * The operation id for the '<em>Notify Worker</em>' operation.
@@ -1623,7 +1659,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int BOOKED_ROOM__BOOKED = ROOM__BOOKED;
 
 	/**
-	 * The feature id for the '<em><b>Max Nbr People</b></em>' attribute list.
+	 * The feature id for the '<em><b>Max Nbr People</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1684,15 +1720,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOKED_ROOM_FEATURE_COUNT = ROOM_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Set Cleaned Status</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKED_ROOM___SET_CLEANED_STATUS__CLEANINGSTATUS = ROOM___SET_CLEANED_STATUS__CLEANINGSTATUS;
 
 	/**
 	 * The operation id for the '<em>Add Addon</em>' operation.
@@ -1927,17 +1954,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int ROOM_TYPE = 22;
 
 	/**
-	 * The meta object id for the '{@link HotelManagementClassDiagram.CleaningStatus <em>Cleaning Status</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see HotelManagementClassDiagram.CleaningStatus
-	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getCleaningStatus()
-	 * @generated
-	 */
-	int CLEANING_STATUS = 23;
-
-
-	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Employee <em>Employee</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1968,6 +1984,28 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEmployee_EmployeeID();
+
+	/**
+	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Employee#getWorkRate <em>Work Rate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Work Rate</em>'.
+	 * @see HotelManagementClassDiagram.Employee#getWorkRate()
+	 * @see #getEmployee()
+	 * @generated
+	 */
+	EAttribute getEmployee_WorkRate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Employee#getSalary <em>Salary</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Salary</em>'.
+	 * @see HotelManagementClassDiagram.Employee#getSalary()
+	 * @see #getEmployee()
+	 * @generated
+	 */
+	EAttribute getEmployee_Salary();
 
 	/**
 	 * Returns the meta object for the '{@link HotelManagementClassDiagram.Employee#Booking() <em>Booking</em>}' operation.
@@ -2141,28 +2179,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EAttribute getEmployeeType_AcessLevel();
 
 	/**
-	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.EmployeeType#getWorkRate <em>Work Rate</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Work Rate</em>'.
-	 * @see HotelManagementClassDiagram.EmployeeType#getWorkRate()
-	 * @see #getEmployeeType()
-	 * @generated
-	 */
-	EAttribute getEmployeeType_WorkRate();
-
-	/**
-	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.EmployeeType#getSalary <em>Salary</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Salary</em>'.
-	 * @see HotelManagementClassDiagram.EmployeeType#getSalary()
-	 * @see #getEmployeeType()
-	 * @generated
-	 */
-	EAttribute getEmployeeType_Salary();
-
-	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Booking <em>Booking</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2316,6 +2332,17 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EReference getBooking_PaymentMaster();
 
 	/**
+	 * Returns the meta object for the reference list '{@link HotelManagementClassDiagram.Booking#getDiscounts <em>Discounts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Discounts</em>'.
+	 * @see HotelManagementClassDiagram.Booking#getDiscounts()
+	 * @see #getBooking()
+	 * @generated
+	 */
+	EReference getBooking_Discounts();
+
+	/**
 	 * Returns the meta object for the '{@link HotelManagementClassDiagram.Booking#checkIn() <em>Check In</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2437,17 +2464,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EAttribute getCreditcard_Number();
 
 	/**
-	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Creditcard#getExpirationDate <em>Expiration Date</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Expiration Date</em>'.
-	 * @see HotelManagementClassDiagram.Creditcard#getExpirationDate()
-	 * @see #getCreditcard()
-	 * @generated
-	 */
-	EAttribute getCreditcard_ExpirationDate();
-
-	/**
 	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Creditcard#getCvc <em>Cvc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2470,14 +2486,26 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EAttribute getCreditcard_Owner();
 
 	/**
-	 * Returns the meta object for the '{@link HotelManagementClassDiagram.Creditcard#validate() <em>Validate</em>}' operation.
+	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Creditcard#getExpirationMonth <em>Expiration Month</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Validate</em>' operation.
-	 * @see HotelManagementClassDiagram.Creditcard#validate()
+	 * @return the meta object for the attribute '<em>Expiration Month</em>'.
+	 * @see HotelManagementClassDiagram.Creditcard#getExpirationMonth()
+	 * @see #getCreditcard()
 	 * @generated
 	 */
-	EOperation getCreditcard__Validate();
+	EAttribute getCreditcard_ExpirationMonth();
+
+	/**
+	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Creditcard#getExpirationDay <em>Expiration Day</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Expiration Day</em>'.
+	 * @see HotelManagementClassDiagram.Creditcard#getExpirationDay()
+	 * @see #getCreditcard()
+	 * @generated
+	 */
+	EAttribute getCreditcard_ExpirationDay();
 
 	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Customer <em>Customer</em>}'.
@@ -2630,10 +2658,10 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EAttribute getRoom_Booked();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link HotelManagementClassDiagram.Room#getMaxNbrPeople <em>Max Nbr People</em>}'.
+	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Room#getMaxNbrPeople <em>Max Nbr People</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Max Nbr People</em>'.
+	 * @return the meta object for the attribute '<em>Max Nbr People</em>'.
 	 * @see HotelManagementClassDiagram.Room#getMaxNbrPeople()
 	 * @see #getRoom()
 	 * @generated
@@ -2683,16 +2711,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRoom_RoomName();
-
-	/**
-	 * Returns the meta object for the '{@link HotelManagementClassDiagram.Room#setCleanedStatus(HotelManagementClassDiagram.CleaningStatus) <em>Set Cleaned Status</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Set Cleaned Status</em>' operation.
-	 * @see HotelManagementClassDiagram.Room#setCleanedStatus(HotelManagementClassDiagram.CleaningStatus)
-	 * @generated
-	 */
-	EOperation getRoom__SetCleanedStatus__CleaningStatus();
 
 	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Bill <em>Bill</em>}'.
@@ -2760,6 +2778,27 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EAttribute getBill_Final();
 
 	/**
+	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Bill#isPaid <em>Paid</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Paid</em>'.
+	 * @see HotelManagementClassDiagram.Bill#isPaid()
+	 * @see #getBill()
+	 * @generated
+	 */
+	EAttribute getBill_Paid();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.Bill#addCostable(HotelManagementClassDiagram.Costable) <em>Add Costable</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Costable</em>' operation.
+	 * @see HotelManagementClassDiagram.Bill#addCostable(HotelManagementClassDiagram.Costable)
+	 * @generated
+	 */
+	EOperation getBill__AddCostable__Costable();
+
+	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Costable <em>Costable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2781,15 +2820,15 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EAttribute getCostable_Price();
 
 	/**
-	 * Returns the meta object for the reference '{@link HotelManagementClassDiagram.Costable#getDiscount <em>Discount</em>}'.
+	 * Returns the meta object for the reference list '{@link HotelManagementClassDiagram.Costable#getDiscounts <em>Discounts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Discount</em>'.
-	 * @see HotelManagementClassDiagram.Costable#getDiscount()
+	 * @return the meta object for the reference list '<em>Discounts</em>'.
+	 * @see HotelManagementClassDiagram.Costable#getDiscounts()
 	 * @see #getCostable()
 	 * @generated
 	 */
-	EReference getCostable_Discount();
+	EReference getCostable_Discounts();
 
 	/**
 	 * Returns the meta object for the '{@link HotelManagementClassDiagram.Costable#addDiscount() <em>Add Discount</em>}' operation.
@@ -2994,26 +3033,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EOperation getManagementController__RegisterDiscount__Discount();
 
 	/**
-	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#registerCostable(HotelManagementClassDiagram.Costable) <em>Register Costable</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Register Costable</em>' operation.
-	 * @see HotelManagementClassDiagram.ManagementController#registerCostable(HotelManagementClassDiagram.Costable)
-	 * @generated
-	 */
-	EOperation getManagementController__RegisterCostable__Costable();
-
-	/**
-	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#updateCostable(HotelManagementClassDiagram.Costable) <em>Update Costable</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Update Costable</em>' operation.
-	 * @see HotelManagementClassDiagram.ManagementController#updateCostable(HotelManagementClassDiagram.Costable)
-	 * @generated
-	 */
-	EOperation getManagementController__UpdateCostable__Costable();
-
-	/**
 	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#modifyBooking(HotelManagementClassDiagram.Booking) <em>Modify Booking</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3032,6 +3051,46 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getManagementController__SetDateSpecificPrices__Costable_Date_Date_double();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#registerRoom(HotelManagementClassDiagram.Room) <em>Register Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Register Room</em>' operation.
+	 * @see HotelManagementClassDiagram.ManagementController#registerRoom(HotelManagementClassDiagram.Room)
+	 * @generated
+	 */
+	EOperation getManagementController__RegisterRoom__Room();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#registerAddon(HotelManagementClassDiagram.Addon) <em>Register Addon</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Register Addon</em>' operation.
+	 * @see HotelManagementClassDiagram.ManagementController#registerAddon(HotelManagementClassDiagram.Addon)
+	 * @generated
+	 */
+	EOperation getManagementController__RegisterAddon__Addon();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#updateRoom(HotelManagementClassDiagram.Room) <em>Update Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Update Room</em>' operation.
+	 * @see HotelManagementClassDiagram.ManagementController#updateRoom(HotelManagementClassDiagram.Room)
+	 * @generated
+	 */
+	EOperation getManagementController__UpdateRoom__Room();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#updateAddon(HotelManagementClassDiagram.Addon) <em>Update Addon</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Update Addon</em>' operation.
+	 * @see HotelManagementClassDiagram.ManagementController#updateAddon(HotelManagementClassDiagram.Addon)
+	 * @generated
+	 */
+	EOperation getManagementController__UpdateAddon__Addon();
 
 	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.MaintenanceController <em>Maintenance Controller</em>}'.
@@ -3065,14 +3124,14 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EOperation getMaintenanceController__AddToStack__Room();
 
 	/**
-	 * Returns the meta object for the '{@link HotelManagementClassDiagram.MaintenanceController#setStatus(HotelManagementClassDiagram.Room, HotelManagementClassDiagram.CleaningStatus) <em>Set Status</em>}' operation.
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.MaintenanceController#setStatus(HotelManagementClassDiagram.Room, boolean) <em>Set Status</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Set Status</em>' operation.
-	 * @see HotelManagementClassDiagram.MaintenanceController#setStatus(HotelManagementClassDiagram.Room, HotelManagementClassDiagram.CleaningStatus)
+	 * @see HotelManagementClassDiagram.MaintenanceController#setStatus(HotelManagementClassDiagram.Room, boolean)
 	 * @generated
 	 */
-	EOperation getMaintenanceController__SetStatus__Room_CleaningStatus();
+	EOperation getMaintenanceController__SetStatus__Room_boolean();
 
 	/**
 	 * Returns the meta object for the '{@link HotelManagementClassDiagram.MaintenanceController#notifyWorker(HotelManagementClassDiagram.EmployeeType) <em>Notify Worker</em>}' operation.
@@ -3354,16 +3413,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EEnum getRoomType();
 
 	/**
-	 * Returns the meta object for enum '{@link HotelManagementClassDiagram.CleaningStatus <em>Cleaning Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Cleaning Status</em>'.
-	 * @see HotelManagementClassDiagram.CleaningStatus
-	 * @generated
-	 */
-	EEnum getCleaningStatus();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3411,6 +3460,22 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EMPLOYEE__EMPLOYEE_ID = eINSTANCE.getEmployee_EmployeeID();
+
+		/**
+		 * The meta object literal for the '<em><b>Work Rate</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EMPLOYEE__WORK_RATE = eINSTANCE.getEmployee_WorkRate();
+
+		/**
+		 * The meta object literal for the '<em><b>Salary</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EMPLOYEE__SALARY = eINSTANCE.getEmployee_Salary();
 
 		/**
 		 * The meta object literal for the '<em><b>Booking</b></em>' operation.
@@ -3545,22 +3610,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EAttribute EMPLOYEE_TYPE__ACESS_LEVEL = eINSTANCE.getEmployeeType_AcessLevel();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Rate</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EMPLOYEE_TYPE__WORK_RATE = eINSTANCE.getEmployeeType_WorkRate();
-
-		/**
-		 * The meta object literal for the '<em><b>Salary</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EMPLOYEE_TYPE__SALARY = eINSTANCE.getEmployeeType_Salary();
-
-		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.BookingImpl <em>Booking</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3675,6 +3724,14 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EReference BOOKING__PAYMENT_MASTER = eINSTANCE.getBooking_PaymentMaster();
 
 		/**
+		 * The meta object literal for the '<em><b>Discounts</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOOKING__DISCOUNTS = eINSTANCE.getBooking_Discounts();
+
+		/**
 		 * The meta object literal for the '<em><b>Check In</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3773,14 +3830,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EAttribute CREDITCARD__NUMBER = eINSTANCE.getCreditcard_Number();
 
 		/**
-		 * The meta object literal for the '<em><b>Expiration Date</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CREDITCARD__EXPIRATION_DATE = eINSTANCE.getCreditcard_ExpirationDate();
-
-		/**
 		 * The meta object literal for the '<em><b>Cvc</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3797,12 +3846,20 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EAttribute CREDITCARD__OWNER = eINSTANCE.getCreditcard_Owner();
 
 		/**
-		 * The meta object literal for the '<em><b>Validate</b></em>' operation.
+		 * The meta object literal for the '<em><b>Expiration Month</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CREDITCARD___VALIDATE = eINSTANCE.getCreditcard__Validate();
+		EAttribute CREDITCARD__EXPIRATION_MONTH = eINSTANCE.getCreditcard_ExpirationMonth();
+
+		/**
+		 * The meta object literal for the '<em><b>Expiration Day</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CREDITCARD__EXPIRATION_DAY = eINSTANCE.getCreditcard_ExpirationDay();
 
 		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.CustomerImpl <em>Customer</em>}' class.
@@ -3923,7 +3980,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EAttribute ROOM__BOOKED = eINSTANCE.getRoom_Booked();
 
 		/**
-		 * The meta object literal for the '<em><b>Max Nbr People</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Max Nbr People</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3961,14 +4018,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROOM__ROOM_NAME = eINSTANCE.getRoom_RoomName();
-
-		/**
-		 * The meta object literal for the '<em><b>Set Cleaned Status</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ROOM___SET_CLEANED_STATUS__CLEANINGSTATUS = eINSTANCE.getRoom__SetCleanedStatus__CleaningStatus();
 
 		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.BillImpl <em>Bill</em>}' class.
@@ -4021,6 +4070,22 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EAttribute BILL__FINAL = eINSTANCE.getBill_Final();
 
 		/**
+		 * The meta object literal for the '<em><b>Paid</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BILL__PAID = eINSTANCE.getBill_Paid();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Costable</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL___ADD_COSTABLE__COSTABLE = eINSTANCE.getBill__AddCostable__Costable();
+
+		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.Costable <em>Costable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4039,12 +4104,12 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EAttribute COSTABLE__PRICE = eINSTANCE.getCostable_Price();
 
 		/**
-		 * The meta object literal for the '<em><b>Discount</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Discounts</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COSTABLE__DISCOUNT = eINSTANCE.getCostable_Discount();
+		EReference COSTABLE__DISCOUNTS = eINSTANCE.getCostable_Discounts();
 
 		/**
 		 * The meta object literal for the '<em><b>Add Discount</b></em>' operation.
@@ -4213,22 +4278,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EOperation MANAGEMENT_CONTROLLER___REGISTER_DISCOUNT__DISCOUNT = eINSTANCE.getManagementController__RegisterDiscount__Discount();
 
 		/**
-		 * The meta object literal for the '<em><b>Register Costable</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MANAGEMENT_CONTROLLER___REGISTER_COSTABLE__COSTABLE = eINSTANCE.getManagementController__RegisterCostable__Costable();
-
-		/**
-		 * The meta object literal for the '<em><b>Update Costable</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MANAGEMENT_CONTROLLER___UPDATE_COSTABLE__COSTABLE = eINSTANCE.getManagementController__UpdateCostable__Costable();
-
-		/**
 		 * The meta object literal for the '<em><b>Modify Booking</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4243,6 +4292,38 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation MANAGEMENT_CONTROLLER___SET_DATE_SPECIFIC_PRICES__COSTABLE_DATE_DATE_DOUBLE = eINSTANCE.getManagementController__SetDateSpecificPrices__Costable_Date_Date_double();
+
+		/**
+		 * The meta object literal for the '<em><b>Register Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MANAGEMENT_CONTROLLER___REGISTER_ROOM__ROOM = eINSTANCE.getManagementController__RegisterRoom__Room();
+
+		/**
+		 * The meta object literal for the '<em><b>Register Addon</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MANAGEMENT_CONTROLLER___REGISTER_ADDON__ADDON = eINSTANCE.getManagementController__RegisterAddon__Addon();
+
+		/**
+		 * The meta object literal for the '<em><b>Update Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MANAGEMENT_CONTROLLER___UPDATE_ROOM__ROOM = eINSTANCE.getManagementController__UpdateRoom__Room();
+
+		/**
+		 * The meta object literal for the '<em><b>Update Addon</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MANAGEMENT_CONTROLLER___UPDATE_ADDON__ADDON = eINSTANCE.getManagementController__UpdateAddon__Addon();
 
 		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.MaintenanceControllerImpl <em>Maintenance Controller</em>}' class.
@@ -4276,7 +4357,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MAINTENANCE_CONTROLLER___SET_STATUS__ROOM_CLEANINGSTATUS = eINSTANCE.getMaintenanceController__SetStatus__Room_CleaningStatus();
+		EOperation MAINTENANCE_CONTROLLER___SET_STATUS__ROOM_BOOLEAN = eINSTANCE.getMaintenanceController__SetStatus__Room_boolean();
 
 		/**
 		 * The meta object literal for the '<em><b>Notify Worker</b></em>' operation.
@@ -4511,16 +4592,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ROOM_TYPE = eINSTANCE.getRoomType();
-
-		/**
-		 * The meta object literal for the '{@link HotelManagementClassDiagram.CleaningStatus <em>Cleaning Status</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see HotelManagementClassDiagram.CleaningStatus
-		 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getCleaningStatus()
-		 * @generated
-		 */
-		EEnum CLEANING_STATUS = eINSTANCE.getCleaningStatus();
 
 	}
 

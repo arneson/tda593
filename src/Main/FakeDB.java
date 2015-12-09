@@ -8,6 +8,9 @@ import HotelManagementClassDiagram.Discount;
 import HotelManagementClassDiagram.Employee;
 import HotelManagementClassDiagram.Room;
 
+/**
+ * @generated NOT
+ */
 public class FakeDB {
 	public static ArrayList<Booking> bookings;
 	public static ArrayList<Room> rooms;

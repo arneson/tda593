@@ -136,20 +136,30 @@ public interface Room extends EObject {
 	void setBooked(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Max Nbr People</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Integer}.
+	 * Returns the value of the '<em><b>Max Nbr People</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Max Nbr People</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Max Nbr People</em>' attribute list.
+	 * @return the value of the '<em>Max Nbr People</em>' attribute.
+	 * @see #setMaxNbrPeople(int)
 	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_MaxNbrPeople()
-	 * @model ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	EList<Integer> getMaxNbrPeople();
+	int getMaxNbrPeople();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Room#getMaxNbrPeople <em>Max Nbr People</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Nbr People</em>' attribute.
+	 * @see #getMaxNbrPeople()
+	 * @generated
+	 */
+	void setMaxNbrPeople(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Under Cleaning</b></em>' attribute.
@@ -246,13 +256,5 @@ public interface Room extends EObject {
 	 * @generated
 	 */
 	void setRoomName(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model statusRequired="true" statusOrdered="false"
-	 * @generated
-	 */
-	void setCleanedStatus(CleaningStatus status);
 
 } // Room

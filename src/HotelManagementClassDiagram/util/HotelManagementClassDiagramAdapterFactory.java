@@ -100,16 +100,16 @@ public class HotelManagementClassDiagramAdapterFactory extends AdapterFactoryImp
 				return createRoomAdapter();
 			}
 			@Override
+			public Adapter caseDiscount(Discount object) {
+				return createDiscountAdapter();
+			}
+			@Override
 			public Adapter caseBill(Bill object) {
 				return createBillAdapter();
 			}
 			@Override
 			public Adapter caseCostable(Costable object) {
 				return createCostableAdapter();
-			}
-			@Override
-			public Adapter caseDiscount(Discount object) {
-				return createDiscountAdapter();
 			}
 			@Override
 			public Adapter caseBookingController(BookingController object) {

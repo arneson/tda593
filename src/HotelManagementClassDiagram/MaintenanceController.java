@@ -53,7 +53,7 @@ public interface MaintenanceController extends EObject {
 	 * @model roomRequired="true" roomOrdered="false" statusRequired="true" statusOrdered="false"
 	 * @generated
 	 */
-	void setStatus(Room room, CleaningStatus status);
+	void setStatus(Room room, boolean status);
 
 	/**
 	 * <!-- begin-user-doc -->

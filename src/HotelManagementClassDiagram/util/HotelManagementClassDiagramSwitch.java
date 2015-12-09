@@ -116,6 +116,12 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case HotelManagementClassDiagramPackage.DISCOUNT: {
+				Discount discount = (Discount)theEObject;
+				T result = caseDiscount(discount);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case HotelManagementClassDiagramPackage.BILL: {
 				Bill bill = (Bill)theEObject;
 				T result = caseBill(bill);
@@ -125,12 +131,6 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 			case HotelManagementClassDiagramPackage.COSTABLE: {
 				Costable costable = (Costable)theEObject;
 				T result = caseCostable(costable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HotelManagementClassDiagramPackage.DISCOUNT: {
-				Discount discount = (Discount)theEObject;
-				T result = caseDiscount(discount);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

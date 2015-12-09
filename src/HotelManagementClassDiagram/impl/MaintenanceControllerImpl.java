@@ -2,7 +2,6 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.CleaningStatus;
 import HotelManagementClassDiagram.EmployeeType;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.MaintenanceController;
@@ -91,7 +90,7 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatus(Room room, CleaningStatus status) {
+	public void setStatus(Room room, boolean status) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -201,8 +200,8 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___ADD_TO_STACK__ROOM:
 				addToStack((Room)arguments.get(0));
 				return null;
-			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___SET_STATUS__ROOM_CLEANINGSTATUS:
-				setStatus((Room)arguments.get(0), (CleaningStatus)arguments.get(1));
+			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___SET_STATUS__ROOM_BOOLEAN:
+				setStatus((Room)arguments.get(0), (Boolean)arguments.get(1));
 				return null;
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___NOTIFY_WORKER__EMPLOYEETYPE:
 				notifyWorker((EmployeeType)arguments.get(0));

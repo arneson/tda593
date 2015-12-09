@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link HotelManagementClassDiagram.Booking#isCheckedIn <em>Checked In</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Booking#isCheckedOut <em>Checked Out</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Booking#getPaymentMaster <em>Payment Master</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Booking#getDiscounts <em>Discounts</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking()
@@ -354,6 +355,22 @@ public interface Booking extends EObject {
 	 * @generated
 	 */
 	void setPaymentMaster(Customer value);
+
+	/**
+	 * Returns the value of the '<em><b>Discounts</b></em>' reference list.
+	 * The list contents are of type {@link HotelManagementClassDiagram.Discount}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Discounts</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Discounts</em>' reference list.
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking_Discounts()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	EList<Discount> getDiscounts();
 
 	/**
 	 * <!-- begin-user-doc -->
