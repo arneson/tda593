@@ -1,4 +1,4 @@
-TODO In Model (TIM):
+﻿TODO In Model (TIM):
 
 BILL:
 Varför finns en setTotalPrice? Ska detta ej beräknas från costables?
@@ -17,5 +17,18 @@ Borde inte salary och workrate vara i Employee? Inte i employeetype?
 ROOM:
 Ta bort remove ”setCleanedStatus”
 Varför är ”getMaxNbrOfPeople” en lista?
+
+BOOKEDROOM:
+Ej extenda ROOM utan istället innehålla ett room.
+	setRoom...
+
+BILL:
+paid boolean som instansvariabel
+
+BOOKING:
+Lista med discounts
+
+COSTABLE:
+Lista med discounts
 
 
