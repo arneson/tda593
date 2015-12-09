@@ -74,23 +74,27 @@ public class BookedRoomImpl extends RoomImpl implements BookedRoom {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addAddon(Addon addon) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (addon != null) {
+			addons.add(addon);
+		} else {
+			throw new IllegalArgumentException("Addon can't be null.");
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void removeAddon(Addon addon) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (addons.contains(addon)) {
+			addons.remove(addon);
+		} else {
+			throw new IllegalArgumentException("Addon does not exist.");
+		}
 	}
 
 	/**
