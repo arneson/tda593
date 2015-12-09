@@ -357,5 +357,36 @@ public class CustomerImpl extends PersonImpl implements Customer {
 		result.append(')');
 		return result.toString();
 	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + customerID;
+		return result;
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CustomerImpl other = (CustomerImpl) obj;
+		if (customerID != other.customerID)
+			return false;
+		return true;
+	}
+	
 
 } //CustomerImpl
