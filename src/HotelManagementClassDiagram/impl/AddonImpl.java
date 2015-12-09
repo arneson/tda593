@@ -77,6 +77,15 @@ public class AddonImpl extends MinimalEObjectImpl.Container implements Addon {
 	}
 
 	/**
+	 * @generated NOT
+	 */
+	public AddonImpl(String name, String description, double price){
+		this.name = name;
+		this.description = description;
+		//TODO: Price
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

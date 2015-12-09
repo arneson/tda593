@@ -224,6 +224,22 @@ public abstract class PersonImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
+	 * @generated NOT
+	 */
+	public PersonImpl(String name, String title, String gender, String ssNumber, String phoneNumber, String country, String city, String postalCode, String street)
+	{
+		this.name = name;
+		this.title = title;
+		this.gender = gender;
+		this.ssNumber = ssNumber;
+		this.phoneNumber = phoneNumber;
+		this.country = country;
+		this.city = city;
+		this.postalCode = postalCode;
+		this.street = street;
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
