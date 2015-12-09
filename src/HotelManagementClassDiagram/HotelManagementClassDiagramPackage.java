@@ -286,13 +286,40 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int EMPLOYEE_FEATURE_COUNT = PERSON_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPLOYEE___BOOKING = PERSON_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Boolean</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPLOYEE___BOOLEAN = PERSON_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Room Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPLOYEE___ROOM_TYPES = PERSON_OPERATION_COUNT + 2;
+
+	/**
 	 * The number of operations of the '<em>Employee</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYEE_OPERATION_COUNT = PERSON_OPERATION_COUNT + 0;
+	int EMPLOYEE_OPERATION_COUNT = PERSON_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.EmployeeTypeImpl <em>Employee Type</em>}' class.
@@ -1187,13 +1214,13 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int BOOKING_CONTROLLER_FEATURE_COUNT = 0;
 
 	/**
-	 * The operation id for the '<em>Search Rooms</em>' operation.
+	 * The operation id for the '<em>Search Available Room Types</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_CONTROLLER___SEARCH_ROOMS = 0;
+	int BOOKING_CONTROLLER___SEARCH_AVAILABLE_ROOM_TYPES__DATE_DATE_INT_INT = 0;
 
 	/**
 	 * The operation id for the '<em>Create Booking</em>' operation.
@@ -1268,13 +1295,40 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int BOOKING_CONTROLLER___CHECK_OUT__BOOKING = 8;
 
 	/**
+	 * The operation id for the '<em>Save Customer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_CONTROLLER___SAVE_CUSTOMER__CUSTOMER = 9;
+
+	/**
+	 * The operation id for the '<em>Find Customer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_CONTROLLER___FIND_CUSTOMER__STRING = 10;
+
+	/**
+	 * The operation id for the '<em>Assign Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_CONTROLLER___ASSIGN_ROOM__ROOM = 11;
+
+	/**
 	 * The number of operations of the '<em>Booking Controller</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_CONTROLLER_OPERATION_COUNT = 9;
+	int BOOKING_CONTROLLER_OPERATION_COUNT = 12;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.ManagementControllerImpl <em>Management Controller</em>}' class.
@@ -1414,13 +1468,22 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int MAINTENANCE_CONTROLLER___REMOVE_FROM_STACK__ROOM = 3;
 
 	/**
+	 * The operation id for the '<em>Get Next Room To Clean</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAINTENANCE_CONTROLLER___GET_NEXT_ROOM_TO_CLEAN__ROOM = 4;
+
+	/**
 	 * The number of operations of the '<em>Maintenance Controller</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAINTENANCE_CONTROLLER_OPERATION_COUNT = 4;
+	int MAINTENANCE_CONTROLLER_OPERATION_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.HotelImpl <em>Hotel</em>}' class.
@@ -1659,6 +1722,191 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int BOOKED_ROOM_OPERATION_COUNT = ROOM_OPERATION_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.Interaction1Impl <em>Interaction1</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see HotelManagementClassDiagram.impl.Interaction1Impl
+	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getInteraction1()
+	 * @generated
+	 */
+	int INTERACTION1 = 16;
+
+	/**
+	 * The feature id for the '<em><b></b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION1__ = 0;
+
+	/**
+	 * The number of structural features of the '<em>Interaction1</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION1_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Interaction1</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION1_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.Interaction2Impl <em>Interaction2</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see HotelManagementClassDiagram.impl.Interaction2Impl
+	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getInteraction2()
+	 * @generated
+	 */
+	int INTERACTION2 = 17;
+
+	/**
+	 * The feature id for the '<em><b></b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION2__ = 0;
+
+	/**
+	 * The number of structural features of the '<em>Interaction2</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION2_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Interaction2</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION2_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.Interaction3Impl <em>Interaction3</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see HotelManagementClassDiagram.impl.Interaction3Impl
+	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getInteraction3()
+	 * @generated
+	 */
+	int INTERACTION3 = 18;
+
+	/**
+	 * The feature id for the '<em><b></b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION3__ = 0;
+
+	/**
+	 * The number of structural features of the '<em>Interaction3</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION3_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Interaction3</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION3_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.Interaction4Impl <em>Interaction4</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see HotelManagementClassDiagram.impl.Interaction4Impl
+	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getInteraction4()
+	 * @generated
+	 */
+	int INTERACTION4 = 19;
+
+	/**
+	 * The feature id for the '<em><b></b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION4__ = 0;
+
+	/**
+	 * The number of structural features of the '<em>Interaction4</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION4_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Interaction4</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION4_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.Interaction5Impl <em>Interaction5</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see HotelManagementClassDiagram.impl.Interaction5Impl
+	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getInteraction5()
+	 * @generated
+	 */
+	int INTERACTION5 = 20;
+
+	/**
+	 * The feature id for the '<em><b></b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION5__ = 0;
+
+	/**
+	 * The number of structural features of the '<em>Interaction5</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION5_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Interaction5</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION5_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.EType <em>EType</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1666,7 +1914,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getEType()
 	 * @generated
 	 */
-	int ETYPE = 16;
+	int ETYPE = 21;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.RoomType <em>Room Type</em>}' enum.
@@ -1676,7 +1924,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getRoomType()
 	 * @generated
 	 */
-	int ROOM_TYPE = 17;
+	int ROOM_TYPE = 22;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.CleaningStatus <em>Cleaning Status</em>}' enum.
@@ -1686,7 +1934,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getCleaningStatus()
 	 * @generated
 	 */
-	int CLEANING_STATUS = 18;
+	int CLEANING_STATUS = 23;
 
 
 	/**
@@ -1720,6 +1968,36 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEmployee_EmployeeID();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.Employee#Booking() <em>Booking</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Booking</em>' operation.
+	 * @see HotelManagementClassDiagram.Employee#Booking()
+	 * @generated
+	 */
+	EOperation getEmployee__Booking();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.Employee#Boolean() <em>Boolean</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Boolean</em>' operation.
+	 * @see HotelManagementClassDiagram.Employee#Boolean()
+	 * @generated
+	 */
+	EOperation getEmployee__Boolean();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.Employee#roomTypes() <em>Room Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Room Types</em>' operation.
+	 * @see HotelManagementClassDiagram.Employee#roomTypes()
+	 * @generated
+	 */
+	EOperation getEmployee__RoomTypes();
 
 	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Person <em>Person</em>}'.
@@ -2576,14 +2854,14 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EClass getBookingController();
 
 	/**
-	 * Returns the meta object for the '{@link HotelManagementClassDiagram.BookingController#searchRooms() <em>Search Rooms</em>}' operation.
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.BookingController#searchAvailableRoomTypes(java.util.Date, java.util.Date, int, int) <em>Search Available Room Types</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Search Rooms</em>' operation.
-	 * @see HotelManagementClassDiagram.BookingController#searchRooms()
+	 * @return the meta object for the '<em>Search Available Room Types</em>' operation.
+	 * @see HotelManagementClassDiagram.BookingController#searchAvailableRoomTypes(java.util.Date, java.util.Date, int, int)
 	 * @generated
 	 */
-	EOperation getBookingController__SearchRooms();
+	EOperation getBookingController__SearchAvailableRoomTypes__Date_Date_int_int();
 
 	/**
 	 * Returns the meta object for the '{@link HotelManagementClassDiagram.BookingController#createBooking(org.eclipse.emf.common.util.EList) <em>Create Booking</em>}' operation.
@@ -2664,6 +2942,36 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getBookingController__CheckOut__Booking();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.BookingController#saveCustomer(HotelManagementClassDiagram.Customer) <em>Save Customer</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Save Customer</em>' operation.
+	 * @see HotelManagementClassDiagram.BookingController#saveCustomer(HotelManagementClassDiagram.Customer)
+	 * @generated
+	 */
+	EOperation getBookingController__SaveCustomer__Customer();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.BookingController#findCustomer(java.lang.String) <em>Find Customer</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Find Customer</em>' operation.
+	 * @see HotelManagementClassDiagram.BookingController#findCustomer(java.lang.String)
+	 * @generated
+	 */
+	EOperation getBookingController__FindCustomer__String();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.BookingController#assignRoom(HotelManagementClassDiagram.Room) <em>Assign Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Assign Room</em>' operation.
+	 * @see HotelManagementClassDiagram.BookingController#assignRoom(HotelManagementClassDiagram.Room)
+	 * @generated
+	 */
+	EOperation getBookingController__AssignRoom__Room();
 
 	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.ManagementController <em>Management Controller</em>}'.
@@ -2785,6 +3093,16 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getMaintenanceController__RemoveFromStack__Room();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.MaintenanceController#getNextRoomToClean(HotelManagementClassDiagram.Room) <em>Get Next Room To Clean</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Next Room To Clean</em>' operation.
+	 * @see HotelManagementClassDiagram.MaintenanceController#getNextRoomToClean(HotelManagementClassDiagram.Room)
+	 * @generated
+	 */
+	EOperation getMaintenanceController__GetNextRoomToClean__Room();
 
 	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Hotel <em>Hotel</em>}'.
@@ -2911,6 +3229,111 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EOperation getBookedRoom__RemoveAddon__Addon();
 
 	/**
+	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Interaction1 <em>Interaction1</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Interaction1</em>'.
+	 * @see HotelManagementClassDiagram.Interaction1
+	 * @generated
+	 */
+	EClass getInteraction1();
+
+	/**
+	 * Returns the meta object for the reference '{@link HotelManagementClassDiagram.Interaction1#get_ <em></em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em></em>'.
+	 * @see HotelManagementClassDiagram.Interaction1#get_()
+	 * @see #getInteraction1()
+	 * @generated
+	 */
+	EReference getInteraction1__();
+
+	/**
+	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Interaction2 <em>Interaction2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Interaction2</em>'.
+	 * @see HotelManagementClassDiagram.Interaction2
+	 * @generated
+	 */
+	EClass getInteraction2();
+
+	/**
+	 * Returns the meta object for the reference '{@link HotelManagementClassDiagram.Interaction2#get_ <em></em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em></em>'.
+	 * @see HotelManagementClassDiagram.Interaction2#get_()
+	 * @see #getInteraction2()
+	 * @generated
+	 */
+	EReference getInteraction2__();
+
+	/**
+	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Interaction3 <em>Interaction3</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Interaction3</em>'.
+	 * @see HotelManagementClassDiagram.Interaction3
+	 * @generated
+	 */
+	EClass getInteraction3();
+
+	/**
+	 * Returns the meta object for the reference '{@link HotelManagementClassDiagram.Interaction3#get_ <em></em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em></em>'.
+	 * @see HotelManagementClassDiagram.Interaction3#get_()
+	 * @see #getInteraction3()
+	 * @generated
+	 */
+	EReference getInteraction3__();
+
+	/**
+	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Interaction4 <em>Interaction4</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Interaction4</em>'.
+	 * @see HotelManagementClassDiagram.Interaction4
+	 * @generated
+	 */
+	EClass getInteraction4();
+
+	/**
+	 * Returns the meta object for the reference '{@link HotelManagementClassDiagram.Interaction4#get_ <em></em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em></em>'.
+	 * @see HotelManagementClassDiagram.Interaction4#get_()
+	 * @see #getInteraction4()
+	 * @generated
+	 */
+	EReference getInteraction4__();
+
+	/**
+	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Interaction5 <em>Interaction5</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Interaction5</em>'.
+	 * @see HotelManagementClassDiagram.Interaction5
+	 * @generated
+	 */
+	EClass getInteraction5();
+
+	/**
+	 * Returns the meta object for the reference '{@link HotelManagementClassDiagram.Interaction5#get_ <em></em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em></em>'.
+	 * @see HotelManagementClassDiagram.Interaction5#get_()
+	 * @see #getInteraction5()
+	 * @generated
+	 */
+	EReference getInteraction5__();
+
+	/**
 	 * Returns the meta object for enum '{@link HotelManagementClassDiagram.EType <em>EType</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2988,6 +3411,30 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EMPLOYEE__EMPLOYEE_ID = eINSTANCE.getEmployee_EmployeeID();
+
+		/**
+		 * The meta object literal for the '<em><b>Booking</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EMPLOYEE___BOOKING = eINSTANCE.getEmployee__Booking();
+
+		/**
+		 * The meta object literal for the '<em><b>Boolean</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EMPLOYEE___BOOLEAN = eINSTANCE.getEmployee__Boolean();
+
+		/**
+		 * The meta object literal for the '<em><b>Room Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EMPLOYEE___ROOM_TYPES = eINSTANCE.getEmployee__RoomTypes();
 
 		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.PersonImpl <em>Person</em>}' class.
@@ -3652,12 +4099,12 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EClass BOOKING_CONTROLLER = eINSTANCE.getBookingController();
 
 		/**
-		 * The meta object literal for the '<em><b>Search Rooms</b></em>' operation.
+		 * The meta object literal for the '<em><b>Search Available Room Types</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BOOKING_CONTROLLER___SEARCH_ROOMS = eINSTANCE.getBookingController__SearchRooms();
+		EOperation BOOKING_CONTROLLER___SEARCH_AVAILABLE_ROOM_TYPES__DATE_DATE_INT_INT = eINSTANCE.getBookingController__SearchAvailableRoomTypes__Date_Date_int_int();
 
 		/**
 		 * The meta object literal for the '<em><b>Create Booking</b></em>' operation.
@@ -3722,6 +4169,30 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation BOOKING_CONTROLLER___CHECK_OUT__BOOKING = eINSTANCE.getBookingController__CheckOut__Booking();
+
+		/**
+		 * The meta object literal for the '<em><b>Save Customer</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_CONTROLLER___SAVE_CUSTOMER__CUSTOMER = eINSTANCE.getBookingController__SaveCustomer__Customer();
+
+		/**
+		 * The meta object literal for the '<em><b>Find Customer</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_CONTROLLER___FIND_CUSTOMER__STRING = eINSTANCE.getBookingController__FindCustomer__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Assign Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_CONTROLLER___ASSIGN_ROOM__ROOM = eINSTANCE.getBookingController__AssignRoom__Room();
 
 		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.ManagementControllerImpl <em>Management Controller</em>}' class.
@@ -3824,6 +4295,14 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EOperation MAINTENANCE_CONTROLLER___REMOVE_FROM_STACK__ROOM = eINSTANCE.getMaintenanceController__RemoveFromStack__Room();
 
 		/**
+		 * The meta object literal for the '<em><b>Get Next Room To Clean</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MAINTENANCE_CONTROLLER___GET_NEXT_ROOM_TO_CLEAN__ROOM = eINSTANCE.getMaintenanceController__GetNextRoomToClean__Room();
+
+		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.HotelImpl <em>Hotel</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3922,6 +4401,96 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation BOOKED_ROOM___REMOVE_ADDON__ADDON = eINSTANCE.getBookedRoom__RemoveAddon__Addon();
+
+		/**
+		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.Interaction1Impl <em>Interaction1</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see HotelManagementClassDiagram.impl.Interaction1Impl
+		 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getInteraction1()
+		 * @generated
+		 */
+		EClass INTERACTION1 = eINSTANCE.getInteraction1();
+
+		/**
+		 * The meta object literal for the '<em><b></b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTERACTION1__ = eINSTANCE.getInteraction1__();
+
+		/**
+		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.Interaction2Impl <em>Interaction2</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see HotelManagementClassDiagram.impl.Interaction2Impl
+		 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getInteraction2()
+		 * @generated
+		 */
+		EClass INTERACTION2 = eINSTANCE.getInteraction2();
+
+		/**
+		 * The meta object literal for the '<em><b></b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTERACTION2__ = eINSTANCE.getInteraction2__();
+
+		/**
+		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.Interaction3Impl <em>Interaction3</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see HotelManagementClassDiagram.impl.Interaction3Impl
+		 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getInteraction3()
+		 * @generated
+		 */
+		EClass INTERACTION3 = eINSTANCE.getInteraction3();
+
+		/**
+		 * The meta object literal for the '<em><b></b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTERACTION3__ = eINSTANCE.getInteraction3__();
+
+		/**
+		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.Interaction4Impl <em>Interaction4</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see HotelManagementClassDiagram.impl.Interaction4Impl
+		 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getInteraction4()
+		 * @generated
+		 */
+		EClass INTERACTION4 = eINSTANCE.getInteraction4();
+
+		/**
+		 * The meta object literal for the '<em><b></b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTERACTION4__ = eINSTANCE.getInteraction4__();
+
+		/**
+		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.Interaction5Impl <em>Interaction5</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see HotelManagementClassDiagram.impl.Interaction5Impl
+		 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getInteraction5()
+		 * @generated
+		 */
+		EClass INTERACTION5 = eINSTANCE.getInteraction5();
+
+		/**
+		 * The meta object literal for the '<em><b></b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTERACTION5__ = eINSTANCE.getInteraction5__();
 
 		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.EType <em>EType</em>}' enum.

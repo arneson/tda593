@@ -132,6 +132,26 @@ public class HotelManagementClassDiagramAdapterFactory extends AdapterFactoryImp
 				return createBookedRoomAdapter();
 			}
 			@Override
+			public Adapter caseInteraction1(Interaction1 object) {
+				return createInteraction1Adapter();
+			}
+			@Override
+			public Adapter caseInteraction2(Interaction2 object) {
+				return createInteraction2Adapter();
+			}
+			@Override
+			public Adapter caseInteraction3(Interaction3 object) {
+				return createInteraction3Adapter();
+			}
+			@Override
+			public Adapter caseInteraction4(Interaction4 object) {
+				return createInteraction4Adapter();
+			}
+			@Override
+			public Adapter caseInteraction5(Interaction5 object) {
+				return createInteraction5Adapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -372,6 +392,76 @@ public class HotelManagementClassDiagramAdapterFactory extends AdapterFactoryImp
 	 * @generated
 	 */
 	public Adapter createBookedRoomAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link HotelManagementClassDiagram.Interaction1 <em>Interaction1</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see HotelManagementClassDiagram.Interaction1
+	 * @generated
+	 */
+	public Adapter createInteraction1Adapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link HotelManagementClassDiagram.Interaction2 <em>Interaction2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see HotelManagementClassDiagram.Interaction2
+	 * @generated
+	 */
+	public Adapter createInteraction2Adapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link HotelManagementClassDiagram.Interaction3 <em>Interaction3</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see HotelManagementClassDiagram.Interaction3
+	 * @generated
+	 */
+	public Adapter createInteraction3Adapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link HotelManagementClassDiagram.Interaction4 <em>Interaction4</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see HotelManagementClassDiagram.Interaction4
+	 * @generated
+	 */
+	public Adapter createInteraction4Adapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link HotelManagementClassDiagram.Interaction5 <em>Interaction5</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see HotelManagementClassDiagram.Interaction5
+	 * @generated
+	 */
+	public Adapter createInteraction5Adapter() {
 		return null;
 	}
 

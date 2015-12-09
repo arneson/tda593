@@ -71,6 +71,11 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER: return createMaintenanceController();
 			case HotelManagementClassDiagramPackage.HOTEL: return createHotel();
 			case HotelManagementClassDiagramPackage.BOOKED_ROOM: return createBookedRoom();
+			case HotelManagementClassDiagramPackage.INTERACTION1: return createInteraction1();
+			case HotelManagementClassDiagramPackage.INTERACTION2: return createInteraction2();
+			case HotelManagementClassDiagramPackage.INTERACTION3: return createInteraction3();
+			case HotelManagementClassDiagramPackage.INTERACTION4: return createInteraction4();
+			case HotelManagementClassDiagramPackage.INTERACTION5: return createInteraction5();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -252,6 +257,56 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 	public BookedRoom createBookedRoom() {
 		BookedRoomImpl bookedRoom = new BookedRoomImpl();
 		return bookedRoom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Interaction1 createInteraction1() {
+		Interaction1Impl interaction1 = new Interaction1Impl();
+		return interaction1;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Interaction2 createInteraction2() {
+		Interaction2Impl interaction2 = new Interaction2Impl();
+		return interaction2;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Interaction3 createInteraction3() {
+		Interaction3Impl interaction3 = new Interaction3Impl();
+		return interaction3;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Interaction4 createInteraction4() {
+		Interaction4Impl interaction4 = new Interaction4Impl();
+		return interaction4;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Interaction5 createInteraction5() {
+		Interaction5Impl interaction5 = new Interaction5Impl();
+		return interaction5;
 	}
 
 	/**

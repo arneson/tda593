@@ -124,6 +124,17 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void getNextRoomToClean(Room room) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -198,6 +209,9 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 				return null;
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___REMOVE_FROM_STACK__ROOM:
 				removeFromStack((Room)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___GET_NEXT_ROOM_TO_CLEAN__ROOM:
+				getNextRoomToClean((Room)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

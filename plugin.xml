@@ -19,7 +19,7 @@
       <package
             uri="http://www.eclipse.org/uml2/5.0.0/Types"
             class="org.eclipse.uml2.types.TypesPackage"
-            genModel="ClassDiagram/model.genmodel"/>
+            genModel="model.genmodel"/>
    </extension>
 
 </plugin>
