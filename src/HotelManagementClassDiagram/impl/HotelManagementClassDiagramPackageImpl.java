@@ -14,6 +14,7 @@ import HotelManagementClassDiagram.Discount;
 import HotelManagementClassDiagram.EType;
 import HotelManagementClassDiagram.Employee;
 import HotelManagementClassDiagram.EmployeeType;
+import HotelManagementClassDiagram.Extra;
 import HotelManagementClassDiagram.Hotel;
 import HotelManagementClassDiagram.HotelManagementClassDiagramFactory;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
@@ -96,6 +97,13 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * @generated
 	 */
 	private EClass addonEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass extraEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -811,8 +819,8 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAddon_Name() {
-		return (EAttribute)addonEClass.getEStructuralFeatures().get(0);
+	public EClass getExtra() {
+		return extraEClass;
 	}
 
 	/**
@@ -820,8 +828,17 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAddon_Description() {
-		return (EAttribute)addonEClass.getEStructuralFeatures().get(1);
+	public EAttribute getExtra_Name() {
+		return (EAttribute)extraEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getExtra_Description() {
+		return (EAttribute)extraEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1405,6 +1422,15 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getBookedRoom_Room() {
+		return (EReference)bookedRoomEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getBookedRoom__AddAddon__Addon() {
 		return bookedRoomEClass.getEOperations().get(0);
 	}
@@ -1619,8 +1645,16 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		createEOperation(customerEClass, CUSTOMER___ADD_BONUS_POINTS__INT);
 
 		addonEClass = createEClass(ADDON);
-		createEAttribute(addonEClass, ADDON__NAME);
-		createEAttribute(addonEClass, ADDON__DESCRIPTION);
+
+		extraEClass = createEClass(EXTRA);
+		createEAttribute(extraEClass, EXTRA__NAME);
+		createEAttribute(extraEClass, EXTRA__DESCRIPTION);
+
+		bookedRoomEClass = createEClass(BOOKED_ROOM);
+		createEReference(bookedRoomEClass, BOOKED_ROOM__ADDONS);
+		createEReference(bookedRoomEClass, BOOKED_ROOM__ROOM);
+		createEOperation(bookedRoomEClass, BOOKED_ROOM___ADD_ADDON__ADDON);
+		createEOperation(bookedRoomEClass, BOOKED_ROOM___REMOVE_ADDON__ADDON);
 
 		roomEClass = createEClass(ROOM);
 		createEAttribute(roomEClass, ROOM__ROOM_NUMBER);
@@ -1692,11 +1726,6 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		createEOperation(hotelEClass, HOTEL___GET_MANAGEMENT_CONTROLLER);
 		createEOperation(hotelEClass, HOTEL___GET_MAINTENANCE_CONTROLLER);
 
-		bookedRoomEClass = createEClass(BOOKED_ROOM);
-		createEReference(bookedRoomEClass, BOOKED_ROOM__ADDONS);
-		createEOperation(bookedRoomEClass, BOOKED_ROOM___ADD_ADDON__ADDON);
-		createEOperation(bookedRoomEClass, BOOKED_ROOM___REMOVE_ADDON__ADDON);
-
 		interaction1EClass = createEClass(INTERACTION1);
 		createEReference(interaction1EClass, INTERACTION1__);
 
@@ -1750,13 +1779,13 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		// Add supertypes to classes
 		employeeEClass.getESuperTypes().add(this.getPerson());
 		customerEClass.getESuperTypes().add(this.getPerson());
-		bookedRoomEClass.getESuperTypes().add(this.getRoom());
+		addonEClass.getESuperTypes().add(this.getExtra());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(employeeEClass, Employee.class, "Employee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEmployee_EmployeeType(), this.getEmployeeType(), null, "employeeType", null, 1, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getEmployee_EmployeeID(), ecorePackage.getEInt(), "employeeID", null, 1, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getEmployee_WorkRate(), ecorePackage.getEInt(), "workRate", null, 1, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getEmployee_WorkRate(), ecorePackage.getEDouble(), "workRate", null, 0, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getEmployee_Salary(), ecorePackage.getEDouble(), "salary", null, 1, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEOperation(getEmployee__Booking(), null, "Booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1788,7 +1817,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		initEReference(getBooking_CreditCard(), this.getCreditcard(), null, "creditCard", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_Customer(), this.getCustomer(), null, "customer", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_Addons(), this.getAddon(), null, "addons", null, 0, -1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBooking_BookedRooms(), this.getRoom(), null, "bookedRooms", null, 1, -1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBooking_BookedRooms(), this.getBookedRoom(), null, "bookedRooms", null, 1, -1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBooking_InternalComments(), theTypesPackage.getString(), "internalComments", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBooking_ExternalComments(), theTypesPackage.getString(), "externalComments", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBooking_CheckedIn(), ecorePackage.getEBoolean(), "checkedIn", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1840,8 +1869,20 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		addEParameter(op, ecorePackage.getEInt(), "bonusPoints", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(addonEClass, Addon.class, "Addon", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAddon_Name(), theTypesPackage.getString(), "name", null, 1, 1, Addon.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getAddon_Description(), theTypesPackage.getString(), "description", null, 1, 1, Addon.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(extraEClass, Extra.class, "Extra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getExtra_Name(), theTypesPackage.getString(), "name", null, 1, 1, Extra.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getExtra_Description(), theTypesPackage.getString(), "description", null, 1, 1, Extra.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(bookedRoomEClass, BookedRoom.class, "BookedRoom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBookedRoom_Addons(), this.getAddon(), null, "addons", null, 0, -1, BookedRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBookedRoom_Room(), this.getRoom(), null, "room", null, 1, 1, BookedRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		op = initEOperation(getBookedRoom__AddAddon__Addon(), null, "addAddon", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getAddon(), "addon", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getBookedRoom__RemoveAddon__Addon(), null, "removeAddon", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getAddon(), "addon", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(roomEClass, Room.class, "Room", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoom_RoomNumber(), ecorePackage.getEInt(), "roomNumber", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1977,15 +2018,6 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		initEOperation(getHotel__GetManagementController(), null, "getManagementController", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getHotel__GetMaintenanceController(), null, "getMaintenanceController", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEClass(bookedRoomEClass, BookedRoom.class, "BookedRoom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBookedRoom_Addons(), this.getAddon(), null, "addons", null, 0, -1, BookedRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		op = initEOperation(getBookedRoom__AddAddon__Addon(), null, "addAddon", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getAddon(), "addon", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getBookedRoom__RemoveAddon__Addon(), null, "removeAddon", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getAddon(), "addon", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(interaction1EClass, Interaction1.class, "Interaction1", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInteraction1__(), this.getEmployee(), null, "_", null, 1, 1, Interaction1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

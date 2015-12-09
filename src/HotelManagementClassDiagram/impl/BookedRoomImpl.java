@@ -6,14 +6,19 @@ import HotelManagementClassDiagram.Addon;
 import HotelManagementClassDiagram.BookedRoom;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 
+import HotelManagementClassDiagram.Room;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -25,11 +30,12 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link HotelManagementClassDiagram.impl.BookedRoomImpl#getAddons <em>Addons</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.BookedRoomImpl#getRoom <em>Room</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class BookedRoomImpl extends RoomImpl implements BookedRoom {
+public class BookedRoomImpl extends MinimalEObjectImpl.Container implements BookedRoom {
 	/**
 	 * The cached value of the '{@link #getAddons() <em>Addons</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -39,6 +45,16 @@ public class BookedRoomImpl extends RoomImpl implements BookedRoom {
 	 * @ordered
 	 */
 	protected EList<Addon> addons;
+
+	/**
+	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoom()
+	 * @generated
+	 * @ordered
+	 */
+	protected Room room;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,6 +92,44 @@ public class BookedRoomImpl extends RoomImpl implements BookedRoom {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Room getRoom() {
+		if (room != null && room.eIsProxy()) {
+			InternalEObject oldRoom = (InternalEObject)room;
+			room = (Room)eResolveProxy(oldRoom);
+			if (room != oldRoom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelManagementClassDiagramPackage.BOOKED_ROOM__ROOM, oldRoom, room));
+			}
+		}
+		return room;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Room basicGetRoom() {
+		return room;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRoom(Room newRoom) {
+		Room oldRoom = room;
+		room = newRoom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BOOKED_ROOM__ROOM, oldRoom, room));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void addAddon(Addon addon) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -103,6 +157,9 @@ public class BookedRoomImpl extends RoomImpl implements BookedRoom {
 		switch (featureID) {
 			case HotelManagementClassDiagramPackage.BOOKED_ROOM__ADDONS:
 				return getAddons();
+			case HotelManagementClassDiagramPackage.BOOKED_ROOM__ROOM:
+				if (resolve) return getRoom();
+				return basicGetRoom();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -120,6 +177,9 @@ public class BookedRoomImpl extends RoomImpl implements BookedRoom {
 				getAddons().clear();
 				getAddons().addAll((Collection<? extends Addon>)newValue);
 				return;
+			case HotelManagementClassDiagramPackage.BOOKED_ROOM__ROOM:
+				setRoom((Room)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -135,6 +195,9 @@ public class BookedRoomImpl extends RoomImpl implements BookedRoom {
 			case HotelManagementClassDiagramPackage.BOOKED_ROOM__ADDONS:
 				getAddons().clear();
 				return;
+			case HotelManagementClassDiagramPackage.BOOKED_ROOM__ROOM:
+				setRoom((Room)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -149,6 +212,8 @@ public class BookedRoomImpl extends RoomImpl implements BookedRoom {
 		switch (featureID) {
 			case HotelManagementClassDiagramPackage.BOOKED_ROOM__ADDONS:
 				return addons != null && !addons.isEmpty();
+			case HotelManagementClassDiagramPackage.BOOKED_ROOM__ROOM:
+				return room != null;
 		}
 		return super.eIsSet(featureID);
 	}

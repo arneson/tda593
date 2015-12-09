@@ -212,7 +212,7 @@ public interface Booking extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Booked Rooms</b></em>' reference list.
-	 * The list contents are of type {@link HotelManagementClassDiagram.Room}.
+	 * The list contents are of type {@link HotelManagementClassDiagram.BookedRoom}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Booked Rooms</em>' reference list isn't clear,
@@ -224,7 +224,7 @@ public interface Booking extends EObject {
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	EList<Room> getBookedRooms();
+	EList<BookedRoom> getBookedRooms();
 
 	/**
 	 * Returns the value of the '<em><b>Internal Comments</b></em>' attribute.

@@ -857,6 +857,52 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int CUSTOMER_OPERATION_COUNT = PERSON_OPERATION_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.ExtraImpl <em>Extra</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see HotelManagementClassDiagram.impl.ExtraImpl
+	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getExtra()
+	 * @generated
+	 */
+	int EXTRA = 7;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTRA__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTRA__DESCRIPTION = 1;
+
+	/**
+	 * The number of structural features of the '<em>Extra</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTRA_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Extra</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTRA_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.AddonImpl <em>Addon</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -873,7 +919,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDON__NAME = 0;
+	int ADDON__NAME = EXTRA__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -882,7 +928,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDON__DESCRIPTION = 1;
+	int ADDON__DESCRIPTION = EXTRA__DESCRIPTION;
 
 	/**
 	 * The number of structural features of the '<em>Addon</em>' class.
@@ -891,7 +937,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDON_FEATURE_COUNT = 2;
+	int ADDON_FEATURE_COUNT = EXTRA_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Addon</em>' class.
@@ -900,7 +946,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDON_OPERATION_COUNT = 0;
+	int ADDON_OPERATION_COUNT = EXTRA_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.RoomImpl <em>Room</em>}' class.
@@ -910,7 +956,141 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getRoom()
 	 * @generated
 	 */
-	int ROOM = 7;
+	int ROOM = 9;
+
+	/**
+	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.BillImpl <em>Bill</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see HotelManagementClassDiagram.impl.BillImpl
+	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getBill()
+	 * @generated
+	 */
+	int BILL = 11;
+
+	/**
+	 * The meta object id for the '{@link HotelManagementClassDiagram.Costable <em>Costable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see HotelManagementClassDiagram.Costable
+	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getCostable()
+	 * @generated
+	 */
+	int COSTABLE = 12;
+
+	/**
+	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.DiscountImpl <em>Discount</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see HotelManagementClassDiagram.impl.DiscountImpl
+	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getDiscount()
+	 * @generated
+	 */
+	int DISCOUNT = 10;
+
+	/**
+	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.BookingControllerImpl <em>Booking Controller</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see HotelManagementClassDiagram.impl.BookingControllerImpl
+	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getBookingController()
+	 * @generated
+	 */
+	int BOOKING_CONTROLLER = 13;
+
+	/**
+	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.ManagementControllerImpl <em>Management Controller</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see HotelManagementClassDiagram.impl.ManagementControllerImpl
+	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getManagementController()
+	 * @generated
+	 */
+	int MANAGEMENT_CONTROLLER = 14;
+
+	/**
+	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.MaintenanceControllerImpl <em>Maintenance Controller</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see HotelManagementClassDiagram.impl.MaintenanceControllerImpl
+	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getMaintenanceController()
+	 * @generated
+	 */
+	int MAINTENANCE_CONTROLLER = 15;
+
+	/**
+	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.HotelImpl <em>Hotel</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see HotelManagementClassDiagram.impl.HotelImpl
+	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getHotel()
+	 * @generated
+	 */
+	int HOTEL = 16;
+
+	/**
+	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.BookedRoomImpl <em>Booked Room</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see HotelManagementClassDiagram.impl.BookedRoomImpl
+	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getBookedRoom()
+	 * @generated
+	 */
+	int BOOKED_ROOM = 8;
+
+	/**
+	 * The feature id for the '<em><b>Addons</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKED_ROOM__ADDONS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Room</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKED_ROOM__ROOM = 1;
+
+	/**
+	 * The number of structural features of the '<em>Booked Room</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKED_ROOM_FEATURE_COUNT = 2;
+
+	/**
+	 * The operation id for the '<em>Add Addon</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKED_ROOM___ADD_ADDON__ADDON = 0;
+
+	/**
+	 * The operation id for the '<em>Remove Addon</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKED_ROOM___REMOVE_ADDON__ADDON = 1;
+
+	/**
+	 * The number of operations of the '<em>Booked Room</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKED_ROOM_OPERATION_COUNT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Room Number</b></em>' attribute.
@@ -1010,36 +1190,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROOM_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.BillImpl <em>Bill</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see HotelManagementClassDiagram.impl.BillImpl
-	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getBill()
-	 * @generated
-	 */
-	int BILL = 9;
-
-	/**
-	 * The meta object id for the '{@link HotelManagementClassDiagram.Costable <em>Costable</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see HotelManagementClassDiagram.Costable
-	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getCostable()
-	 * @generated
-	 */
-	int COSTABLE = 10;
-
-	/**
-	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.DiscountImpl <em>Discount</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see HotelManagementClassDiagram.impl.DiscountImpl
-	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getDiscount()
-	 * @generated
-	 */
-	int DISCOUNT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Is Percentage</b></em>' attribute.
@@ -1213,16 +1363,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int COSTABLE_OPERATION_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.BookingControllerImpl <em>Booking Controller</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see HotelManagementClassDiagram.impl.BookingControllerImpl
-	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getBookingController()
-	 * @generated
-	 */
-	int BOOKING_CONTROLLER = 11;
-
-	/**
 	 * The number of structural features of the '<em>Booking Controller</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1349,16 +1489,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int BOOKING_CONTROLLER_OPERATION_COUNT = 12;
 
 	/**
-	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.ManagementControllerImpl <em>Management Controller</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see HotelManagementClassDiagram.impl.ManagementControllerImpl
-	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getManagementController()
-	 * @generated
-	 */
-	int MANAGEMENT_CONTROLLER = 12;
-
-	/**
 	 * The number of structural features of the '<em>Management Controller</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1440,16 +1570,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int MANAGEMENT_CONTROLLER_OPERATION_COUNT = 7;
 
 	/**
-	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.MaintenanceControllerImpl <em>Maintenance Controller</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see HotelManagementClassDiagram.impl.MaintenanceControllerImpl
-	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getMaintenanceController()
-	 * @generated
-	 */
-	int MAINTENANCE_CONTROLLER = 13;
-
-	/**
 	 * The feature id for the '<em><b>Room Stack</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1520,16 +1640,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAINTENANCE_CONTROLLER_OPERATION_COUNT = 5;
-
-	/**
-	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.HotelImpl <em>Hotel</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see HotelManagementClassDiagram.impl.HotelImpl
-	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getHotel()
-	 * @generated
-	 */
-	int HOTEL = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1613,142 +1723,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int HOTEL_OPERATION_COUNT = 4;
 
 	/**
-	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.BookedRoomImpl <em>Booked Room</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see HotelManagementClassDiagram.impl.BookedRoomImpl
-	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getBookedRoom()
-	 * @generated
-	 */
-	int BOOKED_ROOM = 15;
-
-	/**
-	 * The feature id for the '<em><b>Room Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKED_ROOM__ROOM_NUMBER = ROOM__ROOM_NUMBER;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKED_ROOM__SIZE = ROOM__SIZE;
-
-	/**
-	 * The feature id for the '<em><b>Internal Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKED_ROOM__INTERNAL_COMMENT = ROOM__INTERNAL_COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Booked</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKED_ROOM__BOOKED = ROOM__BOOKED;
-
-	/**
-	 * The feature id for the '<em><b>Max Nbr People</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKED_ROOM__MAX_NBR_PEOPLE = ROOM__MAX_NBR_PEOPLE;
-
-	/**
-	 * The feature id for the '<em><b>Under Cleaning</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKED_ROOM__UNDER_CLEANING = ROOM__UNDER_CLEANING;
-
-	/**
-	 * The feature id for the '<em><b>Under Repair</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKED_ROOM__UNDER_REPAIR = ROOM__UNDER_REPAIR;
-
-	/**
-	 * The feature id for the '<em><b>Types</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKED_ROOM__TYPES = ROOM__TYPES;
-
-	/**
-	 * The feature id for the '<em><b>Room Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKED_ROOM__ROOM_NAME = ROOM__ROOM_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Addons</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKED_ROOM__ADDONS = ROOM_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Booked Room</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKED_ROOM_FEATURE_COUNT = ROOM_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Add Addon</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKED_ROOM___ADD_ADDON__ADDON = ROOM_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Remove Addon</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKED_ROOM___REMOVE_ADDON__ADDON = ROOM_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Booked Room</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKED_ROOM_OPERATION_COUNT = ROOM_OPERATION_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.Interaction1Impl <em>Interaction1</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1756,7 +1730,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getInteraction1()
 	 * @generated
 	 */
-	int INTERACTION1 = 16;
+	int INTERACTION1 = 17;
 
 	/**
 	 * The feature id for the '<em><b></b></em>' reference.
@@ -1793,7 +1767,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getInteraction2()
 	 * @generated
 	 */
-	int INTERACTION2 = 17;
+	int INTERACTION2 = 18;
 
 	/**
 	 * The feature id for the '<em><b></b></em>' reference.
@@ -1830,7 +1804,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getInteraction3()
 	 * @generated
 	 */
-	int INTERACTION3 = 18;
+	int INTERACTION3 = 19;
 
 	/**
 	 * The feature id for the '<em><b></b></em>' reference.
@@ -1867,7 +1841,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getInteraction4()
 	 * @generated
 	 */
-	int INTERACTION4 = 19;
+	int INTERACTION4 = 20;
 
 	/**
 	 * The feature id for the '<em><b></b></em>' reference.
@@ -1904,7 +1878,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getInteraction5()
 	 * @generated
 	 */
-	int INTERACTION5 = 20;
+	int INTERACTION5 = 21;
 
 	/**
 	 * The feature id for the '<em><b></b></em>' reference.
@@ -1941,7 +1915,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getEType()
 	 * @generated
 	 */
-	int ETYPE = 21;
+	int ETYPE = 22;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.RoomType <em>Room Type</em>}' enum.
@@ -1951,7 +1925,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getRoomType()
 	 * @generated
 	 */
-	int ROOM_TYPE = 22;
+	int ROOM_TYPE = 23;
 
 	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Employee <em>Employee</em>}'.
@@ -2582,26 +2556,36 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EClass getAddon();
 
 	/**
-	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Addon#getName <em>Name</em>}'.
+	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Extra <em>Extra</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Extra</em>'.
+	 * @see HotelManagementClassDiagram.Extra
+	 * @generated
+	 */
+	EClass getExtra();
+
+	/**
+	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Extra#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see HotelManagementClassDiagram.Addon#getName()
-	 * @see #getAddon()
+	 * @see HotelManagementClassDiagram.Extra#getName()
+	 * @see #getExtra()
 	 * @generated
 	 */
-	EAttribute getAddon_Name();
+	EAttribute getExtra_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Addon#getDescription <em>Description</em>}'.
+	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Extra#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Description</em>'.
-	 * @see HotelManagementClassDiagram.Addon#getDescription()
-	 * @see #getAddon()
+	 * @see HotelManagementClassDiagram.Extra#getDescription()
+	 * @see #getExtra()
 	 * @generated
 	 */
-	EAttribute getAddon_Description();
+	EAttribute getExtra_Description();
 
 	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Room <em>Room</em>}'.
@@ -3268,6 +3252,17 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EReference getBookedRoom_Addons();
 
 	/**
+	 * Returns the meta object for the reference '{@link HotelManagementClassDiagram.BookedRoom#getRoom <em>Room</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Room</em>'.
+	 * @see HotelManagementClassDiagram.BookedRoom#getRoom()
+	 * @see #getBookedRoom()
+	 * @generated
+	 */
+	EReference getBookedRoom_Room();
+
+	/**
 	 * Returns the meta object for the '{@link HotelManagementClassDiagram.BookedRoom#addAddon(HotelManagementClassDiagram.Addon) <em>Add Addon</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3922,12 +3917,22 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EClass ADDON = eINSTANCE.getAddon();
 
 		/**
+		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.ExtraImpl <em>Extra</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see HotelManagementClassDiagram.impl.ExtraImpl
+		 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getExtra()
+		 * @generated
+		 */
+		EClass EXTRA = eINSTANCE.getExtra();
+
+		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ADDON__NAME = eINSTANCE.getAddon_Name();
+		EAttribute EXTRA__NAME = eINSTANCE.getExtra_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -3935,7 +3940,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ADDON__DESCRIPTION = eINSTANCE.getAddon_Description();
+		EAttribute EXTRA__DESCRIPTION = eINSTANCE.getExtra_Description();
 
 		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.RoomImpl <em>Room</em>}' class.
@@ -4466,6 +4471,14 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BOOKED_ROOM__ADDONS = eINSTANCE.getBookedRoom_Addons();
+
+		/**
+		 * The meta object literal for the '<em><b>Room</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOOKED_ROOM__ROOM = eINSTANCE.getBookedRoom_Room();
 
 		/**
 		 * The meta object literal for the '<em><b>Add Addon</b></em>' operation.
