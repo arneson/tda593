@@ -328,7 +328,6 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_gA2ioJdgEeW_2em-0w3Fbg" name="ManagementController">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_S9ZogJdiEeW_2em-0w3Fbg" name="registerDiscount">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_cLmEIJdnEeW_2em-0w3Fbg" name="discount" type="_P3JucJdQEeW_2em-0w3Fbg"/>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_eoK0QJdnEeW_2em-0w3Fbg" name="costable" type="_OeItEJdQEeW_2em-0w3Fbg"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_Vlg6QJdiEeW_2em-0w3Fbg" name="registerCostable">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_hjRTcJdnEeW_2em-0w3Fbg" name="costable" type="_OeItEJdQEeW_2em-0w3Fbg"/>

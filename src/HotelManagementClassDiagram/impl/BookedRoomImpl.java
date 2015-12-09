@@ -51,7 +51,7 @@ public class BookedRoomImpl extends RoomImpl implements BookedRoom {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->l
 	 * @generated
 	 */
 	@Override
