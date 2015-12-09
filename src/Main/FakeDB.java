@@ -1,12 +1,7 @@
 package Main;
 import java.util.ArrayList;
 
-import HotelManagementClassDiagram.Booking;
-import HotelManagementClassDiagram.Costable;
-import HotelManagementClassDiagram.Customer;
-import HotelManagementClassDiagram.Discount;
-import HotelManagementClassDiagram.Employee;
-import HotelManagementClassDiagram.Room;
+import HotelManagementClassDiagram.*;
 
 public class FakeDB {
 	public static ArrayList<Booking> bookings;
@@ -14,7 +9,7 @@ public class FakeDB {
 	public static ArrayList<Customer> customers;
 	public static ArrayList<Employee> employees;
 	public static ArrayList<Discount> discounts;
-    public static ArrayList<Costable> costables;
+    public static ArrayList<Addon> addons;
 
 	static {
         bookings = new ArrayList<>();
@@ -22,6 +17,6 @@ public class FakeDB {
         customers = new ArrayList<>();
         employees = new ArrayList<>();
         discounts = new ArrayList<>();
-        costables = new ArrayList<>();
+        addons = new ArrayList<>();
     }
 }
