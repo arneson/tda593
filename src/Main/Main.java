@@ -14,7 +14,10 @@ import java.util.List;
 public class Main {
 
 	public static void main(String[] args) {
-		
+        // Generate the fake data for testing
+		generateFakeData();
+
+
 	}
 
 	public static void generateFakeData(){
@@ -84,7 +87,7 @@ public class Main {
         for (int i = 0; i < 3; i++)
         {
             int id = i+1;
-            String name = names[i],
+            String name = customerNames[i],
                     city = "Trollhättan",
                     country = "Sweden",
                     gender = "Male",
