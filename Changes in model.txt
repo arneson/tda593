@@ -3,15 +3,15 @@ TODO In Model (TIM):
 BILL:
 Varför finns en setTotalPrice? Ska detta ej beräknas från costables? - CHECK
 Ska det gå att sätta customer eller ska detta lösas vid initialisering? - CHECK
-Ska det gå att sätta valuAddedTax?
-hur funkar final?
+Ska det gå att sätta valueAddedTax? - N/A
+hur funkar final? - N/A
 måste ha en metod addCostables - CHECK
 
 CREDITCARD:
 Ska creditcard ha en massa setters? - CHECK
 Ta bort validate - CHECK
 Creditcard borde ha Månad och dag istället för Date - CHECK
-Creditcard borde ha Månad och År istället för Månad och Dag
+Creditcard borde ha Månad och År istället för Månad och Dag - CHECK
 
 EMPLOYEETYPE:
 Borde inte salary och workrate vara i Employee? Inte i employeetype? - CHECK
@@ -24,7 +24,7 @@ TA BORT CLEANINGSTATUS - CHECK
 Varför är ”getMaxNbrOfPeople” en lista? - CHECK
 
 BOOKEDROOM:
-Ej extenda ROOM utan istället innehålla ett room.
+Ej extenda ROOM utan istället innehålla ett room. - CHECK
 	setRoom...
 
 BILL:
@@ -38,26 +38,26 @@ Lista med discounts - CHECK
 
 
 EMPLOYEE:
-Workrate bör vara en double (från 0 till 1 som då representerar %)
-Gender bör vara en enum så man kan lägga till fler osv
+Workrate bör vara en double (från 0 till 1 som då representerar %) - CHECK
+Gender bör vara en enum så man kan lägga till fler osv - VASK
 	Med
 		Male
 		Female
 		Other
 
 EXTRA:
-Lägg till extra igen - enda skillnaden mellan denna och addon
+Lägg till extra igen - enda skillnaden mellan denna och addon - CHECK
 är att extra inte kostar något
 
 BOOKING:
-Listan med bookedRooms bör vara av typen BookedRoom och inte Room
+Listan med bookedRooms bör vara av typen BookedRoom och inte Room - CHECK
 
 
 HOTEL:
-getBookingController skall returnera en BookingController.
-getMaintenanceController skall returnera en BookingMaintenance.
-getManagementController skall returnera en BookingManagement.
-Hotellet skall ha en av varje ovanstående kontrollers som instansvariabel.
+getBookingController skall returnera en BookingController. - CHECK
+getMaintenanceController skall returnera en BookingMaintenance. - CHECK
+getManagementController skall returnera en BookingManagement. - CHECK
+Hotellet skall ha en av varje ovanstående kontrollers som instansvariabel. - CHECK
 
 BOOKINGCONTROLLER:
 sendConfirmation, ska den finnas? Ta bort!
