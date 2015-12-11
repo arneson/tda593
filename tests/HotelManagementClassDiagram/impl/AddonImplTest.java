@@ -19,25 +19,18 @@ public class AddonImplTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		this.addon = new AddonImpl();
+		this.addon = new AddonImpl("Food", "Some food", 10);
 	}
 
 	@Test
 	public void testGetName() throws Exception {
 		assertEquals(null, this.addon.getName());
-		this.addon.setName("Food");
 		assertEquals("Food", this.addon.getName());
 	}
 
 	@Test
 	public void testGetDescription() throws Exception {
 		assertEquals(null, this.addon.getDescription());
-		this.addon.setDescription("Some food");
 		assertEquals("Some food", this.addon.getDescription());
-	}
-
-	@Test
-	public void testToString() throws Exception {
-		assertEquals("(name: Food, description: Some food)", this.addon.toString());
 	}
 }

@@ -1,7 +1,13 @@
 package HotelManagementClassDiagram.impl;
 
+import HotelManagementClassDiagram.BookedRoom;
+import HotelManagementClassDiagram.Booking;
+import HotelManagementClassDiagram.Customer;
+import HotelManagementClassDiagram.Room;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Date;
 
 import static org.junit.Assert.*;
 
@@ -12,85 +18,79 @@ import static org.junit.Assert.*;
  * Time: 14:56
  */
 public class BookingImplTest {
+
+	Booking b;
+	Date sDate = new Date();
+	Date eDate = new Date(2016, 11, 2);
+	Room r1;
+	Customer c;
 	
 	@Before
 	public void setUp() throws Exception {
-
-	}
-
-	@Test
-	public void testEStaticClass() throws Exception {
-
+		c = new CustomerImpl();
+		c.setName("Tim");
+		r1 = new RoomImpl();
+		r1.setRoomName("Room");
+		BookedRoom r = new BookedRoomImpl(r1);
+		b = new BookingImpl(1, c, sDate, eDate, r);
 	}
 
 	@Test
 	public void testGetBookingId() throws Exception {
-
+		assertEquals(1, b.getBookingId());
 	}
 
 	@Test
 	public void testSetBookingId() throws Exception {
-
+		b.setBookingId(2);
+		assertEquals(2, b.getBookingId());
 	}
 
 	@Test
 	public void testGetStartDate() throws Exception {
-
+		assertEquals(sDate, b.getStartDate());
 	}
 
 	@Test
 	public void testSetStartDate() throws Exception {
-
+		Date newDate = new Date();
+		b.setStartDate(newDate);
+		assertEquals(newDate, b.getStartDate());
 	}
 
 	@Test
 	public void testGetEndDate() throws Exception {
-
+		assertEquals(eDate, b.getEndDate());
 	}
 
 	@Test
 	public void testSetEndDate() throws Exception {
-
-	}
-
-	@Test
-	public void testGetCreated() throws Exception {
-
-	}
-
-	@Test
-	public void testSetCreated() throws Exception {
-
-	}
-
-	@Test
-	public void testGetCreditCard() throws Exception {
-
-	}
-
-	@Test
-	public void testBasicGetCreditCard() throws Exception {
-
+		Date newDate = new Date();
+		b.setEndDate(newDate);
+		assertEquals(newDate, b.getEndDate());
 	}
 
 	@Test
 	public void testSetCreditCard() throws Exception {
+		b.setCreditCard(new CreditcardImpl(123, 123, 1, 2015, "Tim"));
+	}
 
+	@Test
+	public void testGetCreditCard() throws Exception {
+		assertEquals(b.getCreditCard().getNumber(), 123);
 	}
 
 	@Test
 	public void testGetCustomer() throws Exception {
-
-	}
-
-	@Test
-	public void testBasicGetCustomer() throws Exception {
-
+		assertEquals(b.getCustomer(), c);
 	}
 
 	@Test
 	public void testSetCustomer() throws Exception {
-
+		Customer c = new CustomerImpl();
+		c.setName("Erik");
+		b.setCustomer(c);
+		assertEquals(b.getCustomer(), c);
 	}
 
 	@Test
@@ -213,33 +213,4 @@ public class BookingImplTest {
 
 	}
 
-	@Test
-	public void testEGet() throws Exception {
-
-	}
-
-	@Test
-	public void testESet() throws Exception {
-
-	}
-
-	@Test
-	public void testEUnset() throws Exception {
-
-	}
-
-	@Test
-	public void testEIsSet() throws Exception {
-
-	}
-
-	@Test
-	public void testEInvoke() throws Exception {
-
-	}
-
-	@Test
-	public void testToString() throws Exception {
-
-	}
 }

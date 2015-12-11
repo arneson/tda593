@@ -2,6 +2,7 @@ package HotelManagementClassDiagram.impl;
 
 import HotelManagementClassDiagram.Addon;
 import HotelManagementClassDiagram.BookedRoom;
+import HotelManagementClassDiagram.Room;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,9 +22,7 @@ public class BookedRoomImplTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		this.bookedRoom = new BookedRoomImpl();
-		this.a = new AddonImpl();
-		a.setName("Food");
+		this.bookedRoom = new BookedRoomImpl(new RoomImpl("Roomname", 10, 1, 10));
 		this.bookedRoom.addAddon(a);
 		this.bookedRoom.addAddon(b);
 	}
