@@ -22,6 +22,8 @@ Varför är ”getMaxNbrOfPeople” en lista? - CHECK
 Ta bort remove ”setCleanedStatus” - CHECK
 TA BORT CLEANINGSTATUS - CHECK
 Varför är ”getMaxNbrOfPeople” en lista? - CHECK
+Lägg till lista med damages
+Lägg till getDamages, registerDamage och registerFix
 
 BOOKEDROOM:
 Ej extenda ROOM utan istället innehålla ett room. - CHECK
