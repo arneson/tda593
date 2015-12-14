@@ -68,6 +68,11 @@ createKeyCard? ska den finnas? Ta bort!
 findCustomer är void, bör returnera en customer.
 assignRoom, hur ska den funka?
 
+NY KLASS
+Damages:
+	date Date
+	description String
+	fixed boolean
 
 
 
