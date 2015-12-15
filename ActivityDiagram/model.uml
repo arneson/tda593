@@ -24,12 +24,12 @@
     <edge xmi:type="uml:ControlFlow" xmi:id="_lr2QsKJPEeWJS59A-uMVVw" target="_Cbj_YJHnEeW7bPvR-btyLQ" source="_z9HY0JHmEeW7bPvR-btyLQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_tay5YKJPEeWJS59A-uMVVw" target="_Cbj_YJHnEeW7bPvR-btyLQ" source="_rOCI0JHmEeW7bPvR-btyLQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_UAQjQKJQEeWJS59A-uMVVw" target="_AVzMwJHnEeW7bPvR-btyLQ" source="_6-qI8JHmEeW7bPvR-btyLQ"/>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_w1yawKJpEeW8j-cZyowTpA" target="_wkpoMJHmEeW7bPvR-btyLQ" source="_z9HY0JHmEeW7bPvR-btyLQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_w1yawKJpEeW8j-cZyowTpA" target="_TxW2gKJOEeWJS59A-uMVVw" source="_z9HY0JHmEeW7bPvR-btyLQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_ZWlrwKJxEeW8j-cZyowTpA" target="_l3JjsJHmEeW7bPvR-btyLQ" source="_rOCI0JHmEeW7bPvR-btyLQ"/>
     <structuredNode xmi:type="uml:StructuredActivityNode" xmi:id="_6qEnwJHgEeW7bPvR-btyLQ" name="StructuredActivityNode1"/>
-    <structuredNode xmi:type="uml:StructuredActivityNode" xmi:id="_TxW2gKJOEeWJS59A-uMVVw" inPartition="_IsaUoKJJEeWJS59A-uMVVw">
+    <structuredNode xmi:type="uml:StructuredActivityNode" xmi:id="_TxW2gKJOEeWJS59A-uMVVw" incoming="_w1yawKJpEeW8j-cZyowTpA" inPartition="_IsaUoKJJEeWJS59A-uMVVw">
       <node xmi:type="uml:OpaqueAction" xmi:id="_l3JjsJHmEeW7bPvR-btyLQ" name="Enter date and click search" incoming="_L6hAoKJPEeWJS59A-uMVVw _ZWlrwKJxEeW8j-cZyowTpA" outgoing="_PxzbQKJPEeWJS59A-uMVVw"/>
-      <node xmi:type="uml:OpaqueAction" xmi:id="_wkpoMJHmEeW7bPvR-btyLQ" name="Specify room types to system" incoming="_VI-UQKJPEeWJS59A-uMVVw _w1yawKJpEeW8j-cZyowTpA" outgoing="_V_Fc4KJPEeWJS59A-uMVVw"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_wkpoMJHmEeW7bPvR-btyLQ" name="Specify room types to system" incoming="_VI-UQKJPEeWJS59A-uMVVw" outgoing="_V_Fc4KJPEeWJS59A-uMVVw"/>
       <node xmi:type="uml:OpaqueAction" xmi:id="_4mHkQJHmEeW7bPvR-btyLQ" name="Enter customer information" incoming="_Y5NrsKJPEeWJS59A-uMVVw" outgoing="_ZrEmcKJPEeWJS59A-uMVVw"/>
       <node xmi:type="uml:OpaqueAction" xmi:id="_ZLC-EJKiEeW7VIQB2MMLsg" name="Enter addons" incoming="_d6E9gKJPEeWJS59A-uMVVw _egk80KJPEeWJS59A-uMVVw" outgoing="_fMfAkKJPEeWJS59A-uMVVw"/>
       <node xmi:type="uml:OpaqueAction" xmi:id="_6-qI8JHmEeW7bPvR-btyLQ" name="Confirm booking" incoming="_gjsEEKJPEeWJS59A-uMVVw" outgoing="_UAQjQKJQEeWJS59A-uMVVw"/>
