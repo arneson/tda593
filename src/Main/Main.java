@@ -165,6 +165,7 @@ public class Main {
 			String title = reader.next();
 
 			customer = new CustomerImpl(name, city, country, gender, phoneNumber, postalCode, SSN, street, title);
+			bookingController.updateOrAddCustomer(customer);
 		}
 
 		Booking booking = new BookingImpl(customer, startDate, endDate, types);
@@ -196,7 +197,7 @@ public class Main {
 				Creditcard card = new CreditcardImpl(number,cvc,month,year,owner);
 				b.setCreditCard(card);
 				bookingController.updateOrAddBooking(b);
-				bookingController.checkIn(b, true);
+				bookingController.checkIn(b);
 				System.out.print("Booking successfully checked in: ");
 
 			}else{

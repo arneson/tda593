@@ -75,6 +75,8 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	 */
 	public void addToQueue(Room room) {
 		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -107,7 +109,10 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	 */
 	public void getNextRoomToClean(Room room) {
 		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->

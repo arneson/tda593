@@ -227,12 +227,6 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ManagementController">
-    <eOperations name="setDateSpecificPrices" ordered="false" lowerBound="1">
-      <eParameters name="costable" ordered="false" lowerBound="1" eType="#//Costable"/>
-      <eParameters name="startDate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-      <eParameters name="endDate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-      <eParameters name="priceChange" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    </eOperations>
     <eOperations name="updateOrAddEmployee" ordered="false" lowerBound="1">
       <eParameters name="employee" ordered="false" lowerBound="1" eType="#//Employee"/>
     </eOperations>

@@ -2,8 +2,6 @@
  */
 package HotelManagementClassDiagram;
 
-import java.util.Date;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -17,14 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface ManagementController extends EObject {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model costableRequired="true" costableOrdered="false" startDateRequired="true" startDateOrdered="false" endDateRequired="true" endDateOrdered="false" priceChangeRequired="true" priceChangeOrdered="false"
-	 * @generated
-	 */
-	void setDateSpecificPrices(Costable costable, Date startDate, Date endDate, double priceChange);
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
