@@ -4,6 +4,7 @@ package HotelManagementClassDiagram.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Iterator;
 
@@ -302,10 +303,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		this.bookingId = customer.hashCode();
 		this.startDate = startDate;
 		this.endDate = endDate;
-		bookedRooms = new BasicEList<Room>();
-		for (Room room : rooms) {
-			bookedRooms.add(room);
-		}
+		this.bookedRooms = new BasicEList<>();
+		this.roomTypes = new BasicEList<>();
+		Collections.addAll(this.bookedRooms, rooms);
 	}
 	
 	/**
@@ -316,7 +316,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.bookingId = customer.hashCode();
-		this.roomTypes = new BasicEList<RoomType>();
+		this.bookedRooms = new BasicEList<>();
+		this.roomTypes = new BasicEList<>();
 		for (RoomType type : types) {
 			roomTypes.add(type);
 		}

@@ -146,6 +146,7 @@ public class Main {
             else
                 System.out.print("Value: ");
             double value = reader.nextDouble();
+            reader.nextLine();
             Discount d = new DiscountImpl(name, isPercentage, value);
             managementController.updateOrAddDiscount(d);
             System.out.println("###############################");
@@ -183,6 +184,7 @@ public class Main {
 	        String desc = reader.nextLine();
 	        System.out.println("What should the price be?");
 	        double price = reader.nextDouble();
+            reader.nextLine();
 	        managementController.updateOrAddAddon(new AddonImpl(name, desc, price));
         }catch(Exception ex) {
             System.out.println("Add addon process exited: " + 408);
@@ -197,10 +199,13 @@ public class Main {
         try{
         	System.out.println("Please enter max number of people: ");
         	int maxNbrPeople = reader.nextInt();
+            reader.nextLine();
         	System.out.println("Please enter room number: ");
         	int roomNumber = reader.nextInt();
+            reader.nextLine();
         	System.out.println("Please enter size (m2): ");
         	int size = reader.nextInt();
+            reader.nextLine();
         	System.out.println("Please enter room type: ");
         	RoomType type = RoomType.valueOf(reader.nextLine());
         	Room newRoom = new RoomImpl(maxNbrPeople, roomNumber, size, type);
@@ -293,8 +298,10 @@ public class Main {
 
             System.out.println("Please enter number of adults: ");
             int nbrOfAdults = reader.nextInt();
+            reader.nextLine();
             System.out.println("Please enter number of children: ");
             int nbrOfChildren = reader.nextInt();
+            reader.nextLine();
 
             EList<RoomType> avaliableRoomTypes = bookingController.searchAvailableRoomTypes(startDate, endDate, nbrOfAdults, nbrOfChildren);
             System.out.println();
@@ -306,6 +313,7 @@ public class Main {
             System.out.println("");
             System.out.println("How many rooms? ");
             int nbrOfRooms = reader.nextInt();
+            reader.nextLine();
             BasicEList<RoomType> types = new BasicEList<RoomType>();
             for (int i = 0; i < nbrOfRooms; i++) {
                 System.out.println("Please select type for room " + (i+1) + ": ");
@@ -347,6 +355,7 @@ public class Main {
         }catch(Exception ex){
             System.out.println("Booking process exited: " + 404);
         }
+        System.out.println();
 	}
 
 	public static void checkIn(Scanner reader, BookingController bookingController){
@@ -362,17 +371,22 @@ public class Main {
             do{
                 System.out.print("Please enter booking number: ");
                 bookingId = reader.nextInt();
+                reader.nextLine();
                 Booking b = bookingController.getBooking(bookingId);
                 if(b!=null){
                     System.out.println("Booking found.");
                     System.out.print("Please enter credit card number: ");
                     long number = reader.nextLong();
+                    reader.nextLine();
                     System.out.print("Please enter cvc code: ");
                     int cvc = reader.nextInt();
+                    reader.nextLine();
                     System.out.print("Please enter expiration month: ");
                     int month = reader.nextInt();
+                    reader.nextLine();
                     System.out.print("Please enter expiration year: ");
                     int year = reader.nextInt();
+                    reader.nextLine();
                     System.out.print("Please cardholder's name: ");
                     String owner = reader.nextLine();
                     Creditcard card = new CreditcardImpl(number,cvc,month,year,owner);
@@ -419,8 +433,10 @@ public class Main {
 
             System.out.println("Please enter number of adults: ");
             int nbrOfAdults = reader.nextInt();
+            reader.nextLine();
             System.out.println("Please enter number of children: ");
             int nbrOfChildren = reader.nextInt();
+            reader.nextLine();
 
             EList<RoomType> avaliableRoomTypes = bookingController.searchAvailableRoomTypes(startDate, endDate, nbrOfAdults, nbrOfChildren);
             System.out.println();
@@ -447,6 +463,7 @@ public class Main {
             do{
                 System.out.print("Please enter booking number: ");
                 bookingId = reader.nextInt();
+                reader.nextLine();
                 Booking b = bookingController.getBooking(bookingId);
                 if(b != null){
                     System.out.println("Booking found. Checking out.");
