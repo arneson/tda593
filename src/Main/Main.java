@@ -79,7 +79,7 @@ public class Main {
 					break;
 					
 				case CLI_LIST_BOOKINGS_COMMAND:
-					listBookings(reader, bookingController);
+					listBookings(bookingController);
 					break;
 					
 				case CLI_LIST_CUSTOMERS_COMMAND:
@@ -133,22 +133,26 @@ public class Main {
             return;
         }
 		try{
-			System.out.println("What is the name of the discount?");
-			String name = reader.next();
-			System.out.println("Percentage? (y/n)");
-			String per = reader.next();
-			Boolean perc = false;
-			if (per.equals("y")) {
-				perc = true;
-			}
-			System.out.println("The amount?");
-			double amount = reader.nextDouble();
-			Discount d = new DiscountImpl(perc, amount);
-			d.setName(name);
-			managementController.updateOrAddDiscount(d);
+            System.out.println("###### Create discount #######");
+            System.out.print("Name: ");
+            String name = reader.nextLine();
+            System.out.print("Percentage? Y/N: ");
+            String yesno = reader.nextLine();
+            boolean isPercentage = false;
+            if (yesno.equals("Y"))
+                isPercentage = true;
+            if (isPercentage)
+                System.out.print("Percentage (0-100): ");
+            else
+                System.out.print("Value: ");
+            double value = reader.nextDouble();
+            Discount d = new DiscountImpl(name, isPercentage, value);
+            managementController.updateOrAddDiscount(d);
+            System.out.println("###############################");
         }catch(Exception ex) {
             System.out.println("Add discount process exited: " + 410);
         }
+        System.out.println();
 	}
 
 	private static void addExtra(Scanner reader, ManagementController managementController) {
@@ -191,7 +195,17 @@ public class Main {
             return;
         }
         try{
-
+        	System.out.println("Please enter max number of people: ");
+        	int maxNbrPeople = reader.nextInt();
+        	System.out.println("Please enter room number: ");
+        	int roomNumber = reader.nextInt();
+        	System.out.println("Please enter size (m2): ");
+        	int size = reader.nextInt();
+        	System.out.println("Please enter room type: ");
+        	RoomType type = RoomType.valueOf(reader.next());
+        	Room newRoom = new RoomImpl(maxNbrPeople, roomNumber, size, type);
+        	managementController.updateOrAddRoom(newRoom);
+        	System.out.println("Room created.");
         }catch(Exception ex) {
             System.out.println("Add room process exited: " + 407);
         }
@@ -211,14 +225,19 @@ public class Main {
         }
 	}
 
-	private static void listBookings(Scanner reader, BookingController bookingController) {
+	private static void listBookings(BookingController bookingController) {
         if (user == null || user.getEmployeeType().getAcessLevel() < 4) {
             System.out.println("Unallowed access");
             return;
         }
         try{
-
+            System.out.println("######### List of bookings #######");
+            for (Booking b : bookingController.getAllBookings()) {
+                System.out.println(b);
+            }
+            System.out.println("##################################");
         }catch(Exception ex) {
+            ex.printStackTrace();
             System.out.println("List bookings process exited: " + 411);
         }
 	}
@@ -274,7 +293,7 @@ public class Main {
 
             System.out.println("Please enter number of adults: ");
             int nbrOfAdults = reader.nextInt();
-            System.out.println("Please enter number of adults: ");
+            System.out.println("Please enter number of children: ");
             int nbrOfChildren = reader.nextInt();
 
             EList<RoomType> avaliableRoomTypes = bookingController.searchAvailableRoomTypes(startDate, endDate, nbrOfAdults, nbrOfChildren);
@@ -289,7 +308,7 @@ public class Main {
             int nbrOfRooms = reader.nextInt();
             BasicEList<RoomType> types = new BasicEList<RoomType>();
             for (int i = 0; i < nbrOfRooms; i++) {
-                System.out.println("Please select type for room " + i + ": ");
+                System.out.println("Please select type for room " + (i+1) + ": ");
                 String typeString = reader.next();
                 try{
                     types.add(RoomType.valueOf(typeString.toUpperCase()));
@@ -505,7 +524,7 @@ public class Main {
         {
             boolean isPercentage = i == 1;
             double price = isPercentage ? 0.1 : 100*i;
-            Discount discount = new DiscountImpl(isPercentage, price);
+            Discount discount = new DiscountImpl("Test-" + i, isPercentage, price);
             discounts.add(discount);
         }
 

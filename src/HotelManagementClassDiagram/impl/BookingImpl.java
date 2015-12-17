@@ -1023,33 +1023,13 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (bookingId: ");
-		result.append(bookingId);
-		result.append(", startDate: ");
-		result.append(startDate);
-		result.append(", endDate: ");
-		result.append(endDate);
-		result.append(", created: ");
-		result.append(created);
-		result.append(", internalComments: ");
-		result.append(internalComments);
-		result.append(", externalComments: ");
-		result.append(externalComments);
-		result.append(", checkedIn: ");
-		result.append(checkedIn);
-		result.append(", checkedOut: ");
-		result.append(checkedOut);
-		result.append(", roomTypes: ");
-		result.append(roomTypes);
-		result.append(')');
-		return result.toString();
+		return "ID: " + bookingId + ", NumberOfRooms: " + bookedRooms.size() + ", paymentMaster: " + paymentMaster.getName();
 	}
 	/**
 	 * <!-- begin-user-doc -->
