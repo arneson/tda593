@@ -190,8 +190,10 @@ public class Main {
 					}
 
 					Booking booking = new BookingImpl(customer, startDate, endDate, types);
-					
+					bookingController.updateOrAddBooking(booking);
+					System.out.println("Booking created.");
 					break;
+					
 				case CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND:
 					System.out.print("Please enter start date (YYYY-MM-DD): ");
 					startDateString = reader.next();

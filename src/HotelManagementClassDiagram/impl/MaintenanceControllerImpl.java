@@ -138,6 +138,17 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Room getNextRoomToClean() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -219,6 +230,8 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___SET_REPAIRED_STATUS__ROOM_BOOLEAN:
 				setRepairedStatus((Room)arguments.get(0), (Boolean)arguments.get(1));
 				return null;
+			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___GET_NEXT_ROOM_TO_CLEAN:
+				return getNextRoomToClean();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

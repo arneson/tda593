@@ -30,7 +30,6 @@ import java.util.Iterator;
  *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#getRoomNumber <em>Room Number</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#getSize <em>Size</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#getInternalComment <em>Internal Comment</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#isBooked <em>Booked</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#getMaxNbrPeople <em>Max Nbr People</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#isUnderCleaning <em>Under Cleaning</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#isUnderRepair <em>Under Repair</em>}</li>
@@ -129,26 +128,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @ordered
 	 */
 	protected String internalComment = INTERNAL_COMMENT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isBooked() <em>Booked</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isBooked()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean BOOKED_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isBooked() <em>Booked</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isBooked()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean booked = BOOKED_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMaxNbrPeople() <em>Max Nbr People</em>}' attribute.
@@ -357,27 +336,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isBooked() {
-		return booked;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBooked(boolean newBooked) {
-		boolean oldBooked = booked;
-		booked = newBooked;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.ROOM__BOOKED, oldBooked, booked));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getMaxNbrPeople() {
 		return maxNbrPeople;
 	}
@@ -496,8 +454,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return getSize();
 			case HotelManagementClassDiagramPackage.ROOM__INTERNAL_COMMENT:
 				return getInternalComment();
-			case HotelManagementClassDiagramPackage.ROOM__BOOKED:
-				return isBooked();
 			case HotelManagementClassDiagramPackage.ROOM__MAX_NBR_PEOPLE:
 				return getMaxNbrPeople();
 			case HotelManagementClassDiagramPackage.ROOM__UNDER_CLEANING:
@@ -534,9 +490,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return;
 			case HotelManagementClassDiagramPackage.ROOM__INTERNAL_COMMENT:
 				setInternalComment((String)newValue);
-				return;
-			case HotelManagementClassDiagramPackage.ROOM__BOOKED:
-				setBooked((Boolean)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.ROOM__MAX_NBR_PEOPLE:
 				setMaxNbrPeople((Integer)newValue);
@@ -577,9 +530,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case HotelManagementClassDiagramPackage.ROOM__INTERNAL_COMMENT:
 				setInternalComment(INTERNAL_COMMENT_EDEFAULT);
 				return;
-			case HotelManagementClassDiagramPackage.ROOM__BOOKED:
-				setBooked(BOOKED_EDEFAULT);
-				return;
 			case HotelManagementClassDiagramPackage.ROOM__MAX_NBR_PEOPLE:
 				setMaxNbrPeople(MAX_NBR_PEOPLE_EDEFAULT);
 				return;
@@ -614,8 +564,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return size != SIZE_EDEFAULT;
 			case HotelManagementClassDiagramPackage.ROOM__INTERNAL_COMMENT:
 				return INTERNAL_COMMENT_EDEFAULT == null ? internalComment != null : !INTERNAL_COMMENT_EDEFAULT.equals(internalComment);
-			case HotelManagementClassDiagramPackage.ROOM__BOOKED:
-				return booked != BOOKED_EDEFAULT;
 			case HotelManagementClassDiagramPackage.ROOM__MAX_NBR_PEOPLE:
 				return maxNbrPeople != MAX_NBR_PEOPLE_EDEFAULT;
 			case HotelManagementClassDiagramPackage.ROOM__UNDER_CLEANING:
@@ -664,8 +612,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		result.append(size);
 		result.append(", internalComment: ");
 		result.append(internalComment);
-		result.append(", booked: ");
-		result.append(booked);
 		result.append(", maxNbrPeople: ");
 		result.append(maxNbrPeople);
 		result.append(", underCleaning: ");

@@ -144,7 +144,6 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Room/roomNumber"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Room/size"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Room/internalComment"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Room/booked"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Room/maxNbrPeople"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Room/underCleaning"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Room/underRepair"/>
@@ -285,6 +284,7 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//MaintenanceController/setRepairedStatus/room"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//MaintenanceController/setRepairedStatus/repaired"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//MaintenanceController/getNextRoomToClean.1"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="HotelManagementClassDiagram.ecore#//Hotel">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute HotelManagementClassDiagram.ecore#//Hotel/name"/>
@@ -346,7 +346,6 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//DBInterface/findBookings">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//DBInterface/findBookings/customerName"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//DBInterface/getBookedRooms"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//DBInterface/getAllCustomers"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//DBInterface/getCustomer">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//DBInterface/getCustomer/customerSSNumber"/>

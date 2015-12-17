@@ -270,17 +270,6 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Room> getBookedRooms() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public EList<Customer> getAllCustomers() {
@@ -549,8 +538,6 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 				return getCurrentBookings();
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___FIND_BOOKINGS__STRING:
 				return findBookings((String)arguments.get(0));
-			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___GET_BOOKED_ROOMS:
-				return getBookedRooms();
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___GET_ALL_CUSTOMERS:
 				return getAllCustomers();
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___GET_CUSTOMER__STRING:

@@ -404,6 +404,9 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
       </ownedParameter>
     </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_sdQ3IKThEeWVDoDgGsfQNA" name="getNextRoomToClean">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_vjx8IKThEeWVDoDgGsfQNA" name="room" type="_S3mAoJdQEeW_2em-0w3Fbg" direction="return"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_ucKUoJdrEeW_2em-0w3Fbg" client="_Ew4PgJdOEeW_2em-0w3Fbg" supplier="_KN_mMJdTEeW_2em-0w3Fbg"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_yrD-AJdrEeW_2em-0w3Fbg" client="_LUZ8UJN8EeW_3Yt58t3sgQ" supplier="_LUZ8UJN8EeW_3Yt58t3sgQ"/>

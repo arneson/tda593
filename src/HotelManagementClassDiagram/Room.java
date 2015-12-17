@@ -14,7 +14,6 @@ package HotelManagementClassDiagram;
  *   <li>{@link HotelManagementClassDiagram.Room#getRoomNumber <em>Room Number</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Room#getSize <em>Size</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Room#getInternalComment <em>Internal Comment</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Room#isBooked <em>Booked</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Room#getMaxNbrPeople <em>Max Nbr People</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Room#isUnderCleaning <em>Under Cleaning</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Room#isUnderRepair <em>Under Repair</em>}</li>
@@ -103,32 +102,6 @@ public interface Room extends Costable {
 	 * @generated
 	 */
 	void setInternalComment(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Booked</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Booked</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Booked</em>' attribute.
-	 * @see #setBooked(boolean)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_Booked()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	boolean isBooked();
-
-	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Room#isBooked <em>Booked</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Booked</em>' attribute.
-	 * @see #isBooked()
-	 * @generated
-	 */
-	void setBooked(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Max Nbr People</b></em>' attribute.

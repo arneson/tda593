@@ -1065,22 +1065,13 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int ROOM__INTERNAL_COMMENT = COSTABLE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Booked</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__BOOKED = COSTABLE_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Max Nbr People</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__MAX_NBR_PEOPLE = COSTABLE_FEATURE_COUNT + 4;
+	int ROOM__MAX_NBR_PEOPLE = COSTABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Under Cleaning</b></em>' attribute.
@@ -1089,7 +1080,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__UNDER_CLEANING = COSTABLE_FEATURE_COUNT + 5;
+	int ROOM__UNDER_CLEANING = COSTABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Under Repair</b></em>' attribute.
@@ -1098,7 +1089,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__UNDER_REPAIR = COSTABLE_FEATURE_COUNT + 6;
+	int ROOM__UNDER_REPAIR = COSTABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1107,7 +1098,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__TYPE = COSTABLE_FEATURE_COUNT + 7;
+	int ROOM__TYPE = COSTABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Room</em>' class.
@@ -1116,7 +1107,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = COSTABLE_FEATURE_COUNT + 8;
+	int ROOM_FEATURE_COUNT = COSTABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Add Discount</em>' operation.
@@ -1704,13 +1695,22 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int MAINTENANCE_CONTROLLER___SET_REPAIRED_STATUS__ROOM_BOOLEAN = 5;
 
 	/**
+	 * The operation id for the '<em>Get Next Room To Clean</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAINTENANCE_CONTROLLER___GET_NEXT_ROOM_TO_CLEAN = 6;
+
+	/**
 	 * The number of operations of the '<em>Maintenance Controller</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAINTENANCE_CONTROLLER_OPERATION_COUNT = 6;
+	int MAINTENANCE_CONTROLLER_OPERATION_COUNT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2115,22 +2115,13 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int DB_INTERFACE___FIND_BOOKINGS__STRING = 13;
 
 	/**
-	 * The operation id for the '<em>Get Booked Rooms</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DB_INTERFACE___GET_BOOKED_ROOMS = 14;
-
-	/**
 	 * The operation id for the '<em>Get All Customers</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___GET_ALL_CUSTOMERS = 15;
+	int DB_INTERFACE___GET_ALL_CUSTOMERS = 14;
 
 	/**
 	 * The operation id for the '<em>Get Customer</em>' operation.
@@ -2139,7 +2130,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___GET_CUSTOMER__STRING = 16;
+	int DB_INTERFACE___GET_CUSTOMER__STRING = 15;
 
 	/**
 	 * The operation id for the '<em>Find Customers</em>' operation.
@@ -2148,7 +2139,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___FIND_CUSTOMERS__STRING = 17;
+	int DB_INTERFACE___FIND_CUSTOMERS__STRING = 16;
 
 	/**
 	 * The operation id for the '<em>Get All Employees</em>' operation.
@@ -2157,7 +2148,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___GET_ALL_EMPLOYEES = 18;
+	int DB_INTERFACE___GET_ALL_EMPLOYEES = 17;
 
 	/**
 	 * The operation id for the '<em>Get Employee</em>' operation.
@@ -2166,7 +2157,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___GET_EMPLOYEE__STRING = 19;
+	int DB_INTERFACE___GET_EMPLOYEE__STRING = 18;
 
 	/**
 	 * The operation id for the '<em>Get All Cleaners</em>' operation.
@@ -2175,7 +2166,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___GET_ALL_CLEANERS = 20;
+	int DB_INTERFACE___GET_ALL_CLEANERS = 19;
 
 	/**
 	 * The operation id for the '<em>Get All Managers</em>' operation.
@@ -2184,7 +2175,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___GET_ALL_MANAGERS = 21;
+	int DB_INTERFACE___GET_ALL_MANAGERS = 20;
 
 	/**
 	 * The operation id for the '<em>Get All Receptionists</em>' operation.
@@ -2193,7 +2184,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___GET_ALL_RECEPTIONISTS = 22;
+	int DB_INTERFACE___GET_ALL_RECEPTIONISTS = 21;
 
 	/**
 	 * The operation id for the '<em>Update Or Add Room</em>' operation.
@@ -2202,7 +2193,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___UPDATE_OR_ADD_ROOM__ROOM = 23;
+	int DB_INTERFACE___UPDATE_OR_ADD_ROOM__ROOM = 22;
 
 	/**
 	 * The operation id for the '<em>Update Or Add Customer</em>' operation.
@@ -2211,7 +2202,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___UPDATE_OR_ADD_CUSTOMER__CUSTOMER = 24;
+	int DB_INTERFACE___UPDATE_OR_ADD_CUSTOMER__CUSTOMER = 23;
 
 	/**
 	 * The operation id for the '<em>Update Or Add Booking</em>' operation.
@@ -2220,7 +2211,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___UPDATE_OR_ADD_BOOKING__BOOKING = 25;
+	int DB_INTERFACE___UPDATE_OR_ADD_BOOKING__BOOKING = 24;
 
 	/**
 	 * The operation id for the '<em>Update Or Add Discount</em>' operation.
@@ -2229,7 +2220,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___UPDATE_OR_ADD_DISCOUNT__DISCOUNT = 26;
+	int DB_INTERFACE___UPDATE_OR_ADD_DISCOUNT__DISCOUNT = 25;
 
 	/**
 	 * The operation id for the '<em>Update Or Add Addon</em>' operation.
@@ -2238,7 +2229,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___UPDATE_OR_ADD_ADDON__ADDON = 27;
+	int DB_INTERFACE___UPDATE_OR_ADD_ADDON__ADDON = 26;
 
 	/**
 	 * The operation id for the '<em>Update Or Add Employee</em>' operation.
@@ -2247,7 +2238,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___UPDATE_OR_ADD_EMPLOYEE__EMPLOYEE = 28;
+	int DB_INTERFACE___UPDATE_OR_ADD_EMPLOYEE__EMPLOYEE = 27;
 
 	/**
 	 * The operation id for the '<em>Update Or Add Room Type</em>' operation.
@@ -2256,7 +2247,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___UPDATE_OR_ADD_ROOM_TYPE__ROOMTYPE = 29;
+	int DB_INTERFACE___UPDATE_OR_ADD_ROOM_TYPE__ROOMTYPE = 28;
 
 	/**
 	 * The operation id for the '<em>Update Or Add Employee Type</em>' operation.
@@ -2265,7 +2256,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___UPDATE_OR_ADD_EMPLOYEE_TYPE__EMPLOYEETYPE = 30;
+	int DB_INTERFACE___UPDATE_OR_ADD_EMPLOYEE_TYPE__EMPLOYEETYPE = 29;
 
 	/**
 	 * The operation id for the '<em>Update Or Add Extra</em>' operation.
@@ -2274,7 +2265,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___UPDATE_OR_ADD_EXTRA__EXTRA = 31;
+	int DB_INTERFACE___UPDATE_OR_ADD_EXTRA__EXTRA = 30;
 
 	/**
 	 * The operation id for the '<em>Get Available Rooms</em>' operation.
@@ -2283,7 +2274,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___GET_AVAILABLE_ROOMS__ROOMTYPE_DATE_DATE = 32;
+	int DB_INTERFACE___GET_AVAILABLE_ROOMS__ROOMTYPE_DATE_DATE = 31;
 
 	/**
 	 * The operation id for the '<em>Get Rooms</em>' operation.
@@ -2292,7 +2283,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___GET_ROOMS__ROOMTYPE = 33;
+	int DB_INTERFACE___GET_ROOMS__ROOMTYPE = 32;
 
 	/**
 	 * The operation id for the '<em>Get Booking</em>' operation.
@@ -2301,7 +2292,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE___GET_BOOKING__INT = 34;
+	int DB_INTERFACE___GET_BOOKING__INT = 33;
 
 	/**
 	 * The number of operations of the '<em>DB Interface</em>' class.
@@ -2310,7 +2301,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE_OPERATION_COUNT = 35;
+	int DB_INTERFACE_OPERATION_COUNT = 34;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.FakeDBContextImpl <em>Fake DB Context</em>}' class.
@@ -2456,15 +2447,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int FAKE_DB_CONTEXT___FIND_BOOKINGS__STRING = DB_INTERFACE___FIND_BOOKINGS__STRING;
-
-	/**
-	 * The operation id for the '<em>Get Booked Rooms</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FAKE_DB_CONTEXT___GET_BOOKED_ROOMS = DB_INTERFACE___GET_BOOKED_ROOMS;
 
 	/**
 	 * The operation id for the '<em>Get All Customers</em>' operation.
@@ -3368,17 +3350,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EAttribute getRoom_InternalComment();
 
 	/**
-	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Room#isBooked <em>Booked</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Booked</em>'.
-	 * @see HotelManagementClassDiagram.Room#isBooked()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EAttribute getRoom_Booked();
-
-	/**
 	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Room#getMaxNbrPeople <em>Max Nbr People</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3964,6 +3935,16 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EOperation getMaintenanceController__SetRepairedStatus__Room_boolean();
 
 	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.MaintenanceController#getNextRoomToClean() <em>Get Next Room To Clean</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Next Room To Clean</em>' operation.
+	 * @see HotelManagementClassDiagram.MaintenanceController#getNextRoomToClean()
+	 * @generated
+	 */
+	EOperation getMaintenanceController__GetNextRoomToClean();
+
+	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Hotel <em>Hotel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4293,16 +4274,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getDBInterface__FindBookings__String();
-
-	/**
-	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getBookedRooms() <em>Get Booked Rooms</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Booked Rooms</em>' operation.
-	 * @see HotelManagementClassDiagram.DBInterface#getBookedRooms()
-	 * @generated
-	 */
-	EOperation getDBInterface__GetBookedRooms();
 
 	/**
 	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getAllCustomers() <em>Get All Customers</em>}' operation.
@@ -5096,14 +5067,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EAttribute ROOM__INTERNAL_COMMENT = eINSTANCE.getRoom_InternalComment();
 
 		/**
-		 * The meta object literal for the '<em><b>Booked</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM__BOOKED = eINSTANCE.getRoom_Booked();
-
-		/**
 		 * The meta object literal for the '<em><b>Max Nbr People</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5572,6 +5535,14 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EOperation MAINTENANCE_CONTROLLER___SET_REPAIRED_STATUS__ROOM_BOOLEAN = eINSTANCE.getMaintenanceController__SetRepairedStatus__Room_boolean();
 
 		/**
+		 * The meta object literal for the '<em><b>Get Next Room To Clean</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MAINTENANCE_CONTROLLER___GET_NEXT_ROOM_TO_CLEAN = eINSTANCE.getMaintenanceController__GetNextRoomToClean();
+
+		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.HotelImpl <em>Hotel</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5840,14 +5811,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation DB_INTERFACE___FIND_BOOKINGS__STRING = eINSTANCE.getDBInterface__FindBookings__String();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Booked Rooms</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DB_INTERFACE___GET_BOOKED_ROOMS = eINSTANCE.getDBInterface__GetBookedRooms();
 
 		/**
 		 * The meta object literal for the '<em><b>Get All Customers</b></em>' operation.

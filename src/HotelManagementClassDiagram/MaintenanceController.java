@@ -87,4 +87,12 @@ public interface MaintenanceController extends EObject {
 	 */
 	void setRepairedStatus(Room room, boolean repaired);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	Room getNextRoomToClean();
+
 } // MaintenanceController

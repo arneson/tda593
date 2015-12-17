@@ -138,14 +138,6 @@ public interface DBInterface extends EObject {
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
-	EList<Room> getBookedRooms();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
-	 * @generated
-	 */
 	EList<Customer> getAllCustomers();
 
 	/**
