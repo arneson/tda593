@@ -156,6 +156,17 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Employee getEmployee(String SSN) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
@@ -188,6 +199,8 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 				return getAllExtras();
 			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___GET_ALL_DISCOUNTS:
 				return getAllDiscounts();
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___GET_EMPLOYEE__STRING:
+				return getEmployee((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

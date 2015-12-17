@@ -322,7 +322,7 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void logIn(String SSN) {
+	public Employee logIn(String SSN, String password) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -494,9 +494,8 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HotelManagementClassDiagramPackage.HOTEL___LOG_IN__STRING:
-				logIn((String)arguments.get(0));
-				return null;
+			case HotelManagementClassDiagramPackage.HOTEL___LOG_IN__STRING_STRING:
+				return logIn((String)arguments.get(0), (String)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

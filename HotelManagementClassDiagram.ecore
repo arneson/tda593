@@ -264,6 +264,9 @@
         eType="#//Extra"/>
     <eOperations name="getAllDiscounts" ordered="false" lowerBound="1" upperBound="-1"
         eType="#//Discount"/>
+    <eOperations name="getEmployee" ordered="false" lowerBound="1" eType="#//Employee">
+      <eParameters name="SSN" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MaintenanceController">
     <eOperations name="addToQueue" ordered="false" lowerBound="1">
@@ -288,8 +291,9 @@
         lowerBound="1" upperBound="-1" eType="#//Room"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Hotel">
-    <eOperations name="logIn" ordered="false" lowerBound="1">
+    <eOperations name="logIn" ordered="false" lowerBound="1" eType="#//Employee">
       <eParameters name="SSN" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+      <eParameters name="password" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
         eType="ecore:EDataType types.ecore#//String"/>
