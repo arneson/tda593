@@ -113,17 +113,16 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
         from = addDays(from, -1);
         to = addDays(to, 1);
         EList<RoomType> types = new BasicEList<>();
-		for (Booking booking : FakeDB.bookings)
-        {
-            if (booking.getStartDate().after(from) && booking.getEndDate().before(to))
-            {
-                for (Room room : booking.getBookedRooms()) {
-                    RoomType type = room.getType();
-                    if (!types.contains(type))
-                        types.add(type);
-                }
-            }
+        EList<Room> rooms = _getAllRooms();
+        EList<Booking> bookings = getBookings(from, to);
+        for (Booking booking : bookings)
+            rooms.removeAll(booking.getBookedRooms());
+
+        for (Room room : rooms) {
+            if (!types.contains(room.getType()))
+                types.add(room.getType());
         }
+
 		return types;
 	}
 
