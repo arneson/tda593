@@ -153,13 +153,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="underRepair" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="types" ordered="false"
-        lowerBound="1" upperBound="-1" eType="#//RoomType"/>
+        lowerBound="1" eType="#//RoomType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RoomType">
-    <eLiterals name="Handicapable"/>
-    <eLiterals name="Double" value="1"/>
-    <eLiterals name="Single" value="2"/>
-    <eLiterals name="Suite" value="3"/>
+    <eLiterals name="Double"/>
+    <eLiterals name="Single" value="1"/>
+    <eLiterals name="Suite" value="2"/>
+    <eLiterals name="Family" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Customer" eSuperTypes="#//Person">
     <eOperations name="addBonusPoints" ordered="false" lowerBound="1">

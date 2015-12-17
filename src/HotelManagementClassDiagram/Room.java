@@ -2,8 +2,6 @@
  */
 package HotelManagementClassDiagram;
 
-import org.eclipse.emf.common.util.EList;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Room</b></em>'.
@@ -211,8 +209,7 @@ public interface Room extends Costable {
 	void setUnderRepair(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Types</b></em>' attribute list.
-	 * The list contents are of type {@link HotelManagementClassDiagram.RoomType}.
+	 * Returns the value of the '<em><b>Types</b></em>' attribute.
 	 * The literals are from the enumeration {@link HotelManagementClassDiagram.RoomType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -220,12 +217,24 @@ public interface Room extends Costable {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Types</em>' attribute list.
+	 * @return the value of the '<em>Types</em>' attribute.
 	 * @see HotelManagementClassDiagram.RoomType
+	 * @see #setTypes(RoomType)
 	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_Types()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	EList<RoomType> getTypes();
+	RoomType getTypes();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Room#getTypes <em>Types</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Types</em>' attribute.
+	 * @see HotelManagementClassDiagram.RoomType
+	 * @see #getTypes()
+	 * @generated
+	 */
+	void setTypes(RoomType value);
 
 } // Room

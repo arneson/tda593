@@ -7,7 +7,6 @@ import HotelManagementClassDiagram.Hotel;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.MaintenanceController;
 import HotelManagementClassDiagram.ManagementController;
-import HotelManagementClassDiagram.*;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;

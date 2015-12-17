@@ -183,7 +183,7 @@
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_x2h3sJj1EeWQB-I7Xm36yA" name="types" visibility="private" type="_JTGcgJdZEeW_2em-0w3Fbg">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7T374Jj1EeWQB-I7Xm36yA" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7T5KAJj1EeWQB-I7Xm36yA" value="*"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7T5KAJj1EeWQB-I7Xm36yA" value="1"/>
     </ownedAttribute>
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_k90yQKSuEeWVDoDgGsfQNA" client="_S3mAoJdQEeW_2em-0w3Fbg" supplier="_OeItEJdQEeW_2em-0w3Fbg" contract="_OeItEJdQEeW_2em-0w3Fbg"/>
   </packagedElement>
@@ -199,10 +199,10 @@
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_V0LM4JdYEeW_2em-0w3Fbg" name="Manager"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Enumeration" xmi:id="_JTGcgJdZEeW_2em-0w3Fbg" name="RoomType">
-    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_SweV4JdZEeW_2em-0w3Fbg" name="Handicapable"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_U3j-MJdZEeW_2em-0w3Fbg" name="Double"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_VuLdIJdZEeW_2em-0w3Fbg" name="Single"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_WWOUkJdZEeW_2em-0w3Fbg" name="Suite"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_KwNHoKTWEeWVDoDgGsfQNA" name="Family"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_t7VSwJdbEeW_2em-0w3Fbg" name="Person" isAbstract="true">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_JCRq4JdcEeW_2em-0w3Fbg" name="name" visibility="private">

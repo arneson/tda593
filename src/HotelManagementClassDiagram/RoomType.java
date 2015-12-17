@@ -19,16 +19,6 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum RoomType implements Enumerator {
 	/**
-	 * The '<em><b>Handicapable</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #HANDICAPABLE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	HANDICAPABLE(0, "Handicapable", "Handicapable"),
-
-	/**
 	 * The '<em><b>Double</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -36,7 +26,7 @@ public enum RoomType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DOUBLE(1, "Double", "Double"),
+	DOUBLE(0, "Double", "Double"),
 
 	/**
 	 * The '<em><b>Single</b></em>' literal object.
@@ -46,7 +36,7 @@ public enum RoomType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SINGLE(2, "Single", "Single"),
+	SINGLE(1, "Single", "Single"),
 
 	/**
 	 * The '<em><b>Suite</b></em>' literal object.
@@ -56,22 +46,15 @@ public enum RoomType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SUITE(3, "Suite", "Suite");
-
-	/**
-	 * The '<em><b>Handicapable</b></em>' literal value.
+	SUITE(2, "Suite", "Suite"), /**
+	 * The '<em><b>Family</b></em>' literal object.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Handicapable</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #HANDICAPABLE
-	 * @model name="Handicapable"
+	 * @see #FAMILY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HANDICAPABLE_VALUE = 0;
+	FAMILY(3, "Family", "Family");
 
 	/**
 	 * The '<em><b>Double</b></em>' literal value.
@@ -86,7 +69,7 @@ public enum RoomType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DOUBLE_VALUE = 1;
+	public static final int DOUBLE_VALUE = 0;
 
 	/**
 	 * The '<em><b>Single</b></em>' literal value.
@@ -101,7 +84,7 @@ public enum RoomType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SINGLE_VALUE = 2;
+	public static final int SINGLE_VALUE = 1;
 
 	/**
 	 * The '<em><b>Suite</b></em>' literal value.
@@ -116,7 +99,22 @@ public enum RoomType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SUITE_VALUE = 3;
+	public static final int SUITE_VALUE = 2;
+
+	/**
+	 * The '<em><b>Family</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Family</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #FAMILY
+	 * @model name="Family"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int FAMILY_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Room Type</b></em>' enumerators.
@@ -126,10 +124,10 @@ public enum RoomType implements Enumerator {
 	 */
 	private static final RoomType[] VALUES_ARRAY =
 		new RoomType[] {
-			HANDICAPABLE,
 			DOUBLE,
 			SINGLE,
 			SUITE,
+			FAMILY,
 		};
 
 	/**
@@ -186,10 +184,10 @@ public enum RoomType implements Enumerator {
 	 */
 	public static RoomType get(int value) {
 		switch (value) {
-			case HANDICAPABLE_VALUE: return HANDICAPABLE;
 			case DOUBLE_VALUE: return DOUBLE;
 			case SINGLE_VALUE: return SINGLE;
 			case SUITE_VALUE: return SUITE;
+			case FAMILY_VALUE: return FAMILY;
 		}
 		return null;
 	}

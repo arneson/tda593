@@ -1092,7 +1092,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int ROOM__UNDER_REPAIR = COSTABLE_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Types</b></em>' attribute list.
+	 * The feature id for the '<em><b>Types</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3284,10 +3284,10 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EAttribute getRoom_UnderRepair();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link HotelManagementClassDiagram.Room#getTypes <em>Types</em>}'.
+	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Room#getTypes <em>Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Types</em>'.
+	 * @return the meta object for the attribute '<em>Types</em>'.
 	 * @see HotelManagementClassDiagram.Room#getTypes()
 	 * @see #getRoom()
 	 * @generated
@@ -4892,7 +4892,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EAttribute ROOM__UNDER_REPAIR = eINSTANCE.getRoom_UnderRepair();
 
 		/**
-		 * The meta object literal for the '<em><b>Types</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Types</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -403,8 +403,9 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	 * @generated
 	 */
 	public void updateOrAddCustomer(Customer customer) {
-        if (!FakeDB.customers.contains(customer))
-            FakeDB.customers.add(customer);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -413,8 +414,9 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	 * @generated
 	 */
 	public void updateOrAddBooking(Booking booking) {
-        if (!FakeDB.bookings.contains(booking))
-            FakeDB.bookings.add(booking);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
