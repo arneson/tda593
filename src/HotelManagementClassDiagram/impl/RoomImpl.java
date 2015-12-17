@@ -439,7 +439,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addDiscount() {
+	public void addDiscount(Discount discount) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -450,7 +450,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void removeDiscount() {
+	public void removeDiscount(Discount discount) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -615,11 +615,11 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HotelManagementClassDiagramPackage.ROOM___ADD_DISCOUNT:
-				addDiscount();
+			case HotelManagementClassDiagramPackage.ROOM___ADD_DISCOUNT__DISCOUNT:
+				addDiscount((Discount)arguments.get(0));
 				return null;
-			case HotelManagementClassDiagramPackage.ROOM___REMOVE_DISCOUNT:
-				removeDiscount();
+			case HotelManagementClassDiagramPackage.ROOM___REMOVE_DISCOUNT__DISCOUNT:
+				removeDiscount((Discount)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

@@ -2,7 +2,12 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.*;
+import HotelManagementClassDiagram.Booking;
+import HotelManagementClassDiagram.BookingController;
+import HotelManagementClassDiagram.Customer;
+import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
+import HotelManagementClassDiagram.Room;
+import HotelManagementClassDiagram.RoomType;
 import main.FakeDB;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;

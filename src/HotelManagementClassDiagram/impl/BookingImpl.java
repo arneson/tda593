@@ -2,8 +2,12 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.*;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
+import java.util.Date;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -11,9 +15,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.Collection;
-import java.util.Date;
+import HotelManagementClassDiagram.Addon;
+import HotelManagementClassDiagram.Bill;
+import HotelManagementClassDiagram.Booking;
+import HotelManagementClassDiagram.Creditcard;
+import HotelManagementClassDiagram.Customer;
+import HotelManagementClassDiagram.Discount;
+import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
+import HotelManagementClassDiagram.Room;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +37,6 @@ import java.util.Date;
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getEndDate <em>End Date</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getCreated <em>Created</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getCreditCard <em>Credit Card</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getCustomer <em>Customer</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getAddons <em>Addons</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getBookedRooms <em>Booked Rooms</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getInternalComments <em>Internal Comments</em>}</li>
@@ -133,16 +141,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	protected Creditcard creditCard;
 
 	/**
-	 * The cached value of the '{@link #getCustomer() <em>Customer</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustomer()
-	 * @generated
-	 * @ordered
-	 */
-	protected Customer customer;
-
-	/**
 	 * The cached value of the '{@link #getAddons() <em>Addons</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -153,14 +151,14 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	protected EList<Addon> addons;
 
 	/**
-	 * The cached value of the '{@link #getBookedRooms() <em>Booked Rooms</em>}' reference.
+	 * The cached value of the '{@link #getBookedRooms() <em>Booked Rooms</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBookedRooms()
 	 * @generated
 	 * @ordered
 	 */
-	protected BookedRoom bookedRooms;
+	protected EList<Room> bookedRooms;
 
 	/**
 	 * The default value of the '{@link #getInternalComments() <em>Internal Comments</em>}' attribute.
@@ -276,11 +274,13 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 */
 	public BookingImpl(Customer customer, Date startDate, Date endDate, Room... rooms){
 		// TODO generate booking ID automatically
-		this.customer = customer;
 		this.startDate = startDate;
 		this.endDate = endDate;
-		//this.bookedRooms = new BasicEList<>();
-		//this.bookedRooms.addAll(rooms)
+		bookedRooms = new BasicEList<Room>();
+		for (Room room : rooms) {
+			bookedRooms.add(room);
+		}
+		
 	}
 
 	/**
@@ -417,44 +417,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Customer getCustomer() {
-		if (customer != null && customer.eIsProxy()) {
-			InternalEObject oldCustomer = (InternalEObject)customer;
-			customer = (Customer)eResolveProxy(oldCustomer);
-			if (customer != oldCustomer) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelManagementClassDiagramPackage.BOOKING__CUSTOMER, oldCustomer, customer));
-			}
-		}
-		return customer;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Customer basicGetCustomer() {
-		return customer;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCustomer(Customer newCustomer) {
-		Customer oldCustomer = customer;
-		customer = newCustomer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BOOKING__CUSTOMER, oldCustomer, customer));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Addon> getAddons() {
 		if (addons == null) {
 			addons = new EObjectResolvingEList<Addon>(Addon.class, this, HotelManagementClassDiagramPackage.BOOKING__ADDONS);
@@ -467,37 +429,11 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BookedRoom getBookedRooms() {
-		if (bookedRooms != null && bookedRooms.eIsProxy()) {
-			InternalEObject oldBookedRooms = (InternalEObject)bookedRooms;
-			bookedRooms = (BookedRoom)eResolveProxy(oldBookedRooms);
-			if (bookedRooms != oldBookedRooms) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS, oldBookedRooms, bookedRooms));
-			}
+	public EList<Room> getBookedRooms() {
+		if (bookedRooms == null) {
+			bookedRooms = new EObjectResolvingEList<Room>(Room.class, this, HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS);
 		}
 		return bookedRooms;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BookedRoom basicGetBookedRooms() {
-		return bookedRooms;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBookedRooms(BookedRoom newBookedRooms) {
-		BookedRoom oldBookedRooms = bookedRooms;
-		bookedRooms = newBookedRooms;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS, oldBookedRooms, bookedRooms));
 	}
 
 	/**
@@ -763,14 +699,10 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case HotelManagementClassDiagramPackage.BOOKING__CREDIT_CARD:
 				if (resolve) return getCreditCard();
 				return basicGetCreditCard();
-			case HotelManagementClassDiagramPackage.BOOKING__CUSTOMER:
-				if (resolve) return getCustomer();
-				return basicGetCustomer();
 			case HotelManagementClassDiagramPackage.BOOKING__ADDONS:
 				return getAddons();
 			case HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS:
-				if (resolve) return getBookedRooms();
-				return basicGetBookedRooms();
+				return getBookedRooms();
 			case HotelManagementClassDiagramPackage.BOOKING__INTERNAL_COMMENTS:
 				return getInternalComments();
 			case HotelManagementClassDiagramPackage.BOOKING__EXTERNAL_COMMENTS:
@@ -812,15 +744,13 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case HotelManagementClassDiagramPackage.BOOKING__CREDIT_CARD:
 				setCreditCard((Creditcard)newValue);
 				return;
-			case HotelManagementClassDiagramPackage.BOOKING__CUSTOMER:
-				setCustomer((Customer)newValue);
-				return;
 			case HotelManagementClassDiagramPackage.BOOKING__ADDONS:
 				getAddons().clear();
 				getAddons().addAll((Collection<? extends Addon>)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS:
-				setBookedRooms((BookedRoom) newValue);
+				getBookedRooms().clear();
+				getBookedRooms().addAll((Collection<? extends Room>)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__INTERNAL_COMMENTS:
 				setInternalComments((String)newValue);
@@ -868,14 +798,11 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case HotelManagementClassDiagramPackage.BOOKING__CREDIT_CARD:
 				setCreditCard((Creditcard)null);
 				return;
-			case HotelManagementClassDiagramPackage.BOOKING__CUSTOMER:
-				setCustomer((Customer)null);
-				return;
 			case HotelManagementClassDiagramPackage.BOOKING__ADDONS:
 				getAddons().clear();
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS:
-				setBookedRooms((BookedRoom) null);
+				getBookedRooms().clear();
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__INTERNAL_COMMENTS:
 				setInternalComments(INTERNAL_COMMENTS_EDEFAULT);
@@ -917,12 +844,10 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return CREATED_EDEFAULT == null ? created != null : !CREATED_EDEFAULT.equals(created);
 			case HotelManagementClassDiagramPackage.BOOKING__CREDIT_CARD:
 				return creditCard != null;
-			case HotelManagementClassDiagramPackage.BOOKING__CUSTOMER:
-				return customer != null;
 			case HotelManagementClassDiagramPackage.BOOKING__ADDONS:
 				return addons != null && !addons.isEmpty();
 			case HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS:
-				return bookedRooms != null;
+				return bookedRooms != null && !bookedRooms.isEmpty();
 			case HotelManagementClassDiagramPackage.BOOKING__INTERNAL_COMMENTS:
 				return INTERNAL_COMMENTS_EDEFAULT == null ? internalComments != null : !INTERNAL_COMMENTS_EDEFAULT.equals(internalComments);
 			case HotelManagementClassDiagramPackage.BOOKING__EXTERNAL_COMMENTS:

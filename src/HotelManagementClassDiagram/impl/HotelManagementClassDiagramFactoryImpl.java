@@ -58,12 +58,11 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 			case HotelManagementClassDiagramPackage.EMPLOYEE_TYPE: return createEmployeeType();
 			case HotelManagementClassDiagramPackage.BOOKING: return createBooking();
 			case HotelManagementClassDiagramPackage.CREDITCARD: return createCreditcard();
-			case HotelManagementClassDiagramPackage.CUSTOMER: return createCustomer();
 			case HotelManagementClassDiagramPackage.ADDON: return createAddon();
 			case HotelManagementClassDiagramPackage.EXTRA: return createExtra();
 			case HotelManagementClassDiagramPackage.DISCOUNT: return createDiscount();
-			case HotelManagementClassDiagramPackage.BOOKED_ROOM: return createBookedRoom();
 			case HotelManagementClassDiagramPackage.ROOM: return createRoom();
+			case HotelManagementClassDiagramPackage.CUSTOMER: return createCustomer();
 			case HotelManagementClassDiagramPackage.BILL: return createBill();
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER: return createBookingController();
 			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER: return createManagementController();
@@ -252,16 +251,6 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 	public Hotel createHotel() {
 		HotelImpl hotel = new HotelImpl();
 		return hotel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BookedRoom createBookedRoom() {
-		BookedRoomImpl bookedRoom = new BookedRoomImpl();
-		return bookedRoom;
 	}
 
 	/**

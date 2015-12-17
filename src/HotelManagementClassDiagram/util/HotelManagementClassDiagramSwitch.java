@@ -97,13 +97,6 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HotelManagementClassDiagramPackage.CUSTOMER: {
-				Customer customer = (Customer)theEObject;
-				T result = caseCustomer(customer);
-				if (result == null) result = casePerson(customer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case HotelManagementClassDiagramPackage.ADDON: {
 				Addon addon = (Addon)theEObject;
 				T result = caseAddon(addon);
@@ -130,16 +123,17 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HotelManagementClassDiagramPackage.BOOKED_ROOM: {
-				BookedRoom bookedRoom = (BookedRoom)theEObject;
-				T result = caseBookedRoom(bookedRoom);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case HotelManagementClassDiagramPackage.ROOM: {
 				Room room = (Room)theEObject;
 				T result = caseRoom(room);
 				if (result == null) result = caseCostable(room);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HotelManagementClassDiagramPackage.CUSTOMER: {
+				Customer customer = (Customer)theEObject;
+				T result = caseCustomer(customer);
+				if (result == null) result = casePerson(customer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -457,21 +451,6 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseHotel(Hotel object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Booked Room</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Booked Room</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBookedRoom(BookedRoom object) {
 		return null;
 	}
 

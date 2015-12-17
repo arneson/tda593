@@ -124,7 +124,7 @@ public class AddonImpl extends ExtraImpl implements Addon {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addDiscount() {
+	public void addDiscount(Discount discount) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -135,7 +135,7 @@ public class AddonImpl extends ExtraImpl implements Addon {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void removeDiscount() {
+	public void removeDiscount(Discount discount) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -254,8 +254,8 @@ public class AddonImpl extends ExtraImpl implements Addon {
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == Costable.class) {
 			switch (baseOperationID) {
-				case HotelManagementClassDiagramPackage.COSTABLE___ADD_DISCOUNT: return HotelManagementClassDiagramPackage.ADDON___ADD_DISCOUNT;
-				case HotelManagementClassDiagramPackage.COSTABLE___REMOVE_DISCOUNT: return HotelManagementClassDiagramPackage.ADDON___REMOVE_DISCOUNT;
+				case HotelManagementClassDiagramPackage.COSTABLE___ADD_DISCOUNT__DISCOUNT: return HotelManagementClassDiagramPackage.ADDON___ADD_DISCOUNT__DISCOUNT;
+				case HotelManagementClassDiagramPackage.COSTABLE___REMOVE_DISCOUNT__DISCOUNT: return HotelManagementClassDiagramPackage.ADDON___REMOVE_DISCOUNT__DISCOUNT;
 				default: return -1;
 			}
 		}
@@ -270,11 +270,11 @@ public class AddonImpl extends ExtraImpl implements Addon {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HotelManagementClassDiagramPackage.ADDON___ADD_DISCOUNT:
-				addDiscount();
+			case HotelManagementClassDiagramPackage.ADDON___ADD_DISCOUNT__DISCOUNT:
+				addDiscount((Discount)arguments.get(0));
 				return null;
-			case HotelManagementClassDiagramPackage.ADDON___REMOVE_DISCOUNT:
-				removeDiscount();
+			case HotelManagementClassDiagramPackage.ADDON___REMOVE_DISCOUNT__DISCOUNT:
+				removeDiscount((Discount)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

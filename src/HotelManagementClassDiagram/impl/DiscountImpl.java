@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link HotelManagementClassDiagram.impl.DiscountImpl#isPercentage <em>Is Percentage</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.DiscountImpl#getAmount <em>Amount</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.DiscountImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,6 +64,26 @@ public class DiscountImpl extends MinimalEObjectImpl.Container implements Discou
 	 * @ordered
 	 */
 	protected double amount = AMOUNT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,6 +159,27 @@ public class DiscountImpl extends MinimalEObjectImpl.Container implements Discou
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.DISCOUNT__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -145,6 +187,8 @@ public class DiscountImpl extends MinimalEObjectImpl.Container implements Discou
 				return isPercentage();
 			case HotelManagementClassDiagramPackage.DISCOUNT__AMOUNT:
 				return getAmount();
+			case HotelManagementClassDiagramPackage.DISCOUNT__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,6 +206,9 @@ public class DiscountImpl extends MinimalEObjectImpl.Container implements Discou
 				return;
 			case HotelManagementClassDiagramPackage.DISCOUNT__AMOUNT:
 				setAmount((Double)newValue);
+				return;
+			case HotelManagementClassDiagramPackage.DISCOUNT__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -181,6 +228,9 @@ public class DiscountImpl extends MinimalEObjectImpl.Container implements Discou
 			case HotelManagementClassDiagramPackage.DISCOUNT__AMOUNT:
 				setAmount(AMOUNT_EDEFAULT);
 				return;
+			case HotelManagementClassDiagramPackage.DISCOUNT__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -197,6 +247,8 @@ public class DiscountImpl extends MinimalEObjectImpl.Container implements Discou
 				return isPercentage != IS_PERCENTAGE_EDEFAULT;
 			case HotelManagementClassDiagramPackage.DISCOUNT__AMOUNT:
 				return amount != AMOUNT_EDEFAULT;
+			case HotelManagementClassDiagramPackage.DISCOUNT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -215,6 +267,8 @@ public class DiscountImpl extends MinimalEObjectImpl.Container implements Discou
 		result.append(isPercentage);
 		result.append(", amount: ");
 		result.append(amount);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

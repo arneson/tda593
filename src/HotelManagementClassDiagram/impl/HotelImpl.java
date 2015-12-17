@@ -2,6 +2,11 @@
  */
 package HotelManagementClassDiagram.impl;
 
+import HotelManagementClassDiagram.BookingController;
+import HotelManagementClassDiagram.Hotel;
+import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
+import HotelManagementClassDiagram.MaintenanceController;
+import HotelManagementClassDiagram.ManagementController;
 import HotelManagementClassDiagram.*;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
@@ -426,22 +431,6 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 		result.append(rank);
 		result.append(')');
 		return result.toString();
-	}
-
-	/* Following methods are for factory purposes */
-
-	/**
-	 * @generated NOT
-	 */
-	public Room createRoom(Room room){
-		return new RoomImpl(); //new BookedRoomImpl(room);
-	}
-
-	/**
-	 * @generated NOT
-	 */
-	public BookedRoom createBookedRoom(Room room){
-		return new BookedRoomImpl(); //new BookedRoomImpl(room);
 	}
 
 } //HotelImpl

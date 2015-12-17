@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link HotelManagementClassDiagram.Booking#getEndDate <em>End Date</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Booking#getCreated <em>Created</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Booking#getCreditCard <em>Credit Card</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Booking#getCustomer <em>Customer</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Booking#getAddons <em>Addons</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Booking#getBookedRooms <em>Booked Rooms</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Booking#getInternalComments <em>Internal Comments</em>}</li>
@@ -169,32 +168,6 @@ public interface Booking extends EObject {
 	void setCreditCard(Creditcard value);
 
 	/**
-	 * Returns the value of the '<em><b>Customer</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Customer</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Customer</em>' reference.
-	 * @see #setCustomer(Customer)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking_Customer()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	Customer getCustomer();
-
-	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Booking#getCustomer <em>Customer</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Customer</em>' reference.
-	 * @see #getCustomer()
-	 * @generated
-	 */
-	void setCustomer(Customer value);
-
-	/**
 	 * Returns the value of the '<em><b>Addons</b></em>' reference list.
 	 * The list contents are of type {@link HotelManagementClassDiagram.Addon}.
 	 * <!-- begin-user-doc -->
@@ -211,30 +184,20 @@ public interface Booking extends EObject {
 	EList<Addon> getAddons();
 
 	/**
-	 * Returns the value of the '<em><b>Booked Rooms</b></em>' reference.
+	 * Returns the value of the '<em><b>Booked Rooms</b></em>' reference list.
+	 * The list contents are of type {@link HotelManagementClassDiagram.Room}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Booked Rooms</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Booked Rooms</em>' reference.
-	 * @see #setBookedRooms(BookedRoom)
+	 * @return the value of the '<em>Booked Rooms</em>' reference list.
 	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking_BookedRooms()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	BookedRoom getBookedRooms();
-
-	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Booking#getBookedRooms <em>Booked Rooms</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Booked Rooms</em>' reference.
-	 * @see #getBookedRooms()
-	 * @generated
-	 */
-	void setBookedRooms(BookedRoom value);
+	EList<Room> getBookedRooms();
 
 	/**
 	 * Returns the value of the '<em><b>Internal Comments</b></em>' attribute.

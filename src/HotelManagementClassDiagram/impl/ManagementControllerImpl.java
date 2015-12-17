@@ -2,7 +2,13 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.*;
+import HotelManagementClassDiagram.Addon;
+import HotelManagementClassDiagram.Booking;
+import HotelManagementClassDiagram.Costable;
+import HotelManagementClassDiagram.Discount;
+import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
+import HotelManagementClassDiagram.ManagementController;
+import HotelManagementClassDiagram.Room;
 import main.FakeDB;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;

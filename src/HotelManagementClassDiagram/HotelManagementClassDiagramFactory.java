@@ -148,15 +148,6 @@ public interface HotelManagementClassDiagramFactory extends EFactory {
 	Hotel createHotel();
 
 	/**
-	 * Returns a new object of class '<em>Booked Room</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Booked Room</em>'.
-	 * @generated
-	 */
-	BookedRoom createBookedRoom();
-
-	/**
 	 * Returns a new object of class '<em>Interaction1</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

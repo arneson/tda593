@@ -31,14 +31,6 @@ public interface DBInterface extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
-	 * @generated
-	 */
-	EList<Room> getAvaliableRooms();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false" roomNumberRequired="true" roomNumberOrdered="false"
 	 * @generated
 	 */
@@ -55,10 +47,10 @@ public interface DBInterface extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
+	 * @model required="true" ordered="false" fromRequired="true" fromOrdered="false" toRequired="true" toOrdered="false"
 	 * @generated
 	 */
-	EList<RoomType> getAvaliableRoomTypes();
+	EList<RoomType> getAvaliableRoomTypes(Date from, Date to);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -135,14 +127,6 @@ public interface DBInterface extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
-	 * @generated
-	 */
-	Booking getBooking();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false" customerNameDataType="org.eclipse.uml2.types.String" customerNameRequired="true" customerNameOrdered="false"
 	 * @generated
 	 */
@@ -154,47 +138,7 @@ public interface DBInterface extends EObject {
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
-	EList<BookedRoom> getAllBookedRooms();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" fromDateRequired="true" fromDateOrdered="false" endDateRequired="true" endDateOrdered="false"
-	 * @generated
-	 */
-	EList<BookedRoom> getBookedRooms(Date fromDate, Date endDate);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
-	 * @generated
-	 */
-	EList<BookedRoom> getPastBookedRooms();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
-	 * @generated
-	 */
-	EList<BookedRoom> getFutureBookedRooms();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
-	 * @generated
-	 */
-	EList<BookedRoom> getCurrentBookedRooms();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" customerNameDataType="org.eclipse.uml2.types.String" customerNameRequired="true" customerNameOrdered="false"
-	 * @generated
-	 */
-	EList<BookedRoom> findBookedRooms(String customerName);
+	EList<Room> getBookedRooms();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,10 +159,10 @@ public interface DBInterface extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false"
+	 * @model required="true" ordered="false" partOfCustomerNameDataType="org.eclipse.uml2.types.String" partOfCustomerNameRequired="true" partOfCustomerNameOrdered="false"
 	 * @generated
 	 */
-	EList<Customer> findCustomers();
+	EList<Customer> findCustomers(String partOfCustomerName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,5 +203,85 @@ public interface DBInterface extends EObject {
 	 * @generated
 	 */
 	EList<Employee> getAllReceptionists();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model roomRequired="true" roomOrdered="false"
+	 * @generated
+	 */
+	void updateOrAddRoom(Room room);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model customerRequired="true" customerOrdered="false"
+	 * @generated
+	 */
+	void updateOrAddCustomer(Customer customer);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model bookingRequired="true" bookingOrdered="false"
+	 * @generated
+	 */
+	void updateOrAddBooking(Booking booking);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model discountRequired="true" discountOrdered="false"
+	 * @generated
+	 */
+	void updateOrAddDiscount(Discount discount);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model addonRequired="true" addonOrdered="false"
+	 * @generated
+	 */
+	void updateOrAddAddon(Addon addon);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model employeeRequired="true" employeeOrdered="false"
+	 * @generated
+	 */
+	void updateOrAddEmployee(Employee employee);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model typeRequired="true" typeOrdered="false"
+	 * @generated
+	 */
+	void updateOrAddRoomType(RoomType type);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model typeRequired="true" typeOrdered="false"
+	 * @generated
+	 */
+	void updateOrAddEmployeeType(EmployeeType type);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model extraRequired="true" extraOrdered="false"
+	 * @generated
+	 */
+	void updateOrAddExtra(Extra extra);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" typeRequired="true" typeOrdered="false" fromRequired="true" fromOrdered="false" toRequired="true" toOrdered="false"
+	 * @generated
+	 */
+	EList<Room> getAvailableRooms(RoomType type, Date from, Date to);
 
 } // DBInterface
