@@ -69,22 +69,6 @@ public interface BookingController extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model ssNumberRequired="true" ssNumberOrdered="false"
-	 * @generated
-	 */
-	void findCustomer(String ssNumber);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model roomRequired="true" roomOrdered="false"
-	 * @generated
-	 */
-	void assignRoom(Room room);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false" SSNDataType="org.eclipse.uml2.types.String" SSNRequired="true" SSNOrdered="false"
 	 * @generated
 	 */

@@ -71,21 +71,10 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addToQueue(Room room) {
 		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void addToStack(Room room) {
-		roomStack.add(room);
 	}
 
 	/**
@@ -94,7 +83,7 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	 * @generated NOT
 	 */
 	public void setCleanedStatus(Room room, boolean status) {
-		for (Room roomInstance : roomStack) {
+		for (Room roomInstance : roomQueue) {
 			if (roomInstance.equals(room)) {
 				room.setUnderCleaning(status);
 			}
@@ -105,42 +94,19 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void removeFromQueue(Room room) {
 		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void getNextRoomToClean(Room room) {
 		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void notifyWorker(EmployeeType worker) {
-		throw new UnsupportedOperationException();
-		// TODO
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void removeFromStack(Room room) {
-		roomStack.remove(room);
 	}
 
 	/**
@@ -149,23 +115,22 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	 * @generated NOT
 	 */
 	public void setRepairedStatus(Room room, boolean repaired) {
-		for (Room roomInstance : roomStack) {
+		for (Room roomInstance : roomQueue) {
 			if (roomInstance.equals(room)) {
 				room.setUnderRepair(repaired);
+				break;
 			}
 		}
-		// TODO error parameters
+		FakeDBContextImpl.getInstance().updateOrAddRoom(room);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Room getNextRoomToClean() {
 		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
