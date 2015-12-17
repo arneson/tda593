@@ -66,6 +66,14 @@ public interface MaintenanceController extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model roomRequired="true" roomOrdered="false"
+	 * @generated
+	 */
+	void getNextRoomToClean(Room room);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model roomRequired="true" roomOrdered="false" repairedRequired="true" repairedOrdered="false"
 	 * @generated
 	 */

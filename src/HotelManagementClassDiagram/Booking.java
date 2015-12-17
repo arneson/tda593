@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link HotelManagementClassDiagram.Booking#getPaymentMaster <em>Payment Master</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Booking#getDiscounts <em>Discounts</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Booking#getRoomTypes <em>Room Types</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Booking#getFinalBill <em>Final Bill</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking()
@@ -363,6 +364,32 @@ public interface Booking extends EObject {
 	 * @generated
 	 */
 	EList<RoomType> getRoomTypes();
+
+	/**
+	 * Returns the value of the '<em><b>Final Bill</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Final Bill</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Final Bill</em>' reference.
+	 * @see #setFinalBill(Bill)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking_FinalBill()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	Bill getFinalBill();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Booking#getFinalBill <em>Final Bill</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Final Bill</em>' reference.
+	 * @see #getFinalBill()
+	 * @generated
+	 */
+	void setFinalBill(Bill value);
 
 	/**
 	 * <!-- begin-user-doc -->

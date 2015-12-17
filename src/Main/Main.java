@@ -26,18 +26,26 @@ import HotelManagementClassDiagram.impl.RoomImpl;
  */
 public class Main {
 	
-	static final String CLI_EXIT_COMMAND= "exit";
-	static final String CLI_HELP_COMMAND= "help";
-	static final String CLI_CHECKIN_COMMAND= "checkin";
-	static final String CLI_CHECKOUT_COMMAND= "checkout";
-	static final String CLI_BOOK_A_ROOM_COMMAND= "book";
-	static final String CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND= "browse";
+	static final String CLI_EXIT_COMMAND = "exit";
+	static final String CLI_HELP_COMMAND = "help";
+	static final String CLI_CHECKIN_COMMAND = "checkin";
+	static final String CLI_CHECKOUT_COMMAND = "checkout";
+	static final String CLI_BOOK_A_ROOM_COMMAND = "book";
+	static final String CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND = "browse";
+	static final String CLI_LIST_BOOKINGS_COMMAND = "listbookings";
+	static final String CLI_LIST_CUSTOMERS_COMMAND = "listcustomers";
+	static final String CLI_ADD_ROOM_COMMAND = "addroom";
+	static final String CLI_ADD_ADDON_COMMAND = "addaddon";
+	static final String CLI_ADD_EXTRA_COMMAND = "addextra";
+	static final String CLI_ADD_DISCOUNT_COMMAND = "adddiscount";
+	
 	
 	public static void main(String[] args) {
         // Generate the fake data for testing
 		generateFakeData();
 		Hotel myHotel = new HotelImpl("C-R-A-P hotel");
 		BookingController bookingController = myHotel.getBookingController();
+		ManagementController managementController = myHotel.getManagementController();
 		Scanner reader = new Scanner(System.in);
 		
 		String command ="";
@@ -62,6 +70,31 @@ public class Main {
 				case CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND:
 					searchAvailableRoomTypes(reader, bookingController);
 					break;
+					
+				case CLI_LIST_BOOKINGS_COMMAND:
+					listBookings(reader, bookingController);
+					break;
+					
+				case CLI_LIST_CUSTOMERS_COMMAND:
+					listCustomers(reader, bookingController);
+					break;
+					
+				case CLI_ADD_ROOM_COMMAND:
+					addRoom(reader, managementController);
+					break;
+					
+				case CLI_ADD_ADDON_COMMAND:
+					addAddon(reader, managementController);
+					break;
+					
+				case CLI_ADD_EXTRA_COMMAND:
+					addExtra(reader, managementController);
+					break;
+					
+				case CLI_ADD_DISCOUNT_COMMAND:
+					addDiscount(reader, managementController);
+					break;
+				
 				default:
 					System.out.println("Enter " + CLI_HELP_COMMAND + " for a list of commands.");
 					System.out.println("Enter " + CLI_EXIT_COMMAND + " to exit.");
@@ -71,6 +104,36 @@ public class Main {
 			command = reader.nextLine();
 		}while(!command.equalsIgnoreCase(CLI_EXIT_COMMAND));
 
+	}
+
+	private static void addDiscount(Scanner reader, ManagementController managementController) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void addExtra(Scanner reader, ManagementController managementController) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void addAddon(Scanner reader, ManagementController managementController) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void addRoom(Scanner reader, ManagementController managementController) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void listCustomers(Scanner reader, BookingController bookingController) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void listBookings(Scanner reader, BookingController bookingController) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	public static void printHelp() {

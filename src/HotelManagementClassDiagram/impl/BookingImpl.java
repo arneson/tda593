@@ -49,6 +49,7 @@ import HotelManagementClassDiagram.RoomType;
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getPaymentMaster <em>Payment Master</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getDiscounts <em>Discounts</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getRoomTypes <em>Room Types</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getFinalBill <em>Final Bill</em>}</li>
  * </ul>
  *
  * @generated
@@ -273,6 +274,16 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @ordered
 	 */
 	protected EList<RoomType> roomTypes;
+
+	/**
+	 * The cached value of the '{@link #getFinalBill() <em>Final Bill</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFinalBill()
+	 * @generated
+	 * @ordered
+	 */
+	protected Bill finalBill;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -614,6 +625,44 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Bill getFinalBill() {
+		if (finalBill != null && finalBill.eIsProxy()) {
+			InternalEObject oldFinalBill = (InternalEObject)finalBill;
+			finalBill = (Bill)eResolveProxy(oldFinalBill);
+			if (finalBill != oldFinalBill) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelManagementClassDiagramPackage.BOOKING__FINAL_BILL, oldFinalBill, finalBill));
+			}
+		}
+		return finalBill;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Bill basicGetFinalBill() {
+		return finalBill;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFinalBill(Bill newFinalBill) {
+		Bill oldFinalBill = finalBill;
+		finalBill = newFinalBill;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BOOKING__FINAL_BILL, oldFinalBill, finalBill));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public void checkIn() {
@@ -767,6 +816,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return getDiscounts();
 			case HotelManagementClassDiagramPackage.BOOKING__ROOM_TYPES:
 				return getRoomTypes();
+			case HotelManagementClassDiagramPackage.BOOKING__FINAL_BILL:
+				if (resolve) return getFinalBill();
+				return basicGetFinalBill();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -826,6 +878,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				getRoomTypes().clear();
 				getRoomTypes().addAll((Collection<? extends RoomType>)newValue);
 				return;
+			case HotelManagementClassDiagramPackage.BOOKING__FINAL_BILL:
+				setFinalBill((Bill)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -880,6 +935,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case HotelManagementClassDiagramPackage.BOOKING__ROOM_TYPES:
 				getRoomTypes().clear();
 				return;
+			case HotelManagementClassDiagramPackage.BOOKING__FINAL_BILL:
+				setFinalBill((Bill)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -920,6 +978,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return discounts != null && !discounts.isEmpty();
 			case HotelManagementClassDiagramPackage.BOOKING__ROOM_TYPES:
 				return roomTypes != null && !roomTypes.isEmpty();
+			case HotelManagementClassDiagramPackage.BOOKING__FINAL_BILL:
+				return finalBill != null;
 		}
 		return super.eIsSet(featureID);
 	}

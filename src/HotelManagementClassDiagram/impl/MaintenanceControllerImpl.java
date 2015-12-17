@@ -2,7 +2,6 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.EmployeeType;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.MaintenanceController;
 import HotelManagementClassDiagram.Room;
@@ -14,7 +13,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.Queue;
 
 /**
  * <!-- begin-user-doc -->
@@ -107,6 +105,17 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 				break;
 			}
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void getNextRoomToClean(Room room) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -211,6 +220,9 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 				return null;
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___REMOVE_FROM_QUEUE__ROOM:
 				removeFromQueue((Room)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___GET_NEXT_ROOM_TO_CLEAN__ROOM:
+				getNextRoomToClean((Room)arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___SET_REPAIRED_STATUS__ROOM_BOOLEAN:
 				setRepairedStatus((Room)arguments.get(0), (Boolean)arguments.get(1));

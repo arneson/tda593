@@ -112,6 +112,50 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Employee> getAllEmployees() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Addon> getAllAddons() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Extra> getAllExtras() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Discount> getAllDiscounts() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
@@ -136,6 +180,14 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EXTRA__EXTRA:
 				updateOrAddExtra((Extra)arguments.get(0));
 				return null;
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___GET_ALL_EMPLOYEES:
+				return getAllEmployees();
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___GET_ALL_ADDONS:
+				return getAllAddons();
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___GET_ALL_EXTRAS:
+				return getAllExtras();
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___GET_ALL_DISCOUNTS:
+				return getAllDiscounts();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
