@@ -26,22 +26,46 @@ import HotelManagementClassDiagram.impl.RoomImpl;
  */
 public class Main {
 	
-	static final String CLI_EXIT_COMMAND= "exit";
-	static final String CLI_HELP_COMMAND= "help";
-	static final String CLI_CHECKIN_COMMAND= "checkin";
-	static final String CLI_CHECKOUT_COMMAND= "checkout";
-	static final String CLI_BOOK_A_ROOM_COMMAND= "book";
-	static final String CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND= "browse";
+	static final String CLI_EXIT_COMMAND = "exit";
+	static final String CLI_HELP_COMMAND = "help";
+	static final String CLI_CHECKIN_COMMAND = "checkin";
+	static final String CLI_CHECKOUT_COMMAND = "checkout";
+	static final String CLI_BOOK_A_ROOM_COMMAND = "book";
+	static final String CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND = "browse";
+	static final String CLI_LIST_BOOKINGS_COMMAND = "listbookings";
+	static final String CLI_LIST_CUSTOMERS_COMMAND = "listcustomers";
+	static final String CLI_ADD_ROOM_COMMAND = "addroom";
+	static final String CLI_ADD_ADDON_COMMAND = "addaddon";
+	static final String CLI_ADD_EXTRA_COMMAND = "addextra";
+	static final String CLI_ADD_DISCOUNT_COMMAND = "adddiscount";
+
+    private static Employee user;
 	
 	public static void main(String[] args) {
         // Generate the fake data for testing
 		generateFakeData();
 		Hotel myHotel = new HotelImpl("C-R-A-P hotel");
-		BookingController bookingController = myHotel.getBookingController();
 		Scanner reader = new Scanner(System.in);
 		
 		String command ="";
-		System.out.println("Welcome to "+myHotel.getName()+".");
+		System.out.println("Welcome to " + myHotel.getName() + ".");
+
+        while (user == null)
+        {
+            user = login(reader, myHotel);
+            if (user == null)
+                System.out.println("Login failed");
+        }
+
+        System.out.println("###############################");
+        System.out.println("Logged in as " + user.getName());
+        System.out.println("###############################");
+        System.out.println();
+
+        // Retrieve all controllers
+        BookingController bookingController = myHotel.getBookingController();
+        ManagementController managementController = myHotel.getManagementController();
+
 		do{
 			switch(command){
 				case CLI_HELP_COMMAND:
@@ -62,6 +86,31 @@ public class Main {
 				case CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND:
 					searchAvailableRoomTypes(reader, bookingController);
 					break;
+					
+				case CLI_LIST_BOOKINGS_COMMAND:
+					listBookings(reader, bookingController);
+					break;
+					
+				case CLI_LIST_CUSTOMERS_COMMAND:
+					listCustomers(reader, bookingController);
+					break;
+					
+				case CLI_ADD_ROOM_COMMAND:
+					addRoom(reader, managementController);
+					break;
+					
+				case CLI_ADD_ADDON_COMMAND:
+					addAddon(reader, managementController);
+					break;
+					
+				case CLI_ADD_EXTRA_COMMAND:
+					addExtra(reader, managementController);
+					break;
+					
+				case CLI_ADD_DISCOUNT_COMMAND:
+					addDiscount(reader, managementController);
+					break;
+				
 				default:
 					System.out.println("Enter " + CLI_HELP_COMMAND + " for a list of commands.");
 					System.out.println("Enter " + CLI_EXIT_COMMAND + " to exit.");
@@ -73,14 +122,110 @@ public class Main {
 
 	}
 
+    public static Employee login(Scanner reader, Hotel hotel){
+        try{
+            System.out.println("####### Login #######");
+            System.out.print("Social Security Number: ");
+            String ssn = reader.nextLine();
+            System.out.print("Password: ");
+            String pw = reader.nextLine();
+            return hotel.logIn(ssn, pw);
+        }catch(Exception ex) {
+            System.out.println("Login process exited: " + 405);
+        }
+        return null;
+    }
+
+	private static void addDiscount(Scanner reader, ManagementController managementController) {
+        if (user == null || user.getEmployeeType().getAcessLevel() < 9) {
+            System.out.println("Unallowed access");
+            return;
+        }
+		try{
+
+        }catch(Exception ex) {
+            System.out.println("Add discount process exited: " + 410);
+        }
+	}
+
+	private static void addExtra(Scanner reader, ManagementController managementController) {
+        if (user == null || user.getEmployeeType().getAcessLevel() < 9) {
+            System.out.println("Unallowed access");
+            return;
+        }
+        try{
+
+        }catch(Exception ex) {
+            System.out.println("Add extra process exited: " + 409);
+        }
+	}
+
+	private static void addAddon(Scanner reader, ManagementController managementController) {
+        if (user == null || user.getEmployeeType().getAcessLevel() < 9) {
+            System.out.println("Unallowed access");
+            return;
+        }
+        try{
+
+        }catch(Exception ex) {
+            System.out.println("Add addon process exited: " + 408);
+        }
+	}
+
+	private static void addRoom(Scanner reader, ManagementController managementController) {
+        if (user == null || user.getEmployeeType().getAcessLevel() < 9) {
+            System.out.println("Unallowed access");
+            return;
+        }
+        try{
+
+        }catch(Exception ex) {
+            System.out.println("Add room process exited: " + 407);
+        }
+	}
+
+	private static void listCustomers(Scanner reader, BookingController bookingController) {
+        if (user == null || user.getEmployeeType().getAcessLevel() < 4) {
+            System.out.println("Unallowed access");
+            return;
+        }
+        try{
+
+        }catch(Exception ex) {
+            System.out.println("List customer process exited: " + 406);
+        }
+	}
+
+	private static void listBookings(Scanner reader, BookingController bookingController) {
+        if (user == null || user.getEmployeeType().getAcessLevel() < 4) {
+            System.out.println("Unallowed access");
+            return;
+        }
+        try{
+
+        }catch(Exception ex) {
+            System.out.println("List bookings process exited: " + 411);
+        }
+	}
+
 	public static void printHelp() {
 		System.out.println();
 		System.out.println("HELP - List of commands.");
 		System.out.println("##########################");
-        System.out.println(CLI_BOOK_A_ROOM_COMMAND + " - book a room");
-        System.out.println(CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND + " - browse available room types");
-        System.out.println(CLI_CHECKIN_COMMAND + " - check in a booking");
-        System.out.println(CLI_CHECKOUT_COMMAND + " - check out a booking");
+        if (user != null && user.getEmployeeType().getAcessLevel() >= 4) {
+            System.out.println(CLI_BOOK_A_ROOM_COMMAND + " - book a room");
+            System.out.println(CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND + " - browse available room types");
+            System.out.println(CLI_CHECKIN_COMMAND + " - check in a booking");
+            System.out.println(CLI_CHECKOUT_COMMAND + " - check out a booking");
+            System.out.println(CLI_LIST_BOOKINGS_COMMAND + " - exit the program");
+            System.out.println(CLI_LIST_CUSTOMERS_COMMAND + " - exit the program");
+        }
+        if (user != null && user.getEmployeeType().getAcessLevel() >= 9) {
+            System.out.println(CLI_ADD_ROOM_COMMAND + " - exit the program");
+            System.out.println(CLI_ADD_ADDON_COMMAND + " - exit the program");
+            System.out.println(CLI_ADD_EXTRA_COMMAND + " - exit the program");
+            System.out.println(CLI_ADD_DISCOUNT_COMMAND + " - exit the program");
+        }
         System.out.println(CLI_HELP_COMMAND + " - show list of commands");
 		System.out.println(CLI_EXIT_COMMAND + " - exit the program");
 		System.out.println();
@@ -88,7 +233,10 @@ public class Main {
 	}
 
 	public static void bookARoom(Scanner reader, BookingController bookingController) {
-
+        if (user == null || user.getEmployeeType().getAcessLevel() < 4) {
+            System.out.println("Unallowed access");
+            return;
+        }
         try{
             System.out.print("Please enter start date (YYYY-MM-DD): ");
             String startDateString = reader.next();
@@ -168,6 +316,10 @@ public class Main {
 	}
 
 	public static void checkIn(Scanner reader, BookingController bookingController){
+        if (user == null || user.getEmployeeType().getAcessLevel() < 4) {
+            System.out.println("Unallowed access");
+            return;
+        }
         try{
             System.out.println();
             System.out.println("CHECK IN");
@@ -207,6 +359,10 @@ public class Main {
 	}
 
 	public static void searchAvailableRoomTypes(Scanner reader, BookingController bookingController) {
+        if (user == null || user.getEmployeeType().getAcessLevel() < 4) {
+            System.out.println("Unallowed access");
+            return;
+        }
         try{
             System.out.print("Please enter start date (YYYY-MM-DD): ");
             String startDateString = reader.next();
@@ -245,6 +401,10 @@ public class Main {
 	}
 
 	public static void checkOut(Scanner reader, BookingController bookingController) {
+        if (user == null || user.getEmployeeType().getAcessLevel() < 4) {
+            System.out.println("Unallowed access");
+            return;
+        }
         try{
             System.out.println();
             System.out.println("CHECK OUT");
@@ -296,7 +456,7 @@ public class Main {
         EType[] types = {EType.CLEANER, EType.RECEPTIONIST, EType.MANAGER};
         for (int i = 0; i < 5; i++)
         {
-            EmployeeType type = new EmployeeTypeImpl(types[i%3], (i+1)*2);
+            EmployeeType type = new EmployeeTypeImpl(types[i%3], (i%3+1)*(i%3+1));
             double salary = 20000.0 * (i+1)/4,
                 workrate = 0.2;
             String name = names[i],
@@ -307,9 +467,10 @@ public class Main {
                 postalCode = "711 32",
                 ssnumber = ssnumbers[i],
                 street = "Kungsgatan 11B",
-                title = "Mr.";
+                title = "Mr.",
+                password = "admin";
             Employee employee = new EmployeeImpl(type, salary, workrate, name, city, country, gender, phoneNumber,
-                    postalCode, ssnumber, street, title);
+                    postalCode, ssnumber, password, street, title);
             employees.add(employee);
         }
 

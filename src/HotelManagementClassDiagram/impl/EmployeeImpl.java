@@ -25,6 +25,7 @@ import java.lang.reflect.InvocationTargetException;
  *   <li>{@link HotelManagementClassDiagram.impl.EmployeeImpl#getEmployeeID <em>Employee ID</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.EmployeeImpl#getWorkRate <em>Work Rate</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.EmployeeImpl#getSalary <em>Salary</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.EmployeeImpl#getPassword <em>Password</em>}</li>
  * </ul>
  *
  * @generated
@@ -101,6 +102,26 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 	protected double salary = SALARY_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getPassword() <em>Password</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPassword()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PASSWORD_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPassword() <em>Password</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPassword()
+	 * @generated
+	 * @ordered
+	 */
+	protected String password = PASSWORD_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -114,12 +135,13 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 	 */
 	public EmployeeImpl(EmployeeType type, double salary, double workrate, String name, String city,
 						String country, String gender, String phoneNumber, String postalCode, String ssnumber,
-						String street, String title){
+						String password, String street, String title){
         super(name, title, gender, ssnumber, phoneNumber, country, city, postalCode, street);
 		this.employeeID = name.hashCode();
         this.employeeType = type;
         this.salary = salary;
         this.workRate = workrate;
+		this.password = password;
 	}
 
 	/**
@@ -236,6 +258,27 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPassword() {
+		return password;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPassword(String newPassword) {
+		String oldPassword = password;
+		password = newPassword;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.EMPLOYEE__PASSWORD, oldPassword, password));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public void Booking() {
@@ -277,6 +320,8 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 				return getWorkRate();
 			case HotelManagementClassDiagramPackage.EMPLOYEE__SALARY:
 				return getSalary();
+			case HotelManagementClassDiagramPackage.EMPLOYEE__PASSWORD:
+				return getPassword();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -300,6 +345,9 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 				return;
 			case HotelManagementClassDiagramPackage.EMPLOYEE__SALARY:
 				setSalary((Double)newValue);
+				return;
+			case HotelManagementClassDiagramPackage.EMPLOYEE__PASSWORD:
+				setPassword((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -325,6 +373,9 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 			case HotelManagementClassDiagramPackage.EMPLOYEE__SALARY:
 				setSalary(SALARY_EDEFAULT);
 				return;
+			case HotelManagementClassDiagramPackage.EMPLOYEE__PASSWORD:
+				setPassword(PASSWORD_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -345,6 +396,8 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 				return workRate != WORK_RATE_EDEFAULT;
 			case HotelManagementClassDiagramPackage.EMPLOYEE__SALARY:
 				return salary != SALARY_EDEFAULT;
+			case HotelManagementClassDiagramPackage.EMPLOYEE__PASSWORD:
+				return PASSWORD_EDEFAULT == null ? password != null : !PASSWORD_EDEFAULT.equals(password);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -386,6 +439,8 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 		result.append(workRate);
 		result.append(", salary: ");
 		result.append(salary);
+		result.append(", password: ");
+		result.append(password);
 		result.append(')');
 		return result.toString();
 	}

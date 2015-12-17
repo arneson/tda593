@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link HotelManagementClassDiagram.Hotel#getBookingController <em>Booking Controller</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Hotel#getMaintenanceController <em>Maintenance Controller</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Hotel#getManagementController <em>Management Controller</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Hotel#getUser <em>User</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getHotel()
@@ -144,6 +145,40 @@ public interface Hotel extends EObject {
 	 * @generated
 	 */
 	void setManagementController(ManagementController value);
+
+	/**
+	 * Returns the value of the '<em><b>User</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>User</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>User</em>' reference.
+	 * @see #setUser(Employee)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getHotel_User()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	Employee getUser();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Hotel#getUser <em>User</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>User</em>' reference.
+	 * @see #getUser()
+	 * @generated
+	 */
+	void setUser(Employee value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" SSNDataType="org.eclipse.uml2.types.String" SSNRequired="true" SSNOrdered="false" passwordDataType="org.eclipse.uml2.types.String" passwordRequired="true" passwordOrdered="false"
+	 * @generated
+	 */
+	Employee logIn(String SSN, String password);
 
 	/**
 	 * Returns the value of the '<em><b>Maintenance Controller</b></em>' reference.

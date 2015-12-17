@@ -6,6 +6,7 @@ import HotelManagementClassDiagram.Booking;
 import HotelManagementClassDiagram.BookingController;
 import HotelManagementClassDiagram.Customer;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
+import HotelManagementClassDiagram.Room;
 import HotelManagementClassDiagram.RoomType;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -104,6 +105,28 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void findCustomer(String ssNumber) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void assignRoom(Room room) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public Customer getCustomer(String SSN) {
@@ -133,6 +156,28 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Booking> getAllBookings() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Customer> getAllCustomers() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
@@ -152,6 +197,12 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___SAVE_CUSTOMER__CUSTOMER:
 				saveCustomer((Customer)arguments.get(0));
 				return null;
+			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___FIND_CUSTOMER__STRING:
+				findCustomer((String)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___ASSIGN_ROOM__ROOM:
+				assignRoom((Room)arguments.get(0));
+				return null;
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___GET_CUSTOMER__STRING:
 				return getCustomer((String)arguments.get(0));
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___UPDATE_OR_ADD_CUSTOMER__CUSTOMER:
@@ -160,6 +211,10 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___UPDATE_OR_ADD_BOOKING__BOOKING:
 				updateOrAddBooking((Booking)arguments.get(0));
 				return null;
+			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___GET_ALL_BOOKINGS:
+				return getAllBookings();
+			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___GET_ALL_CUSTOMERS:
+				return getAllCustomers();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

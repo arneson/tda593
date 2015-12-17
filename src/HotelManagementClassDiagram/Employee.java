@@ -16,6 +16,7 @@ package HotelManagementClassDiagram;
  *   <li>{@link HotelManagementClassDiagram.Employee#getEmployeeID <em>Employee ID</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Employee#getWorkRate <em>Work Rate</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Employee#getSalary <em>Salary</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Employee#getPassword <em>Password</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getEmployee()
@@ -126,6 +127,32 @@ public interface Employee extends Person {
 	 * @generated
 	 */
 	void setSalary(double value);
+
+	/**
+	 * Returns the value of the '<em><b>Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Password</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Password</em>' attribute.
+	 * @see #setPassword(String)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getEmployee_Password()
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getPassword();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Employee#getPassword <em>Password</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Password</em>' attribute.
+	 * @see #getPassword()
+	 * @generated
+	 */
+	void setPassword(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

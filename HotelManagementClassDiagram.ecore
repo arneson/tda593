@@ -14,6 +14,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="salary" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" ordered="false"
+        lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Person" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
@@ -99,6 +101,8 @@
         lowerBound="1" upperBound="-1" eType="#//Discount"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomTypes" ordered="false"
         lowerBound="1" upperBound="-1" eType="#//RoomType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="finalBill" ordered="false"
+        lowerBound="1" eType="#//Bill"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Creditcard">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" ordered="false"
@@ -225,6 +229,10 @@
     <eOperations name="updateOrAddBooking" ordered="false" lowerBound="1">
       <eParameters name="booking" ordered="false" lowerBound="1" eType="#//Booking"/>
     </eOperations>
+    <eOperations name="getAllBookings" ordered="false" lowerBound="1" upperBound="-1"
+        eType="#//Booking"/>
+    <eOperations name="getAllCustomers" ordered="false" lowerBound="1" upperBound="-1"
+        eType="#//Customer"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ManagementController">
     <eOperations name="updateOrAddEmployee" ordered="false" lowerBound="1">
@@ -247,6 +255,17 @@
     </eOperations>
     <eOperations name="updateOrAddExtra" ordered="false" lowerBound="1">
       <eParameters name="extra" ordered="false" lowerBound="1" eType="#//Extra"/>
+    </eOperations>
+    <eOperations name="getAllEmployees" ordered="false" lowerBound="1" upperBound="-1"
+        eType="#//Employee"/>
+    <eOperations name="getAllAddons" ordered="false" lowerBound="1" upperBound="-1"
+        eType="#//Addon"/>
+    <eOperations name="getAllExtras" ordered="false" lowerBound="1" upperBound="-1"
+        eType="#//Extra"/>
+    <eOperations name="getAllDiscounts" ordered="false" lowerBound="1" upperBound="-1"
+        eType="#//Discount"/>
+    <eOperations name="getEmployee" ordered="false" lowerBound="1" eType="#//Employee">
+      <eParameters name="SSN" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MaintenanceController">
@@ -272,6 +291,10 @@
         lowerBound="1" upperBound="-1" eType="#//Room"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Hotel">
+    <eOperations name="logIn" ordered="false" lowerBound="1" eType="#//Employee">
+      <eParameters name="SSN" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+      <eParameters name="password" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
         eType="ecore:EDataType types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" ordered="false"
@@ -284,6 +307,8 @@
         ordered="false" lowerBound="1" eType="#//MaintenanceController"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="managementController" ordered="false"
         lowerBound="1" eType="#//ManagementController"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="user" ordered="false" lowerBound="1"
+        eType="#//Employee"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Interaction1">
     <eStructuralFeatures xsi:type="ecore:EReference" name="_" ordered="false" lowerBound="1"

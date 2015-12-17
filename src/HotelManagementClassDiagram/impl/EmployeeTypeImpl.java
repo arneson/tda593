@@ -77,8 +77,8 @@ public class EmployeeTypeImpl extends MinimalEObjectImpl.Container implements Em
 	/**
 	 * @generated NOT
 	 */
-	public EmployeeTypeImpl(EType type, int acessLevel){
-		this.acessLevel = acessLevel;
+	public EmployeeTypeImpl(EType type, int accessLevel){
+		this.acessLevel = accessLevel;
 		this.type = type;
 	}
 
