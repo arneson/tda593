@@ -116,11 +116,11 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 	/**
 	 * @generated NOT
 	 */
-	public EmployeeImpl(int id, EmployeeType type, double salary, double workrate, String name, String city,
+	public EmployeeImpl(EmployeeType type, double salary, double workrate, String name, String city,
 						String country, String gender, String phoneNumber, String postalCode, String ssnumber,
 						String street, String title){
         super(name, title, gender, ssnumber, phoneNumber, country, city, postalCode, street);
-		this.employeeID = id;
+		// TODO generate employeeId
         this.employeeType = type;
         this.salary = salary;
         this.workRate = workrate;

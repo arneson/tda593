@@ -124,7 +124,7 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 			}
 		}
 		return null;
-	}
+	}<
 
 	/**
 	 * <!-- begin-user-doc -->

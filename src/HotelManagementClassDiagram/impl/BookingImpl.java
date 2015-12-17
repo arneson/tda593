@@ -286,13 +286,13 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * @generated NOT
 	 */
-	public BookingImpl(int id, Customer customer, Date startDate, Date endDate, BookedRoom... rooms){
-		this.bookingId = id;
+	public BookingImpl(Customer customer, Date startDate, Date endDate, BookedRoom... rooms){
+		// TODO generate booking ID automatically
 		this.customer = customer;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.bookedRooms = new BasicEList<>();
-		//this.bookedRooms.addAll(rooms);
+		//this.bookedRooms.addAll(rooms)
 	}
 
 	/**
@@ -317,13 +317,10 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setBookingId(int newBookingId) {
-		int oldBookingId = bookingId;
-		bookingId = newBookingId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BOOKING__BOOKING_ID, oldBookingId, bookingId));
+		throw new UnsupportedOperationException("Not a supported operation");
 	}
 
 	/**
