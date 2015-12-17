@@ -12,7 +12,6 @@ import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.ManagementController;
 import HotelManagementClassDiagram.Room;
 import HotelManagementClassDiagram.RoomType;
-import HotelManagementClassDiagram.*;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -52,70 +51,6 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void registerDiscount(Discount discount) {
-		FakeDBContextImpl.getInstance().updateOrAddDiscount(discount);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void modifyBooking(Booking booking) {
-		FakeDBContextImpl.getInstance().updateOrAddBooking(booking);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 *     This method is not supported in this version of the software
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void setDateSpecificPrices(Costable costable, Date startDate, Date endDate, double priceChange) {
-		throw new UnsupportedOperationException("This is not supported");
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void registerRoom(Room room) {
-		FakeDBContextImpl.getInstance().updateOrAddRoom(room);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void registerAddon(Addon addon) {
-		FakeDBContextImpl.getInstance().updateOrAddAddon(addon);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void updateRoom(Room room) {
-		this.registerRoom(room);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void updateAddon(Addon addon) {
-		this.registerAddon(addon);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
 	public void updateOrAddEmployee(Employee employee) {
 		FakeDBContextImpl.getInstance().updateOrAddEmployee(employee);
 	}
@@ -135,7 +70,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * @generated NOT
 	 */
 	public void updateOrAddRoom(Room room) {
-		this.updateRoom(room);
+		FakeDBContextImpl.getInstance().updateOrAddRoom(room);
 	}
 
 	/**
@@ -153,7 +88,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * @generated NOT
 	 */
 	public void updateOrAddDiscount(Discount discount) {
-		this.registerDiscount(discount);
+		FakeDBContextImpl.getInstance().updateOrAddDiscount(discount);
 	}
 
 	/**
@@ -162,7 +97,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * @generated NOT
 	 */
 	public void updateOrAddAddon(Addon addon) {
-		this.registerAddon(addon);
+		FakeDBContextImpl.getInstance().updateOrAddAddon(addon);
 	}
 
 	/**
