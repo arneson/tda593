@@ -57,29 +57,7 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean createBooking(EList<RoomType> roomTypes) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean sendConfirmation(Booking booking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean updateBooking(Booking booking) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -179,18 +157,47 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Customer getCustomer(String SSN) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void updateOrAddCustomer(Customer customer) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void updateOrAddBooking(Booking booking) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___SEARCH_AVAILABLE_ROOM_TYPES__DATE_DATE_INT_INT:
 				return searchAvailableRoomTypes((Date)arguments.get(0), (Date)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3));
-			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CREATE_BOOKING__ELIST:
-				return createBooking((EList<RoomType>)arguments.get(0));
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___SEND_CONFIRMATION__BOOKING:
 				return sendConfirmation((Booking)arguments.get(0));
-			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___UPDATE_BOOKING__BOOKING:
-				return updateBooking((Booking)arguments.get(0));
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___GET_BOOKING__INT:
 				return getBooking((Integer)arguments.get(0));
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CONFIRM__BOOKING:
@@ -212,6 +219,14 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 				return null;
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___ASSIGN_ROOM__ROOM:
 				assignRoom((Room)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___GET_CUSTOMER__STRING:
+				return getCustomer((String)arguments.get(0));
+			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___UPDATE_OR_ADD_CUSTOMER__CUSTOMER:
+				updateOrAddCustomer((Customer)arguments.get(0));
+				return null;
+			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___UPDATE_OR_ADD_BOOKING__BOOKING:
+				updateOrAddBooking((Booking)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

@@ -513,13 +513,22 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int BOOKING__DISCOUNTS = 12;
 
 	/**
+	 * The feature id for the '<em><b>Room Types</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__ROOM_TYPES = 13;
+
+	/**
 	 * The number of structural features of the '<em>Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_FEATURE_COUNT = 13;
+	int BOOKING_FEATURE_COUNT = 14;
 
 	/**
 	 * The operation id for the '<em>Check In</em>' operation.
@@ -1362,31 +1371,13 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int BOOKING_CONTROLLER___SEARCH_AVAILABLE_ROOM_TYPES__DATE_DATE_INT_INT = 0;
 
 	/**
-	 * The operation id for the '<em>Create Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING_CONTROLLER___CREATE_BOOKING__ELIST = 1;
-
-	/**
 	 * The operation id for the '<em>Send Confirmation</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_CONTROLLER___SEND_CONFIRMATION__BOOKING = 2;
-
-	/**
-	 * The operation id for the '<em>Update Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING_CONTROLLER___UPDATE_BOOKING__BOOKING = 3;
+	int BOOKING_CONTROLLER___SEND_CONFIRMATION__BOOKING = 1;
 
 	/**
 	 * The operation id for the '<em>Get Booking</em>' operation.
@@ -1395,7 +1386,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_CONTROLLER___GET_BOOKING__INT = 4;
+	int BOOKING_CONTROLLER___GET_BOOKING__INT = 2;
 
 	/**
 	 * The operation id for the '<em>Confirm</em>' operation.
@@ -1404,7 +1395,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_CONTROLLER___CONFIRM__BOOKING = 5;
+	int BOOKING_CONTROLLER___CONFIRM__BOOKING = 3;
 
 	/**
 	 * The operation id for the '<em>Check In</em>' operation.
@@ -1413,7 +1404,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_CONTROLLER___CHECK_IN__BOOKING_BOOLEAN = 6;
+	int BOOKING_CONTROLLER___CHECK_IN__BOOKING_BOOLEAN = 4;
 
 	/**
 	 * The operation id for the '<em>Create Key Card</em>' operation.
@@ -1422,7 +1413,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_CONTROLLER___CREATE_KEY_CARD__ROOM = 7;
+	int BOOKING_CONTROLLER___CREATE_KEY_CARD__ROOM = 5;
 
 	/**
 	 * The operation id for the '<em>Check Out</em>' operation.
@@ -1431,7 +1422,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_CONTROLLER___CHECK_OUT__BOOKING = 8;
+	int BOOKING_CONTROLLER___CHECK_OUT__BOOKING = 6;
 
 	/**
 	 * The operation id for the '<em>Save Customer</em>' operation.
@@ -1440,7 +1431,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_CONTROLLER___SAVE_CUSTOMER__CUSTOMER = 9;
+	int BOOKING_CONTROLLER___SAVE_CUSTOMER__CUSTOMER = 7;
 
 	/**
 	 * The operation id for the '<em>Find Customer</em>' operation.
@@ -1449,7 +1440,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_CONTROLLER___FIND_CUSTOMER__STRING = 10;
+	int BOOKING_CONTROLLER___FIND_CUSTOMER__STRING = 8;
 
 	/**
 	 * The operation id for the '<em>Assign Room</em>' operation.
@@ -1458,7 +1449,34 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_CONTROLLER___ASSIGN_ROOM__ROOM = 11;
+	int BOOKING_CONTROLLER___ASSIGN_ROOM__ROOM = 9;
+
+	/**
+	 * The operation id for the '<em>Get Customer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_CONTROLLER___GET_CUSTOMER__STRING = 10;
+
+	/**
+	 * The operation id for the '<em>Update Or Add Customer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_CONTROLLER___UPDATE_OR_ADD_CUSTOMER__CUSTOMER = 11;
+
+	/**
+	 * The operation id for the '<em>Update Or Add Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_CONTROLLER___UPDATE_OR_ADD_BOOKING__BOOKING = 12;
 
 	/**
 	 * The number of operations of the '<em>Booking Controller</em>' class.
@@ -1467,7 +1485,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_CONTROLLER_OPERATION_COUNT = 12;
+	int BOOKING_CONTROLLER_OPERATION_COUNT = 13;
 
 	/**
 	 * The number of structural features of the '<em>Management Controller</em>' class.
@@ -1542,13 +1560,76 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int MANAGEMENT_CONTROLLER___UPDATE_ADDON__ADDON = 6;
 
 	/**
+	 * The operation id for the '<em>Update Or Add Employee</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EMPLOYEE__EMPLOYEE = 7;
+
+	/**
+	 * The operation id for the '<em>Update Or Add Employee Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EMPLOYEE_TYPE__EMPLOYEETYPE = 8;
+
+	/**
+	 * The operation id for the '<em>Update Or Add Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ROOM__ROOM = 9;
+
+	/**
+	 * The operation id for the '<em>Update Or Add Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ROOM_TYPE__ROOMTYPE = 10;
+
+	/**
+	 * The operation id for the '<em>Update Or Add Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_DISCOUNT__DISCOUNT = 11;
+
+	/**
+	 * The operation id for the '<em>Update Or Add Addon</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ADDON__ADDON = 12;
+
+	/**
+	 * The operation id for the '<em>Update Or Add Extra</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EXTRA__EXTRA = 13;
+
+	/**
 	 * The number of operations of the '<em>Management Controller</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGEMENT_CONTROLLER_OPERATION_COUNT = 7;
+	int MANAGEMENT_CONTROLLER_OPERATION_COUNT = 14;
 
 	/**
 	 * The feature id for the '<em><b>Room Stack</b></em>' reference list.
@@ -2205,13 +2286,31 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int DB_INTERFACE___GET_AVAILABLE_ROOMS__ROOMTYPE_DATE_DATE = 32;
 
 	/**
+	 * The operation id for the '<em>Get Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_ROOMS__ROOMTYPE = 33;
+
+	/**
+	 * The operation id for the '<em>Get Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_BOOKING__INT = 34;
+
+	/**
 	 * The number of operations of the '<em>DB Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DB_INTERFACE_OPERATION_COUNT = 33;
+	int DB_INTERFACE_OPERATION_COUNT = 35;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.FakeDBContextImpl <em>Fake DB Context</em>}' class.
@@ -2528,6 +2627,24 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int FAKE_DB_CONTEXT___GET_AVAILABLE_ROOMS__ROOMTYPE_DATE_DATE = DB_INTERFACE___GET_AVAILABLE_ROOMS__ROOMTYPE_DATE_DATE;
+
+	/**
+	 * The operation id for the '<em>Get Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_ROOMS__ROOMTYPE = DB_INTERFACE___GET_ROOMS__ROOMTYPE;
+
+	/**
+	 * The operation id for the '<em>Get Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_BOOKING__INT = DB_INTERFACE___GET_BOOKING__INT;
 
 	/**
 	 * The number of operations of the '<em>Fake DB Context</em>' class.
@@ -2935,6 +3052,17 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBooking_Discounts();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link HotelManagementClassDiagram.Booking#getRoomTypes <em>Room Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Room Types</em>'.
+	 * @see HotelManagementClassDiagram.Booking#getRoomTypes()
+	 * @see #getBooking()
+	 * @generated
+	 */
+	EAttribute getBooking_RoomTypes();
 
 	/**
 	 * Returns the meta object for the '{@link HotelManagementClassDiagram.Booking#checkIn() <em>Check In</em>}' operation.
@@ -3485,16 +3613,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EOperation getBookingController__SearchAvailableRoomTypes__Date_Date_int_int();
 
 	/**
-	 * Returns the meta object for the '{@link HotelManagementClassDiagram.BookingController#createBooking(org.eclipse.emf.common.util.EList) <em>Create Booking</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Create Booking</em>' operation.
-	 * @see HotelManagementClassDiagram.BookingController#createBooking(org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getBookingController__CreateBooking__EList();
-
-	/**
 	 * Returns the meta object for the '{@link HotelManagementClassDiagram.BookingController#sendConfirmation(HotelManagementClassDiagram.Booking) <em>Send Confirmation</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3503,16 +3621,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getBookingController__SendConfirmation__Booking();
-
-	/**
-	 * Returns the meta object for the '{@link HotelManagementClassDiagram.BookingController#updateBooking(HotelManagementClassDiagram.Booking) <em>Update Booking</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Update Booking</em>' operation.
-	 * @see HotelManagementClassDiagram.BookingController#updateBooking(HotelManagementClassDiagram.Booking)
-	 * @generated
-	 */
-	EOperation getBookingController__UpdateBooking__Booking();
 
 	/**
 	 * Returns the meta object for the '{@link HotelManagementClassDiagram.BookingController#getBooking(int) <em>Get Booking</em>}' operation.
@@ -3595,6 +3703,36 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EOperation getBookingController__AssignRoom__Room();
 
 	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.BookingController#getCustomer(java.lang.String) <em>Get Customer</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Customer</em>' operation.
+	 * @see HotelManagementClassDiagram.BookingController#getCustomer(java.lang.String)
+	 * @generated
+	 */
+	EOperation getBookingController__GetCustomer__String();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.BookingController#updateOrAddCustomer(HotelManagementClassDiagram.Customer) <em>Update Or Add Customer</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Update Or Add Customer</em>' operation.
+	 * @see HotelManagementClassDiagram.BookingController#updateOrAddCustomer(HotelManagementClassDiagram.Customer)
+	 * @generated
+	 */
+	EOperation getBookingController__UpdateOrAddCustomer__Customer();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.BookingController#updateOrAddBooking(HotelManagementClassDiagram.Booking) <em>Update Or Add Booking</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Update Or Add Booking</em>' operation.
+	 * @see HotelManagementClassDiagram.BookingController#updateOrAddBooking(HotelManagementClassDiagram.Booking)
+	 * @generated
+	 */
+	EOperation getBookingController__UpdateOrAddBooking__Booking();
+
+	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.ManagementController <em>Management Controller</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3673,6 +3811,76 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getManagementController__UpdateAddon__Addon();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#updateOrAddEmployee(HotelManagementClassDiagram.Employee) <em>Update Or Add Employee</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Update Or Add Employee</em>' operation.
+	 * @see HotelManagementClassDiagram.ManagementController#updateOrAddEmployee(HotelManagementClassDiagram.Employee)
+	 * @generated
+	 */
+	EOperation getManagementController__UpdateOrAddEmployee__Employee();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#updateOrAddEmployeeType(HotelManagementClassDiagram.EmployeeType) <em>Update Or Add Employee Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Update Or Add Employee Type</em>' operation.
+	 * @see HotelManagementClassDiagram.ManagementController#updateOrAddEmployeeType(HotelManagementClassDiagram.EmployeeType)
+	 * @generated
+	 */
+	EOperation getManagementController__UpdateOrAddEmployeeType__EmployeeType();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#updateOrAddRoom(HotelManagementClassDiagram.Room) <em>Update Or Add Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Update Or Add Room</em>' operation.
+	 * @see HotelManagementClassDiagram.ManagementController#updateOrAddRoom(HotelManagementClassDiagram.Room)
+	 * @generated
+	 */
+	EOperation getManagementController__UpdateOrAddRoom__Room();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#updateOrAddRoomType(HotelManagementClassDiagram.RoomType) <em>Update Or Add Room Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Update Or Add Room Type</em>' operation.
+	 * @see HotelManagementClassDiagram.ManagementController#updateOrAddRoomType(HotelManagementClassDiagram.RoomType)
+	 * @generated
+	 */
+	EOperation getManagementController__UpdateOrAddRoomType__RoomType();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#updateOrAddDiscount(HotelManagementClassDiagram.Discount) <em>Update Or Add Discount</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Update Or Add Discount</em>' operation.
+	 * @see HotelManagementClassDiagram.ManagementController#updateOrAddDiscount(HotelManagementClassDiagram.Discount)
+	 * @generated
+	 */
+	EOperation getManagementController__UpdateOrAddDiscount__Discount();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#updateOrAddAddon(HotelManagementClassDiagram.Addon) <em>Update Or Add Addon</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Update Or Add Addon</em>' operation.
+	 * @see HotelManagementClassDiagram.ManagementController#updateOrAddAddon(HotelManagementClassDiagram.Addon)
+	 * @generated
+	 */
+	EOperation getManagementController__UpdateOrAddAddon__Addon();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#updateOrAddExtra(HotelManagementClassDiagram.Extra) <em>Update Or Add Extra</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Update Or Add Extra</em>' operation.
+	 * @see HotelManagementClassDiagram.ManagementController#updateOrAddExtra(HotelManagementClassDiagram.Extra)
+	 * @generated
+	 */
+	EOperation getManagementController__UpdateOrAddExtra__Extra();
 
 	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.MaintenanceController <em>Maintenance Controller</em>}'.
@@ -4277,6 +4485,26 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EOperation getDBInterface__GetAvailableRooms__RoomType_Date_Date();
 
 	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getRooms(HotelManagementClassDiagram.RoomType) <em>Get Rooms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Rooms</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getRooms(HotelManagementClassDiagram.RoomType)
+	 * @generated
+	 */
+	EOperation getDBInterface__GetRooms__RoomType();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getBooking(int) <em>Get Booking</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Booking</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getBooking(int)
+	 * @generated
+	 */
+	EOperation getDBInterface__GetBooking__int();
+
+	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.FakeDBContext <em>Fake DB Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4616,6 +4844,14 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BOOKING__DISCOUNTS = eINSTANCE.getBooking_Discounts();
+
+		/**
+		 * The meta object literal for the '<em><b>Room Types</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BOOKING__ROOM_TYPES = eINSTANCE.getBooking_RoomTypes();
 
 		/**
 		 * The meta object literal for the '<em><b>Check In</b></em>' operation.
@@ -5052,28 +5288,12 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EOperation BOOKING_CONTROLLER___SEARCH_AVAILABLE_ROOM_TYPES__DATE_DATE_INT_INT = eINSTANCE.getBookingController__SearchAvailableRoomTypes__Date_Date_int_int();
 
 		/**
-		 * The meta object literal for the '<em><b>Create Booking</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BOOKING_CONTROLLER___CREATE_BOOKING__ELIST = eINSTANCE.getBookingController__CreateBooking__EList();
-
-		/**
 		 * The meta object literal for the '<em><b>Send Confirmation</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EOperation BOOKING_CONTROLLER___SEND_CONFIRMATION__BOOKING = eINSTANCE.getBookingController__SendConfirmation__Booking();
-
-		/**
-		 * The meta object literal for the '<em><b>Update Booking</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BOOKING_CONTROLLER___UPDATE_BOOKING__BOOKING = eINSTANCE.getBookingController__UpdateBooking__Booking();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Booking</b></em>' operation.
@@ -5140,6 +5360,30 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EOperation BOOKING_CONTROLLER___ASSIGN_ROOM__ROOM = eINSTANCE.getBookingController__AssignRoom__Room();
 
 		/**
+		 * The meta object literal for the '<em><b>Get Customer</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_CONTROLLER___GET_CUSTOMER__STRING = eINSTANCE.getBookingController__GetCustomer__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Update Or Add Customer</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_CONTROLLER___UPDATE_OR_ADD_CUSTOMER__CUSTOMER = eINSTANCE.getBookingController__UpdateOrAddCustomer__Customer();
+
+		/**
+		 * The meta object literal for the '<em><b>Update Or Add Booking</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_CONTROLLER___UPDATE_OR_ADD_BOOKING__BOOKING = eINSTANCE.getBookingController__UpdateOrAddBooking__Booking();
+
+		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.ManagementControllerImpl <em>Management Controller</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5204,6 +5448,62 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation MANAGEMENT_CONTROLLER___UPDATE_ADDON__ADDON = eINSTANCE.getManagementController__UpdateAddon__Addon();
+
+		/**
+		 * The meta object literal for the '<em><b>Update Or Add Employee</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EMPLOYEE__EMPLOYEE = eINSTANCE.getManagementController__UpdateOrAddEmployee__Employee();
+
+		/**
+		 * The meta object literal for the '<em><b>Update Or Add Employee Type</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EMPLOYEE_TYPE__EMPLOYEETYPE = eINSTANCE.getManagementController__UpdateOrAddEmployeeType__EmployeeType();
+
+		/**
+		 * The meta object literal for the '<em><b>Update Or Add Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ROOM__ROOM = eINSTANCE.getManagementController__UpdateOrAddRoom__Room();
+
+		/**
+		 * The meta object literal for the '<em><b>Update Or Add Room Type</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ROOM_TYPE__ROOMTYPE = eINSTANCE.getManagementController__UpdateOrAddRoomType__RoomType();
+
+		/**
+		 * The meta object literal for the '<em><b>Update Or Add Discount</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_DISCOUNT__DISCOUNT = eINSTANCE.getManagementController__UpdateOrAddDiscount__Discount();
+
+		/**
+		 * The meta object literal for the '<em><b>Update Or Add Addon</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ADDON__ADDON = eINSTANCE.getManagementController__UpdateOrAddAddon__Addon();
+
+		/**
+		 * The meta object literal for the '<em><b>Update Or Add Extra</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EXTRA__EXTRA = eINSTANCE.getManagementController__UpdateOrAddExtra__Extra();
 
 		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.MaintenanceControllerImpl <em>Maintenance Controller</em>}' class.
@@ -5692,6 +5992,22 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation DB_INTERFACE___GET_AVAILABLE_ROOMS__ROOMTYPE_DATE_DATE = eINSTANCE.getDBInterface__GetAvailableRooms__RoomType_Date_Date();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Rooms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_ROOMS__ROOMTYPE = eINSTANCE.getDBInterface__GetRooms__RoomType();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Booking</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_BOOKING__INT = eINSTANCE.getDBInterface__GetBooking__int();
 
 		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.FakeDBContextImpl <em>Fake DB Context</em>}' class.

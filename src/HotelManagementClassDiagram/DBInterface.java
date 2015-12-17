@@ -284,4 +284,20 @@ public interface DBInterface extends EObject {
 	 */
 	EList<Room> getAvailableRooms(RoomType type, Date from, Date to);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" typeRequired="true" typeOrdered="false"
+	 * @generated
+	 */
+	EList<Room> getRooms(RoomType type);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
+	 * @generated
+	 */
+	Booking getBooking(int bookingID);
+
 } // DBInterface

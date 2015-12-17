@@ -497,6 +497,28 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Room> getRooms(RoomType type) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Booking getBooking(int bookingID) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
@@ -575,6 +597,10 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 				return null;
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___GET_AVAILABLE_ROOMS__ROOMTYPE_DATE_DATE:
 				return getAvailableRooms((RoomType)arguments.get(0), (Date)arguments.get(1), (Date)arguments.get(2));
+			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___GET_ROOMS__ROOMTYPE:
+				return getRooms((RoomType)arguments.get(0));
+			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___GET_BOOKING__INT:
+				return getBooking((Integer)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
