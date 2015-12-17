@@ -13,6 +13,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.Iterator;
+import java.util.Queue;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,6 +39,7 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	 * @ordered
 	 */
 	protected EList<Room> roomQueue;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,9 +77,7 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	 * @generated NOT
 	 */
 	public void addToQueue(Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.roomQueue.add(roomQueue.size()-1, room);
 	}
 
 	/**
@@ -90,7 +91,7 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 				room.setUnderCleaning(status);
 			}
 		}
-		// TODO
+		FakeDBContextImpl.getInstance().updateOrAddRoom(room);
 	}
 
 	/**
@@ -99,20 +100,14 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	 * @generated NOT
 	 */
 	public void removeFromQueue(Room room) {
-		// TODO: implement this method
+		Iterator<Room> it = this.roomQueue.iterator();
+		while (it.hasNext()) {
+			if (room.equals(it.next())) {
+				it.remove();
+				break;
+			}
+		}
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void getNextRoomToClean(Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,6 +122,17 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 			}
 		}
 		FakeDBContextImpl.getInstance().updateOrAddRoom(room);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Room getNextRoomToClean() {
+		Room m = this.roomQueue.get(0);
+		this.roomQueue.remove(0);
+		return m;
 	}
 
 	/**
@@ -206,9 +212,6 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___REMOVE_FROM_QUEUE__ROOM:
 				removeFromQueue((Room)arguments.get(0));
 				return null;
-			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___GET_NEXT_ROOM_TO_CLEAN__ROOM:
-				getNextRoomToClean((Room)arguments.get(0));
-				return null;
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___SET_REPAIRED_STATUS__ROOM_BOOLEAN:
 				setRepairedStatus((Room)arguments.get(0), (Boolean)arguments.get(1));
 				return null;
@@ -216,12 +219,6 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 				return getNextRoomToClean();
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	@Override
-	public Room getNextRoomToClean() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 

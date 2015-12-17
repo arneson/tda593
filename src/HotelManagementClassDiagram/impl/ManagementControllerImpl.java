@@ -3,7 +3,6 @@
 package HotelManagementClassDiagram.impl;
 
 import HotelManagementClassDiagram.Addon;
-import HotelManagementClassDiagram.Costable;
 import HotelManagementClassDiagram.Discount;
 import HotelManagementClassDiagram.Employee;
 import HotelManagementClassDiagram.EmployeeType;
@@ -17,7 +16,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.Date;
 
 /**
  * <!-- begin-user-doc -->
