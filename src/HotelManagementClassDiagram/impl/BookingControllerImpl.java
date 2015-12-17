@@ -79,6 +79,7 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	public void checkIn(Booking booking) {
 		booking.checkIn();
+		FakeDBContextImpl.getInstance().updateOrAddBooking(booking);
 	}
 
 	/**
@@ -88,6 +89,7 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	public void checkOut(Booking booking) {
 		booking.checkOut();
+		FakeDBContextImpl.getInstance().updateOrAddBooking(booking);
 	}
 
 	/**
