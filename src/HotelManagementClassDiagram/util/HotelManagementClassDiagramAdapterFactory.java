@@ -132,26 +132,6 @@ public class HotelManagementClassDiagramAdapterFactory extends AdapterFactoryImp
 				return createHotelAdapter();
 			}
 			@Override
-			public Adapter caseInteraction1(Interaction1 object) {
-				return createInteraction1Adapter();
-			}
-			@Override
-			public Adapter caseInteraction2(Interaction2 object) {
-				return createInteraction2Adapter();
-			}
-			@Override
-			public Adapter caseInteraction3(Interaction3 object) {
-				return createInteraction3Adapter();
-			}
-			@Override
-			public Adapter caseInteraction4(Interaction4 object) {
-				return createInteraction4Adapter();
-			}
-			@Override
-			public Adapter caseInteraction5(Interaction5 object) {
-				return createInteraction5Adapter();
-			}
-			@Override
 			public Adapter caseDBInterface(DBInterface object) {
 				return createDBInterfaceAdapter();
 			}

@@ -148,51 +148,6 @@ public interface HotelManagementClassDiagramFactory extends EFactory {
 	Hotel createHotel();
 
 	/**
-	 * Returns a new object of class '<em>Interaction1</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Interaction1</em>'.
-	 * @generated
-	 */
-	Interaction1 createInteraction1();
-
-	/**
-	 * Returns a new object of class '<em>Interaction2</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Interaction2</em>'.
-	 * @generated
-	 */
-	Interaction2 createInteraction2();
-
-	/**
-	 * Returns a new object of class '<em>Interaction3</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Interaction3</em>'.
-	 * @generated
-	 */
-	Interaction3 createInteraction3();
-
-	/**
-	 * Returns a new object of class '<em>Interaction4</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Interaction4</em>'.
-	 * @generated
-	 */
-	Interaction4 createInteraction4();
-
-	/**
-	 * Returns a new object of class '<em>Interaction5</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Interaction5</em>'.
-	 * @generated
-	 */
-	Interaction5 createInteraction5();
-
-	/**
 	 * Returns a new object of class '<em>Fake DB Context</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
