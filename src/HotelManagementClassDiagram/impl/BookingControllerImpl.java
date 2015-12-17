@@ -56,32 +56,9 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public EList<RoomType> searchAvailableRoomTypes(Date fromDate, Date toDate, int nbrOfAdults, int nbrOfChildren) {
-		EList<RoomType> types = new BasicEList<>();
-		List<Room> rooms = getAvailableRooms(fromDate, toDate);
-		for (Room r : rooms) {
-			if (r.getMaxNbrPeople() >= (nbrOfAdults + nbrOfChildren)) {
-				for (RoomType rt : r.getTypes()) {
-					if (!types.contains(rt)) {
-						types.add(rt);
-					}
-				}
-			}
-		}
-		return types;
+		throw new UnsupportedOperationException();
 	}
 
-	private List<Room> getAvailableRooms(Date fromDate, Date toDate) {
-		List<Room> rooms = new ArrayList<>(FakeDB.rooms);
-		List<Booking> booking = FakeDB.bookings;
-		for (Booking b : booking) {
-			if (fromDate.before(b.getEndDate()) || toDate.after(b.getStartDate())) {
-				for (BookedRoom br : b.getBookedRooms()) {
-					rooms.remove(br);
-				}
-			}
-		}
-		return rooms;
-	}
 
 	/**
 	 * <!-- begin-user-doc -->
