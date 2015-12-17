@@ -50,7 +50,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * @generated NOT
 	 */
 	public void registerDiscount(Discount discount) {
-		FakeDB.discounts.add(discount);
+		// TODO
 	}
 
 	/**
@@ -59,11 +59,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * @generated NOT
 	 */
 	public void modifyBooking(Booking booking) {
-		for(int b = 0; b<FakeDB.bookings.size(); b++){
-			if(FakeDB.bookings.get(b).equals(booking)){
-				FakeDB.bookings.set(b,booking);
-			}
-		}
+		// TODO
 	}
 
 	/**
@@ -72,7 +68,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * @generated NOT
 	 */
 	public void setDateSpecificPrices(Costable costable, Date startDate, Date endDate, double priceChange) {
-		throw new UnsupportedOperationException();		
+		// TODO
 	}
 
 	/**
@@ -81,7 +77,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * @generated NOT
 	 */
 	public void registerRoom(Room room) {
-		FakeDB.rooms.add(room);
+		// TODO
 	}
 
 	/**
@@ -90,7 +86,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * @generated NOT
 	 */
 	public void registerAddon(Addon addon) {
-		FakeDB.addons.add(addon);
+		// TODO
 	}
 
 	/**
@@ -99,11 +95,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * @generated NOT
 	 */
 	public void updateRoom(Room room) {
-		for (int i = 0; i < FakeDB.rooms.size(); i++) {
-			if (FakeDB.rooms.get(i).equals(room)) {
-				FakeDB.rooms.set(i, room);
-			}
-		}
+		// TODO
 	}
 
 	/**
@@ -112,11 +104,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * @generated NOT
 	 */
 	public void updateAddon(Addon addon) {
-		for(int a = 0; a<FakeDB.addons.size(); a++){
-			if(FakeDB.addons.get(a).equals(addon)){
-				FakeDB.addons.set(a,addon);
-			}
-		}
+		// TODO
 	}
 
 	/**
