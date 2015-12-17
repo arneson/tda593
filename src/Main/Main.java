@@ -57,9 +57,10 @@ public class Main {
                 System.out.println("Login failed");
         }
 
-        System.out.println("Logged in as");
-        System.out.println(user.toString());
-        System.out.println("Access: " + user.getEmployeeType().getAcessLevel());
+        System.out.println("###############################");
+        System.out.println("Logged in as " + user.getName());
+        System.out.println("###############################");
+        System.out.println();
 
         // Retrieve all controllers
         BookingController bookingController = myHotel.getBookingController();
@@ -125,9 +126,9 @@ public class Main {
         try{
             System.out.println("####### Login #######");
             System.out.print("Social Security Number: ");
-            String ssn = reader.next();
+            String ssn = reader.nextLine();
             System.out.print("Password: ");
-            String pw = reader.next();
+            String pw = reader.nextLine();
             return hotel.logIn(ssn, pw);
         }catch(Exception ex) {
             System.out.println("Login process exited: " + 405);
