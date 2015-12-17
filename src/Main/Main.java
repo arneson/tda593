@@ -177,7 +177,17 @@ public class Main {
             return;
         }
         try{
-
+        	System.out.println("Please enter max number of people: ");
+        	int maxNbrPeople = reader.nextInt();
+        	System.out.println("Please enter room number: ");
+        	int roomNumber = reader.nextInt();
+        	System.out.println("Please enter size (m2): ");
+        	int size = reader.nextInt();
+        	System.out.println("Please enter room type: ");
+        	RoomType type = RoomType.valueOf(reader.next());
+        	Room newRoom = new RoomImpl(maxNbrPeople, roomNumber, size, type);
+        	managementController.updateOrAddRoom(newRoom);
+        	System.out.println("Room created.");
         }catch(Exception ex) {
             System.out.println("Add room process exited: " + 407);
         }
@@ -258,7 +268,7 @@ public class Main {
 
             System.out.println("Please enter number of adults: ");
             int nbrOfAdults = reader.nextInt();
-            System.out.println("Please enter number of adults: ");
+            System.out.println("Please enter number of children: ");
             int nbrOfChildren = reader.nextInt();
 
             EList<RoomType> avaliableRoomTypes = bookingController.searchAvailableRoomTypes(startDate, endDate, nbrOfAdults, nbrOfChildren);
@@ -273,7 +283,7 @@ public class Main {
             int nbrOfRooms = reader.nextInt();
             BasicEList<RoomType> types = new BasicEList<RoomType>();
             for (int i = 0; i < nbrOfRooms; i++) {
-                System.out.println("Please select type for room " + i + ": ");
+                System.out.println("Please select type for room " + (i+1) + ": ");
                 String typeString = reader.next();
                 try{
                     types.add(RoomType.valueOf(typeString.toUpperCase()));
