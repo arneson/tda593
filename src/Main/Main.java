@@ -257,7 +257,9 @@ public class Main {
                 if(b != null){
                     System.out.println("Booking found. Checking out.");
                     Bill finalBill = b.checkOut();
-                    System.out.println();
+                    System.out.println("######## Final Bil ########");
+                    System.out.println(finalBill.toString());
+                    System.out.println("###########################");
                     System.out.print("Booking successfully checked out: ");
                 }else{
                     System.out.println("No booking with bookingId: " + bookingId + " found.");
