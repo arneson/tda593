@@ -73,7 +73,7 @@ public class AddonImpl extends ExtraImpl implements Addon {
 	public AddonImpl(String name, String description, double price){
 		this.name = name;
 		this.description = description;
-		//TODO: Price
+		this.price = price;
 	}
 
 	/**

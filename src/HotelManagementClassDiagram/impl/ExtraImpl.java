@@ -74,6 +74,14 @@ public class ExtraImpl extends MinimalEObjectImpl.Container implements Extra {
 	}
 
 	/**
+	 * @generated NOT
+	 */
+	public ExtraImpl(String name, String desc) {
+		this.name = name;
+		this.description = desc;
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

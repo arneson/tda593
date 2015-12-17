@@ -8,18 +8,9 @@ import java.util.List;
 import java.util.Scanner;
 
 import HotelManagementClassDiagram.*;
+import HotelManagementClassDiagram.impl.*;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-
-import HotelManagementClassDiagram.impl.AddonImpl;
-import HotelManagementClassDiagram.impl.BookingImpl;
-import HotelManagementClassDiagram.impl.CreditcardImpl;
-import HotelManagementClassDiagram.impl.CustomerImpl;
-import HotelManagementClassDiagram.impl.DiscountImpl;
-import HotelManagementClassDiagram.impl.EmployeeImpl;
-import HotelManagementClassDiagram.impl.EmployeeTypeImpl;
-import HotelManagementClassDiagram.impl.HotelImpl;
-import HotelManagementClassDiagram.impl.RoomImpl;
 
 /**
  * @generated NOT
@@ -142,7 +133,19 @@ public class Main {
             return;
         }
 		try{
-
+			System.out.println("What is the name of the discount?");
+			String name = reader.next();
+			System.out.println("Percentage? (y/n)");
+			String per = reader.next();
+			Boolean perc = false;
+			if (per.equals("y")) {
+				perc = true;
+			}
+			System.out.println("The amount?");
+			double amount = reader.nextDouble();
+			Discount d = new DiscountImpl(perc, amount);
+			d.setName(name);
+			managementController.updateOrAddDiscount(d);
         }catch(Exception ex) {
             System.out.println("Add discount process exited: " + 410);
         }
@@ -154,7 +157,11 @@ public class Main {
             return;
         }
         try{
-
+	        System.out.println("Whats the name of the extra?");
+	        String name = reader.next();
+	        System.out.println("Type the description of the extra:");
+	        String desc = reader.next();
+	        managementController.updateOrAddExtra(new ExtraImpl(name, desc));
         }catch(Exception ex) {
             System.out.println("Add extra process exited: " + 409);
         }
@@ -166,7 +173,13 @@ public class Main {
             return;
         }
         try{
-
+			System.out.println("What the name of the addon?");
+	        String name = reader.next();
+	        System.out.println("What the description of the addon?");
+	        String desc = reader.next();
+	        System.out.println("What should the price be?");
+	        double price = reader.nextDouble();
+	        managementController.updateOrAddAddon(new AddonImpl(name, desc, price));
         }catch(Exception ex) {
             System.out.println("Add addon process exited: " + 408);
         }
@@ -190,7 +203,9 @@ public class Main {
             return;
         }
         try{
-
+	        for(Customer c : bookingController.getAllCustomers() ) {
+		        System.out.println(c.toString());
+	        }
         }catch(Exception ex) {
             System.out.println("List customer process exited: " + 406);
         }
