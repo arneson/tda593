@@ -2,12 +2,7 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.Booking;
-import HotelManagementClassDiagram.BookingController;
-import HotelManagementClassDiagram.Customer;
-import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
-import HotelManagementClassDiagram.Room;
-import HotelManagementClassDiagram.RoomType;
+import HotelManagementClassDiagram.*;
 import main.FakeDB;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -49,8 +44,9 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public EList<RoomType> searchAvailableRoomTypes(Date fromDate, Date toDate, int nbrOfAdults, int nbrOfChildren) {
-		throw new UnsupportedOperationException();
+		EList<RoomType> r = FakeDBContextImpl.getInstance().getAvaliableRoomTypes(fromDate, toDate);
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -58,9 +54,8 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public boolean createBooking(EList<RoomType> roomTypes) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+		// TODO REMOVE
 	}
 
 	/**
@@ -80,8 +75,6 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public boolean updateBooking(Booking booking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
 
@@ -91,12 +84,7 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public Booking getBooking(int bookingId) {
-		for (Booking booking : FakeDB.bookings) {
-			if (bookingId == booking.getBookingId()) {
-				return booking;
-			}
-		}
-		return null;
+		return FakeDBContextImpl.getInstance().getBooking(bookingId);
 	}
 
 	/**
