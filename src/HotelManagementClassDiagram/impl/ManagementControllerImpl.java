@@ -2,6 +2,16 @@
  */
 package HotelManagementClassDiagram.impl;
 
+import HotelManagementClassDiagram.Addon;
+import HotelManagementClassDiagram.Costable;
+import HotelManagementClassDiagram.Discount;
+import HotelManagementClassDiagram.Employee;
+import HotelManagementClassDiagram.EmployeeType;
+import HotelManagementClassDiagram.Extra;
+import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
+import HotelManagementClassDiagram.ManagementController;
+import HotelManagementClassDiagram.Room;
+import HotelManagementClassDiagram.RoomType;
 import HotelManagementClassDiagram.*;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -172,26 +182,8 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___REGISTER_DISCOUNT__DISCOUNT:
-				registerDiscount((Discount)arguments.get(0));
-				return null;
-			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___MODIFY_BOOKING__BOOKING:
-				modifyBooking((Booking)arguments.get(0));
-				return null;
 			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___SET_DATE_SPECIFIC_PRICES__COSTABLE_DATE_DATE_DOUBLE:
 				setDateSpecificPrices((Costable)arguments.get(0), (Date)arguments.get(1), (Date)arguments.get(2), (Double)arguments.get(3));
-				return null;
-			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___REGISTER_ROOM__ROOM:
-				registerRoom((Room)arguments.get(0));
-				return null;
-			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___REGISTER_ADDON__ADDON:
-				registerAddon((Addon)arguments.get(0));
-				return null;
-			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___UPDATE_ROOM__ROOM:
-				updateRoom((Room)arguments.get(0));
-				return null;
-			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___UPDATE_ADDON__ADDON:
-				updateAddon((Addon)arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EMPLOYEE__EMPLOYEE:
 				updateOrAddEmployee((Employee)arguments.get(0));

@@ -63,103 +63,12 @@ public class Main {
 					checkIn(reader, bookingController);
 					break;
 					
-				case CLI_CHECKOUT_COMMAND:					
+				case CLI_CHECKOUT_COMMAND:
+					checkOut(reader, bookingController);
 					break;
 					
 				case CLI_BOOK_A_ROOM_COMMAND:
-					System.out.print("Please enter start date (YYYY-MM-DD): ");
-					String startDateString = reader.next();
-					
-					DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-					Date startDate = null, endDate = null;
-					try {
-						startDate = formatter.parse(startDateString);
-					} catch (ParseException e) {
-						e.printStackTrace();
-					}
-					
-					System.out.print("Please enter end date (YYYY-MM-DD): ");
-					String endDateString = reader.next();
-					try {
-						endDate = formatter.parse(endDateString);
-					} catch (ParseException e) {
-						e.printStackTrace();
-					}
-					
-					System.out.println("Please enter number of adults: ");
-					int nbrOfAdults = reader.nextInt();
-					System.out.println("Please enter number of adults: ");
-					int nbrOfChildren = reader.nextInt();
-					
-					EList<RoomType> avaliableRoomTypes = bookingController.searchAvailableRoomTypes(startDate, endDate, nbrOfAdults, nbrOfChildren);
-					System.out.println();
-					System.out.println("Avaliable room types in the selected interval:");
-					for (RoomType type : avaliableRoomTypes) {
-						System.out.println(type.toString());
-					}
-					
-					System.out.println("");
-					System.out.println("How many rooms? ");
-					int nbrOfRooms = reader.nextInt();
-					BasicEList<RoomType> types = new BasicEList<RoomType>();
-					for (int i = 0; i < nbrOfRooms; i++) {
-						System.out.println("Please select type for room " + (i+1) + ": ");
-						String typeString = reader.next();
-						switch (typeString) {
-							case "SINGLE":
-								types.add(RoomType.SINGLE);
-								break;
-								
-							case "DOUBLE":
-								types.add(RoomType.DOUBLE);
-								break;
-								
-							case "FAMILY":
-								types.add(RoomType.FAMILY);
-								break;
-								
-							case "SUITE":
-								types.add(RoomType.SUITE);
-								break;
-	
-							default:
-								break;
-						}
-						
-					}
-					
-					System.out.println("Please enter customer social security number: ");
-					SSN = reader.next();
-					
-					customer = bookingController.getCustomer(SSN);
-					if (customer == null) {
-						System.out.println("Customer does not exist in DB. Please enter name: ");
-						String name = reader.next();
-						System.out.println("Please enter phone number: ");
-						String phoneNumber = reader.next();
-						System.out.println("Please enter street: ");
-						String street = reader.next();
-						System.out.println("Please enter city: ");
-						String city = reader.next();
-						System.out.println("Please enter postal code: ");
-						String postalCode = reader.next();
-						System.out.println("Please enter country: ");
-						String country = reader.next();
-						System.out.println("Please enter gender: ");
-						String gender = reader.next();
-						System.out.println("Please enter title: ");
-						String title = reader.next();
-						
-						customer = new CustomerImpl(name, city, country, gender, phoneNumber, postalCode, SSN, street, title);
-						bookingController.updateOrAddCustomer(customer);
-					}
-
-					Booking booking = new BookingImpl(customer, startDate, endDate, types);
-					bookingController.updateOrAddBooking(booking);
-					System.out.println("Booking created.");
-=======
 					bookARoom(reader, bookingController);
->>>>>>> 86dfe68368237a05f0628d6536b764e69561ec90
 					break;
 				case CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND:
 					searchAvailableRoomTypes(reader, bookingController);

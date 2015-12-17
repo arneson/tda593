@@ -45,26 +45,10 @@ public interface BookingController extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false"
+	 * @model bookingRequired="true" bookingOrdered="false"
 	 * @generated
 	 */
-	boolean confirm(Booking booking);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model bookingRequired="true" bookingOrdered="false" _Required="true" _Ordered="false"
-	 * @generated
-	 */
-	void checkIn(Booking booking, boolean _);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model roomRequired="true" roomOrdered="false"
-	 * @generated
-	 */
-	void createKeyCard(Room room);
+	void checkIn(Booking booking);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -182,15 +182,8 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//BookingController/getBooking">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//BookingController/getBooking/bookingId"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//BookingController/confirm">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//BookingController/confirm/booking"/>
-      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//BookingController/checkIn">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//BookingController/checkIn/booking"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//BookingController/checkIn/_"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//BookingController/createKeyCard">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//BookingController/createKeyCard/room"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//BookingController/checkOut">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//BookingController/checkOut/booking"/>
@@ -215,29 +208,11 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="HotelManagementClassDiagram.ecore#//ManagementController">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//ManagementController/registerDiscount">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/registerDiscount/discount"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//ManagementController/modifyBooking">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/modifyBooking/booking"/>
-      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//ManagementController/setDateSpecificPrices">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/setDateSpecificPrices/costable"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/setDateSpecificPrices/startDate"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/setDateSpecificPrices/endDate"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/setDateSpecificPrices/priceChange"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//ManagementController/registerRoom">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/registerRoom/room"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//ManagementController/registerAddon">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/registerAddon/addon"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//ManagementController/updateRoom">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/updateRoom/room"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//ManagementController/updateAddon">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/updateAddon/addon"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//ManagementController/updateOrAddEmployee">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/updateOrAddEmployee/employee"/>
@@ -263,19 +238,16 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="HotelManagementClassDiagram.ecore#//MaintenanceController">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference HotelManagementClassDiagram.ecore#//MaintenanceController/roomStack"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//MaintenanceController/addToStack">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//MaintenanceController/addToStack/room"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference HotelManagementClassDiagram.ecore#//MaintenanceController/roomQueue"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//MaintenanceController/addToQueue">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//MaintenanceController/addToQueue/room"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//MaintenanceController/setCleanedStatus">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//MaintenanceController/setCleanedStatus/room"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//MaintenanceController/setCleanedStatus/status"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//MaintenanceController/notifyWorker">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//MaintenanceController/notifyWorker/worker"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//MaintenanceController/removeFromStack">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//MaintenanceController/removeFromStack/room"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//MaintenanceController/removeFromQueue">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//MaintenanceController/removeFromQueue/room"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//MaintenanceController/getNextRoomToClean">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//MaintenanceController/getNextRoomToClean/room"/>

@@ -280,20 +280,8 @@
       </ownedParameter>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_HY9YIJdmEeW_2em-0w3Fbg" name="booking" type="_7pMnYJdPEeW_2em-0w3Fbg" direction="return"/>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_7z1IEJdlEeW_2em-0w3Fbg" name="confirm">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_J9bgAJdmEeW_2em-0w3Fbg" name="booking" type="_7pMnYJdPEeW_2em-0w3Fbg"/>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_M3wjIJdmEeW_2em-0w3Fbg" name="booked" direction="return">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-      </ownedParameter>
-    </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_9MY2cJdlEeW_2em-0w3Fbg" name="checkIn" visibility="public">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_TAATwJdmEeW_2em-0w3Fbg" name="booking" type="_7pMnYJdPEeW_2em-0w3Fbg"/>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_y2GCYKMpEeWG_pLLN1B6zg" direction="out">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-      </ownedParameter>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_94knAJdlEeW_2em-0w3Fbg" name="createKeyCard">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_nJzTkJdmEeW_2em-0w3Fbg" name="room" type="_S3mAoJdQEeW_2em-0w3Fbg"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="__GiO8JdlEeW_2em-0w3Fbg" name="checkOut">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_p2N2gJdmEeW_2em-0w3Fbg" name="booking" type="_7pMnYJdPEeW_2em-0w3Fbg"/>
@@ -323,12 +311,6 @@
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_gA2ioJdgEeW_2em-0w3Fbg" name="ManagementController">
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_S9ZogJdiEeW_2em-0w3Fbg" name="registerDiscount">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_cLmEIJdnEeW_2em-0w3Fbg" name="discount" type="_P3JucJdQEeW_2em-0w3Fbg"/>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_eooqsJy_EeWOD_rmUUwMag" name="modifyBooking">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_jO9VkJy_EeWOD_rmUUwMag" name="booking" type="_7pMnYJdPEeW_2em-0w3Fbg"/>
-    </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_aXVYIJzAEeWOD_rmUUwMag" name="setDateSpecificPrices">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_jnMZ8JzAEeWOD_rmUUwMag" name="costable" type="_OeItEJdQEeW_2em-0w3Fbg"/>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_5qNlMJzAEeWOD_rmUUwMag" name="startDate">
@@ -340,18 +322,6 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_MB-msJzBEeWOD_rmUUwMag" name="priceChange">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
       </ownedParameter>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_iIKUYJ5mEeWsRbM9FFS6Bw" name="registerRoom">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_H21gMJ5nEeW3Pf9vSy-bWw" name="room" type="_S3mAoJdQEeW_2em-0w3Fbg"/>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_39b-kJ5mEeWhZa46NqiRTA" name="registerAddon">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_MgyG0J5nEeW3Pf9vSy-bWw" name="addon" type="_E_WecJdQEeW_2em-0w3Fbg"/>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_OT9UoJ5nEeW3Pf9vSy-bWw" name="updateRoom">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_S8N5MJ5nEeW3Pf9vSy-bWw" name="room" type="_S3mAoJdQEeW_2em-0w3Fbg"/>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_USkoIJ5nEeW3Pf9vSy-bWw" name="updateAddon">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_gGqhQJ5nEeW3Pf9vSy-bWw" name="addon" type="_E_WecJdQEeW_2em-0w3Fbg"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_N23H0KTcEeWVDoDgGsfQNA" name="updateOrAddEmployee">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_e_PlEKTcEeWVDoDgGsfQNA" name="employee" type="_Ew4PgJdOEeW_2em-0w3Fbg"/>
@@ -376,11 +346,11 @@
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_hJ2LAJdgEeW_2em-0w3Fbg" name="MaintenanceController">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_Or2TwJdiEeW_2em-0w3Fbg" name="roomStack" visibility="private" type="_S3mAoJdQEeW_2em-0w3Fbg">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HBQNUJdnEeW_2em-0w3Fbg"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Or2TwJdiEeW_2em-0w3Fbg" name="roomQueue" visibility="private" type="_S3mAoJdQEeW_2em-0w3Fbg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HBQNUJdnEeW_2em-0w3Fbg" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HBSCgJdnEeW_2em-0w3Fbg" value="*"/>
     </ownedAttribute>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_KrW50JdiEeW_2em-0w3Fbg" name="addToStack">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_KrW50JdiEeW_2em-0w3Fbg" name="addToQueue">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_MaMn8JdnEeW_2em-0w3Fbg" name="room" type="_S3mAoJdQEeW_2em-0w3Fbg"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_L04GoJdiEeW_2em-0w3Fbg" name="setCleanedStatus">
@@ -389,10 +359,7 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
       </ownedParameter>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_hOsjcJy-EeWOD_rmUUwMag" name="notifyWorker">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_33O2kJy-EeWOD_rmUUwMag" name="worker" type="_KN_mMJdTEeW_2em-0w3Fbg"/>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_60IFgJy-EeWOD_rmUUwMag" name="removeFromStack">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_60IFgJy-EeWOD_rmUUwMag" name="removeFromQueue">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_9ungsJy-EeWOD_rmUUwMag" name="room" type="_S3mAoJdQEeW_2em-0w3Fbg"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_zBbhYJ3TEeWmd6xZ8Eu3nw" name="getNextRoomToClean" concurrency="guarded">
@@ -508,7 +475,7 @@
     <message xmi:type="uml:Message" xmi:id="_7IatEJ3HEeWmd6xZ8Eu3nw" name="addAddon" receiveEvent="_7Ib7MJ3HEeWmd6xZ8Eu3nw" sendEvent="_7IbUIJ3HEeWmd6xZ8Eu3nw" signature="_7RBD4JjvEeW90dH2IAXwHw"/>
     <message xmi:type="uml:Message" xmi:id="_ptbgEJ3LEeWmd6xZ8Eu3nw" name="Booking(type:RoomType, fromdate:Date, toDate:Date, nbrOfAdults:int, nbrOfChildren:Int)" messageSort="createMessage" receiveEvent="_ptcuMZ3LEeWmd6xZ8Eu3nw" sendEvent="_ptcuMJ3LEeWmd6xZ8Eu3nw"/>
     <message xmi:type="uml:Message" xmi:id="_XIPbsJ3NEeWmd6xZ8Eu3nw" name="findCustomer" receiveEvent="_XIRQ4J3NEeWmd6xZ8Eu3nw" sendEvent="_XIQp0J3NEeWmd6xZ8Eu3nw" signature="_69UeEJ3MEeWmd6xZ8Eu3nw"/>
-    <message xmi:type="uml:Message" xmi:id="_BVTeYJ3OEeWmd6xZ8Eu3nw" name="confirm" receiveEvent="_BVUsgJ3OEeWmd6xZ8Eu3nw" sendEvent="_BVUFcJ3OEeWmd6xZ8Eu3nw" signature="_7z1IEJdlEeW_2em-0w3Fbg"/>
+    <message xmi:type="uml:Message" xmi:id="_BVTeYJ3OEeWmd6xZ8Eu3nw" name="confirm" receiveEvent="_BVUsgJ3OEeWmd6xZ8Eu3nw" sendEvent="_BVUFcJ3OEeWmd6xZ8Eu3nw"/>
     <message xmi:type="uml:Message" xmi:id="_IXlOUJ3OEeWmd6xZ8Eu3nw" name="sendConfirmation" receiveEvent="_IXmccJ3OEeWmd6xZ8Eu3nw" sendEvent="_IXl1YJ3OEeWmd6xZ8Eu3nw" signature="_EsOB4JdiEeW_2em-0w3Fbg"/>
     <message xmi:type="uml:Message" xmi:id="_UOkU4KMoEeWG_pLLN1B6zg" name="type: RoomType" messageSort="reply" receiveEvent="_UOmxIKMoEeWG_pLLN1B6zg" sendEvent="_UOmKEKMoEeWG_pLLN1B6zg"/>
     <message xmi:type="uml:Message" xmi:id="_pFp4gKMoEeWG_pLLN1B6zg" name="customer: Customer" messageSort="reply" receiveEvent="_pFrtsKMoEeWG_pLLN1B6zg" sendEvent="_pFrGoKMoEeWG_pLLN1B6zg"/>
@@ -536,7 +503,7 @@
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_nA5SQJ3UEeWmd6xZ8Eu3nw" name="setCleanedStatus_MessageRecv0" covered="_1Y6yoJ3SEeWmd6xZ8Eu3nw" message="_nA4EIJ3UEeWmd6xZ8Eu3nw"/>
     <message xmi:type="uml:Message" xmi:id="_5CF4wJ3SEeWmd6xZ8Eu3nw" name="setCleanedStatus" receiveEvent="_5CGf0Z3SEeWmd6xZ8Eu3nw" sendEvent="_5CGf0J3SEeWmd6xZ8Eu3nw"/>
     <message xmi:type="uml:Message" xmi:id="_JCrngJ3TEeWmd6xZ8Eu3nw" name="addToStack" receiveEvent="_JCs1oJ3TEeWmd6xZ8Eu3nw" sendEvent="_JCsOkJ3TEeWmd6xZ8Eu3nw" signature="_KrW50JdiEeW_2em-0w3Fbg"/>
-    <message xmi:type="uml:Message" xmi:id="_qxwKMJ3TEeWmd6xZ8Eu3nw" name="notifyWorker" receiveEvent="_qxwxQJ3TEeWmd6xZ8Eu3nw" sendEvent="_qxwKMZ3TEeWmd6xZ8Eu3nw" signature="_hOsjcJy-EeWOD_rmUUwMag"/>
+    <message xmi:type="uml:Message" xmi:id="_qxwKMJ3TEeWmd6xZ8Eu3nw" name="notifyWorker" receiveEvent="_qxwxQJ3TEeWmd6xZ8Eu3nw" sendEvent="_qxwKMZ3TEeWmd6xZ8Eu3nw"/>
     <message xmi:type="uml:Message" xmi:id="_AMf0gJ3UEeWmd6xZ8Eu3nw" name="getNextRoomToClean" receiveEvent="_AMhCoZ3UEeWmd6xZ8Eu3nw" sendEvent="_AMhCoJ3UEeWmd6xZ8Eu3nw" signature="_zBbhYJ3TEeWmd6xZ8Eu3nw"/>
     <message xmi:type="uml:Message" xmi:id="_nA4EIJ3UEeWmd6xZ8Eu3nw" name="setCleanedStatus" receiveEvent="_nA5SQJ3UEeWmd6xZ8Eu3nw" sendEvent="_nA4rMJ3UEeWmd6xZ8Eu3nw"/>
   </packagedElement>

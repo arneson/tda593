@@ -1,14 +1,14 @@
 BookingController:
 
-findCustomer returnerar void SKA BORT
-createKeyCard SKA BORT
+findCustomer returnerar void SKA BORT 
+createKeyCard SKA BORT - CHECK
 assignRoom tar returnerar void och tar bara rum som parameter?
-ta bort boolean på checkIn
+ta bort boolean på checkIn - CHECK
 
 MaintenanceController:
-Allt som heter stack ska vara queue
-notifyWorker ska bort
+Allt som heter stack ska vara queue - CHECK
+notifyWorker ska bort - CHECK
 OM DET GÅR gör EList till Queue
 
 ManagementController:
-Massa dubletter såsom updateAddon samt updateOrAddAddon
+Massa dubletter såsom updateAddon samt updateOrAddAddon - CHECK

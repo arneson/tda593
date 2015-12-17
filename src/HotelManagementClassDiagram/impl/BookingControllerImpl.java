@@ -2,8 +2,12 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.*;
-import main.FakeDB;
+import HotelManagementClassDiagram.Booking;
+import HotelManagementClassDiagram.BookingController;
+import HotelManagementClassDiagram.Customer;
+import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
+import HotelManagementClassDiagram.Room;
+import HotelManagementClassDiagram.RoomType;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -71,6 +75,17 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void checkIn(Booking booking) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 *     This method should be used as a confirmation that
 	 *     the booking has not been done concurrently and that no room is
 	 *     available anymore. Now it just illustrates what could be done.
@@ -79,24 +94,6 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	public boolean confirm(Booking booking) {
 		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void checkIn(Booking booking, boolean _) {
-		// TODO säg till axel att ta bort boolean
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void createKeyCard(Room room) {
-		// TODO remove
 	}
 
 	/**
@@ -181,13 +178,8 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 				return sendConfirmation((Booking)arguments.get(0));
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___GET_BOOKING__INT:
 				return getBooking((Integer)arguments.get(0));
-			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CONFIRM__BOOKING:
-				return confirm((Booking)arguments.get(0));
-			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CHECK_IN__BOOKING_BOOLEAN:
-				checkIn((Booking)arguments.get(0), (Boolean)arguments.get(1));
-				return null;
-			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CREATE_KEY_CARD__ROOM:
-				createKeyCard((Room)arguments.get(0));
+			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CHECK_IN__BOOKING:
+				checkIn((Booking)arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CHECK_OUT__BOOKING:
 				checkOut((Booking)arguments.get(0));

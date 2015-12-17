@@ -201,15 +201,8 @@
     <eOperations name="getBooking" ordered="false" lowerBound="1" eType="#//Booking">
       <eParameters name="bookingId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eOperations>
-    <eOperations name="confirm" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="booking" ordered="false" lowerBound="1" eType="#//Booking"/>
-    </eOperations>
     <eOperations name="checkIn" ordered="false" lowerBound="1">
       <eParameters name="booking" ordered="false" lowerBound="1" eType="#//Booking"/>
-      <eParameters name="_" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    </eOperations>
-    <eOperations name="createKeyCard" ordered="false" lowerBound="1">
-      <eParameters name="room" ordered="false" lowerBound="1" eType="#//Room"/>
     </eOperations>
     <eOperations name="checkOut" ordered="false" lowerBound="1">
       <eParameters name="booking" ordered="false" lowerBound="1" eType="#//Booking"/>
@@ -234,29 +227,11 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ManagementController">
-    <eOperations name="registerDiscount" ordered="false" lowerBound="1">
-      <eParameters name="discount" ordered="false" lowerBound="1" eType="#//Discount"/>
-    </eOperations>
-    <eOperations name="modifyBooking" ordered="false" lowerBound="1">
-      <eParameters name="booking" ordered="false" lowerBound="1" eType="#//Booking"/>
-    </eOperations>
     <eOperations name="setDateSpecificPrices" ordered="false" lowerBound="1">
       <eParameters name="costable" ordered="false" lowerBound="1" eType="#//Costable"/>
       <eParameters name="startDate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
       <eParameters name="endDate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
       <eParameters name="priceChange" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    </eOperations>
-    <eOperations name="registerRoom" ordered="false" lowerBound="1">
-      <eParameters name="room" ordered="false" lowerBound="1" eType="#//Room"/>
-    </eOperations>
-    <eOperations name="registerAddon" ordered="false" lowerBound="1">
-      <eParameters name="addon" ordered="false" lowerBound="1" eType="#//Addon"/>
-    </eOperations>
-    <eOperations name="updateRoom" ordered="false" lowerBound="1">
-      <eParameters name="room" ordered="false" lowerBound="1" eType="#//Room"/>
-    </eOperations>
-    <eOperations name="updateAddon" ordered="false" lowerBound="1">
-      <eParameters name="addon" ordered="false" lowerBound="1" eType="#//Addon"/>
     </eOperations>
     <eOperations name="updateOrAddEmployee" ordered="false" lowerBound="1">
       <eParameters name="employee" ordered="false" lowerBound="1" eType="#//Employee"/>
@@ -281,17 +256,14 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MaintenanceController">
-    <eOperations name="addToStack" ordered="false" lowerBound="1">
+    <eOperations name="addToQueue" ordered="false" lowerBound="1">
       <eParameters name="room" ordered="false" lowerBound="1" eType="#//Room"/>
     </eOperations>
     <eOperations name="setCleanedStatus" ordered="false" lowerBound="1">
       <eParameters name="room" ordered="false" lowerBound="1" eType="#//Room"/>
       <eParameters name="status" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eOperations>
-    <eOperations name="notifyWorker" ordered="false" lowerBound="1">
-      <eParameters name="worker" ordered="false" lowerBound="1" eType="#//EmployeeType"/>
-    </eOperations>
-    <eOperations name="removeFromStack" ordered="false" lowerBound="1">
+    <eOperations name="removeFromQueue" ordered="false" lowerBound="1">
       <eParameters name="room" ordered="false" lowerBound="1" eType="#//Room"/>
     </eOperations>
     <eOperations name="getNextRoomToClean" ordered="false" lowerBound="1">
@@ -302,8 +274,8 @@
       <eParameters name="repaired" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eOperations>
     <eOperations name="getNextRoomToClean" ordered="false" lowerBound="1" eType="#//Room"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="roomStack" ordered="false"
-        upperBound="-1" eType="#//Room"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roomQueue" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Room"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Hotel">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
