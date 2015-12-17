@@ -162,9 +162,9 @@ public class Main {
         }
         try{
 	        System.out.println("Whats the name of the extra?");
-	        String name = reader.next();
+	        String name = reader.nextLine();
 	        System.out.println("Type the description of the extra:");
-	        String desc = reader.next();
+	        String desc = reader.nextLine();
 	        managementController.updateOrAddExtra(new ExtraImpl(name, desc));
         }catch(Exception ex) {
             System.out.println("Add extra process exited: " + 409);
@@ -178,9 +178,9 @@ public class Main {
         }
         try{
 			System.out.println("What the name of the addon?");
-	        String name = reader.next();
+	        String name = reader.nextLine();
 	        System.out.println("What the description of the addon?");
-	        String desc = reader.next();
+	        String desc = reader.nextLine();
 	        System.out.println("What should the price be?");
 	        double price = reader.nextDouble();
 	        managementController.updateOrAddAddon(new AddonImpl(name, desc, price));
@@ -202,7 +202,7 @@ public class Main {
         	System.out.println("Please enter size (m2): ");
         	int size = reader.nextInt();
         	System.out.println("Please enter room type: ");
-        	RoomType type = RoomType.valueOf(reader.next());
+        	RoomType type = RoomType.valueOf(reader.nextLine());
         	Room newRoom = new RoomImpl(maxNbrPeople, roomNumber, size, type);
         	managementController.updateOrAddRoom(newRoom);
         	System.out.println("Room created.");
@@ -273,7 +273,7 @@ public class Main {
         }
         try{
             System.out.print("Please enter start date (YYYY-MM-DD): ");
-            String startDateString = reader.next();
+            String startDateString = reader.nextLine();
 
             DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             Date startDate = null, endDate = null;
@@ -284,7 +284,7 @@ public class Main {
             }
 
             System.out.print("Please enter end date (YYYY-MM-DD): ");
-            String endDateString = reader.next();
+            String endDateString = reader.nextLine();
             try {
                 endDate = formatter.parse(endDateString);
             } catch (ParseException e) {
@@ -309,33 +309,33 @@ public class Main {
             BasicEList<RoomType> types = new BasicEList<RoomType>();
             for (int i = 0; i < nbrOfRooms; i++) {
                 System.out.println("Please select type for room " + (i+1) + ": ");
-                String typeString = reader.next();
+                String typeString = reader.nextLine();
                 try{
                     types.add(RoomType.valueOf(typeString.toUpperCase()));
                 }catch (IllegalArgumentException ignored){}
             }
 
             System.out.println("Please enter customer social security number: ");
-            String SSN = reader.next();
+            String SSN = reader.nextLine();
 
             Customer customer = bookingController.getCustomer(SSN);
             if (customer == null) {
                 System.out.println("Customer does not exist in DB. \nPlease enter name: ");
-                String name = reader.next();
+                String name = reader.nextLine();
                 System.out.println("Please enter phone number: ");
-                String phoneNumber = reader.next();
+                String phoneNumber = reader.nextLine();
                 System.out.println("Please enter street: ");
-                String street = reader.next();
+                String street = reader.nextLine();
                 System.out.println("Please enter city: ");
-                String city = reader.next();
+                String city = reader.nextLine();
                 System.out.println("Please enter postal code: ");
-                String postalCode = reader.next();
+                String postalCode = reader.nextLine();
                 System.out.println("Please enter country: ");
-                String country = reader.next();
+                String country = reader.nextLine();
                 System.out.println("Please enter gender: ");
-                String gender = reader.next();
+                String gender = reader.nextLine();
                 System.out.println("Please enter title: ");
-                String title = reader.next();
+                String title = reader.nextLine();
 
                 customer = new CustomerImpl(name, city, country, gender, phoneNumber, postalCode, SSN, street, title);
                 bookingController.updateOrAddCustomer(customer);
@@ -399,7 +399,7 @@ public class Main {
         }
         try{
             System.out.print("Please enter start date (YYYY-MM-DD): ");
-            String startDateString = reader.next();
+            String startDateString = reader.nextLine();
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             Date startDate = null;
             Date endDate = null;
@@ -410,7 +410,7 @@ public class Main {
             }
 
             System.out.print("Please enter end date (YYYY-MM-DD): ");
-            String endDateString = reader.next();
+            String endDateString = reader.nextLine();
             try {
                 endDate = formatter.parse(endDateString);
             } catch (ParseException e) {
