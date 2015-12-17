@@ -127,8 +127,10 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 		return types;
 	}
 
-    private Date addDays(Date date, int days)
-    {
+    /**
+     * @generated NOT
+     */
+    private Date addDays(Date date, int days) {
         Calendar c = Calendar.getInstance();
         c.setTime(date);
         c.add(Calendar.DATE, days);
@@ -481,23 +483,27 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Room> getRooms(RoomType type) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<Room> rooms = new BasicEList<>();
+        for (Room r : FakeDB.rooms){
+            if (r.getType() == type)
+                rooms.add(r);
+        }
+        return rooms;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Booking getBooking(int bookingID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (Booking b : FakeDB.bookings)
+            if (b.getBookingId() == bookingID)
+                return b;
+        return null;
 	}
 
 	/**
