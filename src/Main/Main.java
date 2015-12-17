@@ -87,6 +87,7 @@ public class Main {
 				case CLI_BOOK_A_ROOM_COMMAND:
 					break;
 				case CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND:
+
 					break;
 				default:
 					System.out.println("Enter "+CLI_HELP_COMMAND+" for a list of commands.");

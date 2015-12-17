@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -106,13 +107,35 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
+     * Returns types _between_ the from and to dates. Not inclusive!
 	 */
 	public EList<RoomType> getAvaliableRoomTypes(Date from, Date to) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+        from = addDays(from, -1);
+        to = addDays(to, 1);
+        EList<RoomType> types = new BasicEList<>();
+		for (Booking booking : FakeDB.bookings)
+        {
+            if (booking.getStartDate().after(from) && booking.getEndDate().before(to))
+            {
+                for (Room room : booking.getBookedRooms()) {
+                    for (RoomType type : room.getTypes()) {
+                        if (!types.contains(type))
+                            types.add(type);
+                    }
+                }
+            }
+        }
+		return types;
 	}
+
+    private Date addDays(Date date, int days)
+    {
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        c.add(Calendar.DATE, days);
+        return c.getTime();
+    }
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,9 +153,8 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	 */
 	public Addon getAddon(String addonName) {
 		for (Addon a : FakeDB.addons) {
-			if (a.getName() == addonName) {
+			if (a.getName().contains((addonName)))
 				return a;
-			}
 		}
 		return null;
 	}
@@ -153,10 +175,8 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	 */
 	public Discount getDiscount(String discountName) {
 		for (Discount d : FakeDB.discounts) {
-			// TODO no getName?
-			/*if (d.getName().contains(discountName)) {
+			if (d.getName().contains(discountName))
 				return d;
-			}*/
 		}
 		return null;
 	}
@@ -176,11 +196,12 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	 * @generated NOT
 	 */
 	public EList<Booking> getBookings(Date fromDate, Date toDate) {
+        fromDate = addDays(fromDate, -1);
+        toDate = addDays(toDate, 1);
 		EList<Booking> bookings = new BasicEList<>();
 		for (Booking b : FakeDB.bookings) {
-			if(b.getEndDate().before(toDate) && b.getStartDate().after(fromDate)) {
+			if(b.getEndDate().before(toDate) && b.getStartDate().after(fromDate))
 				bookings.add(b);
-			}
 		}
 		return bookings;
 	}
@@ -242,9 +263,8 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 		EList<Booking> bookings = new BasicEList<>();
 		customerName = customerName.toLowerCase();
 		for (Booking b : FakeDB.bookings) {
-			if (b.getPaymentMaster().getName().toLowerCase().contains(customerName)) {
+			if (b.getPaymentMaster().getName().toLowerCase().contains(customerName))
 				bookings.add(b);
-			}
 		}
 		return bookings;
 	}
@@ -276,9 +296,8 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	 */
 	public Customer getCustomer(String customerSSNumber) {
 		for (Customer c : FakeDB.customers) {
-			if (c.getSSNumber().equals(customerSSNumber)) {
+			if (c.getSSNumber().equals(customerSSNumber))
 				return c;
-			}
 		}
 		return null;
 	}
@@ -321,9 +340,8 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	 */
 	public Employee getEmployee(String employeeSSNumber) {
 		for (Employee e : FakeDB.employees) {
-			if(e.getSSNumber().equals(employeeSSNumber)) {
+			if(e.getSSNumber().equals(employeeSSNumber))
 				return e;
-			}
 		}
 		return null;
 	}
@@ -372,12 +390,11 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateOrAddRoom(Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+        if (!FakeDB.rooms.contains(room))
+		    FakeDB.rooms.add(room);
 	}
 
 	/**
@@ -386,9 +403,8 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	 * @generated
 	 */
 	public void updateOrAddCustomer(Customer customer) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+        if (!FakeDB.customers.contains(customer))
+            FakeDB.customers.add(customer);
 	}
 
 	/**
@@ -397,9 +413,8 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	 * @generated
 	 */
 	public void updateOrAddBooking(Booking booking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+        if (!FakeDB.bookings.contains(booking))
+            FakeDB.bookings.add(booking);
 	}
 
 	/**
