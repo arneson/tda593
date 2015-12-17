@@ -2,18 +2,7 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.Addon;
-import HotelManagementClassDiagram.Booking;
-import HotelManagementClassDiagram.Costable;
-import HotelManagementClassDiagram.Discount;
-import HotelManagementClassDiagram.Employee;
-import HotelManagementClassDiagram.EmployeeType;
-import HotelManagementClassDiagram.Extra;
-import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
-import HotelManagementClassDiagram.ManagementController;
-import HotelManagementClassDiagram.Room;
-import HotelManagementClassDiagram.RoomType;
-import main.FakeDB;
+import HotelManagementClassDiagram.*;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -54,7 +43,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * @generated NOT
 	 */
 	public void registerDiscount(Discount discount) {
-		// TODO
+		FakeDBContextImpl.getInstance().updateOrAddDiscount(discount);
 	}
 
 	/**
@@ -63,16 +52,17 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * @generated NOT
 	 */
 	public void modifyBooking(Booking booking) {
-		// TODO
+		FakeDBContextImpl.getInstance().updateOrAddBooking(booking);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
+	 *     This method is not supported in this version of the software
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public void setDateSpecificPrices(Costable costable, Date startDate, Date endDate, double priceChange) {
-		// TODO
+		throw new UnsupportedOperationException("This is not supported");
 	}
 
 	/**
@@ -81,7 +71,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * @generated NOT
 	 */
 	public void registerRoom(Room room) {
-		// TODO
+		FakeDBContextImpl.getInstance().updateOrAddRoom(room);
 	}
 
 	/**
@@ -90,7 +80,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * @generated NOT
 	 */
 	public void registerAddon(Addon addon) {
-		// TODO
+		FakeDBContextImpl.getInstance().updateOrAddAddon(addon);
 	}
 
 	/**
@@ -99,7 +89,7 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * @generated NOT
 	 */
 	public void updateRoom(Room room) {
-		// TODO
+		this.registerRoom(room);
 	}
 
 	/**
@@ -108,84 +98,70 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * @generated NOT
 	 */
 	public void updateAddon(Addon addon) {
-		// TODO
+		this.registerAddon(addon);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateOrAddEmployee(Employee employee) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		FakeDBContextImpl.getInstance().updateOrAddEmployee(employee);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateOrAddEmployeeType(EmployeeType employeeType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		FakeDBContextImpl.getInstance().updateOrAddEmployeeType(employeeType);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateOrAddRoom(Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.updateRoom(room);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateOrAddRoomType(RoomType roomType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		FakeDBContextImpl.getInstance().updateOrAddRoomType(roomType);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateOrAddDiscount(Discount discount) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.registerDiscount(discount);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateOrAddAddon(Addon addon) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.registerAddon(addon);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateOrAddExtra(Extra extra) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		FakeDBContextImpl.getInstance().updateOrAddExtra(extra);
 	}
 
 	/**
