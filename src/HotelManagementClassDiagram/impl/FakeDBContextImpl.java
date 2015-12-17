@@ -2,21 +2,15 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.Addon;
-import HotelManagementClassDiagram.BookedRoom;
-import HotelManagementClassDiagram.Booking;
-import HotelManagementClassDiagram.Customer;
-import HotelManagementClassDiagram.Discount;
-import HotelManagementClassDiagram.Employee;
-import HotelManagementClassDiagram.FakeDBContext;
-import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
-import HotelManagementClassDiagram.Room;
-import HotelManagementClassDiagram.RoomType;
+import HotelManagementClassDiagram.*;
 
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Date;
+import java.util.Iterator;
 
+import main.FakeDB;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -66,117 +60,135 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Room> _getAllRooms() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return new BasicEList<>(FakeDB.rooms);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Room> getAvaliableRooms() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<Room> freeRooms = new BasicEList<>();
+		Iterator<Room> it = FakeDB.rooms.iterator();
+		while (it.hasNext()) {
+			if (it.next().isBooked()) {
+				freeRooms.add(it.next());
+			}
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Room getRoom(int roomNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (Room r : FakeDB.rooms) {
+			if (r.getRoomNumber() == roomNumber) {
+				return r;
+			}
+		}
+		return null;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<RoomType> getAllRoomTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<RoomType> types = new BasicEList<>();
+		for (Room r : FakeDB.rooms) {
+			for (RoomType rt : r.getTypes()) {
+				if (!types.contains(rt)) {
+					types.add(rt);
+				}
+			}
+		}
+		return types;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<RoomType> getAvaliableRoomTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<RoomType> types = new BasicEList<>();
+		for (Room r : getInstance().getAvaliableRooms()) {
+			for (RoomType rt : r.getTypes()) {
+				if (!types.contains(rt)) {
+					types.add(rt);
+				}
+			}
+		}
+		return types;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Addon> getAllAddons() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return new BasicEList<>(FakeDB.addons);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Addon getAddon(String addonName) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (Addon a : FakeDB.addons) {
+			if (a.getName() == addonName) {
+				return a;
+			}
+		}
+		return null;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Discount> getAllDiscounts() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return new BasicEList<>(FakeDB.discounts);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Discount getDiscount(String discountName) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (Discount d : FakeDB.discounts) {
+			// TODO no getName?
+			if (d.getName == discountName) {
+				return d;
+			}
+		}
+		return null;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Booking> getAllBookings() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return new BasicEList<>(FakeDB.bookings);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Booking> getBookings(Date fromDate, Date toDate) {
 		// TODO: implement this method
@@ -187,34 +199,49 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Booking> getPastBookings() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<Booking> pastBookings = new BasicEList<>();
+		Date today = new Date();
+		for (Booking b : FakeDB.bookings) {
+			if (b.getEndDate().before(today)) {
+				pastBookings.add(b);
+			}
+		}
+		return pastBookings;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Booking> getFutureBookings() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<Booking> futureBooking = new BasicEList<>();
+		Date today = new Date();
+		for (Booking b : FakeDB.bookings) {
+			if(b.getStartDate().after(today)) {
+				futureBooking.add(b);
+			}
+		}
+		return futureBooking;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Booking> getCurrentBookings() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<Booking> currentBookings = new BasicEList<>();
+		Date today = new Date();
+		for (Booking b : FakeDB.bookings) {
+			if(b.getStartDate().before(today) && b.getEndDate().after(today)) {
+				currentBookings.add(b);
+			}
+		}
+		return currentBookings;
 	}
 
 	/**
@@ -231,12 +258,16 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Booking> findBookings(String customerName) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<Booking> bookings = new BasicEList<>();
+		for (Booking b : FakeDB.bookings) {
+			if (b.getCustomer().getName().equals(customerName)) {
+				bookings.add(b);
+			}
+		}
+		return bookings;
 	}
 
 	/**
@@ -308,29 +339,30 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Customer> getAllCustomers() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return new BasicEList<>(FakeDB.customers);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Customer getCustomer(String customerSSNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (Customer c : FakeDB.customers) {
+			if (c.getSSNumber().equals(customerSSNumber)) {
+				return c;
+			}
+		}
+		return null;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Customer> findCustomers() {
 		// TODO: implement this method
@@ -341,45 +373,54 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Employee> getAllEmployees() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return new BasicEList<>(FakeDB.employees);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Employee getEmployee(String employeeSSNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (Employee e : FakeDB.employees) {
+			if(e.getSSNumber().equals(employeeSSNumber)) {
+				return e;
+			}
+		}
+		return null;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Employee> getAllCleaners() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<Employee> cleaners = new BasicEList<>();
+		for (Employee e : FakeDB.employees) {
+			if (e.getEmployeeType().getType() == EType.CLEANER) {
+				cleaners.add(e);
+			}
+		}
+		return cleaners;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Employee> getAllManagers() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<Employee> cleaners = new BasicEList<>();
+		for (Employee e : FakeDB.employees) {
+			if (e.getEmployeeType().getType() == EType.MANAGER) {
+				cleaners.add(e);
+			}
+		}
+		return cleaners;
 	}
 
 	/**
@@ -388,9 +429,13 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	 * @generated
 	 */
 	public EList<Employee> getAllReceptionists() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<Employee> cleaners = new BasicEList<>();
+		for (Employee e : FakeDB.employees) {
+			if (e.getEmployeeType().getType() == EType.RECEPTIONIST) {
+				cleaners.add(e);
+			}
+		}
+		return cleaners;
 	}
 
 	/**

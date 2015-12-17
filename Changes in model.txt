@@ -72,46 +72,47 @@ assignRoom, hur ska den funka?
 NEW:
 
 Hotel:
-- Ta bort authenticate - CHECK
-- Behöver managementcontroller, maintenancecontroller, bookingcontroller som instansvariabler. - CHECK
-- getManagementController returnerar nu void!? - CHECK
-- getMaintenanceController returnerar nu void!? - CHECK
+- Ta bort authenticate
+- Behöver managementcontroller, maintenancecontroller, bookingcontroller som instansvariabler.
+- getManagementController returnerar nu void!?
+- getMaintenanceController returnerar nu void!?
 
 Addon:
 - Saknar double price som instansvariabel
 
 Bill:
-- Strunta i tax? - CHECK
-- Saknar ytterligare konstruktor
-- Varför behöver vi ”basicGetCustomer”? - CHECK
+- Strunta i tax?
+- Saknar ytterligare konstruktör
+- Varför behöver vi ”basicGetCustomer”?
 
 BookedRoom:
-- Varför behöver vi ”basicGetRoom”? - CHECK
+- Varför behöver vi ”basicGetRoom”?
 
 BookingController:
 - 
 
 Booking:
-- Varför behövs ”basicGetCreditCard”? - CHECK
-- Varför behövs ”basicGetCustomer”? - CHECK
-- Varför behövs ”basicGetPaymentMaster”? - CHECK
-- Vi har både ”checkIn, checkOut” samt ”setCheckedIn, setCheckedOut” - CHECK
+- Varför behövs ”basicGetCreditCard”?
+- Varför behövs ”basicGetCustomer”?
+- Varför behövs ”basicGetPaymentMaster”?
+- Vi har både ”checkIn, checkOut” samt ”setCheckedIn, setCheckedOut”
+- Ta bort paymentMaster
 
 Creditcard:
 - 
 
 Customer:
-- Vad är customer rank? Behövs det? - CHECK
+- Vad är customer rank? Behövs det?
 - 
 
 Discount:
 - 
 
 Employee:
-- Varför behövs basicGetEmployeeType? - CHECK
-- Varför är ”Booking()” void och utan parametrar vad gör den? - CHECK
-- Vad är ”Boolean()”, void och utan parametrar? - CHECK
-- Vad är ”roomTypes()”, void och utan parametrar? - CHECK
+- Varför behövs basicGetEmployeeType?
+- Varför är ”Booking()” void och utan parametrar vad gör den?
+- Vad är ”Boolean()”, void och utan parametrar?
+- Vad är ”roomTypes()”, void och utan parametrar?
 
 EmployeeType:
 - 
