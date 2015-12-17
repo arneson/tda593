@@ -101,9 +101,6 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_q2OGgJdcEeW_2em-0w3Fbg" name="miscInfo" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="__HSOsJy8EeWOD_rmUUwMag" name="rank" visibility="private">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-    </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_XsatgJjwEeWQB-I7Xm36yA" name="addBonusPoints">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_b0eIAJjwEeWQB-I7Xm36yA" name="bonusPoints">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
@@ -119,9 +116,6 @@
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_DxPEgJdbEeW_2em-0w3Fbg" name="customer" visibility="private" type="_943j8JdPEeW_2em-0w3Fbg"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_EXcI4JdbEeW_2em-0w3Fbg" name="valueAddedTax" visibility="private">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-    </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_L1Q5UJjwEeW90dH2IAXwHw" name="final" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
     </ownedAttribute>
@@ -424,14 +418,6 @@
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_8B95AJ8sEeWgYtB9i8LQew" name="maintenanceController" visibility="private" type="_hJ2LAJdgEeW_2em-0w3Fbg"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_Axp7QJ8tEeWgYtB9i8LQew" name="managementController" visibility="private" type="_gA2ioJdgEeW_2em-0w3Fbg"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_LMR4oJjuEeW90dH2IAXwHw" name="authenticate">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_0pP7IJjuEeW90dH2IAXwHw" name="login">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_3vghcJjuEeW90dH2IAXwHw" name="password">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedParameter>
-    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_MFrhoJj1EeWQB-I7Xm36yA" name="BookedRoom">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_XwdRQJj2EeWQB-I7Xm36yA" name="addons" visibility="private" type="_E_WecJdQEeW_2em-0w3Fbg">
