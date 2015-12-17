@@ -77,6 +77,7 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 			case HotelManagementClassDiagramPackage.INTERACTION3: return createInteraction3();
 			case HotelManagementClassDiagramPackage.INTERACTION4: return createInteraction4();
 			case HotelManagementClassDiagramPackage.INTERACTION5: return createInteraction5();
+			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT: return createFakeDBContext();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -314,6 +315,16 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 	public Interaction5 createInteraction5() {
 		Interaction5Impl interaction5 = new Interaction5Impl();
 		return interaction5;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FakeDBContext createFakeDBContext() {
+		FakeDBContextImpl fakeDBContext = new FakeDBContextImpl();
+		return fakeDBContext;
 	}
 
 	/**

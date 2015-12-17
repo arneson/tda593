@@ -117,9 +117,12 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated 
+	 * @generated
 	 */
 	public void getNextRoomToClean(Room room) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

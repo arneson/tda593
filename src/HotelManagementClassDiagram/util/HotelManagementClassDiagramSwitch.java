@@ -201,6 +201,19 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case HotelManagementClassDiagramPackage.DB_INTERFACE: {
+				DBInterface dbInterface = (DBInterface)theEObject;
+				T result = caseDBInterface(dbInterface);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT: {
+				FakeDBContext fakeDBContext = (FakeDBContext)theEObject;
+				T result = caseFakeDBContext(fakeDBContext);
+				if (result == null) result = caseDBInterface(fakeDBContext);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -532,6 +545,36 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseInteraction5(Interaction5 object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>DB Interface</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>DB Interface</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDBInterface(DBInterface object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Fake DB Context</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Fake DB Context</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFakeDBContext(FakeDBContext object) {
 		return null;
 	}
 

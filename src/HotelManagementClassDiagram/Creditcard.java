@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link HotelManagementClassDiagram.Creditcard#getCvc <em>Cvc</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Creditcard#getOwner <em>Owner</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Creditcard#getExpirationMonth <em>Expiration Month</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Creditcard#getExpirationDay <em>Expiration Day</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Creditcard#getExpirationYear <em>Expiration Year</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getCreditcard()
@@ -130,29 +130,29 @@ public interface Creditcard extends EObject {
 	void setExpirationMonth(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Expiration Day</b></em>' attribute.
+	 * Returns the value of the '<em><b>Expiration Year</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Expiration Day</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Expiration Year</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Expiration Day</em>' attribute.
-	 * @see #setExpirationDay(int)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getCreditcard_ExpirationDay()
+	 * @return the value of the '<em>Expiration Year</em>' attribute.
+	 * @see #setExpirationYear(int)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getCreditcard_ExpirationYear()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	int getExpirationDay();
+	int getExpirationYear();
 
 	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Creditcard#getExpirationDay <em>Expiration Day</em>}' attribute.
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Creditcard#getExpirationYear <em>Expiration Year</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Expiration Day</em>' attribute.
-	 * @see #getExpirationDay()
+	 * @param value the new value of the '<em>Expiration Year</em>' attribute.
+	 * @see #getExpirationYear()
 	 * @generated
 	 */
-	void setExpirationDay(int value);
+	void setExpirationYear(int value);
 
 } // Creditcard

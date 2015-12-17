@@ -16,6 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link HotelManagementClassDiagram.Hotel#getName <em>Name</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Hotel#getAddress <em>Address</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Hotel#getRank <em>Rank</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Hotel#getBookingController <em>Booking Controller</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Hotel#getMaintenanceController <em>Maintenance Controller</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Hotel#getManagementController <em>Management Controller</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getHotel()
@@ -119,19 +122,57 @@ public interface Hotel extends EObject {
 	BookingController getBookingController();
 
 	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Hotel#getBookingController <em>Booking Controller</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @param value the new value of the '<em>Booking Controller</em>' reference.
+	 * @see #getBookingController()
 	 * @generated
 	 */
-	void getManagementController();
+	void setBookingController(BookingController value);
 
 	/**
+	 * Returns the value of the '<em><b>Management Controller</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @return the value of the '<em>Management Controller</em>' reference.
+	 * @see #setManagementController(ManagementController)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getHotel_ManagementController()
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	void getMaintenanceController();
+	ManagementController getManagementController();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Hotel#getManagementController <em>Management Controller</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Management Controller</em>' reference.
+	 * @see #getManagementController()
+	 * @generated
+	 */
+	void setManagementController(ManagementController value);
+
+	/**
+	 * Returns the value of the '<em><b>Maintenance Controller</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Maintenance Controller</em>' reference.
+	 * @see #setMaintenanceController(MaintenanceController)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getHotel_MaintenanceController()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	MaintenanceController getMaintenanceController();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Hotel#getMaintenanceController <em>Maintenance Controller</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Maintenance Controller</em>' reference.
+	 * @see #getMaintenanceController()
+	 * @generated
+	 */
+	void setMaintenanceController(MaintenanceController value);
 
 } // Hotel

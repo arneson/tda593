@@ -165,14 +165,14 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	protected EList<Addon> addons;
 
 	/**
-	 * The cached value of the '{@link #getBookedRooms() <em>Booked Rooms</em>}' reference list.
+	 * The cached value of the '{@link #getBookedRooms() <em>Booked Rooms</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBookedRooms()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<BookedRoom> bookedRooms;
+	protected BookedRoom bookedRooms;
 
 	/**
 	 * The default value of the '{@link #getInternalComments() <em>Internal Comments</em>}' attribute.
@@ -479,11 +479,37 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<BookedRoom> getBookedRooms() {
-		if (bookedRooms == null) {
-			bookedRooms = new EObjectResolvingEList<BookedRoom>(BookedRoom.class, this, HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS);
+	public BookedRoom getBookedRooms() {
+		if (bookedRooms != null && bookedRooms.eIsProxy()) {
+			InternalEObject oldBookedRooms = (InternalEObject)bookedRooms;
+			bookedRooms = (BookedRoom)eResolveProxy(oldBookedRooms);
+			if (bookedRooms != oldBookedRooms) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS, oldBookedRooms, bookedRooms));
+			}
 		}
 		return bookedRooms;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BookedRoom basicGetBookedRooms() {
+		return bookedRooms;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBookedRooms(BookedRoom newBookedRooms) {
+		BookedRoom oldBookedRooms = bookedRooms;
+		bookedRooms = newBookedRooms;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS, oldBookedRooms, bookedRooms));
 	}
 
 	/**
@@ -755,7 +781,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case HotelManagementClassDiagramPackage.BOOKING__ADDONS:
 				return getAddons();
 			case HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS:
-				return getBookedRooms();
+				if (resolve) return getBookedRooms();
+				return basicGetBookedRooms();
 			case HotelManagementClassDiagramPackage.BOOKING__INTERNAL_COMMENTS:
 				return getInternalComments();
 			case HotelManagementClassDiagramPackage.BOOKING__EXTERNAL_COMMENTS:
@@ -805,8 +832,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				getAddons().addAll((Collection<? extends Addon>)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS:
-				getBookedRooms().clear();
-				getBookedRooms().addAll((Collection<? extends BookedRoom>)newValue);
+				setBookedRooms((BookedRoom)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__INTERNAL_COMMENTS:
 				setInternalComments((String)newValue);
@@ -861,7 +887,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				getAddons().clear();
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS:
-				getBookedRooms().clear();
+				setBookedRooms((BookedRoom)null);
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__INTERNAL_COMMENTS:
 				setInternalComments(INTERNAL_COMMENTS_EDEFAULT);
@@ -908,7 +934,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case HotelManagementClassDiagramPackage.BOOKING__ADDONS:
 				return addons != null && !addons.isEmpty();
 			case HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS:
-				return bookedRooms != null && !bookedRooms.isEmpty();
+				return bookedRooms != null;
 			case HotelManagementClassDiagramPackage.BOOKING__INTERNAL_COMMENTS:
 				return INTERNAL_COMMENTS_EDEFAULT == null ? internalComments != null : !INTERNAL_COMMENTS_EDEFAULT.equals(internalComments);
 			case HotelManagementClassDiagramPackage.BOOKING__EXTERNAL_COMMENTS:
