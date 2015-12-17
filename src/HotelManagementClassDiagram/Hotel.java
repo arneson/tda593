@@ -175,10 +175,10 @@ public interface Hotel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model SSNDataType="org.eclipse.uml2.types.String" SSNRequired="true" SSNOrdered="false"
+	 * @model required="true" ordered="false" SSNDataType="org.eclipse.uml2.types.String" SSNRequired="true" SSNOrdered="false" passwordDataType="org.eclipse.uml2.types.String" passwordRequired="true" passwordOrdered="false"
 	 * @generated
 	 */
-	void logIn(String SSN);
+	Employee logIn(String SSN, String password);
 
 	/**
 	 * Returns the value of the '<em><b>Maintenance Controller</b></em>' reference.

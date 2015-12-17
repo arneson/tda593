@@ -1309,6 +1309,15 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getManagementController__GetEmployee__String() {
+		return managementControllerEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMaintenanceController() {
 		return maintenanceControllerEClass;
 	}
@@ -1453,7 +1462,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getHotel__LogIn__String() {
+	public EOperation getHotel__LogIn__String_String() {
 		return hotelEClass.getEOperations().get(0);
 	}
 
@@ -2043,6 +2052,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___GET_ALL_ADDONS);
 		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___GET_ALL_EXTRAS);
 		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___GET_ALL_DISCOUNTS);
+		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___GET_EMPLOYEE__STRING);
 
 		maintenanceControllerEClass = createEClass(MAINTENANCE_CONTROLLER);
 		createEReference(maintenanceControllerEClass, MAINTENANCE_CONTROLLER__ROOM_QUEUE);
@@ -2061,7 +2071,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		createEReference(hotelEClass, HOTEL__MAINTENANCE_CONTROLLER);
 		createEReference(hotelEClass, HOTEL__MANAGEMENT_CONTROLLER);
 		createEReference(hotelEClass, HOTEL__USER);
-		createEOperation(hotelEClass, HOTEL___LOG_IN__STRING);
+		createEOperation(hotelEClass, HOTEL___LOG_IN__STRING_STRING);
 
 		interaction1EClass = createEClass(INTERACTION1);
 		createEReference(interaction1EClass, INTERACTION1__);
@@ -2360,6 +2370,9 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 
 		initEOperation(getManagementController__GetAllDiscounts(), this.getDiscount(), "getAllDiscounts", 1, -1, IS_UNIQUE, !IS_ORDERED);
 
+		op = initEOperation(getManagementController__GetEmployee__String(), this.getEmployee(), "getEmployee", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "SSN", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(maintenanceControllerEClass, MaintenanceController.class, "MaintenanceController", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMaintenanceController_RoomQueue(), this.getRoom(), null, "roomQueue", null, 1, -1, MaintenanceController.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -2391,8 +2404,9 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		initEReference(getHotel_ManagementController(), this.getManagementController(), null, "managementController", null, 1, 1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getHotel_User(), this.getEmployee(), null, "user", null, 1, 1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		op = initEOperation(getHotel__LogIn__String(), null, "logIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getHotel__LogIn__String_String(), this.getEmployee(), "logIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getString(), "SSN", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "password", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(interaction1EClass, Interaction1.class, "Interaction1", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInteraction1__(), this.getEmployee(), null, "_", null, 1, 1, Interaction1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

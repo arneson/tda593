@@ -372,6 +372,12 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_i05JgKTzEeWVDoDgGsfQNA" value="*"/>
       </ownedParameter>
     </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_ApUJoKT2EeWVDoDgGsfQNA" name="getEmployee">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_DbevQKT2EeWVDoDgGsfQNA" name="employee" type="_Ew4PgJdOEeW_2em-0w3Fbg" direction="return"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_GGgyIKT2EeWVDoDgGsfQNA" name="SSN">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_hJ2LAJdgEeW_2em-0w3Fbg" name="MaintenanceController">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_Or2TwJdiEeW_2em-0w3Fbg" name="roomQueue" visibility="private" type="_S3mAoJdQEeW_2em-0w3Fbg">
@@ -441,6 +447,10 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_PaPusKTzEeWVDoDgGsfQNA" name="SSN">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ZWekKT1EeWVDoDgGsfQNA" name="password">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_7UI0sKT1EeWVDoDgGsfQNA" name="employee" type="_Ew4PgJdOEeW_2em-0w3Fbg" direction="return"/>
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Interaction" xmi:id="_ZqMmoJ3DEeWmd6xZ8Eu3nw" name="Interaction1">

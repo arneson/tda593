@@ -104,4 +104,12 @@ public interface ManagementController extends EObject {
 	 */
 	EList<Discount> getAllDiscounts();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" SSNDataType="org.eclipse.uml2.types.String" SSNRequired="true" SSNOrdered="false"
+	 * @generated
+	 */
+	Employee getEmployee(String SSN);
+
 } // ManagementController
