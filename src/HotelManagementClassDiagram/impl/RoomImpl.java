@@ -7,7 +7,6 @@ import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.Room;
 import HotelManagementClassDiagram.RoomType;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -34,7 +33,7 @@ import java.util.Collection;
  *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#getMaxNbrPeople <em>Max Nbr People</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#isUnderCleaning <em>Under Cleaning</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#isUnderRepair <em>Under Repair</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#getTypes <em>Types</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -211,24 +210,24 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	protected boolean underRepair = UNDER_REPAIR_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTypes() <em>Types</em>}' attribute.
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTypes()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final RoomType TYPES_EDEFAULT = RoomType.DOUBLE;
+	protected static final RoomType TYPE_EDEFAULT = RoomType.DOUBLE;
 
 	/**
-	 * The cached value of the '{@link #getTypes() <em>Types</em>}' attribute.
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTypes()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected RoomType types = TYPES_EDEFAULT;
+	protected RoomType type = TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -438,8 +437,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoomType getTypes() {
-		return types;
+	public RoomType getType() {
+		return type;
 	}
 
 	/**
@@ -447,11 +446,11 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTypes(RoomType newTypes) {
-		RoomType oldTypes = types;
-		types = newTypes == null ? TYPES_EDEFAULT : newTypes;
+	public void setType(RoomType newType) {
+		RoomType oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.ROOM__TYPES, oldTypes, types));
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.ROOM__TYPE, oldType, type));
 	}
 
 	/**
@@ -502,8 +501,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return isUnderCleaning();
 			case HotelManagementClassDiagramPackage.ROOM__UNDER_REPAIR:
 				return isUnderRepair();
-			case HotelManagementClassDiagramPackage.ROOM__TYPES:
-				return getTypes();
+			case HotelManagementClassDiagramPackage.ROOM__TYPE:
+				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -545,8 +544,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case HotelManagementClassDiagramPackage.ROOM__UNDER_REPAIR:
 				setUnderRepair((Boolean)newValue);
 				return;
-			case HotelManagementClassDiagramPackage.ROOM__TYPES:
-				setTypes((RoomType)newValue);
+			case HotelManagementClassDiagramPackage.ROOM__TYPE:
+				setType((RoomType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -587,8 +586,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case HotelManagementClassDiagramPackage.ROOM__UNDER_REPAIR:
 				setUnderRepair(UNDER_REPAIR_EDEFAULT);
 				return;
-			case HotelManagementClassDiagramPackage.ROOM__TYPES:
-				setTypes(TYPES_EDEFAULT);
+			case HotelManagementClassDiagramPackage.ROOM__TYPE:
+				setType(TYPE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -620,8 +619,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return underCleaning != UNDER_CLEANING_EDEFAULT;
 			case HotelManagementClassDiagramPackage.ROOM__UNDER_REPAIR:
 				return underRepair != UNDER_REPAIR_EDEFAULT;
-			case HotelManagementClassDiagramPackage.ROOM__TYPES:
-				return types != TYPES_EDEFAULT;
+			case HotelManagementClassDiagramPackage.ROOM__TYPE:
+				return type != TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -670,8 +669,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		result.append(underCleaning);
 		result.append(", underRepair: ");
 		result.append(underRepair);
-		result.append(", types: ");
-		result.append(types);
+		result.append(", type: ");
+		result.append(type);
 		result.append(')');
 		return result.toString();
 	}

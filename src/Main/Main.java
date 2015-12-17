@@ -113,11 +113,12 @@ public class Main {
 					}
 					
 					EList<RoomType> avaliableRoomTypes = fakeDBInstance.getAvaliableRoomTypes(startDate, endDate);
+					System.out.println();
 					System.out.println("Avaliable room types in the selected interval:");
 					for (RoomType type : avaliableRoomTypes) {
 						System.out.println(type.toString());
 					}
-					
+					System.out.println();
 					break;
 				default:
 					System.out.println("Enter "+CLI_HELP_COMMAND+" for a list of commands.");

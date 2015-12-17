@@ -95,10 +95,9 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	public EList<RoomType> getAllRoomTypes() {
 		EList<RoomType> types = new BasicEList<>();
 		for (Room r : FakeDB.rooms) {
-			for (RoomType rt : r.getTypes()) {
-				if (!types.contains(rt)) {
-					types.add(rt);
-				}
+			RoomType rt = r.getType();
+			if (!types.contains(rt)) {
+				types.add(rt);
 			}
 		}
 		return types;

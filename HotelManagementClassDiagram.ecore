@@ -152,8 +152,8 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="underRepair" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="types" ordered="false"
-        lowerBound="1" eType="#//RoomType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" lowerBound="1"
+        eType="#//RoomType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RoomType">
     <eLiterals name="Double"/>

@@ -1092,13 +1092,13 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int ROOM__UNDER_REPAIR = COSTABLE_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Types</b></em>' attribute.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__TYPES = COSTABLE_FEATURE_COUNT + 7;
+	int ROOM__TYPE = COSTABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Room</em>' class.
@@ -3284,15 +3284,15 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EAttribute getRoom_UnderRepair();
 
 	/**
-	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Room#getTypes <em>Types</em>}'.
+	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Room#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Types</em>'.
-	 * @see HotelManagementClassDiagram.Room#getTypes()
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see HotelManagementClassDiagram.Room#getType()
 	 * @see #getRoom()
 	 * @generated
 	 */
-	EAttribute getRoom_Types();
+	EAttribute getRoom_Type();
 
 	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Bill <em>Bill</em>}'.
@@ -4892,12 +4892,12 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EAttribute ROOM__UNDER_REPAIR = eINSTANCE.getRoom_UnderRepair();
 
 		/**
-		 * The meta object literal for the '<em><b>Types</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ROOM__TYPES = eINSTANCE.getRoom_Types();
+		EAttribute ROOM__TYPE = eINSTANCE.getRoom_Type();
 
 		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.BillImpl <em>Bill</em>}' class.

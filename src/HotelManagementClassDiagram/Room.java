@@ -18,7 +18,7 @@ package HotelManagementClassDiagram;
  *   <li>{@link HotelManagementClassDiagram.Room#getMaxNbrPeople <em>Max Nbr People</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Room#isUnderCleaning <em>Under Cleaning</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Room#isUnderRepair <em>Under Repair</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Room#getTypes <em>Types</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Room#getType <em>Type</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom()
@@ -209,32 +209,32 @@ public interface Room extends Costable {
 	void setUnderRepair(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Types</b></em>' attribute.
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link HotelManagementClassDiagram.RoomType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Types</em>' attribute list isn't clear,
+	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Types</em>' attribute.
+	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see HotelManagementClassDiagram.RoomType
-	 * @see #setTypes(RoomType)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_Types()
+	 * @see #setType(RoomType)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_Type()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	RoomType getTypes();
+	RoomType getType();
 
 	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Room#getTypes <em>Types</em>}' attribute.
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Room#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Types</em>' attribute.
+	 * @param value the new value of the '<em>Type</em>' attribute.
 	 * @see HotelManagementClassDiagram.RoomType
-	 * @see #getTypes()
+	 * @see #getType()
 	 * @generated
 	 */
-	void setTypes(RoomType value);
+	void setType(RoomType value);
 
 } // Room

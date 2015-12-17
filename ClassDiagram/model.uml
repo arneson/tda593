@@ -181,7 +181,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_tXoqgJj1EeWQB-I7Xm36yA" name="underRepair" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_x2h3sJj1EeWQB-I7Xm36yA" name="types" visibility="private" type="_JTGcgJdZEeW_2em-0w3Fbg">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_x2h3sJj1EeWQB-I7Xm36yA" name="type" visibility="private" type="_JTGcgJdZEeW_2em-0w3Fbg">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7T374Jj1EeWQB-I7Xm36yA" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7T5KAJj1EeWQB-I7Xm36yA" value="1"/>
     </ownedAttribute>
