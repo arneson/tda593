@@ -59,7 +59,7 @@ public class Main {
 
         System.out.println("Logged in as");
         System.out.println(user.toString());
-        System.out.println();
+        System.out.println("Access: " + user.getEmployeeType().getAcessLevel());
 
         // Retrieve all controllers
         BookingController bookingController = myHotel.getBookingController();
@@ -128,7 +128,7 @@ public class Main {
             String ssn = reader.next();
             System.out.print("Password: ");
             String pw = reader.next();
-            return hotel.logIn(ssn);
+            return hotel.logIn(ssn, pw);
         }catch(Exception ex) {
             System.out.println("Login process exited: " + 405);
         }
@@ -466,9 +466,11 @@ public class Main {
                 postalCode = "711 32",
                 ssnumber = ssnumbers[i],
                 street = "Kungsgatan 11B",
-                title = "Mr.";
+                title = "Mr.",
+                password = "admin";
+            System.out.println("Type");
             Employee employee = new EmployeeImpl(type, salary, workrate, name, city, country, gender, phoneNumber,
-                    postalCode, ssnumber, street, title);
+                    postalCode, ssnumber, password, street, title);
             employees.add(employee);
         }
 

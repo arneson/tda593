@@ -319,9 +319,10 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 */
 	public Employee logIn(String SSN, String password) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Employee e = FakeDBContextImpl.getInstance().getEmployee(SSN);
+        if (e.getPassword().equals(password))
+            return e;
+        return null;
 	}
 
 	/**
