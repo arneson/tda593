@@ -35,7 +35,6 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#isUnderCleaning <em>Under Cleaning</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#isUnderRepair <em>Under Repair</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#getTypes <em>Types</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#getRoomName <em>Room Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -190,26 +189,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @ordered
 	 */
 	protected EList<RoomType> types;
-
-	/**
-	 * The default value of the '{@link #getRoomName() <em>Room Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoomName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROOM_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRoomName() <em>Room Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoomName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roomName = ROOM_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -398,27 +377,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getRoomName() {
-		return roomName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRoomName(String newRoomName) {
-		String oldRoomName = roomName;
-		roomName = newRoomName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.ROOM__ROOM_NAME, oldRoomName, roomName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -438,8 +396,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return isUnderRepair();
 			case HotelManagementClassDiagramPackage.ROOM__TYPES:
 				return getTypes();
-			case HotelManagementClassDiagramPackage.ROOM__ROOM_NAME:
-				return getRoomName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -478,9 +434,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				getTypes().clear();
 				getTypes().addAll((Collection<? extends RoomType>)newValue);
 				return;
-			case HotelManagementClassDiagramPackage.ROOM__ROOM_NAME:
-				setRoomName((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -517,9 +470,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case HotelManagementClassDiagramPackage.ROOM__TYPES:
 				getTypes().clear();
 				return;
-			case HotelManagementClassDiagramPackage.ROOM__ROOM_NAME:
-				setRoomName(ROOM_NAME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -548,8 +498,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return underRepair != UNDER_REPAIR_EDEFAULT;
 			case HotelManagementClassDiagramPackage.ROOM__TYPES:
 				return types != null && !types.isEmpty();
-			case HotelManagementClassDiagramPackage.ROOM__ROOM_NAME:
-				return ROOM_NAME_EDEFAULT == null ? roomName != null : !ROOM_NAME_EDEFAULT.equals(roomName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -580,8 +528,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		result.append(underRepair);
 		result.append(", types: ");
 		result.append(types);
-		result.append(", roomName: ");
-		result.append(roomName);
 		result.append(')');
 		return result.toString();
 	}

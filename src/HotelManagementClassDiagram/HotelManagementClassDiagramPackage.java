@@ -821,22 +821,13 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int CUSTOMER__MISC_INFO = PERSON_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Rank</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER__RANK = PERSON_FEATURE_COUNT + 3;
-
-	/**
 	 * The number of structural features of the '<em>Customer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMER_FEATURE_COUNT = PERSON_FEATURE_COUNT + 4;
+	int CUSTOMER_FEATURE_COUNT = PERSON_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Add Bonus Points</em>' operation.
@@ -1165,22 +1156,13 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int ROOM__TYPES = 7;
 
 	/**
-	 * The feature id for the '<em><b>Room Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__ROOM_NAME = 8;
-
-	/**
 	 * The number of structural features of the '<em>Room</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = 9;
+	int ROOM_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -1255,22 +1237,13 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int BILL__CUSTOMER = 2;
 
 	/**
-	 * The feature id for the '<em><b>Value Added Tax</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILL__VALUE_ADDED_TAX = 3;
-
-	/**
 	 * The feature id for the '<em><b>Final</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL__FINAL = 4;
+	int BILL__FINAL = 3;
 
 	/**
 	 * The feature id for the '<em><b>Paid</b></em>' attribute.
@@ -1279,7 +1252,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL__PAID = 5;
+	int BILL__PAID = 4;
 
 	/**
 	 * The number of structural features of the '<em>Bill</em>' class.
@@ -1288,7 +1261,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_FEATURE_COUNT = 6;
+	int BILL_FEATURE_COUNT = 5;
 
 	/**
 	 * The operation id for the '<em>Add Costable</em>' operation.
@@ -1714,22 +1687,13 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int HOTEL_FEATURE_COUNT = 6;
 
 	/**
-	 * The operation id for the '<em>Authenticate</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL___AUTHENTICATE__STRING_STRING = 0;
-
-	/**
 	 * The number of operations of the '<em>Hotel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_OPERATION_COUNT = 1;
+	int HOTEL_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.Interaction1Impl <em>Interaction1</em>}' class.
@@ -3130,17 +3094,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EAttribute getCustomer_MiscInfo();
 
 	/**
-	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Customer#getRank <em>Rank</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Rank</em>'.
-	 * @see HotelManagementClassDiagram.Customer#getRank()
-	 * @see #getCustomer()
-	 * @generated
-	 */
-	EAttribute getCustomer_Rank();
-
-	/**
 	 * Returns the meta object for the '{@link HotelManagementClassDiagram.Customer#addBonusPoints(int) <em>Add Bonus Points</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3291,17 +3244,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EAttribute getRoom_Types();
 
 	/**
-	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Room#getRoomName <em>Room Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Room Name</em>'.
-	 * @see HotelManagementClassDiagram.Room#getRoomName()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EAttribute getRoom_RoomName();
-
-	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Bill <em>Bill</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3343,17 +3285,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBill_Customer();
-
-	/**
-	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Bill#getValueAddedTax <em>Value Added Tax</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value Added Tax</em>'.
-	 * @see HotelManagementClassDiagram.Bill#getValueAddedTax()
-	 * @see #getBill()
-	 * @generated
-	 */
-	EAttribute getBill_ValueAddedTax();
 
 	/**
 	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Bill#isFinal <em>Final</em>}'.
@@ -3837,16 +3768,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getHotel_ManagementController();
-
-	/**
-	 * Returns the meta object for the '{@link HotelManagementClassDiagram.Hotel#authenticate(java.lang.String, java.lang.String) <em>Authenticate</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Authenticate</em>' operation.
-	 * @see HotelManagementClassDiagram.Hotel#authenticate(java.lang.String, java.lang.String)
-	 * @generated
-	 */
-	EOperation getHotel__Authenticate__String_String();
 
 	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.BookedRoom <em>Booked Room</em>}'.
@@ -4829,14 +4750,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EAttribute CUSTOMER__MISC_INFO = eINSTANCE.getCustomer_MiscInfo();
 
 		/**
-		 * The meta object literal for the '<em><b>Rank</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CUSTOMER__RANK = eINSTANCE.getCustomer_Rank();
-
-		/**
 		 * The meta object literal for the '<em><b>Add Bonus Points</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4955,14 +4868,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EAttribute ROOM__TYPES = eINSTANCE.getRoom_Types();
 
 		/**
-		 * The meta object literal for the '<em><b>Room Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM__ROOM_NAME = eINSTANCE.getRoom_RoomName();
-
-		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.BillImpl <em>Bill</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4995,14 +4900,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BILL__CUSTOMER = eINSTANCE.getBill_Customer();
-
-		/**
-		 * The meta object literal for the '<em><b>Value Added Tax</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BILL__VALUE_ADDED_TAX = eINSTANCE.getBill_ValueAddedTax();
 
 		/**
 		 * The meta object literal for the '<em><b>Final</b></em>' attribute feature.
@@ -5391,14 +5288,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference HOTEL__MANAGEMENT_CONTROLLER = eINSTANCE.getHotel_ManagementController();
-
-		/**
-		 * The meta object literal for the '<em><b>Authenticate</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation HOTEL___AUTHENTICATE__STRING_STRING = eINSTANCE.getHotel__Authenticate__String_String();
 
 		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.BookedRoomImpl <em>Booked Room</em>}' class.

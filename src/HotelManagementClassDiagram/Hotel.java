@@ -107,14 +107,6 @@ public interface Hotel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model loginDataType="org.eclipse.uml2.types.String" loginRequired="true" loginOrdered="false" passwordDataType="org.eclipse.uml2.types.String" passwordRequired="true" passwordOrdered="false"
-	 * @generated
-	 */
-	void authenticate(String login, String password);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @return 
 	 * @model kind="operation"
 	 * @generated NOT

@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link HotelManagementClassDiagram.Room#isUnderCleaning <em>Under Cleaning</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Room#isUnderRepair <em>Under Repair</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Room#getTypes <em>Types</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Room#getRoomName <em>Room Name</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom()
@@ -230,31 +229,5 @@ public interface Room extends EObject {
 	 * @generated
 	 */
 	EList<RoomType> getTypes();
-
-	/**
-	 * Returns the value of the '<em><b>Room Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Room Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Room Name</em>' attribute.
-	 * @see #setRoomName(String)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_RoomName()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
-	 * @generated
-	 */
-	String getRoomName();
-
-	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Room#getRoomName <em>Room Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Room Name</em>' attribute.
-	 * @see #getRoomName()
-	 * @generated
-	 */
-	void setRoomName(String value);
 
 } // Room

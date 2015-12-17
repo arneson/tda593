@@ -178,9 +178,6 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7T374Jj1EeWQB-I7Xm36yA" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7T5KAJj1EeWQB-I7Xm36yA" value="*"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_LNKIwJj2EeWQB-I7Xm36yA" name="roomName" visibility="private">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-    </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_KN_mMJdTEeW_2em-0w3Fbg" name="EmployeeType">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_PVV6gJdTEeW_2em-0w3Fbg" name="type" visibility="private" type="_InaQoJdYEeW_2em-0w3Fbg"/>
@@ -394,7 +391,7 @@
   <packagedElement xmi:type="uml:Dependency" xmi:id="_icXP4JdtEeW_2em-0w3Fbg" client="_LUZ8UJN8EeW_3Yt58t3sgQ" supplier="_LUZ8UJN8EeW_3Yt58t3sgQ"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_RPOZAJduEeW_2em-0w3Fbg" client="_7pMnYJdPEeW_2em-0w3Fbg" supplier="_LUZ8UJN8EeW_3Yt58t3sgQ"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_3HY4AJduEeW_2em-0w3Fbg" client="_BnrYAJdQEeW_2em-0w3Fbg" supplier="_LUZ8UJN8EeW_3Yt58t3sgQ"/>
-  <packagedElement xmi:type="uml:Dependency" xmi:id="_oOG6IJdvEeW_2em-0w3Fbg" client="_7pMnYJdPEeW_2em-0w3Fbg" supplier="_S3mAoJdQEeW_2em-0w3Fbg"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_oOG6IJdvEeW_2em-0w3Fbg" client="_7pMnYJdPEeW_2em-0w3Fbg" supplier="_LUZ8UJN8EeW_3Yt58t3sgQ"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_TybDoJdwEeW_2em-0w3Fbg" client="_7pMnYJdPEeW_2em-0w3Fbg" supplier="_E_WecJdQEeW_2em-0w3Fbg"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_lnK3oJdwEeW_2em-0w3Fbg" client="_BnrYAJdQEeW_2em-0w3Fbg" supplier="_LUZ8UJN8EeW_3Yt58t3sgQ"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_WdT1MJdzEeW_2em-0w3Fbg" client="_e6180JdgEeW_2em-0w3Fbg" supplier="_7pMnYJdPEeW_2em-0w3Fbg"/>

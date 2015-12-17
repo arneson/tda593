@@ -34,7 +34,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link HotelManagementClassDiagram.impl.BillImpl#getCostables <em>Costables</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BillImpl#getTotalPrice <em>Total Price</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BillImpl#getCustomer <em>Customer</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.impl.BillImpl#getValueAddedTax <em>Value Added Tax</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BillImpl#isFinal <em>Final</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BillImpl#isPaid <em>Paid</em>}</li>
  * </ul>
@@ -81,26 +80,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * @ordered
 	 */
 	protected Customer customer;
-
-	/**
-	 * The default value of the '{@link #getValueAddedTax() <em>Value Added Tax</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValueAddedTax()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double VALUE_ADDED_TAX_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getValueAddedTax() <em>Value Added Tax</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValueAddedTax()
-	 * @generated
-	 * @ordered
-	 */
-	protected double valueAddedTax = VALUE_ADDED_TAX_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isFinal() <em>Final</em>}' attribute.
@@ -237,27 +216,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public double getValueAddedTax() {
-		return valueAddedTax;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setValueAddedTax(double newValueAddedTax) {
-		double oldValueAddedTax = valueAddedTax;
-		valueAddedTax = newValueAddedTax;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BILL__VALUE_ADDED_TAX, oldValueAddedTax, valueAddedTax));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isFinal() {
 		return final_;
 	}
@@ -321,8 +279,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			case HotelManagementClassDiagramPackage.BILL__CUSTOMER:
 				if (resolve) return getCustomer();
 				return basicGetCustomer();
-			case HotelManagementClassDiagramPackage.BILL__VALUE_ADDED_TAX:
-				return getValueAddedTax();
 			case HotelManagementClassDiagramPackage.BILL__FINAL:
 				return isFinal();
 			case HotelManagementClassDiagramPackage.BILL__PAID:
@@ -349,9 +305,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return;
 			case HotelManagementClassDiagramPackage.BILL__CUSTOMER:
 				setCustomer((Customer)newValue);
-				return;
-			case HotelManagementClassDiagramPackage.BILL__VALUE_ADDED_TAX:
-				setValueAddedTax((Double)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.BILL__FINAL:
 				setFinal((Boolean)newValue);
@@ -380,9 +333,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			case HotelManagementClassDiagramPackage.BILL__CUSTOMER:
 				setCustomer((Customer)null);
 				return;
-			case HotelManagementClassDiagramPackage.BILL__VALUE_ADDED_TAX:
-				setValueAddedTax(VALUE_ADDED_TAX_EDEFAULT);
-				return;
 			case HotelManagementClassDiagramPackage.BILL__FINAL:
 				setFinal(FINAL_EDEFAULT);
 				return;
@@ -407,8 +357,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return totalPrice != TOTAL_PRICE_EDEFAULT;
 			case HotelManagementClassDiagramPackage.BILL__CUSTOMER:
 				return customer != null;
-			case HotelManagementClassDiagramPackage.BILL__VALUE_ADDED_TAX:
-				return valueAddedTax != VALUE_ADDED_TAX_EDEFAULT;
 			case HotelManagementClassDiagramPackage.BILL__FINAL:
 				return final_ != FINAL_EDEFAULT;
 			case HotelManagementClassDiagramPackage.BILL__PAID:
@@ -444,8 +392,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (totalPrice: ");
 		result.append(totalPrice);
-		result.append(", valueAddedTax: ");
-		result.append(valueAddedTax);
 		result.append(", final: ");
 		result.append(final_);
 		result.append(", paid: ");

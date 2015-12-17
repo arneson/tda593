@@ -9,13 +9,8 @@ import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 
 import HotelManagementClassDiagram.MaintenanceController;
 import HotelManagementClassDiagram.ManagementController;
-import java.lang.reflect.InvocationTargetException;
-
 import HotelManagementClassDiagram.Room;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
@@ -210,17 +205,6 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 		rank = newRank;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.HOTEL__RANK, oldRank, rank));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void authenticate(String login, String password) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -422,21 +406,6 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 				return managementController != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case HotelManagementClassDiagramPackage.HOTEL___AUTHENTICATE__STRING_STRING:
-				authenticate((String)arguments.get(0), (String)arguments.get(1));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
