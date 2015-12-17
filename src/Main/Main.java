@@ -41,7 +41,6 @@ public class Main {
 	static final String CLI_HELP_COMMAND= "help";
 	static final String CLI_CHECKIN_COMMAND= "checkin";
 	static final String CLI_CHECKOUT_COMMAND= "checkout";
-	static final String CLI_NEW_CUSTOMER_COMMAND= "new customer";
 	static final String CLI_BOOK_A_ROOM_COMMAND= "book";
 	static final String CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND= "browse";
 	
@@ -57,87 +56,14 @@ public class Main {
 		do{
 			switch(command){
 				case CLI_HELP_COMMAND:
-					System.out.println();
-					System.out.println("HELP - List of commands.");
-					System.out.println("##########################");
-					System.out.println("exit - exit the program");
-					System.out.println("help - show list of commands");
-					System.out.println(CLI_CHECKIN_COMMAND+" - check in a booking");
-					System.out.println(CLI_CHECKOUT_COMMAND+" - check out a booking");
-					System.out.println(CLI_NEW_CUSTOMER_COMMAND+" - create a new customer");
-					System.out.println(CLI_BOOK_A_ROOM_COMMAND+" - book a room");
-					System.out.println(CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND+" - browse available room types");
-					System.out.println();
-					System.out.print("Choose an option: ");
+					printHelp();
 					break;
 					
 				case CLI_CHECKIN_COMMAND:
-					System.out.println();
-					System.out.println("CHECK IN");
-					System.out.println("##################");
-					int bookingId = -1;
-					do{
-						System.out.print("Please enter booking number: ");
-						bookingId = reader.nextInt();
-						Booking b = bookingController.getBooking(bookingId);
-						if(b!=null){
-							System.out.println("Booking found.");
-							System.out.print("Please enter credit card number: ");
-							long number = reader.nextLong();
-							System.out.print("Please enter cvc code: ");
-							int cvc = reader.nextInt();
-							System.out.print("Please enter expiration month: ");
-							int month = reader.nextInt();
-							System.out.print("Please enter expiration year: ");
-							int year = reader.nextInt();
-							System.out.print("Please cardholder's name: ");
-							String owner = reader.nextLine();
-							Creditcard card = new CreditcardImpl(number,cvc,month,year,owner);
-							b.setCreditCard(card);
-							bookingController.updateOrAddBooking(b);
-							bookingController.checkIn(b, true);
-							System.out.print("Booking successfully checked in: ");
-							
-						}else{
-							System.out.println("No booking with bookingId: "+bookingId+" found.");
-							bookingId =-1;
-						}
-						
-					}while(bookingId!=-1);
+					checkIn(reader, bookingController);
 					break;
 					
-				case CLI_CHECKOUT_COMMAND:
-					
-					break;
-					
-				case CLI_NEW_CUSTOMER_COMMAND:
-					System.out.println("Please enter customer social security number: ");
-					String SSN = reader.next();
-					
-					Customer customer = bookingController.getCustomer(SSN);
-					if (customer == null) {
-						System.out.println("Customer does not exist in DB. Please enter name: ");
-						String name = reader.next();
-						System.out.println("Please enter phone number: ");
-						String phoneNumber = reader.next();
-						System.out.println("Please enter street: ");
-						String street = reader.next();
-						System.out.println("Please enter city: ");
-						String city = reader.next();
-						System.out.println("Please enter postal code: ");
-						String postalCode = reader.next();
-						System.out.println("Please enter country: ");
-						String country = reader.next();
-						System.out.println("Please enter gender: ");
-						String gender = reader.next();
-						System.out.println("Please enter title: ");
-						String title = reader.next();
-						
-						customer = new CustomerImpl(name, city, country, gender, phoneNumber, postalCode, SSN, street, title);
-						bookingController.updateOrAddCustomer(customer);
-					} else {
-						System.out.println("Customer already exists in DB.");
-					}
+				case CLI_CHECKOUT_COMMAND:					
 					break;
 					
 				case CLI_BOOK_A_ROOM_COMMAND:
@@ -231,49 +157,182 @@ public class Main {
 					Booking booking = new BookingImpl(customer, startDate, endDate, types);
 					bookingController.updateOrAddBooking(booking);
 					System.out.println("Booking created.");
+=======
+					bookARoom(reader, bookingController);
+>>>>>>> 86dfe68368237a05f0628d6536b764e69561ec90
 					break;
-					
 				case CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND:
-					System.out.print("Please enter start date (YYYY-MM-DD): ");
-					startDateString = reader.next();
-					formatter = new SimpleDateFormat("yyyy-MM-dd");
-					startDate = null;
-					endDate = null;
-					try {
-						startDate = formatter.parse(startDateString);
-					} catch (ParseException e) {
-						e.printStackTrace();
-					}
-					
-					System.out.print("Please enter end date (YYYY-MM-DD): ");
-					endDateString = reader.next();
-					try {
-						endDate = formatter.parse(endDateString);
-					} catch (ParseException e) {
-						e.printStackTrace();
-					}
-					
-					System.out.println("Please enter number of adults: ");
-					nbrOfAdults = reader.nextInt();
-					System.out.println("Please enter number of children: ");
-					nbrOfChildren = reader.nextInt();
-					
-					avaliableRoomTypes = bookingController.searchAvailableRoomTypes(startDate, endDate, nbrOfAdults, nbrOfChildren);
-					System.out.println();
-					System.out.println("Avaliable room types in the selected interval:");
-					for (RoomType type2 : avaliableRoomTypes) {
-						System.out.println(type2.toString());
-					}
-					System.out.println();
+					searchAvailableRoomTypes(reader, bookingController);
 					break;
 				default:
-					System.out.println("Enter "+CLI_HELP_COMMAND+" for a list of commands.");
+					System.out.println("Enter " + CLI_HELP_COMMAND + " for a list of commands.");
 					System.out.println("Enter " + CLI_EXIT_COMMAND + " to exit.");
 					System.out.println("Choose an option: ");
 					break;
 			}
 			command = reader.nextLine();
 		}while(!command.equalsIgnoreCase(CLI_EXIT_COMMAND));
+
+	}
+
+	public static void printHelp() {
+		System.out.println();
+		System.out.println("HELP - List of commands.");
+		System.out.println("##########################");
+        System.out.println(CLI_BOOK_A_ROOM_COMMAND + " - book a room");
+        System.out.println(CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND + " - browse available room types");
+        System.out.println(CLI_CHECKIN_COMMAND + " - check in a booking");
+        System.out.println(CLI_CHECKOUT_COMMAND + " - check out a booking");
+        System.out.println(CLI_HELP_COMMAND + " - show list of commands");
+		System.out.println(CLI_EXIT_COMMAND + " - exit the program");
+		System.out.println();
+		System.out.print("Choose an option: ");
+	}
+
+	public static void bookARoom(Scanner reader, BookingController bookingController) {
+		System.out.print("Please enter start date (YYYY-MM-DD): ");
+		String startDateString = reader.next();
+
+		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		Date startDate = null, endDate = null;
+		try {
+			startDate = formatter.parse(startDateString);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+		System.out.print("Please enter end date (YYYY-MM-DD): ");
+		String endDateString = reader.next();
+		try {
+			endDate = formatter.parse(endDateString);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+		System.out.println("Please enter number of adults: ");
+		int nbrOfAdults = reader.nextInt();
+		System.out.println("Please enter number of adults: ");
+		int nbrOfChildren = reader.nextInt();
+
+		EList<RoomType> avaliableRoomTypes = bookingController.searchAvailableRoomTypes(startDate, endDate, nbrOfAdults, nbrOfChildren);
+		System.out.println();
+		System.out.println("Avaliable room types in the selected interval:");
+		for (RoomType type : avaliableRoomTypes) {
+			System.out.println(type.toString());
+		}
+
+		System.out.println("");
+		System.out.println("How many rooms? ");
+		int nbrOfRooms = reader.nextInt();
+		BasicEList<RoomType> types = new BasicEList<RoomType>();
+		for (int i = 0; i < nbrOfRooms; i++) {
+			System.out.println("Please select type for room " + i + ": ");
+			String typeString = reader.next();
+            try{
+                types.add(RoomType.valueOf(typeString.toUpperCase()));
+            }catch (IllegalArgumentException ignored){}
+		}
+
+		System.out.println("Please enter customer social security number: ");
+		String SSN = reader.next();
+
+		Customer customer = bookingController.getCustomer(SSN);
+		if (customer == null) {
+			System.out.println("Customer does not exist in DB. \nPlease enter name: ");
+			String name = reader.next();
+			System.out.println("Please enter phone number: ");
+			String phoneNumber = reader.next();
+			System.out.println("Please enter street: ");
+			String street = reader.next();
+			System.out.println("Please enter city: ");
+			String city = reader.next();
+			System.out.println("Please enter postal code: ");
+			String postalCode = reader.next();
+			System.out.println("Please enter country: ");
+			String country = reader.next();
+			System.out.println("Please enter gender: ");
+			String gender = reader.next();
+			System.out.println("Please enter title: ");
+			String title = reader.next();
+
+			customer = new CustomerImpl(name, city, country, gender, phoneNumber, postalCode, SSN, street, title);
+		}
+
+		Booking booking = new BookingImpl(customer, startDate, endDate, types);
+		bookingController.updateOrAddBooking(booking);
+		System.out.println("Booking created.");
+	}
+
+	public static void checkIn(Scanner reader, BookingController bookingController){
+		System.out.println();
+		System.out.println("CHECK IN");
+		System.out.println("##################");
+		int bookingId = -1;
+		do{
+			System.out.print("Please enter booking number: ");
+			bookingId = reader.nextInt();
+			Booking b = bookingController.getBooking(bookingId);
+			if(b!=null){
+				System.out.println("Booking found.");
+				System.out.print("Please enter credit card number: ");
+				long number = reader.nextLong();
+				System.out.print("Please enter cvc code: ");
+				int cvc = reader.nextInt();
+				System.out.print("Please enter expiration month: ");
+				int month = reader.nextInt();
+				System.out.print("Please enter expiration year: ");
+				int year = reader.nextInt();
+				System.out.print("Please cardholder's name: ");
+				String owner = reader.nextLine();
+				Creditcard card = new CreditcardImpl(number,cvc,month,year,owner);
+				b.setCreditCard(card);
+				bookingController.updateOrAddBooking(b);
+				bookingController.checkIn(b, true);
+				System.out.print("Booking successfully checked in: ");
+
+			}else{
+				System.out.println("No booking with bookingId: "+bookingId+" found.");
+				bookingId =-1;
+			}
+
+		}while(bookingId!=-1);
+	}
+
+	public static void searchAvailableRoomTypes(Scanner reader, BookingController bookingController) {
+		System.out.print("Please enter start date (YYYY-MM-DD): ");
+		String startDateString = reader.next();
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		Date startDate = null;
+		Date endDate = null;
+		try {
+			startDate = formatter.parse(startDateString);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+		System.out.print("Please enter end date (YYYY-MM-DD): ");
+		String endDateString = reader.next();
+		try {
+			endDate = formatter.parse(endDateString);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+		System.out.println("Please enter number of adults: ");
+		int nbrOfAdults = reader.nextInt();
+		System.out.println("Please enter number of children: ");
+		int nbrOfChildren = reader.nextInt();
+
+		EList<RoomType> avaliableRoomTypes = bookingController.searchAvailableRoomTypes(startDate, endDate, nbrOfAdults, nbrOfChildren);
+		System.out.println();
+		System.out.println("Avaliable room types in the selected interval:");
+		for (RoomType type2 : avaliableRoomTypes) {
+			System.out.println(type2.toString());
+		}
+		System.out.println();
+	}
+
+	public static void checkOut(Scanner reader, BookingController bookingController) {
 
 	}
 

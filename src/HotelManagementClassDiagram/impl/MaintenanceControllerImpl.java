@@ -225,10 +225,5 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 		return super.eInvoke(operationID, arguments);
 	}
 
-	@Override
-	public void getNextRoomToClean(Room room) {
-		// TODO Auto-generated method stub
-		
-	}
 
 } //MaintenanceControllerImpl
