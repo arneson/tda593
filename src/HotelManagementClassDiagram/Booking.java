@@ -211,20 +211,30 @@ public interface Booking extends EObject {
 	EList<Addon> getAddons();
 
 	/**
-	 * Returns the value of the '<em><b>Booked Rooms</b></em>' reference list.
-	 * The list contents are of type {@link HotelManagementClassDiagram.BookedRoom}.
+	 * Returns the value of the '<em><b>Booked Rooms</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Booked Rooms</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Booked Rooms</em>' reference list.
+	 * @return the value of the '<em>Booked Rooms</em>' reference.
+	 * @see #setBookedRooms(BookedRoom)
 	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking_BookedRooms()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	EList<BookedRoom> getBookedRooms();
+	BookedRoom getBookedRooms();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Booking#getBookedRooms <em>Booked Rooms</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Booked Rooms</em>' reference.
+	 * @see #getBookedRooms()
+	 * @generated
+	 */
+	void setBookedRooms(BookedRoom value);
 
 	/**
 	 * Returns the value of the '<em><b>Internal Comments</b></em>' attribute.

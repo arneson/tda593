@@ -202,6 +202,15 @@ public interface HotelManagementClassDiagramFactory extends EFactory {
 	Interaction5 createInteraction5();
 
 	/**
+	 * Returns a new object of class '<em>Fake DB Context</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Fake DB Context</em>'.
+	 * @generated
+	 */
+	FakeDBContext createFakeDBContext();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

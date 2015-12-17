@@ -459,7 +459,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int BOOKING__ADDONS = 6;
 
 	/**
-	 * The feature id for the '<em><b>Booked Rooms</b></em>' reference list.
+	 * The feature id for the '<em><b>Booked Rooms</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -676,13 +676,13 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int CREDITCARD__EXPIRATION_MONTH = 3;
 
 	/**
-	 * The feature id for the '<em><b>Expiration Day</b></em>' attribute.
+	 * The feature id for the '<em><b>Expiration Year</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREDITCARD__EXPIRATION_DAY = 4;
+	int CREDITCARD__EXPIRATION_YEAR = 4;
 
 	/**
 	 * The number of structural features of the '<em>Creditcard</em>' class.
@@ -1432,7 +1432,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_CONTROLLER___CHECK_IN__BOOKING = 6;
+	int BOOKING_CONTROLLER___CHECK_IN__BOOKING_BOOLEAN = 6;
 
 	/**
 	 * The operation id for the '<em>Create Key Card</em>' operation.
@@ -1678,13 +1678,40 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int HOTEL__RANK = 2;
 
 	/**
+	 * The feature id for the '<em><b>Booking Controller</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL__BOOKING_CONTROLLER = 3;
+
+	/**
+	 * The feature id for the '<em><b>Maintenance Controller</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL__MAINTENANCE_CONTROLLER = 4;
+
+	/**
+	 * The feature id for the '<em><b>Management Controller</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL__MANAGEMENT_CONTROLLER = 5;
+
+	/**
 	 * The number of structural features of the '<em>Hotel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_FEATURE_COUNT = 3;
+	int HOTEL_FEATURE_COUNT = 6;
 
 	/**
 	 * The operation id for the '<em>Authenticate</em>' operation.
@@ -1696,40 +1723,13 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int HOTEL___AUTHENTICATE__STRING_STRING = 0;
 
 	/**
-	 * The operation id for the '<em>Get Booking Controller</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL___GET_BOOKING_CONTROLLER = 1;
-
-	/**
-	 * The operation id for the '<em>Get Management Controller</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL___GET_MANAGEMENT_CONTROLLER = 2;
-
-	/**
-	 * The operation id for the '<em>Get Maintenance Controller</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL___GET_MAINTENANCE_CONTROLLER = 3;
-
-	/**
 	 * The number of operations of the '<em>Hotel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_OPERATION_COUNT = 4;
+	int HOTEL_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.Interaction1Impl <em>Interaction1</em>}' class.
@@ -1917,6 +1917,602 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int INTERACTION5_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link HotelManagementClassDiagram.DBInterface <em>DB Interface</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see HotelManagementClassDiagram.DBInterface
+	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getDBInterface()
+	 * @generated
+	 */
+	int DB_INTERFACE = 22;
+
+	/**
+	 * The number of structural features of the '<em>DB Interface</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>get All Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_ALL_ROOMS = 0;
+
+	/**
+	 * The operation id for the '<em>Get Avaliable Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_AVALIABLE_ROOMS = 1;
+
+	/**
+	 * The operation id for the '<em>Get Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_ROOM__INT = 2;
+
+	/**
+	 * The operation id for the '<em>Get All Room Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_ALL_ROOM_TYPES = 3;
+
+	/**
+	 * The operation id for the '<em>Get Avaliable Room Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_AVALIABLE_ROOM_TYPES = 4;
+
+	/**
+	 * The operation id for the '<em>Get All Addons</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_ALL_ADDONS = 5;
+
+	/**
+	 * The operation id for the '<em>Get Addon</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_ADDON__STRING = 6;
+
+	/**
+	 * The operation id for the '<em>Get All Discounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_ALL_DISCOUNTS = 7;
+
+	/**
+	 * The operation id for the '<em>Get Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_DISCOUNT__STRING = 8;
+
+	/**
+	 * The operation id for the '<em>Get All Bookings</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_ALL_BOOKINGS = 9;
+
+	/**
+	 * The operation id for the '<em>Get Bookings</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_BOOKINGS__DATE_DATE = 10;
+
+	/**
+	 * The operation id for the '<em>Get Past Bookings</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_PAST_BOOKINGS = 11;
+
+	/**
+	 * The operation id for the '<em>Get Future Bookings</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_FUTURE_BOOKINGS = 12;
+
+	/**
+	 * The operation id for the '<em>Get Current Bookings</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_CURRENT_BOOKINGS = 13;
+
+	/**
+	 * The operation id for the '<em>Get Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_BOOKING = 14;
+
+	/**
+	 * The operation id for the '<em>Find Bookings</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___FIND_BOOKINGS__STRING = 15;
+
+	/**
+	 * The operation id for the '<em>Get All Booked Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_ALL_BOOKED_ROOMS = 16;
+
+	/**
+	 * The operation id for the '<em>Get Booked Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_BOOKED_ROOMS__DATE_DATE = 17;
+
+	/**
+	 * The operation id for the '<em>Get Past Booked Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_PAST_BOOKED_ROOMS = 18;
+
+	/**
+	 * The operation id for the '<em>Get Future Booked Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_FUTURE_BOOKED_ROOMS = 19;
+
+	/**
+	 * The operation id for the '<em>Get Current Booked Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_CURRENT_BOOKED_ROOMS = 20;
+
+	/**
+	 * The operation id for the '<em>Find Booked Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___FIND_BOOKED_ROOMS__STRING = 21;
+
+	/**
+	 * The operation id for the '<em>Get All Customers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_ALL_CUSTOMERS = 22;
+
+	/**
+	 * The operation id for the '<em>Get Customer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_CUSTOMER__STRING = 23;
+
+	/**
+	 * The operation id for the '<em>Find Customers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___FIND_CUSTOMERS = 24;
+
+	/**
+	 * The operation id for the '<em>Get All Employees</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_ALL_EMPLOYEES = 25;
+
+	/**
+	 * The operation id for the '<em>Get Employee</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_EMPLOYEE__STRING = 26;
+
+	/**
+	 * The operation id for the '<em>Get All Cleaners</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_ALL_CLEANERS = 27;
+
+	/**
+	 * The operation id for the '<em>Get All Managers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_ALL_MANAGERS = 28;
+
+	/**
+	 * The operation id for the '<em>Get All Receptionists</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE___GET_ALL_RECEPTIONISTS = 29;
+
+	/**
+	 * The number of operations of the '<em>DB Interface</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_INTERFACE_OPERATION_COUNT = 30;
+
+	/**
+	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.FakeDBContextImpl <em>Fake DB Context</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see HotelManagementClassDiagram.impl.FakeDBContextImpl
+	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getFakeDBContext()
+	 * @generated
+	 */
+	int FAKE_DB_CONTEXT = 23;
+
+	/**
+	 * The number of structural features of the '<em>Fake DB Context</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT_FEATURE_COUNT = DB_INTERFACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>get All Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_ALL_ROOMS = DB_INTERFACE___GET_ALL_ROOMS;
+
+	/**
+	 * The operation id for the '<em>Get Avaliable Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_AVALIABLE_ROOMS = DB_INTERFACE___GET_AVALIABLE_ROOMS;
+
+	/**
+	 * The operation id for the '<em>Get Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_ROOM__INT = DB_INTERFACE___GET_ROOM__INT;
+
+	/**
+	 * The operation id for the '<em>Get All Room Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_ALL_ROOM_TYPES = DB_INTERFACE___GET_ALL_ROOM_TYPES;
+
+	/**
+	 * The operation id for the '<em>Get Avaliable Room Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_AVALIABLE_ROOM_TYPES = DB_INTERFACE___GET_AVALIABLE_ROOM_TYPES;
+
+	/**
+	 * The operation id for the '<em>Get All Addons</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_ALL_ADDONS = DB_INTERFACE___GET_ALL_ADDONS;
+
+	/**
+	 * The operation id for the '<em>Get Addon</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_ADDON__STRING = DB_INTERFACE___GET_ADDON__STRING;
+
+	/**
+	 * The operation id for the '<em>Get All Discounts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_ALL_DISCOUNTS = DB_INTERFACE___GET_ALL_DISCOUNTS;
+
+	/**
+	 * The operation id for the '<em>Get Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_DISCOUNT__STRING = DB_INTERFACE___GET_DISCOUNT__STRING;
+
+	/**
+	 * The operation id for the '<em>Get All Bookings</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_ALL_BOOKINGS = DB_INTERFACE___GET_ALL_BOOKINGS;
+
+	/**
+	 * The operation id for the '<em>Get Bookings</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_BOOKINGS__DATE_DATE = DB_INTERFACE___GET_BOOKINGS__DATE_DATE;
+
+	/**
+	 * The operation id for the '<em>Get Past Bookings</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_PAST_BOOKINGS = DB_INTERFACE___GET_PAST_BOOKINGS;
+
+	/**
+	 * The operation id for the '<em>Get Future Bookings</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_FUTURE_BOOKINGS = DB_INTERFACE___GET_FUTURE_BOOKINGS;
+
+	/**
+	 * The operation id for the '<em>Get Current Bookings</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_CURRENT_BOOKINGS = DB_INTERFACE___GET_CURRENT_BOOKINGS;
+
+	/**
+	 * The operation id for the '<em>Get Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_BOOKING = DB_INTERFACE___GET_BOOKING;
+
+	/**
+	 * The operation id for the '<em>Find Bookings</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___FIND_BOOKINGS__STRING = DB_INTERFACE___FIND_BOOKINGS__STRING;
+
+	/**
+	 * The operation id for the '<em>Get All Booked Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_ALL_BOOKED_ROOMS = DB_INTERFACE___GET_ALL_BOOKED_ROOMS;
+
+	/**
+	 * The operation id for the '<em>Get Booked Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_BOOKED_ROOMS__DATE_DATE = DB_INTERFACE___GET_BOOKED_ROOMS__DATE_DATE;
+
+	/**
+	 * The operation id for the '<em>Get Past Booked Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_PAST_BOOKED_ROOMS = DB_INTERFACE___GET_PAST_BOOKED_ROOMS;
+
+	/**
+	 * The operation id for the '<em>Get Future Booked Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_FUTURE_BOOKED_ROOMS = DB_INTERFACE___GET_FUTURE_BOOKED_ROOMS;
+
+	/**
+	 * The operation id for the '<em>Get Current Booked Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_CURRENT_BOOKED_ROOMS = DB_INTERFACE___GET_CURRENT_BOOKED_ROOMS;
+
+	/**
+	 * The operation id for the '<em>Find Booked Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___FIND_BOOKED_ROOMS__STRING = DB_INTERFACE___FIND_BOOKED_ROOMS__STRING;
+
+	/**
+	 * The operation id for the '<em>Get All Customers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_ALL_CUSTOMERS = DB_INTERFACE___GET_ALL_CUSTOMERS;
+
+	/**
+	 * The operation id for the '<em>Get Customer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_CUSTOMER__STRING = DB_INTERFACE___GET_CUSTOMER__STRING;
+
+	/**
+	 * The operation id for the '<em>Find Customers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___FIND_CUSTOMERS = DB_INTERFACE___FIND_CUSTOMERS;
+
+	/**
+	 * The operation id for the '<em>Get All Employees</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_ALL_EMPLOYEES = DB_INTERFACE___GET_ALL_EMPLOYEES;
+
+	/**
+	 * The operation id for the '<em>Get Employee</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_EMPLOYEE__STRING = DB_INTERFACE___GET_EMPLOYEE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get All Cleaners</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_ALL_CLEANERS = DB_INTERFACE___GET_ALL_CLEANERS;
+
+	/**
+	 * The operation id for the '<em>Get All Managers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_ALL_MANAGERS = DB_INTERFACE___GET_ALL_MANAGERS;
+
+	/**
+	 * The operation id for the '<em>Get All Receptionists</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT___GET_ALL_RECEPTIONISTS = DB_INTERFACE___GET_ALL_RECEPTIONISTS;
+
+	/**
+	 * The number of operations of the '<em>Fake DB Context</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAKE_DB_CONTEXT_OPERATION_COUNT = DB_INTERFACE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.EType <em>EType</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1924,7 +2520,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getEType()
 	 * @generated
 	 */
-	int ETYPE = 22;
+	int ETYPE = 24;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.RoomType <em>Room Type</em>}' enum.
@@ -1934,7 +2530,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getRoomType()
 	 * @generated
 	 */
-	int ROOM_TYPE = 23;
+	int ROOM_TYPE = 25;
 
 	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Employee <em>Employee</em>}'.
@@ -2249,10 +2845,10 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EReference getBooking_Addons();
 
 	/**
-	 * Returns the meta object for the reference list '{@link HotelManagementClassDiagram.Booking#getBookedRooms <em>Booked Rooms</em>}'.
+	 * Returns the meta object for the reference '{@link HotelManagementClassDiagram.Booking#getBookedRooms <em>Booked Rooms</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Booked Rooms</em>'.
+	 * @return the meta object for the reference '<em>Booked Rooms</em>'.
 	 * @see HotelManagementClassDiagram.Booking#getBookedRooms()
 	 * @see #getBooking()
 	 * @generated
@@ -2480,15 +3076,15 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EAttribute getCreditcard_ExpirationMonth();
 
 	/**
-	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Creditcard#getExpirationDay <em>Expiration Day</em>}'.
+	 * Returns the meta object for the attribute '{@link HotelManagementClassDiagram.Creditcard#getExpirationYear <em>Expiration Year</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Expiration Day</em>'.
-	 * @see HotelManagementClassDiagram.Creditcard#getExpirationDay()
+	 * @return the meta object for the attribute '<em>Expiration Year</em>'.
+	 * @see HotelManagementClassDiagram.Creditcard#getExpirationYear()
 	 * @see #getCreditcard()
 	 * @generated
 	 */
-	EAttribute getCreditcard_ExpirationDay();
+	EAttribute getCreditcard_ExpirationYear();
 
 	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.Customer <em>Customer</em>}'.
@@ -2946,14 +3542,14 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EOperation getBookingController__Confirm__Booking();
 
 	/**
-	 * Returns the meta object for the '{@link HotelManagementClassDiagram.BookingController#checkIn(HotelManagementClassDiagram.Booking) <em>Check In</em>}' operation.
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.BookingController#checkIn(HotelManagementClassDiagram.Booking, boolean) <em>Check In</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Check In</em>' operation.
-	 * @see HotelManagementClassDiagram.BookingController#checkIn(HotelManagementClassDiagram.Booking)
+	 * @see HotelManagementClassDiagram.BookingController#checkIn(HotelManagementClassDiagram.Booking, boolean)
 	 * @generated
 	 */
-	EOperation getBookingController__CheckIn__Booking();
+	EOperation getBookingController__CheckIn__Booking_boolean();
 
 	/**
 	 * Returns the meta object for the '{@link HotelManagementClassDiagram.BookingController#createKeyCard(HotelManagementClassDiagram.Room) <em>Create Key Card</em>}' operation.
@@ -3210,6 +3806,39 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EAttribute getHotel_Rank();
 
 	/**
+	 * Returns the meta object for the reference '{@link HotelManagementClassDiagram.Hotel#getBookingController <em>Booking Controller</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Booking Controller</em>'.
+	 * @see HotelManagementClassDiagram.Hotel#getBookingController()
+	 * @see #getHotel()
+	 * @generated
+	 */
+	EReference getHotel_BookingController();
+
+	/**
+	 * Returns the meta object for the reference '{@link HotelManagementClassDiagram.Hotel#getMaintenanceController <em>Maintenance Controller</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Maintenance Controller</em>'.
+	 * @see HotelManagementClassDiagram.Hotel#getMaintenanceController()
+	 * @see #getHotel()
+	 * @generated
+	 */
+	EReference getHotel_MaintenanceController();
+
+	/**
+	 * Returns the meta object for the reference '{@link HotelManagementClassDiagram.Hotel#getManagementController <em>Management Controller</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Management Controller</em>'.
+	 * @see HotelManagementClassDiagram.Hotel#getManagementController()
+	 * @see #getHotel()
+	 * @generated
+	 */
+	EReference getHotel_ManagementController();
+
+	/**
 	 * Returns the meta object for the '{@link HotelManagementClassDiagram.Hotel#authenticate(java.lang.String, java.lang.String) <em>Authenticate</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3218,36 +3847,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getHotel__Authenticate__String_String();
-
-	/**
-	 * Returns the meta object for the '{@link HotelManagementClassDiagram.Hotel#getBookingController() <em>Get Booking Controller</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Booking Controller</em>' operation.
-	 * @see HotelManagementClassDiagram.Hotel#getBookingController()
-	 * @generated
-	 */
-	EOperation getHotel__GetBookingController();
-
-	/**
-	 * Returns the meta object for the '{@link HotelManagementClassDiagram.Hotel#getManagementController() <em>Get Management Controller</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Management Controller</em>' operation.
-	 * @see HotelManagementClassDiagram.Hotel#getManagementController()
-	 * @generated
-	 */
-	EOperation getHotel__GetManagementController();
-
-	/**
-	 * Returns the meta object for the '{@link HotelManagementClassDiagram.Hotel#getMaintenanceController() <em>Get Maintenance Controller</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Maintenance Controller</em>' operation.
-	 * @see HotelManagementClassDiagram.Hotel#getMaintenanceController()
-	 * @generated
-	 */
-	EOperation getHotel__GetMaintenanceController();
 
 	/**
 	 * Returns the meta object for class '{@link HotelManagementClassDiagram.BookedRoom <em>Booked Room</em>}'.
@@ -3405,6 +4004,326 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInteraction5__();
+
+	/**
+	 * Returns the meta object for class '{@link HotelManagementClassDiagram.DBInterface <em>DB Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>DB Interface</em>'.
+	 * @see HotelManagementClassDiagram.DBInterface
+	 * @generated
+	 */
+	EClass getDBInterface();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#_getAllRooms() <em>get All Rooms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>get All Rooms</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#_getAllRooms()
+	 * @generated
+	 */
+	EOperation getDBInterface___getAllRooms();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getAvaliableRooms() <em>Get Avaliable Rooms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Avaliable Rooms</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getAvaliableRooms()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetAvaliableRooms();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getRoom(int) <em>Get Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Room</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getRoom(int)
+	 * @generated
+	 */
+	EOperation getDBInterface__GetRoom__int();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getAllRoomTypes() <em>Get All Room Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All Room Types</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getAllRoomTypes()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetAllRoomTypes();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getAvaliableRoomTypes() <em>Get Avaliable Room Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Avaliable Room Types</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getAvaliableRoomTypes()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetAvaliableRoomTypes();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getAllAddons() <em>Get All Addons</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All Addons</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getAllAddons()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetAllAddons();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getAddon(java.lang.String) <em>Get Addon</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Addon</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getAddon(java.lang.String)
+	 * @generated
+	 */
+	EOperation getDBInterface__GetAddon__String();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getAllDiscounts() <em>Get All Discounts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All Discounts</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getAllDiscounts()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetAllDiscounts();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getDiscount(java.lang.String) <em>Get Discount</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Discount</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getDiscount(java.lang.String)
+	 * @generated
+	 */
+	EOperation getDBInterface__GetDiscount__String();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getAllBookings() <em>Get All Bookings</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All Bookings</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getAllBookings()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetAllBookings();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getBookings(java.util.Date, java.util.Date) <em>Get Bookings</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Bookings</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getBookings(java.util.Date, java.util.Date)
+	 * @generated
+	 */
+	EOperation getDBInterface__GetBookings__Date_Date();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getPastBookings() <em>Get Past Bookings</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Past Bookings</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getPastBookings()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetPastBookings();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getFutureBookings() <em>Get Future Bookings</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Future Bookings</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getFutureBookings()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetFutureBookings();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getCurrentBookings() <em>Get Current Bookings</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Current Bookings</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getCurrentBookings()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetCurrentBookings();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getBooking() <em>Get Booking</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Booking</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getBooking()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetBooking();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#findBookings(java.lang.String) <em>Find Bookings</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Find Bookings</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#findBookings(java.lang.String)
+	 * @generated
+	 */
+	EOperation getDBInterface__FindBookings__String();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getAllBookedRooms() <em>Get All Booked Rooms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All Booked Rooms</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getAllBookedRooms()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetAllBookedRooms();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getBookedRooms(java.util.Date, java.util.Date) <em>Get Booked Rooms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Booked Rooms</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getBookedRooms(java.util.Date, java.util.Date)
+	 * @generated
+	 */
+	EOperation getDBInterface__GetBookedRooms__Date_Date();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getPastBookedRooms() <em>Get Past Booked Rooms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Past Booked Rooms</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getPastBookedRooms()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetPastBookedRooms();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getFutureBookedRooms() <em>Get Future Booked Rooms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Future Booked Rooms</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getFutureBookedRooms()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetFutureBookedRooms();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getCurrentBookedRooms() <em>Get Current Booked Rooms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Current Booked Rooms</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getCurrentBookedRooms()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetCurrentBookedRooms();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#findBookedRooms(java.lang.String) <em>Find Booked Rooms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Find Booked Rooms</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#findBookedRooms(java.lang.String)
+	 * @generated
+	 */
+	EOperation getDBInterface__FindBookedRooms__String();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getAllCustomers() <em>Get All Customers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All Customers</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getAllCustomers()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetAllCustomers();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getCustomer(java.lang.String) <em>Get Customer</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Customer</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getCustomer(java.lang.String)
+	 * @generated
+	 */
+	EOperation getDBInterface__GetCustomer__String();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#findCustomers() <em>Find Customers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Find Customers</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#findCustomers()
+	 * @generated
+	 */
+	EOperation getDBInterface__FindCustomers();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getAllEmployees() <em>Get All Employees</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All Employees</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getAllEmployees()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetAllEmployees();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getEmployee(java.lang.String) <em>Get Employee</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Employee</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getEmployee(java.lang.String)
+	 * @generated
+	 */
+	EOperation getDBInterface__GetEmployee__String();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getAllCleaners() <em>Get All Cleaners</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All Cleaners</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getAllCleaners()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetAllCleaners();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getAllManagers() <em>Get All Managers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All Managers</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getAllManagers()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetAllManagers();
+
+	/**
+	 * Returns the meta object for the '{@link HotelManagementClassDiagram.DBInterface#getAllReceptionists() <em>Get All Receptionists</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All Receptionists</em>' operation.
+	 * @see HotelManagementClassDiagram.DBInterface#getAllReceptionists()
+	 * @generated
+	 */
+	EOperation getDBInterface__GetAllReceptionists();
+
+	/**
+	 * Returns the meta object for class '{@link HotelManagementClassDiagram.FakeDBContext <em>Fake DB Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fake DB Context</em>'.
+	 * @see HotelManagementClassDiagram.FakeDBContext
+	 * @generated
+	 */
+	EClass getFakeDBContext();
 
 	/**
 	 * Returns the meta object for enum '{@link HotelManagementClassDiagram.EType <em>EType</em>}'.
@@ -3690,7 +4609,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EReference BOOKING__ADDONS = eINSTANCE.getBooking_Addons();
 
 		/**
-		 * The meta object literal for the '<em><b>Booked Rooms</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Booked Rooms</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3868,12 +4787,12 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EAttribute CREDITCARD__EXPIRATION_MONTH = eINSTANCE.getCreditcard_ExpirationMonth();
 
 		/**
-		 * The meta object literal for the '<em><b>Expiration Day</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Expiration Year</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CREDITCARD__EXPIRATION_DAY = eINSTANCE.getCreditcard_ExpirationDay();
+		EAttribute CREDITCARD__EXPIRATION_YEAR = eINSTANCE.getCreditcard_ExpirationYear();
 
 		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.CustomerImpl <em>Customer</em>}' class.
@@ -4241,7 +5160,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BOOKING_CONTROLLER___CHECK_IN__BOOKING = eINSTANCE.getBookingController__CheckIn__Booking();
+		EOperation BOOKING_CONTROLLER___CHECK_IN__BOOKING_BOOLEAN = eINSTANCE.getBookingController__CheckIn__Booking_boolean();
 
 		/**
 		 * The meta object literal for the '<em><b>Create Key Card</b></em>' operation.
@@ -4450,36 +5369,36 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		EAttribute HOTEL__RANK = eINSTANCE.getHotel_Rank();
 
 		/**
+		 * The meta object literal for the '<em><b>Booking Controller</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HOTEL__BOOKING_CONTROLLER = eINSTANCE.getHotel_BookingController();
+
+		/**
+		 * The meta object literal for the '<em><b>Maintenance Controller</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HOTEL__MAINTENANCE_CONTROLLER = eINSTANCE.getHotel_MaintenanceController();
+
+		/**
+		 * The meta object literal for the '<em><b>Management Controller</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HOTEL__MANAGEMENT_CONTROLLER = eINSTANCE.getHotel_ManagementController();
+
+		/**
 		 * The meta object literal for the '<em><b>Authenticate</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EOperation HOTEL___AUTHENTICATE__STRING_STRING = eINSTANCE.getHotel__Authenticate__String_String();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Booking Controller</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation HOTEL___GET_BOOKING_CONTROLLER = eINSTANCE.getHotel__GetBookingController();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Management Controller</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation HOTEL___GET_MANAGEMENT_CONTROLLER = eINSTANCE.getHotel__GetManagementController();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Maintenance Controller</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation HOTEL___GET_MAINTENANCE_CONTROLLER = eINSTANCE.getHotel__GetMaintenanceController();
 
 		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.BookedRoomImpl <em>Booked Room</em>}' class.
@@ -4612,6 +5531,266 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INTERACTION5__ = eINSTANCE.getInteraction5__();
+
+		/**
+		 * The meta object literal for the '{@link HotelManagementClassDiagram.DBInterface <em>DB Interface</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see HotelManagementClassDiagram.DBInterface
+		 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getDBInterface()
+		 * @generated
+		 */
+		EClass DB_INTERFACE = eINSTANCE.getDBInterface();
+
+		/**
+		 * The meta object literal for the '<em><b>get All Rooms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_ALL_ROOMS = eINSTANCE.getDBInterface___getAllRooms();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Avaliable Rooms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_AVALIABLE_ROOMS = eINSTANCE.getDBInterface__GetAvaliableRooms();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_ROOM__INT = eINSTANCE.getDBInterface__GetRoom__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All Room Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_ALL_ROOM_TYPES = eINSTANCE.getDBInterface__GetAllRoomTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Avaliable Room Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_AVALIABLE_ROOM_TYPES = eINSTANCE.getDBInterface__GetAvaliableRoomTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All Addons</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_ALL_ADDONS = eINSTANCE.getDBInterface__GetAllAddons();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Addon</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_ADDON__STRING = eINSTANCE.getDBInterface__GetAddon__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All Discounts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_ALL_DISCOUNTS = eINSTANCE.getDBInterface__GetAllDiscounts();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Discount</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_DISCOUNT__STRING = eINSTANCE.getDBInterface__GetDiscount__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All Bookings</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_ALL_BOOKINGS = eINSTANCE.getDBInterface__GetAllBookings();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Bookings</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_BOOKINGS__DATE_DATE = eINSTANCE.getDBInterface__GetBookings__Date_Date();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Past Bookings</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_PAST_BOOKINGS = eINSTANCE.getDBInterface__GetPastBookings();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Future Bookings</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_FUTURE_BOOKINGS = eINSTANCE.getDBInterface__GetFutureBookings();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Current Bookings</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_CURRENT_BOOKINGS = eINSTANCE.getDBInterface__GetCurrentBookings();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Booking</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_BOOKING = eINSTANCE.getDBInterface__GetBooking();
+
+		/**
+		 * The meta object literal for the '<em><b>Find Bookings</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___FIND_BOOKINGS__STRING = eINSTANCE.getDBInterface__FindBookings__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All Booked Rooms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_ALL_BOOKED_ROOMS = eINSTANCE.getDBInterface__GetAllBookedRooms();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Booked Rooms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_BOOKED_ROOMS__DATE_DATE = eINSTANCE.getDBInterface__GetBookedRooms__Date_Date();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Past Booked Rooms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_PAST_BOOKED_ROOMS = eINSTANCE.getDBInterface__GetPastBookedRooms();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Future Booked Rooms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_FUTURE_BOOKED_ROOMS = eINSTANCE.getDBInterface__GetFutureBookedRooms();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Current Booked Rooms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_CURRENT_BOOKED_ROOMS = eINSTANCE.getDBInterface__GetCurrentBookedRooms();
+
+		/**
+		 * The meta object literal for the '<em><b>Find Booked Rooms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___FIND_BOOKED_ROOMS__STRING = eINSTANCE.getDBInterface__FindBookedRooms__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All Customers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_ALL_CUSTOMERS = eINSTANCE.getDBInterface__GetAllCustomers();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Customer</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_CUSTOMER__STRING = eINSTANCE.getDBInterface__GetCustomer__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Find Customers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___FIND_CUSTOMERS = eINSTANCE.getDBInterface__FindCustomers();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All Employees</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_ALL_EMPLOYEES = eINSTANCE.getDBInterface__GetAllEmployees();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Employee</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_EMPLOYEE__STRING = eINSTANCE.getDBInterface__GetEmployee__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All Cleaners</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_ALL_CLEANERS = eINSTANCE.getDBInterface__GetAllCleaners();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All Managers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_ALL_MANAGERS = eINSTANCE.getDBInterface__GetAllManagers();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All Receptionists</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DB_INTERFACE___GET_ALL_RECEPTIONISTS = eINSTANCE.getDBInterface__GetAllReceptionists();
+
+		/**
+		 * The meta object literal for the '{@link HotelManagementClassDiagram.impl.FakeDBContextImpl <em>Fake DB Context</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see HotelManagementClassDiagram.impl.FakeDBContextImpl
+		 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getFakeDBContext()
+		 * @generated
+		 */
+		EClass FAKE_DB_CONTEXT = eINSTANCE.getFakeDBContext();
 
 		/**
 		 * The meta object literal for the '{@link HotelManagementClassDiagram.EType <em>EType</em>}' enum.

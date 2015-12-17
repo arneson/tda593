@@ -2,6 +2,12 @@
  */
 package HotelManagementClassDiagram.impl;
 
+import HotelManagementClassDiagram.Booking;
+import HotelManagementClassDiagram.BookingController;
+import HotelManagementClassDiagram.Customer;
+import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
+import HotelManagementClassDiagram.Room;
+import HotelManagementClassDiagram.RoomType;
 import HotelManagementClassDiagram.*;
 
 import java.lang.reflect.InvocationTargetException;
@@ -9,8 +15,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import HotelManagementClassDiagram.exceptions.NoSuchBookingException;
 import main.FakeDB;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -142,8 +146,10 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void checkIn(Booking booking) {
-		// TODO
+	public void checkIn(Booking booking, boolean _) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -152,7 +158,9 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public void createKeyCard(Room room) {
-		// TODO
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -161,7 +169,9 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public void checkOut(Booking booking) {
-		// TODO
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -179,11 +189,9 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public void findCustomer(String ssNumber) {
-		for (Customer customer : FakeDB.customers) {
-			if (customer.getSSNumber() == ssNumber) {
-				// TODO return customer;
-			}
-		}
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -192,7 +200,9 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public void assignRoom(Room room) {
-		// TODO
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -216,8 +226,8 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 				return getBooking((Integer)arguments.get(0));
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CONFIRM__BOOKING:
 				return confirm((Booking)arguments.get(0));
-			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CHECK_IN__BOOKING:
-				checkIn((Booking)arguments.get(0));
+			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CHECK_IN__BOOKING_BOOLEAN:
+				checkIn((Booking)arguments.get(0), (Boolean)arguments.get(1));
 				return null;
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CREATE_KEY_CARD__ROOM:
 				createKeyCard((Room)arguments.get(0));
