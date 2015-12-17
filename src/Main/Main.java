@@ -140,7 +140,11 @@ public class Main {
             System.out.println("Unallowed access");
             return;
         }
-		
+		try{
+
+        }catch(Exception ex) {
+            System.out.println("Add discount process exited: " + 410);
+        }
 	}
 
 	private static void addExtra(Scanner reader, ManagementController managementController) {
@@ -148,7 +152,11 @@ public class Main {
             System.out.println("Unallowed access");
             return;
         }
-		
+        try{
+
+        }catch(Exception ex) {
+            System.out.println("Add extra process exited: " + 409);
+        }
 	}
 
 	private static void addAddon(Scanner reader, ManagementController managementController) {
@@ -156,7 +164,11 @@ public class Main {
             System.out.println("Unallowed access");
             return;
         }
-		
+        try{
+
+        }catch(Exception ex) {
+            System.out.println("Add addon process exited: " + 408);
+        }
 	}
 
 	private static void addRoom(Scanner reader, ManagementController managementController) {
@@ -164,7 +176,11 @@ public class Main {
             System.out.println("Unallowed access");
             return;
         }
-		
+        try{
+
+        }catch(Exception ex) {
+            System.out.println("Add room process exited: " + 407);
+        }
 	}
 
 	private static void listCustomers(Scanner reader, BookingController bookingController) {
@@ -172,7 +188,11 @@ public class Main {
             System.out.println("Unallowed access");
             return;
         }
-		
+        try{
+
+        }catch(Exception ex) {
+            System.out.println("List customer process exited: " + 406);
+        }
 	}
 
 	private static void listBookings(Scanner reader, BookingController bookingController) {
@@ -180,7 +200,11 @@ public class Main {
             System.out.println("Unallowed access");
             return;
         }
-		
+        try{
+
+        }catch(Exception ex) {
+            System.out.println("List bookings process exited: " + 411);
+        }
 	}
 
 	public static void printHelp() {
