@@ -148,7 +148,7 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 		this.number = number;
 		this.cvc = cvc;
 		this.expirationMonth = expirationMonth;
-		this.expirationDay = expirationYear;
+		this.expirationYear = expirationYear;
 		this.owner = owner;
 	}
 

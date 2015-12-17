@@ -320,11 +320,10 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public FakeDBContext createFakeDBContext() {
-		FakeDBContextImpl fakeDBContext = new FakeDBContextImpl();
-		return fakeDBContext;
+		return FakeDBContextImpl.getInstance();
 	}
 
 	/**

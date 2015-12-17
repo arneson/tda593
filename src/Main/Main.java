@@ -70,7 +70,7 @@ public class Main {
 							Creditcard card = new CreditcardImpl(number,cvc,month,year,owner);
 							b.setCreditCard(card);
 							myHotel.getBookingController().updateBooking(b);
-							myHotel.getBookingController().checkIn(b);
+							myHotel.getBookingController().checkIn(b, true);
 							System.out.print("Booking successfully checked in: ");
 							
 						}else{
@@ -124,7 +124,6 @@ public class Main {
         EType[] types = {EType.CLEANER, EType.RECEPTIONIST, EType.MANAGER};
         for (int i = 0; i < 5; i++)
         {
-            int id = i+1;
             EmployeeType type = new EmployeeTypeImpl(types[i%3], (i+1)*2);
             double salary = 20000.0 * (i+1)/4,
                 workrate = 0.2;
@@ -137,7 +136,8 @@ public class Main {
                 ssnumber = ssnumbers[i],
                 street = "Kungsgatan 11B",
                 title = "Mr.";
-            Employee employee = new EmployeeImpl(id, type, salary, workrate, name, city, country, gender, phoneNumber, postalCode, ssnumber, street, title);
+            Employee employee = new EmployeeImpl(type, salary, workrate, name, city, country, gender, phoneNumber,
+                    postalCode, ssnumber, street, title);
             employees.add(employee);
         }
 
@@ -165,7 +165,6 @@ public class Main {
         String[] customerNames = {"Axel Niklasson", "Tim Kerschbaumer", "Simon Takman"};
         for (int i = 0; i < 3; i++)
         {
-            int id = i+1;
             String name = customerNames[i],
                     city = "Trollh�ttan",
                     country = "Sweden",
@@ -175,15 +174,15 @@ public class Main {
                     ssnumber = ssnumbers[i],
                     street = "Kungsgatan 11B",
                     title = "Mr.";
-            Customer customer = new CustomerImpl(id, name, city, country, gender, phoneNumber, postalCode, ssnumber, street, title);
+            Customer customer = new CustomerImpl(name, city, country, gender, phoneNumber, postalCode, ssnumber, street, title);
             customers.add(customer);
         }
 
         // Create 3 bookings
         for (int i = 0; i < 3; i++)
         {
-            BookedRoom bookedRoom = new BookedRoomImpl(rooms.get(i));
-            Booking booking = new BookingImpl(i+1, customers.get(i), getDate("25/12/2015"), getDate("29/12/2015"), bookedRoom);
+            Room bookedRoom = rooms.get(i);
+            Booking booking = new BookingImpl(customers.get(i), getDate("25/12/2015"), getDate("29/12/2015"), bookedRoom);
             bookings.add(booking);
         }
 

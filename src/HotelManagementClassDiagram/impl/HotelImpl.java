@@ -134,6 +134,14 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	protected HotelImpl() {
 		super();
 	}
+
+	/**
+	 * @generated NOT
+	 */
+	public HotelImpl(String name){
+		this.name = name;
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

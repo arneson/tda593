@@ -69,16 +69,16 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public EList<Room> getAvaliableRooms() {
 		EList<Room> freeRooms = new BasicEList<>();
-		Iterator<Room> it = FakeDB.rooms.iterator();
-		while (it.hasNext()) {
-			if (it.next().isBooked()) {
-				freeRooms.add(it.next());
+		for (Room room : FakeDB.rooms) {
+			if (!room.isBooked()) {
+				freeRooms.add(room);
 			}
 		}
+		return freeRooms;
 	}
 
 	/**
@@ -115,7 +115,7 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public EList<RoomType> getAvaliableRoomTypes() {
 		EList<RoomType> types = new BasicEList<>();
@@ -169,9 +169,9 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	public Discount getDiscount(String discountName) {
 		for (Discount d : FakeDB.discounts) {
 			// TODO no getName?
-			if (d.getName == discountName) {
+			/*if (d.getName().contains(discountName)) {
 				return d;
-			}
+			}*/
 		}
 		return null;
 	}
@@ -262,8 +262,9 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	 */
 	public EList<Booking> findBookings(String customerName) {
 		EList<Booking> bookings = new BasicEList<>();
+		customerName = customerName.toLowerCase();
 		for (Booking b : FakeDB.bookings) {
-			if (b.getCustomer().getName().equals(customerName)) {
+			if (b.getCustomer().getName().toLowerCase().contains(customerName)) {
 				bookings.add(b);
 			}
 		}

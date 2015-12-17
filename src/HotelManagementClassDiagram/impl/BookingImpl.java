@@ -286,12 +286,12 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * @generated NOT
 	 */
-	public BookingImpl(Customer customer, Date startDate, Date endDate, BookedRoom... rooms){
+	public BookingImpl(Customer customer, Date startDate, Date endDate, Room... rooms){
 		// TODO generate booking ID automatically
 		this.customer = customer;
 		this.startDate = startDate;
 		this.endDate = endDate;
-		this.bookedRooms = new BasicEList<>();
+		//this.bookedRooms = new BasicEList<>();
 		//this.bookedRooms.addAll(rooms)
 	}
 

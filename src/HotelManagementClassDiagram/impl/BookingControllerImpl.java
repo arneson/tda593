@@ -75,9 +75,9 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 		List<Booking> booking = FakeDB.bookings;
 		for (Booking b : booking) {
 			if (fromDate.before(b.getEndDate()) || toDate.after(b.getStartDate())) {
-				for (BookedRoom br : b.getBookedRooms()) {
+				/*for (BookedRoom br : b.getBookedRooms()) {
 					rooms.remove(br);
-				}
+				}*/
 			}
 		}
 		return rooms;
