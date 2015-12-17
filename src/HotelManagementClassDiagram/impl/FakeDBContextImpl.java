@@ -79,6 +79,7 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 				freeRooms.add(it.next());
 			}
 		}
+		return freeRooms;
 	}
 
 	/**
@@ -191,9 +192,13 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	 * @generated NOT
 	 */
 	public EList<Booking> getBookings(Date fromDate, Date toDate) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<Booking> bookings = new BasicEList<>();
+		for (Booking b : FakeDB.bookings) {
+			if(b.getEndDate().before(toDate) && b.getStartDate().after(fromDate)) {
+				bookings.add(b);
+			}
+		}
+		return bookings;
 	}
 
 	/**
