@@ -116,7 +116,24 @@ Employee:
 EmployeeType:
 - 
 
+Extra:
+- Saknar konstruktor
+- 
 
+Factory:
+- Vad ska denna göra? Fråga Jocke hur han tänkt
 
+FakeDBContext:
+- Alla metoder bör vara statiska
 
+MaintenanceController:
+- 
 
+ManagementController:
+- 
+
+Person:
+- 
+
+Room:
+- Ta bort rumnamn

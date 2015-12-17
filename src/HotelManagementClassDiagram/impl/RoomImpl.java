@@ -255,13 +255,10 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setRoomNumber(int newRoomNumber) {
-		int oldRoomNumber = roomNumber;
-		roomNumber = newRoomNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.ROOM__ROOM_NUMBER, oldRoomNumber, roomNumber));
+		throw new UnsupportedOperationException("Not supported");
 	}
 
 	/**
@@ -276,13 +273,10 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setSize(double newSize) {
-		double oldSize = size;
-		size = newSize;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.ROOM__SIZE, oldSize, size));
+		throw new UnsupportedOperationException("Not supported");
 	}
 
 	/**
@@ -339,13 +333,10 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setMaxNbrPeople(int newMaxNbrPeople) {
-		int oldMaxNbrPeople = maxNbrPeople;
-		maxNbrPeople = newMaxNbrPeople;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.ROOM__MAX_NBR_PEOPLE, oldMaxNbrPeople, maxNbrPeople));
+		throw new UnsupportedOperationException("Not supported");
 	}
 
 	/**
