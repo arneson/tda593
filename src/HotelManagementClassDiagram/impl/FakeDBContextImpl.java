@@ -390,9 +390,8 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	 * @generated NOT
 	 */
 	public void updateOrAddCustomer(Customer customer) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+        if (!FakeDB.customers.contains(customer))
+            FakeDB.customers.add(customer);
 	}
 
 	/**
@@ -401,9 +400,8 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	 * @generated NOT
 	 */
 	public void updateOrAddBooking(Booking booking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+        if (!FakeDB.bookings.contains(booking))
+            FakeDB.bookings.add(booking);
 	}
 
 	/**
@@ -472,7 +470,7 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	 * @generated NOT
 	 */
 	public EList<Room> getAvailableRooms(RoomType type, Date from, Date to) {
-		EList<Room> availableRooms = null; //getRooms(type);
+		EList<Room> availableRooms = getRooms(type);
         EList<Booking> bookings = getBookings(from, to);
         for (Booking booking : bookings)
             availableRooms.removeAll(booking.getBookedRooms());
@@ -486,9 +484,13 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	 * @generated
 	 */
 	public EList<Room> getRooms(RoomType type) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<Room> rooms = new BasicEList<>();
+        for (Room room : FakeDB.rooms)
+        {
+            if (room.getType() == type)
+                rooms.add(room);
+        }
+        return rooms;
 	}
 
 	/**
@@ -497,9 +499,12 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	 * @generated
 	 */
 	public Booking getBooking(int bookingID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (Booking booking : FakeDB.bookings)
+        {
+            if (booking.getBookingId() == bookingID)
+                return booking;
+        }
+        return null;
 	}
 
 	/**
@@ -541,13 +546,13 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___GET_ALL_CUSTOMERS:
 				return getAllCustomers();
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___GET_CUSTOMER__STRING:
-				return getCustomer((String)arguments.get(0));
+				return getCustomer((String) arguments.get(0));
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___FIND_CUSTOMERS__STRING:
-				return findCustomers((String)arguments.get(0));
+				return findCustomers((String) arguments.get(0));
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___GET_ALL_EMPLOYEES:
 				return getAllEmployees();
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___GET_EMPLOYEE__STRING:
-				return getEmployee((String)arguments.get(0));
+				return getEmployee((String) arguments.get(0));
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___GET_ALL_CLEANERS:
 				return getAllCleaners();
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___GET_ALL_MANAGERS:
@@ -561,32 +566,32 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 				updateOrAddCustomer((Customer)arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___UPDATE_OR_ADD_BOOKING__BOOKING:
-				updateOrAddBooking((Booking)arguments.get(0));
+				updateOrAddBooking((Booking) arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___UPDATE_OR_ADD_DISCOUNT__DISCOUNT:
-				updateOrAddDiscount((Discount)arguments.get(0));
+				updateOrAddDiscount((Discount) arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___UPDATE_OR_ADD_ADDON__ADDON:
-				updateOrAddAddon((Addon)arguments.get(0));
+				updateOrAddAddon((Addon) arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___UPDATE_OR_ADD_EMPLOYEE__EMPLOYEE:
-				updateOrAddEmployee((Employee)arguments.get(0));
+				updateOrAddEmployee((Employee) arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___UPDATE_OR_ADD_ROOM_TYPE__ROOMTYPE:
-				updateOrAddRoomType((RoomType)arguments.get(0));
+				updateOrAddRoomType((RoomType) arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___UPDATE_OR_ADD_EMPLOYEE_TYPE__EMPLOYEETYPE:
-				updateOrAddEmployeeType((EmployeeType)arguments.get(0));
+				updateOrAddEmployeeType((EmployeeType) arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___UPDATE_OR_ADD_EXTRA__EXTRA:
-				updateOrAddExtra((Extra)arguments.get(0));
+				updateOrAddExtra((Extra) arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___GET_AVAILABLE_ROOMS__ROOMTYPE_DATE_DATE:
 				return getAvailableRooms((RoomType)arguments.get(0), (Date)arguments.get(1), (Date)arguments.get(2));
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___GET_ROOMS__ROOMTYPE:
 				return getRooms((RoomType)arguments.get(0));
 			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT___GET_BOOKING__INT:
-				return getBooking((Integer)arguments.get(0));
+				return getBooking((Integer) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
