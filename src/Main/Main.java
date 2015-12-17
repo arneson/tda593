@@ -3,6 +3,7 @@ package main;
 import HotelManagementClassDiagram.*;
 import HotelManagementClassDiagram.impl.*;
 
+import java.lang.reflect.InvocationTargetException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,7 +13,17 @@ import java.util.Scanner;
 
 import javax.swing.text.DateFormatter;
 
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * @generated NOT
@@ -31,12 +42,13 @@ public class Main {
         // Generate the fake data for testing
 		generateFakeData();
 		Hotel myHotel = new HotelImpl("C-R-A-P hotel");
+		BookingController bookingController = myHotel.getBookingController();
 		
 		Scanner reader = new Scanner(System.in);
-		FakeDBContext fakeDBInstance = FakeDBContextImpl.getInstance();
+		
 		String command ="";
+		System.out.println("Welcome to "+myHotel.getName()+".");
 		do{
-			System.out.println("Welcome to "+myHotel.getName()+".");
 			switch(command){
 				case CLI_HELP_COMMAND:
 					System.out.println();
@@ -60,7 +72,7 @@ public class Main {
 					do{
 						System.out.print("Please enter booking number: ");
 						bookingId = reader.nextInt();
-						Booking b = myHotel.getBookingController().getBooking(bookingId);
+						Booking b = bookingController.getBooking(bookingId);
 						if(b!=null){
 							System.out.println("Booking found.");
 							System.out.print("Please enter credit card number: ");
@@ -75,8 +87,8 @@ public class Main {
 							String owner = reader.nextLine();
 							Creditcard card = new CreditcardImpl(number,cvc,month,year,owner);
 							b.setCreditCard(card);
-							myHotel.getBookingController().updateBooking(b);
-							myHotel.getBookingController().checkIn(b, true);
+							bookingController.updateOrAddBooking(b);
+							bookingController.checkIn(b, true);
 							System.out.print("Booking successfully checked in: ");
 							
 						}else{
@@ -91,8 +103,6 @@ public class Main {
 				case CLI_NEW_CUSTOMER_COMMAND:
 					break;
 				case CLI_BOOK_A_ROOM_COMMAND:
-					break;
-				case CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND:
 					System.out.print("Please enter start date (YYYY-MM-DD): ");
 					String startDateString = reader.next();
 					
@@ -112,11 +122,106 @@ public class Main {
 						e.printStackTrace();
 					}
 					
-					EList<RoomType> avaliableRoomTypes = fakeDBInstance.getAvaliableRoomTypes(startDate, endDate);
+					System.out.println("Please enter number of adults: ");
+					int nbrOfAdults = reader.nextInt();
+					System.out.println("Please enter number of adults: ");
+					int nbrOfChildren = reader.nextInt();
+					
+					EList<RoomType> avaliableRoomTypes = bookingController.searchAvailableRoomTypes(startDate, endDate, nbrOfAdults, nbrOfChildren);
 					System.out.println();
 					System.out.println("Avaliable room types in the selected interval:");
 					for (RoomType type : avaliableRoomTypes) {
 						System.out.println(type.toString());
+					}
+					
+					System.out.println("");
+					System.out.println("How many rooms? ");
+					int nbrOfRooms = reader.nextInt();
+					BasicEList<RoomType> types = new BasicEList<RoomType>();
+					for (int i = 0; i < nbrOfRooms; i++) {
+						System.out.println("Please select type for room " + i + ": ");
+						String typeString = reader.next();
+						switch (typeString) {
+							case "SINGLE":
+								types.add(RoomType.SINGLE);
+								break;
+								
+							case "DOUBLE":
+								types.add(RoomType.DOUBLE);
+								break;
+								
+							case "FAMILY":
+								types.add(RoomType.FAMILY);
+								break;
+								
+							case "SUITE":
+								types.add(RoomType.SUITE);
+								break;
+	
+							default:
+								break;
+						}
+						
+					}
+					
+					System.out.println("Please enter customer social security number: ");
+					String SSN = reader.next();
+					
+					Customer customer = bookingController.getCustomer(SSN);
+					if (customer == null) {
+						System.out.println("Customer does not exist in DB. Please enter name: ");
+						String name = reader.next();
+						System.out.println("Please enter phone number: ");
+						String phoneNumber = reader.next();
+						System.out.println("Please enter street: ");
+						String street = reader.next();
+						System.out.println("Please enter city: ");
+						String city = reader.next();
+						System.out.println("Please enter postal code: ");
+						String postalCode = reader.next();
+						System.out.println("Please enter country: ");
+						String country = reader.next();
+						System.out.println("Please enter gender: ");
+						String gender = reader.next();
+						System.out.println("Please enter title: ");
+						String title = reader.next();
+						
+						customer = new CustomerImpl(name, city, country, gender, phoneNumber, postalCode, SSN, street, title);
+					}
+
+					Booking booking = new BookingImpl(customer, startDate, endDate, types);
+					
+					break;
+				case CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND:
+					System.out.print("Please enter start date (YYYY-MM-DD): ");
+					startDateString = reader.next();
+					formatter = new SimpleDateFormat("yyyy-MM-dd");
+					startDate = null;
+					endDate = null;
+					try {
+						startDate = formatter.parse(startDateString);
+					} catch (ParseException e) {
+						e.printStackTrace();
+					}
+					
+					System.out.print("Please enter end date (YYYY-MM-DD): ");
+					endDateString = reader.next();
+					try {
+						endDate = formatter.parse(endDateString);
+					} catch (ParseException e) {
+						e.printStackTrace();
+					}
+					
+					System.out.println("Please enter number of adults: ");
+					nbrOfAdults = reader.nextInt();
+					System.out.println("Please enter number of children: ");
+					nbrOfChildren = reader.nextInt();
+					
+					avaliableRoomTypes = bookingController.searchAvailableRoomTypes(startDate, endDate, nbrOfAdults, nbrOfChildren);
+					System.out.println();
+					System.out.println("Avaliable room types in the selected interval:");
+					for (RoomType type2 : avaliableRoomTypes) {
+						System.out.println(type2.toString());
 					}
 					System.out.println();
 					break;

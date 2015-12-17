@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import HotelManagementClassDiagram.Addon;
@@ -24,6 +25,7 @@ import HotelManagementClassDiagram.Customer;
 import HotelManagementClassDiagram.Discount;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.Room;
+import HotelManagementClassDiagram.RoomType;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,6 +48,7 @@ import HotelManagementClassDiagram.Room;
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#isCheckedOut <em>Checked Out</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getPaymentMaster <em>Payment Master</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getDiscounts <em>Discounts</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getRoomTypes <em>Room Types</em>}</li>
  * </ul>
  *
  * @generated
@@ -262,6 +265,16 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	protected EList<Discount> discounts;
 
 	/**
+	 * The cached value of the '{@link #getRoomTypes() <em>Room Types</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoomTypes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<RoomType> roomTypes;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -274,6 +287,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @generated NOT
 	 */
 	public BookingImpl(Customer customer, Date startDate, Date endDate, Room... rooms){
+		this.paymentMaster = customer;
 		this.bookingId = customer.hashCode();
 		this.startDate = startDate;
 		this.endDate = endDate;
@@ -281,6 +295,21 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		for (Room room : rooms) {
 			bookedRooms.add(room);
 		}
+	}
+	
+	/**
+	 * @generated NOT
+	 */
+	public BookingImpl(Customer customer, Date startDate, Date endDate, BasicEList<RoomType> types){
+		this.paymentMaster = customer;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.bookingId = customer.hashCode();
+		this.roomTypes = new BasicEList<RoomType>();
+		for (RoomType type : types) {
+			roomTypes.add(type);
+		}
+		
 	}
 
 	/**
@@ -575,6 +604,18 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<RoomType> getRoomTypes() {
+		if (roomTypes == null) {
+			roomTypes = new EDataTypeUniqueEList<RoomType>(RoomType.class, this, HotelManagementClassDiagramPackage.BOOKING__ROOM_TYPES);
+		}
+		return roomTypes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void checkIn() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -726,6 +767,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return basicGetPaymentMaster();
 			case HotelManagementClassDiagramPackage.BOOKING__DISCOUNTS:
 				return getDiscounts();
+			case HotelManagementClassDiagramPackage.BOOKING__ROOM_TYPES:
+				return getRoomTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -781,6 +824,10 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				getDiscounts().clear();
 				getDiscounts().addAll((Collection<? extends Discount>)newValue);
 				return;
+			case HotelManagementClassDiagramPackage.BOOKING__ROOM_TYPES:
+				getRoomTypes().clear();
+				getRoomTypes().addAll((Collection<? extends RoomType>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -832,6 +879,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case HotelManagementClassDiagramPackage.BOOKING__DISCOUNTS:
 				getDiscounts().clear();
 				return;
+			case HotelManagementClassDiagramPackage.BOOKING__ROOM_TYPES:
+				getRoomTypes().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -870,6 +920,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return paymentMaster != null;
 			case HotelManagementClassDiagramPackage.BOOKING__DISCOUNTS:
 				return discounts != null && !discounts.isEmpty();
+			case HotelManagementClassDiagramPackage.BOOKING__ROOM_TYPES:
+				return roomTypes != null && !roomTypes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -939,6 +991,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		result.append(checkedIn);
 		result.append(", checkedOut: ");
 		result.append(checkedOut);
+		result.append(", roomTypes: ");
+		result.append(roomTypes);
 		result.append(')');
 		return result.toString();
 	}

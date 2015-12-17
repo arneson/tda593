@@ -29,26 +29,10 @@ public interface BookingController extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" roomTypesRequired="true" roomTypesMany="true" roomTypesOrdered="false"
-	 * @generated
-	 */
-	boolean createBooking(EList<RoomType> roomTypes);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false"
 	 * @generated
 	 */
 	boolean sendConfirmation(Booking booking);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false"
-	 * @generated
-	 */
-	boolean updateBooking(Booking booking);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,5 +97,29 @@ public interface BookingController extends EObject {
 	 * @generated
 	 */
 	void assignRoom(Room room);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" SSNDataType="org.eclipse.uml2.types.String" SSNRequired="true" SSNOrdered="false"
+	 * @generated
+	 */
+	Customer getCustomer(String SSN);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model customerRequired="true" customerOrdered="false"
+	 * @generated
+	 */
+	void updateOrAddCustomer(Customer customer);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model bookingRequired="true" bookingOrdered="false"
+	 * @generated
+	 */
+	void updateOrAddBooking(Booking booking);
 
 } // BookingController

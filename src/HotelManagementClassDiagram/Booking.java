@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link HotelManagementClassDiagram.Booking#isCheckedOut <em>Checked Out</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Booking#getPaymentMaster <em>Payment Master</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Booking#getDiscounts <em>Discounts</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Booking#getRoomTypes <em>Room Types</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking()
@@ -344,6 +345,24 @@ public interface Booking extends EObject {
 	 * @generated
 	 */
 	EList<Discount> getDiscounts();
+
+	/**
+	 * Returns the value of the '<em><b>Room Types</b></em>' attribute list.
+	 * The list contents are of type {@link HotelManagementClassDiagram.RoomType}.
+	 * The literals are from the enumeration {@link HotelManagementClassDiagram.RoomType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Room Types</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Room Types</em>' attribute list.
+	 * @see HotelManagementClassDiagram.RoomType
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBooking_RoomTypes()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	EList<RoomType> getRoomTypes();
 
 	/**
 	 * <!-- begin-user-doc -->
