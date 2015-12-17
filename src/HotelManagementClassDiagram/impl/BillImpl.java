@@ -250,12 +250,11 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addCostable(Costable costable) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		costables.add(costable);
+		totalPrice += costable.getPrice();
 	}
 
 	/**
