@@ -93,7 +93,7 @@ public class Main {
 				case CLI_BOOK_A_ROOM_COMMAND:
 					break;
 				case CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND:
-					System.out.print("Please enter start date: ");
+					System.out.print("Please enter start date (YYYY-MM-DD): ");
 					String startDateString = reader.next();
 					
 					DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -104,7 +104,7 @@ public class Main {
 						e.printStackTrace();
 					}
 					
-					System.out.print("Please enter end date: ");
+					System.out.print("Please enter end date (YYYY-MM-DD): ");
 					String endDateString = reader.next();
 					try {
 						endDate = formatter.parse(endDateString);
