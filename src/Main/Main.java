@@ -47,9 +47,22 @@ public class Main {
 		BookingController bookingController = myHotel.getBookingController();
 		ManagementController managementController = myHotel.getManagementController();
 		Scanner reader = new Scanner(System.in);
+        Employee user = null;
 		
 		String command ="";
-		System.out.println("Welcome to "+myHotel.getName()+".");
+		System.out.println("Welcome to " + myHotel.getName() + ".");
+
+        while (user == null)
+        {
+            user = login(reader, myHotel);
+            if (user == null)
+                System.out.println("Login failed");
+        }
+
+        System.out.println("Logged in as");
+        System.out.println(user.toString());
+        System.out.println();
+
 		do{
 			switch(command){
 				case CLI_HELP_COMMAND:
@@ -105,6 +118,20 @@ public class Main {
 		}while(!command.equalsIgnoreCase(CLI_EXIT_COMMAND));
 
 	}
+
+    public static Employee login(Scanner reader, Hotel hotel){
+        try{
+            System.out.println("####### Login #######");
+            System.out.print("Social Security Number: ");
+            String ssn = reader.next();
+            System.out.print("Password: ");
+            String pw = reader.next();
+            return hotel.logIn(ssn);
+        }catch(Exception ex) {
+            System.out.println("Login process exited: " + 405);
+        }
+        return null;
+    }
 
 	private static void addDiscount(Scanner reader, ManagementController managementController) {
 		// TODO Auto-generated method stub
@@ -359,7 +386,7 @@ public class Main {
         EType[] types = {EType.CLEANER, EType.RECEPTIONIST, EType.MANAGER};
         for (int i = 0; i < 5; i++)
         {
-            EmployeeType type = new EmployeeTypeImpl(types[i%3], (i+1)*2);
+            EmployeeType type = new EmployeeTypeImpl(types[i%3], ((i+1)%4)^2);
             double salary = 20000.0 * (i+1)/4,
                 workrate = 0.2;
             String name = names[i],

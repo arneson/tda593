@@ -231,7 +231,9 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated NOT
 	 */
 	public BookingController getBookingController() {
-		return new BookingControllerImpl();
+		if (user == null || user.getEmployeeType().getAcessLevel() >= 4)
+			return new BookingControllerImpl();
+		return null;
 	}
 
 	public BookingController basicGetBookingController() {
@@ -254,15 +256,9 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 */
 	public ManagementController getManagementController() {
-		if (managementController != null && managementController.eIsProxy()) {
-			InternalEObject oldManagementController = (InternalEObject)managementController;
-			managementController = (ManagementController)eResolveProxy(oldManagementController);
-			if (managementController != oldManagementController) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelManagementClassDiagramPackage.HOTEL__MANAGEMENT_CONTROLLER, oldManagementController, managementController));
-			}
-		}
-		return managementController;
+		if (user == null || user.getEmployeeType().getAcessLevel() >= 9)
+			return new ManagementControllerImpl();
+		return null;
 	}
 
 	public ManagementController basicGetManagementController() {
@@ -334,15 +330,9 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 */
 	public MaintenanceController getMaintenanceController() {
-		if (maintenanceController != null && maintenanceController.eIsProxy()) {
-			InternalEObject oldMaintenanceController = (InternalEObject)maintenanceController;
-			maintenanceController = (MaintenanceController)eResolveProxy(oldMaintenanceController);
-			if (maintenanceController != oldMaintenanceController) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelManagementClassDiagramPackage.HOTEL__MAINTENANCE_CONTROLLER, oldMaintenanceController, maintenanceController));
-			}
-		}
-		return maintenanceController;
+		if (user == null || user.getEmployeeType().getAcessLevel() >= 1)
+			return new MaintenanceControllerImpl();
+		return null;
 	}
 
 	/**
@@ -445,16 +435,16 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 				setRank(RANK_EDEFAULT);
 				return;
 			case HotelManagementClassDiagramPackage.HOTEL__BOOKING_CONTROLLER:
-				setBookingController((BookingController)null);
+				setBookingController((BookingController) null);
 				return;
 			case HotelManagementClassDiagramPackage.HOTEL__MAINTENANCE_CONTROLLER:
-				setMaintenanceController((MaintenanceController)null);
+				setMaintenanceController((MaintenanceController) null);
 				return;
 			case HotelManagementClassDiagramPackage.HOTEL__MANAGEMENT_CONTROLLER:
-				setManagementController((ManagementController)null);
+				setManagementController((ManagementController) null);
 				return;
 			case HotelManagementClassDiagramPackage.HOTEL__USER:
-				setUser((Employee)null);
+				setUser((Employee) null);
 				return;
 		}
 		super.eUnset(featureID);
