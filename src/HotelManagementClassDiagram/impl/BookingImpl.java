@@ -651,13 +651,10 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setFinalBill(Bill newFinalBill) {
-		Bill oldFinalBill = finalBill;
-		finalBill = newFinalBill;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BOOKING__FINAL_BILL, oldFinalBill, finalBill));
+		throw new UnsupportedOperationException("Not supported");
 	}
 
 	/**
@@ -675,9 +672,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @generated NOT
 	 */
 	public Bill checkOut() {
-		Bill b = this.generateBill();
-		this.pay(b);
-		return b;
+		this.finalBill = this.generateBill();
+		this.pay(finalBill);
+		return finalBill;
 	}
 
 	/**
