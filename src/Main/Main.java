@@ -1,9 +1,5 @@
 package main;
 
-import HotelManagementClassDiagram.*;
-import HotelManagementClassDiagram.impl.*;
-
-import java.lang.reflect.InvocationTargetException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -11,19 +7,30 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-import javax.swing.text.DateFormatter;
-
-import org.eclipse.emf.common.notify.Adapter;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.resource.Resource;
+
+import HotelManagementClassDiagram.Addon;
+import HotelManagementClassDiagram.Booking;
+import HotelManagementClassDiagram.BookingController;
+import HotelManagementClassDiagram.Creditcard;
+import HotelManagementClassDiagram.Customer;
+import HotelManagementClassDiagram.Discount;
+import HotelManagementClassDiagram.EType;
+import HotelManagementClassDiagram.Employee;
+import HotelManagementClassDiagram.EmployeeType;
+import HotelManagementClassDiagram.Hotel;
+import HotelManagementClassDiagram.Room;
+import HotelManagementClassDiagram.RoomType;
+import HotelManagementClassDiagram.impl.AddonImpl;
+import HotelManagementClassDiagram.impl.BookingImpl;
+import HotelManagementClassDiagram.impl.CreditcardImpl;
+import HotelManagementClassDiagram.impl.CustomerImpl;
+import HotelManagementClassDiagram.impl.DiscountImpl;
+import HotelManagementClassDiagram.impl.EmployeeImpl;
+import HotelManagementClassDiagram.impl.EmployeeTypeImpl;
+import HotelManagementClassDiagram.impl.HotelImpl;
+import HotelManagementClassDiagram.impl.RoomImpl;
 
 /**
  * @generated NOT
@@ -43,7 +50,6 @@ public class Main {
 		generateFakeData();
 		Hotel myHotel = new HotelImpl("C-R-A-P hotel");
 		BookingController bookingController = myHotel.getBookingController();
-		
 		Scanner reader = new Scanner(System.in);
 		
 		String command ="";
@@ -64,6 +70,7 @@ public class Main {
 					System.out.println();
 					System.out.print("Choose an option: ");
 					break;
+					
 				case CLI_CHECKIN_COMMAND:
 					System.out.println();
 					System.out.println("CHECK IN");
@@ -98,10 +105,41 @@ public class Main {
 						
 					}while(bookingId!=-1);
 					break;
+					
 				case CLI_CHECKOUT_COMMAND:
+					
 					break;
+					
 				case CLI_NEW_CUSTOMER_COMMAND:
+					System.out.println("Please enter customer social security number: ");
+					String SSN = reader.next();
+					
+					Customer customer = bookingController.getCustomer(SSN);
+					if (customer == null) {
+						System.out.println("Customer does not exist in DB. Please enter name: ");
+						String name = reader.next();
+						System.out.println("Please enter phone number: ");
+						String phoneNumber = reader.next();
+						System.out.println("Please enter street: ");
+						String street = reader.next();
+						System.out.println("Please enter city: ");
+						String city = reader.next();
+						System.out.println("Please enter postal code: ");
+						String postalCode = reader.next();
+						System.out.println("Please enter country: ");
+						String country = reader.next();
+						System.out.println("Please enter gender: ");
+						String gender = reader.next();
+						System.out.println("Please enter title: ");
+						String title = reader.next();
+						
+						customer = new CustomerImpl(name, city, country, gender, phoneNumber, postalCode, SSN, street, title);
+						bookingController.updateOrAddCustomer(customer);
+					} else {
+						System.out.println("Customer already exists in DB.");
+					}
 					break;
+					
 				case CLI_BOOK_A_ROOM_COMMAND:
 					System.out.print("Please enter start date (YYYY-MM-DD): ");
 					String startDateString = reader.next();
@@ -139,7 +177,7 @@ public class Main {
 					int nbrOfRooms = reader.nextInt();
 					BasicEList<RoomType> types = new BasicEList<RoomType>();
 					for (int i = 0; i < nbrOfRooms; i++) {
-						System.out.println("Please select type for room " + i + ": ");
+						System.out.println("Please select type for room " + (i+1) + ": ");
 						String typeString = reader.next();
 						switch (typeString) {
 							case "SINGLE":
@@ -165,9 +203,9 @@ public class Main {
 					}
 					
 					System.out.println("Please enter customer social security number: ");
-					String SSN = reader.next();
+					SSN = reader.next();
 					
-					Customer customer = bookingController.getCustomer(SSN);
+					customer = bookingController.getCustomer(SSN);
 					if (customer == null) {
 						System.out.println("Customer does not exist in DB. Please enter name: ");
 						String name = reader.next();
@@ -187,6 +225,7 @@ public class Main {
 						String title = reader.next();
 						
 						customer = new CustomerImpl(name, city, country, gender, phoneNumber, postalCode, SSN, street, title);
+						bookingController.updateOrAddCustomer(customer);
 					}
 
 					Booking booking = new BookingImpl(customer, startDate, endDate, types);
