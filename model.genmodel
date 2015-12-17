@@ -208,12 +208,6 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="HotelManagementClassDiagram.ecore#//ManagementController">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//ManagementController/setDateSpecificPrices">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/setDateSpecificPrices/costable"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/setDateSpecificPrices/startDate"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/setDateSpecificPrices/endDate"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/setDateSpecificPrices/priceChange"/>
-      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="HotelManagementClassDiagram.ecore#//ManagementController/updateOrAddEmployee">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="HotelManagementClassDiagram.ecore#//ManagementController/updateOrAddEmployee/employee"/>
       </genOperations>

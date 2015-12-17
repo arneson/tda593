@@ -1470,22 +1470,13 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int MANAGEMENT_CONTROLLER_FEATURE_COUNT = 0;
 
 	/**
-	 * The operation id for the '<em>Set Date Specific Prices</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGEMENT_CONTROLLER___SET_DATE_SPECIFIC_PRICES__COSTABLE_DATE_DATE_DOUBLE = 0;
-
-	/**
 	 * The operation id for the '<em>Update Or Add Employee</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EMPLOYEE__EMPLOYEE = 1;
+	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EMPLOYEE__EMPLOYEE = 0;
 
 	/**
 	 * The operation id for the '<em>Update Or Add Employee Type</em>' operation.
@@ -1494,7 +1485,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EMPLOYEE_TYPE__EMPLOYEETYPE = 2;
+	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EMPLOYEE_TYPE__EMPLOYEETYPE = 1;
 
 	/**
 	 * The operation id for the '<em>Update Or Add Room</em>' operation.
@@ -1503,7 +1494,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ROOM__ROOM = 3;
+	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ROOM__ROOM = 2;
 
 	/**
 	 * The operation id for the '<em>Update Or Add Room Type</em>' operation.
@@ -1512,7 +1503,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ROOM_TYPE__ROOMTYPE = 4;
+	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ROOM_TYPE__ROOMTYPE = 3;
 
 	/**
 	 * The operation id for the '<em>Update Or Add Discount</em>' operation.
@@ -1521,7 +1512,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_DISCOUNT__DISCOUNT = 5;
+	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_DISCOUNT__DISCOUNT = 4;
 
 	/**
 	 * The operation id for the '<em>Update Or Add Addon</em>' operation.
@@ -1530,7 +1521,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ADDON__ADDON = 6;
+	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ADDON__ADDON = 5;
 
 	/**
 	 * The operation id for the '<em>Update Or Add Extra</em>' operation.
@@ -1539,7 +1530,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EXTRA__EXTRA = 7;
+	int MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EXTRA__EXTRA = 6;
 
 	/**
 	 * The number of operations of the '<em>Management Controller</em>' class.
@@ -1548,7 +1539,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGEMENT_CONTROLLER_OPERATION_COUNT = 8;
+	int MANAGEMENT_CONTROLLER_OPERATION_COUNT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Room Queue</b></em>' reference list.
@@ -3613,16 +3604,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	EClass getManagementController();
 
 	/**
-	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#setDateSpecificPrices(HotelManagementClassDiagram.Costable, java.util.Date, java.util.Date, double) <em>Set Date Specific Prices</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Set Date Specific Prices</em>' operation.
-	 * @see HotelManagementClassDiagram.ManagementController#setDateSpecificPrices(HotelManagementClassDiagram.Costable, java.util.Date, java.util.Date, double)
-	 * @generated
-	 */
-	EOperation getManagementController__SetDateSpecificPrices__Costable_Date_Date_double();
-
-	/**
 	 * Returns the meta object for the '{@link HotelManagementClassDiagram.ManagementController#updateOrAddEmployee(HotelManagementClassDiagram.Employee) <em>Update Or Add Employee</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5168,14 +5149,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MANAGEMENT_CONTROLLER = eINSTANCE.getManagementController();
-
-		/**
-		 * The meta object literal for the '<em><b>Set Date Specific Prices</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MANAGEMENT_CONTROLLER___SET_DATE_SPECIFIC_PRICES__COSTABLE_DATE_DATE_DOUBLE = eINSTANCE.getManagementController__SetDateSpecificPrices__Costable_Date_Date_double();
 
 		/**
 		 * The meta object literal for the '<em><b>Update Or Add Employee</b></em>' operation.

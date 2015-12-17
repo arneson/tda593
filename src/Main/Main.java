@@ -175,7 +175,7 @@ public class Main {
                 System.out.print("Please enter booking number: ");
                 bookingId = reader.nextInt();
                 Booking b = bookingController.getBooking(bookingId);
-                if(b != null){
+                if(b!=null){
                     System.out.println("Booking found.");
                     System.out.print("Please enter credit card number: ");
                     long number = reader.nextLong();

@@ -1174,7 +1174,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getManagementController__SetDateSpecificPrices__Costable_Date_Date_double() {
+	public EOperation getManagementController__UpdateOrAddEmployee__Employee() {
 		return managementControllerEClass.getEOperations().get(0);
 	}
 
@@ -1183,7 +1183,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getManagementController__UpdateOrAddEmployee__Employee() {
+	public EOperation getManagementController__UpdateOrAddEmployeeType__EmployeeType() {
 		return managementControllerEClass.getEOperations().get(1);
 	}
 
@@ -1192,7 +1192,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getManagementController__UpdateOrAddEmployeeType__EmployeeType() {
+	public EOperation getManagementController__UpdateOrAddRoom__Room() {
 		return managementControllerEClass.getEOperations().get(2);
 	}
 
@@ -1201,7 +1201,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getManagementController__UpdateOrAddRoom__Room() {
+	public EOperation getManagementController__UpdateOrAddRoomType__RoomType() {
 		return managementControllerEClass.getEOperations().get(3);
 	}
 
@@ -1210,7 +1210,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getManagementController__UpdateOrAddRoomType__RoomType() {
+	public EOperation getManagementController__UpdateOrAddDiscount__Discount() {
 		return managementControllerEClass.getEOperations().get(4);
 	}
 
@@ -1219,7 +1219,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getManagementController__UpdateOrAddDiscount__Discount() {
+	public EOperation getManagementController__UpdateOrAddAddon__Addon() {
 		return managementControllerEClass.getEOperations().get(5);
 	}
 
@@ -1228,17 +1228,8 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getManagementController__UpdateOrAddAddon__Addon() {
-		return managementControllerEClass.getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getManagementController__UpdateOrAddExtra__Extra() {
-		return managementControllerEClass.getEOperations().get(7);
+		return managementControllerEClass.getEOperations().get(6);
 	}
 
 	/**
@@ -1947,7 +1938,6 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___UPDATE_OR_ADD_BOOKING__BOOKING);
 
 		managementControllerEClass = createEClass(MANAGEMENT_CONTROLLER);
-		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___SET_DATE_SPECIFIC_PRICES__COSTABLE_DATE_DATE_DOUBLE);
 		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EMPLOYEE__EMPLOYEE);
 		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EMPLOYEE_TYPE__EMPLOYEETYPE);
 		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ROOM__ROOM);
@@ -2234,12 +2224,6 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		addEParameter(op, this.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(managementControllerEClass, ManagementController.class, "ManagementController", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getManagementController__SetDateSpecificPrices__Costable_Date_Date_double(), null, "setDateSpecificPrices", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getCostable(), "costable", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDate(), "startDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDate(), "endDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDouble(), "priceChange", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getManagementController__UpdateOrAddEmployee__Employee(), null, "updateOrAddEmployee", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getEmployee(), "employee", 1, 1, IS_UNIQUE, !IS_ORDERED);
