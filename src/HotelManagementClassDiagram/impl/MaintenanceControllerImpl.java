@@ -89,6 +89,7 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 				room.setUnderCleaning(status);
 			}
 		}
+		// TODO
 	}
 
 	/**
@@ -98,6 +99,7 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	 */
 	public void notifyWorker(EmployeeType worker) {
 		throw new UnsupportedOperationException();
+		// TODO
 	}
 
 	/**
@@ -112,17 +114,6 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void getNextRoomToClean(Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public void setRepairedStatus(Room room, boolean repaired) {
@@ -131,6 +122,7 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 				room.setUnderRepair(repaired);
 			}
 		}
+		// TODO error parameters
 	}
 
 	/**
