@@ -1,8 +1,8 @@
 BookingController:
 
-findCustomer returnerar void SKA BORT 
+findCustomer returnerar void SKA BORT - CHECK
 createKeyCard SKA BORT - CHECK
-assignRoom tar returnerar void och tar bara rum som parameter?
+assignRoom tar returnerar void och tar bara rum som parameter? - CHECK
 ta bort boolean på checkIn - CHECK
 
 MaintenanceController:

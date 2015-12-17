@@ -71,21 +71,12 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addToQueue(Room room) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void addToStack(Room room) {
-		roomQueue.add(room);
 	}
 
 	/**
@@ -105,18 +96,16 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void removeFromQueue(Room room) {
 		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void getNextRoomToClean(Room room) {
 		// TODO: implement this method
@@ -124,24 +113,6 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void notifyWorker(EmployeeType worker) {
-		throw new UnsupportedOperationException();
-		// TODO
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void removeFromStack(Room room) {
-		roomQueue.remove(room);
-	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,20 +123,10 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 		for (Room roomInstance : roomQueue) {
 			if (roomInstance.equals(room)) {
 				room.setUnderRepair(repaired);
+				break;
 			}
 		}
-		// TODO error parameters
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Room getNextRoomToClean() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		FakeDBContextImpl.getInstance().updateOrAddRoom(room);
 	}
 
 	/**
@@ -255,6 +216,12 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 				return getNextRoomToClean();
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	@Override
+	public Room getNextRoomToClean() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

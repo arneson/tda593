@@ -88,6 +88,7 @@ public class Main {
 	}
 
 	public static void bookARoom(Scanner reader, BookingController bookingController) {
+
         try{
             System.out.print("Please enter start date (YYYY-MM-DD): ");
             String startDateString = reader.next();
@@ -155,6 +156,7 @@ public class Main {
                 String title = reader.next();
 
                 customer = new CustomerImpl(name, city, country, gender, phoneNumber, postalCode, SSN, street, title);
+                bookingController.updateOrAddCustomer(customer);
             }
 
             Booking booking = new BookingImpl(customer, startDate, endDate, types);
