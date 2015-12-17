@@ -31,13 +31,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements FakeDBContext {
+
+	private static FakeDBContext fdbc = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected FakeDBContextImpl() {
+	private FakeDBContextImpl() {
 		super();
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	public static FakeDBContext getInstance() {
+		if (fdbc == null) {
+			fdbc = new FakeDBContextImpl();
+		}
+		return fdbc;
 	}
 
 	/**
