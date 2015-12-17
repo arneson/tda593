@@ -22,22 +22,21 @@ import java.util.Collection;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link HotelManagementClassDiagram.impl.MaintenanceControllerImpl#getRoomStack <em>Room Stack</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.MaintenanceControllerImpl#getRoomQueue <em>Room Queue</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container implements MaintenanceController {
 	/**
-	 * The cached value of the '{@link #getRoomStack() <em>Room Stack</em>}' reference list.
+	 * The cached value of the '{@link #getRoomQueue() <em>Room Queue</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoomStack()
+	 * @see #getRoomQueue()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Room> roomStack;
-
+	protected EList<Room> roomQueue;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -62,11 +61,22 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Room> getRoomStack() {
-		if (roomStack == null) {
-			roomStack = new EObjectResolvingEList<Room>(Room.class, this, HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER__ROOM_STACK);
+	public EList<Room> getRoomQueue() {
+		if (roomQueue == null) {
+			roomQueue = new EObjectResolvingEList<Room>(Room.class, this, HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER__ROOM_QUEUE);
 		}
-		return roomStack;
+		return roomQueue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addToQueue(Room room) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -90,6 +100,28 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 			}
 		}
 		// TODO
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void removeFromQueue(Room room) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void getNextRoomToClean(Room room) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -144,8 +176,8 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER__ROOM_STACK:
-				return getRoomStack();
+			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER__ROOM_QUEUE:
+				return getRoomQueue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -159,9 +191,9 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER__ROOM_STACK:
-				getRoomStack().clear();
-				getRoomStack().addAll((Collection<? extends Room>)newValue);
+			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER__ROOM_QUEUE:
+				getRoomQueue().clear();
+				getRoomQueue().addAll((Collection<? extends Room>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -175,8 +207,8 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER__ROOM_STACK:
-				getRoomStack().clear();
+			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER__ROOM_QUEUE:
+				getRoomQueue().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -190,8 +222,8 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER__ROOM_STACK:
-				return roomStack != null && !roomStack.isEmpty();
+			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER__ROOM_QUEUE:
+				return roomQueue != null && !roomQueue.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -204,17 +236,17 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___ADD_TO_STACK__ROOM:
-				addToStack((Room)arguments.get(0));
+			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___ADD_TO_QUEUE__ROOM:
+				addToQueue((Room)arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___SET_CLEANED_STATUS__ROOM_BOOLEAN:
 				setCleanedStatus((Room)arguments.get(0), (Boolean)arguments.get(1));
 				return null;
-			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___NOTIFY_WORKER__EMPLOYEETYPE:
-				notifyWorker((EmployeeType)arguments.get(0));
+			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___REMOVE_FROM_QUEUE__ROOM:
+				removeFromQueue((Room)arguments.get(0));
 				return null;
-			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___REMOVE_FROM_STACK__ROOM:
-				removeFromStack((Room)arguments.get(0));
+			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___GET_NEXT_ROOM_TO_CLEAN__ROOM:
+				getNextRoomToClean((Room)arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___SET_REPAIRED_STATUS__ROOM_BOOLEAN:
 				setRepairedStatus((Room)arguments.get(0), (Boolean)arguments.get(1));
@@ -224,5 +256,6 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 		}
 		return super.eInvoke(operationID, arguments);
 	}
+
 
 } //MaintenanceControllerImpl

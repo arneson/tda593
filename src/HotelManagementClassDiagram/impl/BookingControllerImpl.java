@@ -8,7 +8,6 @@ import HotelManagementClassDiagram.Customer;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.Room;
 import HotelManagementClassDiagram.RoomType;
-import main.FakeDB;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -51,17 +50,18 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	public EList<RoomType> searchAvailableRoomTypes(Date fromDate, Date toDate, int nbrOfAdults, int nbrOfChildren) {
 		EList<RoomType> r = FakeDBContextImpl.getInstance().getAvaliableRoomTypes(fromDate, toDate);
 		return r;
+		// TODO filter skit
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
+	 *     This method should be used to send an email to a customer
+	 *     but this is not done, it just illustrates what could be done.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean sendConfirmation(Booking booking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return true;
 	}
 
 	/**
@@ -78,43 +78,31 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void checkIn(Booking booking) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 *     This method should be used as a confirmation that
+	 *     the booking has not been done concurrently and that no room is
+	 *     available anymore. Now it just illustrates what could be done.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	public boolean confirm(Booking booking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return true;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void checkIn(Booking booking, boolean _) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void createKeyCard(Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void checkOut(Booking booking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		booking.checkOut();
 	}
 
 	/**
@@ -123,7 +111,7 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public void saveCustomer(Customer customer) {
-		FakeDB.customers.add(customer);
+		FakeDBContextImpl.getInstance().updateOrAddCustomer(customer);
 	}
 
 	/**
@@ -151,34 +139,28 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Customer getCustomer(String SSN) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return FakeDBContextImpl.getInstance().getCustomer(SSN);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateOrAddCustomer(Customer customer) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		FakeDBContextImpl.getInstance().updateOrAddCustomer(customer);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateOrAddBooking(Booking booking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		FakeDBContextImpl.getInstance().updateOrAddBooking(booking);
 	}
 
 	/**
@@ -196,13 +178,8 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 				return sendConfirmation((Booking)arguments.get(0));
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___GET_BOOKING__INT:
 				return getBooking((Integer)arguments.get(0));
-			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CONFIRM__BOOKING:
-				return confirm((Booking)arguments.get(0));
-			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CHECK_IN__BOOKING_BOOLEAN:
-				checkIn((Booking)arguments.get(0), (Boolean)arguments.get(1));
-				return null;
-			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CREATE_KEY_CARD__ROOM:
-				createKeyCard((Room)arguments.get(0));
+			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CHECK_IN__BOOKING:
+				checkIn((Booking)arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CHECK_OUT__BOOKING:
 				checkOut((Booking)arguments.get(0));

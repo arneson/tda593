@@ -1,9 +1,5 @@
 package main;
 
-import HotelManagementClassDiagram.*;
-import HotelManagementClassDiagram.impl.*;
-
-import java.lang.reflect.InvocationTargetException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -11,19 +7,30 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-import javax.swing.text.DateFormatter;
-
-import org.eclipse.emf.common.notify.Adapter;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.resource.Resource;
+
+import HotelManagementClassDiagram.Addon;
+import HotelManagementClassDiagram.Booking;
+import HotelManagementClassDiagram.BookingController;
+import HotelManagementClassDiagram.Creditcard;
+import HotelManagementClassDiagram.Customer;
+import HotelManagementClassDiagram.Discount;
+import HotelManagementClassDiagram.EType;
+import HotelManagementClassDiagram.Employee;
+import HotelManagementClassDiagram.EmployeeType;
+import HotelManagementClassDiagram.Hotel;
+import HotelManagementClassDiagram.Room;
+import HotelManagementClassDiagram.RoomType;
+import HotelManagementClassDiagram.impl.AddonImpl;
+import HotelManagementClassDiagram.impl.BookingImpl;
+import HotelManagementClassDiagram.impl.CreditcardImpl;
+import HotelManagementClassDiagram.impl.CustomerImpl;
+import HotelManagementClassDiagram.impl.DiscountImpl;
+import HotelManagementClassDiagram.impl.EmployeeImpl;
+import HotelManagementClassDiagram.impl.EmployeeTypeImpl;
+import HotelManagementClassDiagram.impl.HotelImpl;
+import HotelManagementClassDiagram.impl.RoomImpl;
 
 /**
  * @generated NOT
@@ -42,7 +49,6 @@ public class Main {
 		generateFakeData();
 		Hotel myHotel = new HotelImpl("C-R-A-P hotel");
 		BookingController bookingController = myHotel.getBookingController();
-		
 		Scanner reader = new Scanner(System.in);
 		
 		String command ="";
@@ -52,12 +58,15 @@ public class Main {
 				case CLI_HELP_COMMAND:
 					printHelp();
 					break;
+					
 				case CLI_CHECKIN_COMMAND:
 					checkIn(reader, bookingController);
 					break;
+					
 				case CLI_CHECKOUT_COMMAND:
 					checkOut(reader, bookingController);
 					break;
+					
 				case CLI_BOOK_A_ROOM_COMMAND:
 					bookARoom(reader, bookingController);
 					break;
