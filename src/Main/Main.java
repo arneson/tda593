@@ -1,4 +1,4 @@
-package main;
+package Main;
 
 import HotelManagementClassDiagram.*;
 import HotelManagementClassDiagram.impl.*;

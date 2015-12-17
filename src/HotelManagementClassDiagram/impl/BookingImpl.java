@@ -2,30 +2,18 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.Addon;
-import HotelManagementClassDiagram.Bill;
-import HotelManagementClassDiagram.BookedRoom;
-import HotelManagementClassDiagram.Booking;
-import HotelManagementClassDiagram.Creditcard;
-import HotelManagementClassDiagram.Customer;
-import HotelManagementClassDiagram.Discount;
-import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
-import HotelManagementClassDiagram.Room;
+import HotelManagementClassDiagram.*;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Date;
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -832,7 +820,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				getAddons().addAll((Collection<? extends Addon>)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS:
-				setBookedRooms((BookedRoom)newValue);
+				setBookedRooms((BookedRoom) newValue);
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__INTERNAL_COMMENTS:
 				setInternalComments((String)newValue);
@@ -887,7 +875,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				getAddons().clear();
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS:
-				setBookedRooms((BookedRoom)null);
+				setBookedRooms((BookedRoom) null);
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__INTERNAL_COMMENTS:
 				setInternalComments(INTERNAL_COMMENTS_EDEFAULT);

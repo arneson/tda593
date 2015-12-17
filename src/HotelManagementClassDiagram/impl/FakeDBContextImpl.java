@@ -3,19 +3,14 @@
 package HotelManagementClassDiagram.impl;
 
 import HotelManagementClassDiagram.*;
-
-import java.lang.reflect.InvocationTargetException;
-
-import java.util.Date;
-import java.util.Iterator;
-
-import main.FakeDB;
+import Main.FakeDB;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.Date;
 
 /**
  * <!-- begin-user-doc -->

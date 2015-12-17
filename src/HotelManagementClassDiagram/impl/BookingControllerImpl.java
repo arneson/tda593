@@ -2,26 +2,14 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.Booking;
-import HotelManagementClassDiagram.BookingController;
-import HotelManagementClassDiagram.Customer;
-import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
-import HotelManagementClassDiagram.Room;
-import HotelManagementClassDiagram.RoomType;
 import HotelManagementClassDiagram.*;
+import Main.FakeDB;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import java.lang.reflect.InvocationTargetException;
-
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-import main.FakeDB;
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->

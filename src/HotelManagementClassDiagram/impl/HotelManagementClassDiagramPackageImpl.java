@@ -2,46 +2,10 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.Addon;
-import HotelManagementClassDiagram.Bill;
-import HotelManagementClassDiagram.BookedRoom;
-import HotelManagementClassDiagram.Booking;
-import HotelManagementClassDiagram.BookingController;
-import HotelManagementClassDiagram.Costable;
-import HotelManagementClassDiagram.Creditcard;
-import HotelManagementClassDiagram.Customer;
-import HotelManagementClassDiagram.DBInterface;
-import HotelManagementClassDiagram.Discount;
-import HotelManagementClassDiagram.EType;
-import HotelManagementClassDiagram.Employee;
-import HotelManagementClassDiagram.EmployeeType;
-import HotelManagementClassDiagram.Extra;
-import HotelManagementClassDiagram.FakeDBContext;
-import HotelManagementClassDiagram.Hotel;
-import HotelManagementClassDiagram.HotelManagementClassDiagramFactory;
-import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
-import HotelManagementClassDiagram.Interaction1;
-import HotelManagementClassDiagram.Interaction2;
-import HotelManagementClassDiagram.Interaction3;
-import HotelManagementClassDiagram.Interaction4;
-import HotelManagementClassDiagram.Interaction5;
-import HotelManagementClassDiagram.MaintenanceController;
-import HotelManagementClassDiagram.ManagementController;
-import HotelManagementClassDiagram.Person;
-import HotelManagementClassDiagram.Room;
-import HotelManagementClassDiagram.RoomType;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-
+import HotelManagementClassDiagram.*;
+import org.eclipse.emf.ecore.*;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.uml2.types.TypesPackage;
-
 import org.eclipse.uml2.types.impl.TypesPackageImpl;
 
 /**

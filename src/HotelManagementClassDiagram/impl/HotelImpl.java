@@ -2,17 +2,9 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.BookedRoom;
-import HotelManagementClassDiagram.BookingController;
-import HotelManagementClassDiagram.Hotel;
-import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
-
-import HotelManagementClassDiagram.MaintenanceController;
-import HotelManagementClassDiagram.ManagementController;
-import HotelManagementClassDiagram.Room;
+import HotelManagementClassDiagram.*;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
