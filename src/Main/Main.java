@@ -3,11 +3,16 @@ package main;
 import HotelManagementClassDiagram.*;
 import HotelManagementClassDiagram.impl.*;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
+
+import javax.swing.text.DateFormatter;
+
+import org.eclipse.emf.common.util.EList;
 
 /**
  * @generated NOT
@@ -20,7 +25,7 @@ public class Main {
 	static final String CLI_CHECKOUT_COMMAND= "checkout";
 	static final String CLI_NEW_CUSTOMER_COMMAND= "new customer";
 	static final String CLI_BOOK_A_ROOM_COMMAND= "book";
-	static final String CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND= "browse available";
+	static final String CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND= "browse";
 	
 	public static void main(String[] args) {
         // Generate the fake data for testing
@@ -28,6 +33,7 @@ public class Main {
 		Hotel myHotel = new HotelImpl("C-R-A-P hotel");
 		
 		Scanner reader = new Scanner(System.in);
+		FakeDBContext fakeDBInstance = FakeDBContextImpl.getInstance();
 		String command ="";
 		do{
 			System.out.println("Welcome to "+myHotel.getName()+".");
@@ -87,6 +93,31 @@ public class Main {
 				case CLI_BOOK_A_ROOM_COMMAND:
 					break;
 				case CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND:
+					System.out.print("Please enter start date: ");
+					String startDateString = reader.next();
+					
+					DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+					Date startDate = null, endDate = null;
+					try {
+						startDate = formatter.parse(startDateString);
+					} catch (ParseException e) {
+						e.printStackTrace();
+					}
+					
+					System.out.print("Please enter end date: ");
+					String endDateString = reader.next();
+					try {
+						endDate = formatter.parse(endDateString);
+					} catch (ParseException e) {
+						e.printStackTrace();
+					}
+					
+					EList<RoomType> avaliableRoomTypes = fakeDBInstance.getAvaliableRoomTypes(startDate, endDate);
+					System.out.println("Avaliable room types in the selected interval:");
+					for (RoomType type : avaliableRoomTypes) {
+						System.out.println(type.toString());
+					}
+					
 					break;
 				default:
 					System.out.println("Enter "+CLI_HELP_COMMAND+" for a list of commands.");
