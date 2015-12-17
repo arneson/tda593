@@ -7,6 +7,7 @@ import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.Room;
 import HotelManagementClassDiagram.RoomType;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -241,13 +242,14 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
 	 * @generated NOT
 	 */
-	public RoomImpl(String name, int maxNbrPeople, int roomNumber, int size){
+	public RoomImpl(int maxNbrPeople, int roomNumber, int size, RoomType type){
 		this.booked = false;
 		this.maxNbrPeople = maxNbrPeople;
 		this.roomNumber = roomNumber;
 		this.size = size;
 		this.underCleaning = false;
 		this.underRepair = false;
+		this.type = type;
 	}
 
 	/**

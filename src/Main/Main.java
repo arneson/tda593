@@ -139,13 +139,12 @@ public class Main {
         List<Addon> addons = FakeDB.addons;
 
         // Create 20 rooms
+        RoomType[] roomTypes = {RoomType.DOUBLE, RoomType.SINGLE, RoomType.SUITE};
         for (int i = 0; i < 20; i++)
         {
-            String name = "" + i;
             int size = i%2 == 0 ? 2 : 4;
-            int maxNbrPeople = size + 2,
-                roomNumber = i;
-            Room room = new RoomImpl(name, maxNbrPeople, roomNumber, size);
+            int maxNbrPeople = size + 2;
+            Room room = new RoomImpl(maxNbrPeople, i, size, roomTypes[i % 3]);
             rooms.add(room);
         }
 
