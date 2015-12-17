@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.Iterator;
 
 /**
  * <!-- begin-user-doc -->
@@ -456,23 +457,25 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addDiscount(Discount discount) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.discounts.add(discount);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void removeDiscount(Discount discount) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Iterator<Discount> it = this.discounts.iterator();
+		while(it.hasNext()) {
+			if(it.next().equals(discount)) {
+				it.remove();
+				break;
+			}
+		}
 	}
 
 	/**

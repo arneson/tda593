@@ -49,7 +49,8 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public EList<RoomType> searchAvailableRoomTypes(Date fromDate, Date toDate, int nbrOfAdults, int nbrOfChildren) {
-		throw new UnsupportedOperationException();
+		EList<RoomType> r = FakeDBContextImpl.getInstance().getAvaliableRoomTypes(fromDate, toDate);
+		return r;
 	}
 
 	/**
@@ -69,12 +70,7 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public Booking getBooking(int bookingId) {
-		for (Booking booking : FakeDB.bookings) {
-			if (bookingId == booking.getBookingId()) {
-				return booking;
-			}
-		}
-		return null;
+		return FakeDBContextImpl.getInstance().getBooking(bookingId);
 	}
 
 	/**

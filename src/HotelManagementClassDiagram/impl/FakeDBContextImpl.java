@@ -303,23 +303,19 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Customer> findCustomers(String partOfCustomerName) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList<Customer> findCustomers() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public EList<Customer> findCustomers(String partOfCustomerName) {
+        partOfCustomerName = partOfCustomerName.toLowerCase();
+		EList<Customer> customers = new BasicEList<>();
+        if (partOfCustomerName == null)
+            return customers;
+        for (Customer customer : FakeDB.customers)
+        {
+            if (customer.getName().toLowerCase().contains(partOfCustomerName))
+                customers.add(customer);
+        }
+        return customers;
 	}
 
 	/**
@@ -377,12 +373,16 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Employee> getAllReceptionists() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+        EList<Employee> receptionists = new BasicEList<>();
+        for (Employee e : FakeDB.employees) {
+            if (e.getEmployeeType().getType() == EType.RECEPTIONIST) {
+                receptionists.add(e);
+            }
+        }
+        return receptionists;
 	}
 
 	/**
@@ -440,56 +440,55 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateOrAddEmployee(Employee employee) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+        if (!FakeDB.employees.contains(employee))
+            FakeDB.employees.add(employee);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateOrAddRoomType(RoomType type) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+        if (!FakeDB.roomTypes.contains(type))
+            FakeDB.roomTypes.add(type);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateOrAddEmployeeType(EmployeeType type) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+        if (!FakeDB.employeeTypes.contains(type))
+            FakeDB.employeeTypes.add(type);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateOrAddExtra(Extra extra) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+        if (!FakeDB.extras.contains(extra))
+            FakeDB.extras.add(extra);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Room> getAvailableRooms(RoomType type, Date from, Date to) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<Room> availableRooms = null; //getRooms(type);
+        EList<Booking> bookings = getBookings(from, to);
+        for (Booking booking : bookings)
+            availableRooms.removeAll(booking.getBookedRooms());
+
+        return availableRooms;
 	}
 
 	/**
