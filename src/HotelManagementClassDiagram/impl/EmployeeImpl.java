@@ -116,7 +116,7 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 						String country, String gender, String phoneNumber, String postalCode, String ssnumber,
 						String street, String title){
         super(name, title, gender, ssnumber, phoneNumber, country, city, postalCode, street);
-		// TODO generate employeeId
+		this.employeeID = name.hashCode();
         this.employeeType = type;
         this.salary = salary;
         this.workRate = workrate;
@@ -236,33 +236,27 @@ public class EmployeeImpl extends PersonImpl implements Employee {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void Booking() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void Boolean() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void roomTypes() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
 
