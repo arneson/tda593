@@ -1,140 +1,14 @@
-TODO In Model (TIM):
-
-BILL:
-Varför finns en setTotalPrice? Ska detta ej beräknas från costables? - CHECK
-Ska det gå att sätta customer eller ska detta lösas vid initialisering? - CHECK
-Ska det gå att sätta valueAddedTax? - N/A
-hur funkar final? - N/A
-måste ha en metod addCostables - CHECK
-
-CREDITCARD:
-Ska creditcard ha en massa setters? - CHECK
-Ta bort validate - CHECK
-Creditcard borde ha Månad och dag istället för Date - CHECK
-Creditcard borde ha Månad och År istället för Månad och Dag - CHECK
-
-EMPLOYEETYPE:
-Borde inte salary och workrate vara i Employee? Inte i employeetype? - CHECK
-
-ROOM:
-Ta bort remove ”setCleanedStatus” - CHECK
-Varför är ”getMaxNbrOfPeople” en lista? - CHECK
-Ta bort remove ”setCleanedStatus” - CHECK
-TA BORT CLEANINGSTATUS - CHECK
-Varför är ”getMaxNbrOfPeople” en lista? - CHECK
-
-BOOKEDROOM:
-Ej extenda ROOM utan istället innehålla ett room. - CHECK
-	setRoom...
-
-BILL:
-paid boolean som instansvariabel - CHECK
-
-BOOKING:
-Lista med discounts - CHECK
-
-COSTABLE:
-Lista med discounts - CHECK
-
-
-EMPLOYEE:
-Workrate bör vara en double (från 0 till 1 som då representerar %) - CHECK
-Gender bör vara en enum så man kan lägga till fler osv - VASK
-	Med
-		Male
-		Female
-		Other
-
-EXTRA:
-Lägg till extra igen - enda skillnaden mellan denna och addon - CHECK
-är att extra inte kostar något
-
-BOOKING:
-Listan med bookedRooms bör vara av typen BookedRoom och inte Room - CHECK
-
-
-HOTEL:
-getBookingController skall returnera en BookingController. - CHECK
-getMaintenanceController skall returnera en BookingMaintenance. - CHECK
-getManagementController skall returnera en BookingManagement. - CHECK
-Hotellet skall ha en av varje ovanstående kontrollers som instansvariabel. - CHECK
-
-BOOKINGCONTROLLER:
-sendConfirmation, ska den finnas? Ta bort!
-confirm vad ska denna göra?
-checkIn hur funkar den?
-checkOut hur funkar den?
-createKeyCard? ska den finnas? Ta bort!
-findCustomer är void, bör returnera en customer.
-assignRoom, hur ska den funka?
-
-——————————————————————————————————————————————————————————————————————————————
-NEW:
-
-Hotel:
-- Ta bort authenticate
-- Behöver managementcontroller, maintenancecontroller, bookingcontroller som instansvariabler.
-- getManagementController returnerar nu void!?
-- getMaintenanceController returnerar nu void!?
-
-Addon:
-- Saknar double price som instansvariabel
-
-Bill:
-- Strunta i tax?
-- Saknar ytterligare konstruktör
-- Varför behöver vi ”basicGetCustomer”?
-
-BookedRoom:
-- Varför behöver vi ”basicGetRoom”?
-
 BookingController:
-- 
 
-Booking:
-- Varför behövs ”basicGetCreditCard”?
-- Varför behövs ”basicGetCustomer”?
-- Varför behövs ”basicGetPaymentMaster”?
-- Vi har både ”checkIn, checkOut” samt ”setCheckedIn, setCheckedOut”
-- Ta bort paymentMaster
-
-Creditcard:
-- 
-
-Customer:
-- Vad är customer rank? Behövs det?
-- 
-
-Discount:
-- 
-
-Employee:
-- Varför behövs basicGetEmployeeType?
-- Varför är ”Booking()” void och utan parametrar vad gör den?
-- Vad är ”Boolean()”, void och utan parametrar?
-- Vad är ”roomTypes()”, void och utan parametrar?
-
-EmployeeType:
-- 
-
-Extra:
-- Saknar konstruktor
-- 
-
-Factory:
-- Vad ska denna göra? Fråga Jocke hur han tänkt
-
-FakeDBContext:
-- Alla metoder bör vara statiska
+findCustomer returnerar void SKA BORT
+createKeyCard SKA BORT
+assignRoom tar returnerar void och tar bara rum som parameter?
+ta bort boolean på checkIn
 
 MaintenanceController:
-- 
+Allt som heter stack ska vara queue
+notifyWorker ska bort
+OM DET GÅR gör EList till Queue
 
 ManagementController:
-- 
-
-Person:
-- 
-
-Room:
-- Ta bort rumnamn
+Massa dubletter såsom updateAddon samt updateOrAddAddon
