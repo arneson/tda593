@@ -85,7 +85,7 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	 * @generated NOT
 	 */
 	public void addToStack(Room room) {
-		roomStack.add(room);
+		roomQueue.add(room);
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	 * @generated NOT
 	 */
 	public void setCleanedStatus(Room room, boolean status) {
-		for (Room roomInstance : roomStack) {
+		for (Room roomInstance : roomQueue) {
 			if (roomInstance.equals(room)) {
 				room.setUnderCleaning(status);
 			}
@@ -140,7 +140,7 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	 * @generated NOT
 	 */
 	public void removeFromStack(Room room) {
-		roomStack.remove(room);
+		roomQueue.remove(room);
 	}
 
 	/**
@@ -149,7 +149,7 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 	 * @generated NOT
 	 */
 	public void setRepairedStatus(Room room, boolean repaired) {
-		for (Room roomInstance : roomStack) {
+		for (Room roomInstance : roomQueue) {
 			if (roomInstance.equals(room)) {
 				room.setUnderRepair(repaired);
 			}

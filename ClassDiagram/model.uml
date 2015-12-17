@@ -311,18 +311,6 @@
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_gA2ioJdgEeW_2em-0w3Fbg" name="ManagementController">
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_aXVYIJzAEeWOD_rmUUwMag" name="setDateSpecificPrices">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_jnMZ8JzAEeWOD_rmUUwMag" name="costable" type="_OeItEJdQEeW_2em-0w3Fbg"/>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_5qNlMJzAEeWOD_rmUUwMag" name="startDate">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_7tdPUJzAEeWOD_rmUUwMag" name="endDate">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_MB-msJzBEeWOD_rmUUwMag" name="priceChange">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-      </ownedParameter>
-    </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_N23H0KTcEeWVDoDgGsfQNA" name="updateOrAddEmployee">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_e_PlEKTcEeWVDoDgGsfQNA" name="employee" type="_Ew4PgJdOEeW_2em-0w3Fbg"/>
     </ownedOperation>
@@ -387,7 +375,7 @@
   <packagedElement xmi:type="uml:Dependency" xmi:id="_oOG6IJdvEeW_2em-0w3Fbg" client="_7pMnYJdPEeW_2em-0w3Fbg" supplier="_LUZ8UJN8EeW_3Yt58t3sgQ"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_TybDoJdwEeW_2em-0w3Fbg" client="_7pMnYJdPEeW_2em-0w3Fbg" supplier="_E_WecJdQEeW_2em-0w3Fbg"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_lnK3oJdwEeW_2em-0w3Fbg" client="_BnrYAJdQEeW_2em-0w3Fbg" supplier="_LUZ8UJN8EeW_3Yt58t3sgQ"/>
-  <packagedElement xmi:type="uml:Dependency" xmi:id="_WdT1MJdzEeW_2em-0w3Fbg" client="_e6180JdgEeW_2em-0w3Fbg" supplier="_7pMnYJdPEeW_2em-0w3Fbg"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_WdT1MJdzEeW_2em-0w3Fbg" client="_LUZ8UJN8EeW_3Yt58t3sgQ" supplier="_7pMnYJdPEeW_2em-0w3Fbg"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_Y4KuEJdzEeW_2em-0w3Fbg" client="_LUZ8UJN8EeW_3Yt58t3sgQ" supplier="_S3mAoJdQEeW_2em-0w3Fbg"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_tHE3YJdzEeW_2em-0w3Fbg" client="_LUZ8UJN8EeW_3Yt58t3sgQ" supplier="_JTGcgJdZEeW_2em-0w3Fbg"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_lCjx4Jd0EeW_2em-0w3Fbg" client="_hJ2LAJdgEeW_2em-0w3Fbg" supplier="_S3mAoJdQEeW_2em-0w3Fbg"/>
