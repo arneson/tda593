@@ -7,21 +7,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
+import HotelManagementClassDiagram.*;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
-import HotelManagementClassDiagram.Addon;
-import HotelManagementClassDiagram.Booking;
-import HotelManagementClassDiagram.BookingController;
-import HotelManagementClassDiagram.Creditcard;
-import HotelManagementClassDiagram.Customer;
-import HotelManagementClassDiagram.Discount;
-import HotelManagementClassDiagram.EType;
-import HotelManagementClassDiagram.Employee;
-import HotelManagementClassDiagram.EmployeeType;
-import HotelManagementClassDiagram.Hotel;
-import HotelManagementClassDiagram.Room;
-import HotelManagementClassDiagram.RoomType;
 import HotelManagementClassDiagram.impl.AddonImpl;
 import HotelManagementClassDiagram.impl.BookingImpl;
 import HotelManagementClassDiagram.impl.CreditcardImpl;
@@ -172,7 +161,7 @@ public class Main {
             bookingController.updateOrAddBooking(booking);
             System.out.println("Booking created.");
         }catch(Exception ex){
-            System.out.println("Check In process exited: " + 404);
+            System.out.println("Booking process exited: " + 404);
         }
 	}
 
@@ -201,7 +190,7 @@ public class Main {
                     Creditcard card = new CreditcardImpl(number,cvc,month,year,owner);
                     b.setCreditCard(card);
                     bookingController.updateOrAddBooking(b);
-                    bookingController.checkIn(b, true);
+                    bookingController.checkIn(b);
                     System.out.print("Booking successfully checked in: ");
 
                 }else{
@@ -211,7 +200,7 @@ public class Main {
 
             }while(bookingId!=-1);
         }catch(Exception e){
-            System.out.println("Check In process exited: " + 404);
+            System.out.println("Check In process exited: " + 403);
         }
 	}
 
@@ -249,7 +238,7 @@ public class Main {
             }
             System.out.println();
         }catch(Exception ex) {
-            System.out.println("Check In process exited: " + 403);
+            System.out.println("Searching process exited: " + 402);
         }
 	}
 
@@ -264,21 +253,9 @@ public class Main {
                 bookingId = reader.nextInt();
                 Booking b = bookingController.getBooking(bookingId);
                 if(b != null){
-                    System.out.println("Booking found.");
-                    System.out.print("Please enter credit card number: ");
-                    long number = reader.nextLong();
-                    System.out.print("Please enter cvc code: ");
-                    int cvc = reader.nextInt();
-                    System.out.print("Please enter expiration month: ");
-                    int month = reader.nextInt();
-                    System.out.print("Please enter expiration year: ");
-                    int year = reader.nextInt();
-                    System.out.print("Please cardholder's name: ");
-                    String owner = reader.nextLine();
-                    Creditcard card = new CreditcardImpl(number,cvc,month,year,owner);
-                    b.setCreditCard(card);
-                    bookingController.updateOrAddBooking(b);
-                    bookingController.checkIn(b, true);
+                    System.out.println("Booking found. Checking out.");
+                    Bill finalBill = b.checkOut();
+                    System.out.println();
                     System.out.print("Booking successfully checked out: ");
                 }else{
                     System.out.println("No booking with bookingId: " + bookingId + " found.");
@@ -287,7 +264,7 @@ public class Main {
 
             }while(bookingId != -1);
         }catch(Exception ex) {
-            System.out.println("Check In process exited: " + 403);
+            System.out.println("Check Out process exited: " + 401);
         }
 	}
 
