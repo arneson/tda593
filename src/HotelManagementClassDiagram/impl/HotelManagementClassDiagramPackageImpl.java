@@ -1926,6 +1926,16 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		createEAttribute(extraEClass, EXTRA__NAME);
 		createEAttribute(extraEClass, EXTRA__DESCRIPTION);
 
+		costableEClass = createEClass(COSTABLE);
+		createEAttribute(costableEClass, COSTABLE__PRICE);
+		createEReference(costableEClass, COSTABLE__DISCOUNTS);
+		createEOperation(costableEClass, COSTABLE___ADD_DISCOUNT);
+		createEOperation(costableEClass, COSTABLE___REMOVE_DISCOUNT);
+
+		discountEClass = createEClass(DISCOUNT);
+		createEAttribute(discountEClass, DISCOUNT__IS_PERCENTAGE);
+		createEAttribute(discountEClass, DISCOUNT__AMOUNT);
+
 		bookedRoomEClass = createEClass(BOOKED_ROOM);
 		createEReference(bookedRoomEClass, BOOKED_ROOM__ADDONS);
 		createEReference(bookedRoomEClass, BOOKED_ROOM__ROOM);
@@ -1942,10 +1952,6 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		createEAttribute(roomEClass, ROOM__UNDER_REPAIR);
 		createEAttribute(roomEClass, ROOM__TYPES);
 
-		discountEClass = createEClass(DISCOUNT);
-		createEAttribute(discountEClass, DISCOUNT__IS_PERCENTAGE);
-		createEAttribute(discountEClass, DISCOUNT__AMOUNT);
-
 		billEClass = createEClass(BILL);
 		createEReference(billEClass, BILL__COSTABLES);
 		createEAttribute(billEClass, BILL__TOTAL_PRICE);
@@ -1953,12 +1959,6 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		createEAttribute(billEClass, BILL__FINAL);
 		createEAttribute(billEClass, BILL__PAID);
 		createEOperation(billEClass, BILL___ADD_COSTABLE__COSTABLE);
-
-		costableEClass = createEClass(COSTABLE);
-		createEAttribute(costableEClass, COSTABLE__PRICE);
-		createEReference(costableEClass, COSTABLE__DISCOUNTS);
-		createEOperation(costableEClass, COSTABLE___ADD_DISCOUNT);
-		createEOperation(costableEClass, COSTABLE___REMOVE_DISCOUNT);
 
 		bookingControllerEClass = createEClass(BOOKING_CONTROLLER);
 		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___SEARCH_AVAILABLE_ROOM_TYPES__DATE_DATE_INT_INT);
@@ -2088,6 +2088,8 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		employeeEClass.getESuperTypes().add(this.getPerson());
 		customerEClass.getESuperTypes().add(this.getPerson());
 		addonEClass.getESuperTypes().add(this.getExtra());
+		addonEClass.getESuperTypes().add(this.getCostable());
+		roomEClass.getESuperTypes().add(this.getCostable());
 		fakeDBContextEClass.getESuperTypes().add(this.getDBInterface());
 
 		// Initialize classes, features, and operations; add parameters
@@ -2182,6 +2184,18 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		initEAttribute(getExtra_Name(), theTypesPackage.getString(), "name", null, 1, 1, Extra.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getExtra_Description(), theTypesPackage.getString(), "description", null, 1, 1, Extra.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		initEClass(costableEClass, Costable.class, "Costable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCostable_Price(), ecorePackage.getEDouble(), "price", null, 1, 1, Costable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getCostable_Discounts(), this.getDiscount(), null, "discounts", null, 1, -1, Costable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEOperation(getCostable__AddDiscount(), null, "addDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getCostable__RemoveDiscount(), null, "removeDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(discountEClass, Discount.class, "Discount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDiscount_IsPercentage(), theTypesPackage.getBoolean(), "isPercentage", null, 1, 1, Discount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getDiscount_Amount(), ecorePackage.getEDouble(), "amount", null, 1, 1, Discount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
 		initEClass(bookedRoomEClass, BookedRoom.class, "BookedRoom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBookedRoom_Addons(), this.getAddon(), null, "addons", null, 0, -1, BookedRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBookedRoom_Room(), this.getRoom(), null, "room", null, 1, 1, BookedRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2202,10 +2216,6 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		initEAttribute(getRoom_UnderRepair(), ecorePackage.getEBoolean(), "underRepair", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_Types(), this.getRoomType(), "types", null, 1, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(discountEClass, Discount.class, "Discount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDiscount_IsPercentage(), theTypesPackage.getBoolean(), "isPercentage", null, 1, 1, Discount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getDiscount_Amount(), ecorePackage.getEDouble(), "amount", null, 1, 1, Discount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
 		initEClass(billEClass, Bill.class, "Bill", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBill_Costables(), this.getCostable(), null, "costables", null, 1, -1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBill_TotalPrice(), ecorePackage.getEDouble(), "totalPrice", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2215,14 +2225,6 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 
 		op = initEOperation(getBill__AddCostable__Costable(), null, "addCostable", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getCostable(), "costable", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEClass(costableEClass, Costable.class, "Costable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCostable_Price(), ecorePackage.getEDouble(), "price", null, 1, 1, Costable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getCostable_Discounts(), this.getDiscount(), null, "discounts", null, 1, -1, Costable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEOperation(getCostable__AddDiscount(), null, "addDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getCostable__RemoveDiscount(), null, "removeDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(bookingControllerEClass, BookingController.class, "BookingController", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

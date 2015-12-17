@@ -2,10 +2,12 @@
  */
 package HotelManagementClassDiagram.impl;
 
+import HotelManagementClassDiagram.Discount;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.Room;
 import HotelManagementClassDiagram.RoomType;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -18,6 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +30,8 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#getPrice <em>Price</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#getDiscounts <em>Discounts</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#getRoomNumber <em>Room Number</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#getSize <em>Size</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.RoomImpl#getInternalComment <em>Internal Comment</em>}</li>
@@ -40,6 +45,36 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * @generated
  */
 public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
+	/**
+	 * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrice()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double PRICE_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getPrice() <em>Price</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrice()
+	 * @generated
+	 * @ordered
+	 */
+	protected double price = PRICE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDiscounts() <em>Discounts</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDiscounts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Discount> discounts;
+
 	/**
 	 * The default value of the '{@link #getRoomNumber() <em>Room Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -203,7 +238,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated NOT
 	 */
 	public RoomImpl(String name, int maxNbrPeople, int roomNumber, int size){
-		this.roomName = name;
 		this.booked = false;
 		this.maxNbrPeople = maxNbrPeople;
 		this.roomNumber = roomNumber;
@@ -220,6 +254,39 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	protected EClass eStaticClass() {
 		return HotelManagementClassDiagramPackage.Literals.ROOM;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public double getPrice() {
+		return price;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPrice(double newPrice) {
+		double oldPrice = price;
+		price = newPrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.ROOM__PRICE, oldPrice, price));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Discount> getDiscounts() {
+		if (discounts == null) {
+			discounts = new EObjectResolvingEList<Discount>(Discount.class, this, HotelManagementClassDiagramPackage.ROOM__DISCOUNTS);
+		}
+		return discounts;
 	}
 
 	/**
@@ -377,9 +444,35 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void addDiscount() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void removeDiscount() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case HotelManagementClassDiagramPackage.ROOM__PRICE:
+				return getPrice();
+			case HotelManagementClassDiagramPackage.ROOM__DISCOUNTS:
+				return getDiscounts();
 			case HotelManagementClassDiagramPackage.ROOM__ROOM_NUMBER:
 				return getRoomNumber();
 			case HotelManagementClassDiagramPackage.ROOM__SIZE:
@@ -409,6 +502,13 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case HotelManagementClassDiagramPackage.ROOM__PRICE:
+				setPrice((Double)newValue);
+				return;
+			case HotelManagementClassDiagramPackage.ROOM__DISCOUNTS:
+				getDiscounts().clear();
+				getDiscounts().addAll((Collection<? extends Discount>)newValue);
+				return;
 			case HotelManagementClassDiagramPackage.ROOM__ROOM_NUMBER:
 				setRoomNumber((Integer)newValue);
 				return;
@@ -446,6 +546,12 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case HotelManagementClassDiagramPackage.ROOM__PRICE:
+				setPrice(PRICE_EDEFAULT);
+				return;
+			case HotelManagementClassDiagramPackage.ROOM__DISCOUNTS:
+				getDiscounts().clear();
+				return;
 			case HotelManagementClassDiagramPackage.ROOM__ROOM_NUMBER:
 				setRoomNumber(ROOM_NUMBER_EDEFAULT);
 				return;
@@ -482,6 +588,10 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case HotelManagementClassDiagramPackage.ROOM__PRICE:
+				return price != PRICE_EDEFAULT;
+			case HotelManagementClassDiagramPackage.ROOM__DISCOUNTS:
+				return discounts != null && !discounts.isEmpty();
 			case HotelManagementClassDiagramPackage.ROOM__ROOM_NUMBER:
 				return roomNumber != ROOM_NUMBER_EDEFAULT;
 			case HotelManagementClassDiagramPackage.ROOM__SIZE:
@@ -508,11 +618,31 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 */
 	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case HotelManagementClassDiagramPackage.ROOM___ADD_DISCOUNT:
+				addDiscount();
+				return null;
+			case HotelManagementClassDiagramPackage.ROOM___REMOVE_DISCOUNT:
+				removeDiscount();
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (roomNumber: ");
+		result.append(" (price: ");
+		result.append(price);
+		result.append(", roomNumber: ");
 		result.append(roomNumber);
 		result.append(", size: ");
 		result.append(size);

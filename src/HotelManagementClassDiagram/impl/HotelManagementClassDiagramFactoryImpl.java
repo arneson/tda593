@@ -64,9 +64,9 @@ public class HotelManagementClassDiagramFactoryImpl extends EFactoryImpl impleme
 			case HotelManagementClassDiagramPackage.CUSTOMER: return createCustomer();
 			case HotelManagementClassDiagramPackage.ADDON: return createAddon();
 			case HotelManagementClassDiagramPackage.EXTRA: return createExtra();
+			case HotelManagementClassDiagramPackage.DISCOUNT: return createDiscount();
 			case HotelManagementClassDiagramPackage.BOOKED_ROOM: return createBookedRoom();
 			case HotelManagementClassDiagramPackage.ROOM: return createRoom();
-			case HotelManagementClassDiagramPackage.DISCOUNT: return createDiscount();
 			case HotelManagementClassDiagramPackage.BILL: return createBill();
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER: return createBookingController();
 			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER: return createManagementController();

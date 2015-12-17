@@ -12,6 +12,6 @@ package HotelManagementClassDiagram;
  * @model
  * @generated
  */
-public interface Addon extends Extra {
+public interface Addon extends Extra, Costable {
 
 } // Addon

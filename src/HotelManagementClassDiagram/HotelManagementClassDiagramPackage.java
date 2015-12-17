@@ -922,13 +922,49 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int ADDON__DESCRIPTION = EXTRA__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Price</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDON__PRICE = EXTRA_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Discounts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDON__DISCOUNTS = EXTRA_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Addon</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADDON_FEATURE_COUNT = EXTRA_FEATURE_COUNT + 0;
+	int ADDON_FEATURE_COUNT = EXTRA_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Add Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDON___ADD_DISCOUNT = EXTRA_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Remove Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDON___REMOVE_DISCOUNT = EXTRA_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Addon</em>' class.
@@ -937,7 +973,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDON_OPERATION_COUNT = EXTRA_OPERATION_COUNT + 0;
+	int ADDON_OPERATION_COUNT = EXTRA_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.RoomImpl <em>Room</em>}' class.
@@ -947,7 +983,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getRoom()
 	 * @generated
 	 */
-	int ROOM = 9;
+	int ROOM = 11;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.BillImpl <em>Bill</em>}' class.
@@ -957,7 +993,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getBill()
 	 * @generated
 	 */
-	int BILL = 11;
+	int BILL = 12;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.Costable <em>Costable</em>}' class.
@@ -967,7 +1003,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getCostable()
 	 * @generated
 	 */
-	int COSTABLE = 12;
+	int COSTABLE = 8;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.DiscountImpl <em>Discount</em>}' class.
@@ -977,7 +1013,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getDiscount()
 	 * @generated
 	 */
-	int DISCOUNT = 10;
+	int DISCOUNT = 9;
 
 	/**
 	 * The meta object id for the '{@link HotelManagementClassDiagram.impl.BookingControllerImpl <em>Booking Controller</em>}' class.
@@ -1027,7 +1063,97 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @see HotelManagementClassDiagram.impl.HotelManagementClassDiagramPackageImpl#getBookedRoom()
 	 * @generated
 	 */
-	int BOOKED_ROOM = 8;
+	int BOOKED_ROOM = 10;
+
+	/**
+	 * The feature id for the '<em><b>Price</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COSTABLE__PRICE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Discounts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COSTABLE__DISCOUNTS = 1;
+
+	/**
+	 * The number of structural features of the '<em>Costable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COSTABLE_FEATURE_COUNT = 2;
+
+	/**
+	 * The operation id for the '<em>Add Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COSTABLE___ADD_DISCOUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Remove Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COSTABLE___REMOVE_DISCOUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Costable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COSTABLE_OPERATION_COUNT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Is Percentage</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCOUNT__IS_PERCENTAGE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Amount</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCOUNT__AMOUNT = 1;
+
+	/**
+	 * The number of structural features of the '<em>Discount</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCOUNT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Discount</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCOUNT_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Addons</b></em>' reference list.
@@ -1084,13 +1210,31 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	int BOOKED_ROOM_OPERATION_COUNT = 2;
 
 	/**
+	 * The feature id for the '<em><b>Price</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__PRICE = COSTABLE__PRICE;
+
+	/**
+	 * The feature id for the '<em><b>Discounts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__DISCOUNTS = COSTABLE__DISCOUNTS;
+
+	/**
 	 * The feature id for the '<em><b>Room Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__ROOM_NUMBER = 0;
+	int ROOM__ROOM_NUMBER = COSTABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -1099,7 +1243,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__SIZE = 1;
+	int ROOM__SIZE = COSTABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Internal Comment</b></em>' attribute.
@@ -1108,7 +1252,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__INTERNAL_COMMENT = 2;
+	int ROOM__INTERNAL_COMMENT = COSTABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Booked</b></em>' attribute.
@@ -1117,7 +1261,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__BOOKED = 3;
+	int ROOM__BOOKED = COSTABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Max Nbr People</b></em>' attribute.
@@ -1126,7 +1270,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__MAX_NBR_PEOPLE = 4;
+	int ROOM__MAX_NBR_PEOPLE = COSTABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Under Cleaning</b></em>' attribute.
@@ -1135,7 +1279,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__UNDER_CLEANING = 5;
+	int ROOM__UNDER_CLEANING = COSTABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Under Repair</b></em>' attribute.
@@ -1144,7 +1288,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__UNDER_REPAIR = 6;
+	int ROOM__UNDER_REPAIR = COSTABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Types</b></em>' attribute list.
@@ -1153,7 +1297,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__TYPES = 7;
+	int ROOM__TYPES = COSTABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Room</em>' class.
@@ -1162,7 +1306,25 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = 8;
+	int ROOM_FEATURE_COUNT = COSTABLE_FEATURE_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Add Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM___ADD_DISCOUNT = COSTABLE___ADD_DISCOUNT;
+
+	/**
+	 * The operation id for the '<em>Remove Discount</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM___REMOVE_DISCOUNT = COSTABLE___REMOVE_DISCOUNT;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -1171,43 +1333,7 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_OPERATION_COUNT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Is Percentage</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT__IS_PERCENTAGE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Amount</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT__AMOUNT = 1;
-
-	/**
-	 * The number of structural features of the '<em>Discount</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Discount</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCOUNT_OPERATION_COUNT = 0;
+	int ROOM_OPERATION_COUNT = COSTABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Costables</b></em>' reference list.
@@ -1280,60 +1406,6 @@ public interface HotelManagementClassDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int BILL_OPERATION_COUNT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Price</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COSTABLE__PRICE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Discounts</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COSTABLE__DISCOUNTS = 1;
-
-	/**
-	 * The number of structural features of the '<em>Costable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COSTABLE_FEATURE_COUNT = 2;
-
-	/**
-	 * The operation id for the '<em>Add Discount</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COSTABLE___ADD_DISCOUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Remove Discount</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COSTABLE___REMOVE_DISCOUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Costable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COSTABLE_OPERATION_COUNT = 2;
 
 	/**
 	 * The number of structural features of the '<em>Booking Controller</em>' class.

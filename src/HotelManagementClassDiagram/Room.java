@@ -4,8 +4,6 @@ package HotelManagementClassDiagram;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Room</b></em>'.
@@ -29,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Room extends EObject {
+public interface Room extends Costable {
 	/**
 	 * Returns the value of the '<em><b>Room Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->

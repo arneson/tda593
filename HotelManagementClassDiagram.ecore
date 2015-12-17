@@ -123,12 +123,26 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="miscInfo" ordered="false"
         lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Addon" eSuperTypes="#//Extra"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Addon" eSuperTypes="#//Extra #//Costable"/>
   <eClassifiers xsi:type="ecore:EClass" name="Extra">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
         eType="ecore:EDataType types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
         lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Costable" abstract="true" interface="true">
+    <eOperations name="addDiscount" ordered="false" lowerBound="1"/>
+    <eOperations name="removeDiscount" ordered="false" lowerBound="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="discounts" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Discount"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Discount">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPercentage" ordered="false"
+        lowerBound="1" eType="ecore:EDataType types.ecore#//Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="amount" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BookedRoom">
     <eOperations name="addAddon" ordered="false" lowerBound="1">
@@ -142,7 +156,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" lowerBound="1"
         eType="#//Room"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Room">
+  <eClassifiers xsi:type="ecore:EClass" name="Room" eSuperTypes="#//Costable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomNumber" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" ordered="false" lowerBound="1"
@@ -166,12 +180,6 @@
     <eLiterals name="Single" value="2"/>
     <eLiterals name="Suite" value="3"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Discount">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPercentage" ordered="false"
-        lowerBound="1" eType="ecore:EDataType types.ecore#//Boolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="amount" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Bill">
     <eOperations name="addCostable" ordered="false" lowerBound="1">
       <eParameters name="costable" ordered="false" lowerBound="1" eType="#//Costable"/>
@@ -186,14 +194,6 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="paid" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Costable" abstract="true" interface="true">
-    <eOperations name="addDiscount" ordered="false" lowerBound="1"/>
-    <eOperations name="removeDiscount" ordered="false" lowerBound="1"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="discounts" ordered="false"
-        lowerBound="1" upperBound="-1" eType="#//Discount"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BookingController">
     <eOperations name="searchAvailableRoomTypes" ordered="false" lowerBound="1" upperBound="-1"

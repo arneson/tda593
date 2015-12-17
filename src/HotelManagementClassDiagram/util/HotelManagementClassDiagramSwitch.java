@@ -108,12 +108,25 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 				Addon addon = (Addon)theEObject;
 				T result = caseAddon(addon);
 				if (result == null) result = caseExtra(addon);
+				if (result == null) result = caseCostable(addon);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case HotelManagementClassDiagramPackage.EXTRA: {
 				Extra extra = (Extra)theEObject;
 				T result = caseExtra(extra);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HotelManagementClassDiagramPackage.COSTABLE: {
+				Costable costable = (Costable)theEObject;
+				T result = caseCostable(costable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HotelManagementClassDiagramPackage.DISCOUNT: {
+				Discount discount = (Discount)theEObject;
+				T result = caseDiscount(discount);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -126,24 +139,13 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 			case HotelManagementClassDiagramPackage.ROOM: {
 				Room room = (Room)theEObject;
 				T result = caseRoom(room);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HotelManagementClassDiagramPackage.DISCOUNT: {
-				Discount discount = (Discount)theEObject;
-				T result = caseDiscount(discount);
+				if (result == null) result = caseCostable(room);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case HotelManagementClassDiagramPackage.BILL: {
 				Bill bill = (Bill)theEObject;
 				T result = caseBill(bill);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HotelManagementClassDiagramPackage.COSTABLE: {
-				Costable costable = (Costable)theEObject;
-				T result = caseCostable(costable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
