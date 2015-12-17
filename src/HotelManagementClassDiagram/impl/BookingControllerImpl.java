@@ -3,7 +3,7 @@
 package HotelManagementClassDiagram.impl;
 
 import HotelManagementClassDiagram.*;
-import Main.FakeDB;
+import main.FakeDB;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
