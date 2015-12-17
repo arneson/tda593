@@ -216,9 +216,6 @@ public class MaintenanceControllerImpl extends MinimalEObjectImpl.Container impl
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___REMOVE_FROM_STACK__ROOM:
 				removeFromStack((Room)arguments.get(0));
 				return null;
-			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___GET_NEXT_ROOM_TO_CLEAN__ROOM:
-				getNextRoomToClean((Room)arguments.get(0));
-				return null;
 			case HotelManagementClassDiagramPackage.MAINTENANCE_CONTROLLER___SET_REPAIRED_STATUS__ROOM_BOOLEAN:
 				setRepairedStatus((Room)arguments.get(0), (Boolean)arguments.get(1));
 				return null;

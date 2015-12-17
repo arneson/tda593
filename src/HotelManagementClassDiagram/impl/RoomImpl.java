@@ -222,7 +222,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated NOT
 	 */
 	public RoomImpl(int maxNbrPeople, int roomNumber, int size, RoomType type){
-		this.booked = false;
 		this.maxNbrPeople = maxNbrPeople;
 		this.roomNumber = roomNumber;
 		this.size = size;
