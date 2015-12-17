@@ -88,7 +88,7 @@ public class Main {
 					break;
 					
 				case CLI_LIST_BOOKINGS_COMMAND:
-					listBookings(reader, bookingController);
+					listBookings(bookingController);
 					break;
 					
 				case CLI_LIST_CUSTOMERS_COMMAND:
@@ -142,10 +142,26 @@ public class Main {
             return;
         }
 		try{
-
+            System.out.println("###### Create discount #######");
+            System.out.print("Name: ");
+            String name = reader.nextLine();
+            System.out.print("Percentage? Y/N: ");
+            String yesno = reader.nextLine();
+            boolean isPercentage = false;
+            if (yesno.equals("Y"))
+                isPercentage = true;
+            if (isPercentage)
+                System.out.print("Percentage (0-100): ");
+            else
+                System.out.print("Value: ");
+            double value = reader.nextDouble();
+            Discount d = new DiscountImpl(name, isPercentage, value);
+            managementController.updateOrAddDiscount(d);
+            System.out.println("###############################");
         }catch(Exception ex) {
             System.out.println("Add discount process exited: " + 410);
         }
+        System.out.println();
 	}
 
 	private static void addExtra(Scanner reader, ManagementController managementController) {
@@ -196,14 +212,19 @@ public class Main {
         }
 	}
 
-	private static void listBookings(Scanner reader, BookingController bookingController) {
+	private static void listBookings(BookingController bookingController) {
         if (user == null || user.getEmployeeType().getAcessLevel() < 4) {
             System.out.println("Unallowed access");
             return;
         }
         try{
-
+            System.out.println("######### List of bookings #######");
+            for (Booking b : bookingController.getAllBookings()) {
+                System.out.println(b);
+            }
+            System.out.println("##################################");
         }catch(Exception ex) {
+            ex.printStackTrace();
             System.out.println("List bookings process exited: " + 411);
         }
 	}
@@ -490,7 +511,7 @@ public class Main {
         {
             boolean isPercentage = i == 1;
             double price = isPercentage ? 0.1 : 100*i;
-            Discount discount = new DiscountImpl(isPercentage, price);
+            Discount discount = new DiscountImpl("Test-" + i, isPercentage, price);
             discounts.add(discount);
         }
 

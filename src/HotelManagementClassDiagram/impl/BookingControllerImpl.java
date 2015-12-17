@@ -157,9 +157,7 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public EList<Booking> getAllBookings() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return FakeDBContextImpl.getInstance().getAllBookings();
 	}
 
 	/**
@@ -168,9 +166,7 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public EList<Customer> getAllCustomers() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return FakeDBContextImpl.getInstance().getAllCustomers();
 	}
 
 	/**
@@ -187,15 +183,15 @@ public class BookingControllerImpl extends MinimalEObjectImpl.Container implemen
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___SEND_CONFIRMATION__BOOKING:
 				return sendConfirmation((Booking)arguments.get(0));
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___GET_BOOKING__INT:
-				return getBooking((Integer)arguments.get(0));
+				return getBooking((Integer) arguments.get(0));
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CHECK_IN__BOOKING:
-				checkIn((Booking)arguments.get(0));
+				checkIn((Booking) arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___CHECK_OUT__BOOKING:
 				checkOut((Booking)arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___SAVE_CUSTOMER__CUSTOMER:
-				saveCustomer((Customer)arguments.get(0));
+				saveCustomer((Customer) arguments.get(0));
 				return null;
 			case HotelManagementClassDiagramPackage.BOOKING_CONTROLLER___FIND_CUSTOMER__STRING:
 				findCustomer((String)arguments.get(0));
