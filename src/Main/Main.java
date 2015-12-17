@@ -38,16 +38,14 @@ public class Main {
 	static final String CLI_ADD_ADDON_COMMAND = "addaddon";
 	static final String CLI_ADD_EXTRA_COMMAND = "addextra";
 	static final String CLI_ADD_DISCOUNT_COMMAND = "adddiscount";
-	
+
+    private static Employee user;
 	
 	public static void main(String[] args) {
         // Generate the fake data for testing
 		generateFakeData();
 		Hotel myHotel = new HotelImpl("C-R-A-P hotel");
-		BookingController bookingController = myHotel.getBookingController();
-		ManagementController managementController = myHotel.getManagementController();
 		Scanner reader = new Scanner(System.in);
-        Employee user = null;
 		
 		String command ="";
 		System.out.println("Welcome to " + myHotel.getName() + ".");
@@ -62,6 +60,10 @@ public class Main {
         System.out.println("Logged in as");
         System.out.println(user.toString());
         System.out.println();
+
+        // Retrieve all controllers
+        BookingController bookingController = myHotel.getBookingController();
+        ManagementController managementController = myHotel.getManagementController();
 
 		do{
 			switch(command){
@@ -134,32 +136,50 @@ public class Main {
     }
 
 	private static void addDiscount(Scanner reader, ManagementController managementController) {
-		// TODO Auto-generated method stub
+        if (user == null || user.getEmployeeType().getAcessLevel() < 9) {
+            System.out.println("Unallowed access");
+            return;
+        }
 		
 	}
 
 	private static void addExtra(Scanner reader, ManagementController managementController) {
-		// TODO Auto-generated method stub
+        if (user == null || user.getEmployeeType().getAcessLevel() < 9) {
+            System.out.println("Unallowed access");
+            return;
+        }
 		
 	}
 
 	private static void addAddon(Scanner reader, ManagementController managementController) {
-		// TODO Auto-generated method stub
+        if (user == null || user.getEmployeeType().getAcessLevel() < 9) {
+            System.out.println("Unallowed access");
+            return;
+        }
 		
 	}
 
 	private static void addRoom(Scanner reader, ManagementController managementController) {
-		// TODO Auto-generated method stub
+        if (user == null || user.getEmployeeType().getAcessLevel() < 9) {
+            System.out.println("Unallowed access");
+            return;
+        }
 		
 	}
 
 	private static void listCustomers(Scanner reader, BookingController bookingController) {
-		// TODO Auto-generated method stub
+        if (user == null || user.getEmployeeType().getAcessLevel() < 4) {
+            System.out.println("Unallowed access");
+            return;
+        }
 		
 	}
 
 	private static void listBookings(Scanner reader, BookingController bookingController) {
-		// TODO Auto-generated method stub
+        if (user == null || user.getEmployeeType().getAcessLevel() < 4) {
+            System.out.println("Unallowed access");
+            return;
+        }
 		
 	}
 
@@ -167,10 +187,20 @@ public class Main {
 		System.out.println();
 		System.out.println("HELP - List of commands.");
 		System.out.println("##########################");
-        System.out.println(CLI_BOOK_A_ROOM_COMMAND + " - book a room");
-        System.out.println(CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND + " - browse available room types");
-        System.out.println(CLI_CHECKIN_COMMAND + " - check in a booking");
-        System.out.println(CLI_CHECKOUT_COMMAND + " - check out a booking");
+        if (user != null && user.getEmployeeType().getAcessLevel() >= 4) {
+            System.out.println(CLI_BOOK_A_ROOM_COMMAND + " - book a room");
+            System.out.println(CLI_SEARCH_AVAILABLE_ROOM_TYPES_COMMAND + " - browse available room types");
+            System.out.println(CLI_CHECKIN_COMMAND + " - check in a booking");
+            System.out.println(CLI_CHECKOUT_COMMAND + " - check out a booking");
+            System.out.println(CLI_LIST_BOOKINGS_COMMAND + " - exit the program");
+            System.out.println(CLI_LIST_CUSTOMERS_COMMAND + " - exit the program");
+        }
+        if (user != null && user.getEmployeeType().getAcessLevel() >= 9) {
+            System.out.println(CLI_ADD_ROOM_COMMAND + " - exit the program");
+            System.out.println(CLI_ADD_ADDON_COMMAND + " - exit the program");
+            System.out.println(CLI_ADD_EXTRA_COMMAND + " - exit the program");
+            System.out.println(CLI_ADD_DISCOUNT_COMMAND + " - exit the program");
+        }
         System.out.println(CLI_HELP_COMMAND + " - show list of commands");
 		System.out.println(CLI_EXIT_COMMAND + " - exit the program");
 		System.out.println();
@@ -178,7 +208,10 @@ public class Main {
 	}
 
 	public static void bookARoom(Scanner reader, BookingController bookingController) {
-
+        if (user == null || user.getEmployeeType().getAcessLevel() < 4) {
+            System.out.println("Unallowed access");
+            return;
+        }
         try{
             System.out.print("Please enter start date (YYYY-MM-DD): ");
             String startDateString = reader.next();
@@ -258,6 +291,10 @@ public class Main {
 	}
 
 	public static void checkIn(Scanner reader, BookingController bookingController){
+        if (user == null || user.getEmployeeType().getAcessLevel() < 4) {
+            System.out.println("Unallowed access");
+            return;
+        }
         try{
             System.out.println();
             System.out.println("CHECK IN");
@@ -297,6 +334,10 @@ public class Main {
 	}
 
 	public static void searchAvailableRoomTypes(Scanner reader, BookingController bookingController) {
+        if (user == null || user.getEmployeeType().getAcessLevel() < 4) {
+            System.out.println("Unallowed access");
+            return;
+        }
         try{
             System.out.print("Please enter start date (YYYY-MM-DD): ");
             String startDateString = reader.next();
@@ -335,6 +376,10 @@ public class Main {
 	}
 
 	public static void checkOut(Scanner reader, BookingController bookingController) {
+        if (user == null || user.getEmployeeType().getAcessLevel() < 4) {
+            System.out.println("Unallowed access");
+            return;
+        }
         try{
             System.out.println();
             System.out.println("CHECK OUT");
