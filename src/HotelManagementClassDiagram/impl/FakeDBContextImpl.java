@@ -119,10 +119,9 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
             if (booking.getStartDate().after(from) && booking.getEndDate().before(to))
             {
                 for (Room room : booking.getBookedRooms()) {
-                    for (RoomType type : room.getTypes()) {
-                        if (!types.contains(type))
-                            types.add(type);
-                    }
+                    RoomType type = room.getType();
+                    if (!types.contains(type))
+                        types.add(type);
                 }
             }
         }
@@ -400,7 +399,7 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateOrAddCustomer(Customer customer) {
         if (!FakeDB.customers.contains(customer))
@@ -410,7 +409,7 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateOrAddBooking(Booking booking) {
         if (!FakeDB.bookings.contains(booking))
@@ -420,23 +419,21 @@ public class FakeDBContextImpl extends MinimalEObjectImpl.Container implements F
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateOrAddDiscount(Discount discount) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+        if (!FakeDB.discounts.contains(discount))
+            FakeDB.discounts.add(discount);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void updateOrAddAddon(Addon addon) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+        if (!FakeDB.addons.contains(addon))
+            FakeDB.addons.add(addon);
 	}
 
 	/**
