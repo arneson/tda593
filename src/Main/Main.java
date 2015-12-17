@@ -455,7 +455,7 @@ public class Main {
         EType[] types = {EType.CLEANER, EType.RECEPTIONIST, EType.MANAGER};
         for (int i = 0; i < 5; i++)
         {
-            EmployeeType type = new EmployeeTypeImpl(types[i%3], ((i+1)%4)^2);
+            EmployeeType type = new EmployeeTypeImpl(types[i%3], (i%3+1)*(i%3+1));
             double salary = 20000.0 * (i+1)/4,
                 workrate = 0.2;
             String name = names[i],
@@ -468,7 +468,6 @@ public class Main {
                 street = "Kungsgatan 11B",
                 title = "Mr.",
                 password = "admin";
-            System.out.println("Type");
             Employee employee = new EmployeeImpl(type, salary, workrate, name, city, country, gender, phoneNumber,
                     postalCode, ssnumber, password, street, title);
             employees.add(employee);
