@@ -3,23 +3,19 @@
 package HotelManagementClassDiagram.impl;
 
 import HotelManagementClassDiagram.Addon;
-import HotelManagementClassDiagram.Booking;
-import HotelManagementClassDiagram.Costable;
 import HotelManagementClassDiagram.Discount;
+import HotelManagementClassDiagram.Employee;
+import HotelManagementClassDiagram.EmployeeType;
+import HotelManagementClassDiagram.Extra;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.ManagementController;
 import HotelManagementClassDiagram.Room;
-import main.FakeDB;
+import HotelManagementClassDiagram.RoomType;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import java.lang.reflect.InvocationTargetException;
-
-import java.util.Date;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,8 +49,8 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void registerDiscount(Discount discount) {
-		FakeDB.discounts.add(discount);
+	public void updateOrAddEmployee(Employee employee) {
+		FakeDBContextImpl.getInstance().updateOrAddEmployee(employee);
 	}
 
 	/**
@@ -62,12 +58,8 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void modifyBooking(Booking booking) {
-		for(int b = 0; b<FakeDB.bookings.size(); b++){
-			if(FakeDB.bookings.get(b).equals(booking)){
-				FakeDB.bookings.set(b,booking);
-			}
-		}
+	public void updateOrAddEmployeeType(EmployeeType employeeType) {
+		FakeDBContextImpl.getInstance().updateOrAddEmployeeType(employeeType);
 	}
 
 	/**
@@ -75,8 +67,8 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void setDateSpecificPrices(Costable costable, Date startDate, Date endDate, double priceChange) {
-		throw new UnsupportedOperationException();		
+	public void updateOrAddRoom(Room room) {
+		FakeDBContextImpl.getInstance().updateOrAddRoom(room);
 	}
 
 	/**
@@ -84,8 +76,8 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void registerRoom(Room room) {
-		FakeDB.rooms.add(room);
+	public void updateOrAddRoomType(RoomType roomType) {
+		FakeDBContextImpl.getInstance().updateOrAddRoomType(roomType);
 	}
 
 	/**
@@ -93,8 +85,8 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void registerAddon(Addon addon) {
-		FakeDB.addons.add(addon);
+	public void updateOrAddDiscount(Discount discount) {
+		FakeDBContextImpl.getInstance().updateOrAddDiscount(discount);
 	}
 
 	/**
@@ -102,12 +94,8 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void updateRoom(Room room) {
-		for (int i = 0; i < FakeDB.rooms.size(); i++) {
-			if (FakeDB.rooms.get(i).equals(room)) {
-				FakeDB.rooms.set(i, room);
-			}
-		}
+	public void updateOrAddAddon(Addon addon) {
+		FakeDBContextImpl.getInstance().updateOrAddAddon(addon);
 	}
 
 	/**
@@ -115,12 +103,63 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void updateAddon(Addon addon) {
-		for(int a = 0; a<FakeDB.addons.size(); a++){
-			if(FakeDB.addons.get(a).equals(addon)){
-				FakeDB.addons.set(a,addon);
-			}
-		}
+	public void updateOrAddExtra(Extra extra) {
+		FakeDBContextImpl.getInstance().updateOrAddExtra(extra);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Employee> getAllEmployees() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Addon> getAllAddons() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Extra> getAllExtras() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Discount> getAllDiscounts() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Employee getEmployee(String SSN) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -131,27 +170,37 @@ public class ManagementControllerImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___REGISTER_DISCOUNT__DISCOUNT:
-				registerDiscount((Discount)arguments.get(0));
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EMPLOYEE__EMPLOYEE:
+				updateOrAddEmployee((Employee)arguments.get(0));
 				return null;
-			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___MODIFY_BOOKING__BOOKING:
-				modifyBooking((Booking)arguments.get(0));
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EMPLOYEE_TYPE__EMPLOYEETYPE:
+				updateOrAddEmployeeType((EmployeeType)arguments.get(0));
 				return null;
-			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___SET_DATE_SPECIFIC_PRICES__COSTABLE_DATE_DATE_DOUBLE:
-				setDateSpecificPrices((Costable)arguments.get(0), (Date)arguments.get(1), (Date)arguments.get(2), (Double)arguments.get(3));
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ROOM__ROOM:
+				updateOrAddRoom((Room)arguments.get(0));
 				return null;
-			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___REGISTER_ROOM__ROOM:
-				registerRoom((Room)arguments.get(0));
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ROOM_TYPE__ROOMTYPE:
+				updateOrAddRoomType((RoomType)arguments.get(0));
 				return null;
-			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___REGISTER_ADDON__ADDON:
-				registerAddon((Addon)arguments.get(0));
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_DISCOUNT__DISCOUNT:
+				updateOrAddDiscount((Discount)arguments.get(0));
 				return null;
-			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___UPDATE_ROOM__ROOM:
-				updateRoom((Room)arguments.get(0));
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ADDON__ADDON:
+				updateOrAddAddon((Addon)arguments.get(0));
 				return null;
-			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___UPDATE_ADDON__ADDON:
-				updateAddon((Addon)arguments.get(0));
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EXTRA__EXTRA:
+				updateOrAddExtra((Extra)arguments.get(0));
 				return null;
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___GET_ALL_EMPLOYEES:
+				return getAllEmployees();
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___GET_ALL_ADDONS:
+				return getAllAddons();
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___GET_ALL_EXTRAS:
+				return getAllExtras();
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___GET_ALL_DISCOUNTS:
+				return getAllDiscounts();
+			case HotelManagementClassDiagramPackage.MANAGEMENT_CONTROLLER___GET_EMPLOYEE__STRING:
+				return getEmployee((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

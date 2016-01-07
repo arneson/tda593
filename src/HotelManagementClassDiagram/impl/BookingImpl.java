@@ -2,30 +2,31 @@
  */
 package HotelManagementClassDiagram.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Date;
+import java.util.Iterator;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import HotelManagementClassDiagram.Addon;
 import HotelManagementClassDiagram.Bill;
-import HotelManagementClassDiagram.BookedRoom;
 import HotelManagementClassDiagram.Booking;
 import HotelManagementClassDiagram.Creditcard;
 import HotelManagementClassDiagram.Customer;
 import HotelManagementClassDiagram.Discount;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
 import HotelManagementClassDiagram.Room;
-import java.lang.reflect.InvocationTargetException;
-import java.util.Collection;
-import java.util.Date;
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import HotelManagementClassDiagram.RoomType;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +41,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getEndDate <em>End Date</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getCreated <em>Created</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getCreditCard <em>Credit Card</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getCustomer <em>Customer</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getAddons <em>Addons</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getBookedRooms <em>Booked Rooms</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getInternalComments <em>Internal Comments</em>}</li>
@@ -49,6 +49,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#isCheckedOut <em>Checked Out</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getPaymentMaster <em>Payment Master</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getDiscounts <em>Discounts</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getRoomTypes <em>Room Types</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.BookingImpl#getFinalBill <em>Final Bill</em>}</li>
  * </ul>
  *
  * @generated
@@ -145,16 +147,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	protected Creditcard creditCard;
 
 	/**
-	 * The cached value of the '{@link #getCustomer() <em>Customer</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustomer()
-	 * @generated
-	 * @ordered
-	 */
-	protected Customer customer;
-
-	/**
 	 * The cached value of the '{@link #getAddons() <em>Addons</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -172,7 +164,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<BookedRoom> bookedRooms;
+	protected EList<Room> bookedRooms;
 
 	/**
 	 * The default value of the '{@link #getInternalComments() <em>Internal Comments</em>}' attribute.
@@ -275,6 +267,26 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	protected EList<Discount> discounts;
 
 	/**
+	 * The cached value of the '{@link #getRoomTypes() <em>Room Types</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoomTypes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<RoomType> roomTypes;
+
+	/**
+	 * The cached value of the '{@link #getFinalBill() <em>Final Bill</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFinalBill()
+	 * @generated
+	 * @ordered
+	 */
+	protected Bill finalBill;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -286,13 +298,30 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * @generated NOT
 	 */
-	public BookingImpl(int id, Customer customer, Date startDate, Date endDate, BookedRoom... rooms){
-		this.bookingId = id;
-		this.customer = customer;
+	public BookingImpl(Customer customer, Date startDate, Date endDate, Room... rooms){
+		this.paymentMaster = customer;
+		this.bookingId = customer.hashCode();
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.bookedRooms = new BasicEList<>();
-		//this.bookedRooms.addAll(rooms);
+		this.roomTypes = new BasicEList<>();
+		Collections.addAll(this.bookedRooms, rooms);
+	}
+	
+	/**
+	 * @generated NOT
+	 */
+	public BookingImpl(Customer customer, Date startDate, Date endDate, BasicEList<RoomType> types){
+		this.paymentMaster = customer;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.bookingId = customer.hashCode();
+		this.bookedRooms = new BasicEList<>();
+		this.roomTypes = new BasicEList<>();
+		for (RoomType type : types) {
+			roomTypes.add(type);
+		}
+		
 	}
 
 	/**
@@ -317,13 +346,10 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setBookingId(int newBookingId) {
-		int oldBookingId = bookingId;
-		bookingId = newBookingId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BOOKING__BOOKING_ID, oldBookingId, bookingId));
+		throw new UnsupportedOperationException("Not a supported operation");
 	}
 
 	/**
@@ -432,44 +458,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Customer getCustomer() {
-		if (customer != null && customer.eIsProxy()) {
-			InternalEObject oldCustomer = (InternalEObject)customer;
-			customer = (Customer)eResolveProxy(oldCustomer);
-			if (customer != oldCustomer) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelManagementClassDiagramPackage.BOOKING__CUSTOMER, oldCustomer, customer));
-			}
-		}
-		return customer;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Customer basicGetCustomer() {
-		return customer;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCustomer(Customer newCustomer) {
-		Customer oldCustomer = customer;
-		customer = newCustomer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.BOOKING__CUSTOMER, oldCustomer, customer));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Addon> getAddons() {
 		if (addons == null) {
 			addons = new EObjectResolvingEList<Addon>(Addon.class, this, HotelManagementClassDiagramPackage.BOOKING__ADDONS);
@@ -482,9 +470,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<BookedRoom> getBookedRooms() {
+	public EList<Room> getBookedRooms() {
 		if (bookedRooms == null) {
-			bookedRooms = new EObjectResolvingEList<BookedRoom>(BookedRoom.class, this, HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS);
+			bookedRooms = new EObjectResolvingEList<Room>(Room.class, this, HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS);
 		}
 		return bookedRooms;
 	}
@@ -628,109 +616,164 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void checkIn() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public EList<RoomType> getRoomTypes() {
+		if (roomTypes == null) {
+			roomTypes = new EDataTypeUniqueEList<RoomType>(RoomType.class, this, HotelManagementClassDiagramPackage.BOOKING__ROOM_TYPES);
+		}
+		return roomTypes;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 */
+	public Bill getFinalBill() {
+		if (finalBill != null && finalBill.eIsProxy()) {
+			InternalEObject oldFinalBill = (InternalEObject)finalBill;
+			finalBill = (Bill)eResolveProxy(oldFinalBill);
+			if (finalBill != oldFinalBill) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelManagementClassDiagramPackage.BOOKING__FINAL_BILL, oldFinalBill, finalBill));
+			}
+		}
+		return finalBill;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Bill basicGetFinalBill() {
+		return finalBill;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setFinalBill(Bill newFinalBill) {
+		throw new UnsupportedOperationException("Not supported");
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void checkIn() {
+		this.checkedIn = true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	public Bill checkOut() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.finalBill = this.generateBill();
+		this.pay(finalBill);
+		return finalBill;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addAddon(Addon addon) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.addons.add(addon);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addRoom(Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.bookedRooms.add(room);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void removeAddon(Addon addon) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Iterator<Addon> it = this.addons.iterator();
+		while (it.hasNext()) {
+			if(it.next().equals(addon)) {
+				it.remove();
+				break;
+			}
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void removeRoom(Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Iterator<Room> it = this.bookedRooms.iterator();
+		while (it.hasNext()) {
+			if(it.next().equals(room)) {
+				it.remove();
+				break;
+			}
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Bill generateBill() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Bill b = new BillImpl();
+		for (Room r : this.bookedRooms) {
+			b.addCostable(r);
+		}
+		for (Addon a : this.addons) {
+			b.addCostable(a);
+		}
+		return b;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean pay(Bill bill) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		bill.setPaid(true);
+		return true;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addDiscount(Discount discount) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.discounts.add(discount);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void removeDiscount(Discount discount) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Iterator<Discount> it = this.discounts.iterator();
+		while(it.hasNext()) {
+			if(discount.equals(it.next())) {
+				it.remove();
+				break;
+			}
+		}
 	}
 
 	/**
@@ -752,9 +795,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case HotelManagementClassDiagramPackage.BOOKING__CREDIT_CARD:
 				if (resolve) return getCreditCard();
 				return basicGetCreditCard();
-			case HotelManagementClassDiagramPackage.BOOKING__CUSTOMER:
-				if (resolve) return getCustomer();
-				return basicGetCustomer();
 			case HotelManagementClassDiagramPackage.BOOKING__ADDONS:
 				return getAddons();
 			case HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS:
@@ -772,6 +812,11 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return basicGetPaymentMaster();
 			case HotelManagementClassDiagramPackage.BOOKING__DISCOUNTS:
 				return getDiscounts();
+			case HotelManagementClassDiagramPackage.BOOKING__ROOM_TYPES:
+				return getRoomTypes();
+			case HotelManagementClassDiagramPackage.BOOKING__FINAL_BILL:
+				if (resolve) return getFinalBill();
+				return basicGetFinalBill();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -800,16 +845,13 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case HotelManagementClassDiagramPackage.BOOKING__CREDIT_CARD:
 				setCreditCard((Creditcard)newValue);
 				return;
-			case HotelManagementClassDiagramPackage.BOOKING__CUSTOMER:
-				setCustomer((Customer)newValue);
-				return;
 			case HotelManagementClassDiagramPackage.BOOKING__ADDONS:
 				getAddons().clear();
 				getAddons().addAll((Collection<? extends Addon>)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS:
 				getBookedRooms().clear();
-				getBookedRooms().addAll((Collection<? extends BookedRoom>)newValue);
+				getBookedRooms().addAll((Collection<? extends Room>)newValue);
 				return;
 			case HotelManagementClassDiagramPackage.BOOKING__INTERNAL_COMMENTS:
 				setInternalComments((String)newValue);
@@ -829,6 +871,13 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case HotelManagementClassDiagramPackage.BOOKING__DISCOUNTS:
 				getDiscounts().clear();
 				getDiscounts().addAll((Collection<? extends Discount>)newValue);
+				return;
+			case HotelManagementClassDiagramPackage.BOOKING__ROOM_TYPES:
+				getRoomTypes().clear();
+				getRoomTypes().addAll((Collection<? extends RoomType>)newValue);
+				return;
+			case HotelManagementClassDiagramPackage.BOOKING__FINAL_BILL:
+				setFinalBill((Bill)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -857,9 +906,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case HotelManagementClassDiagramPackage.BOOKING__CREDIT_CARD:
 				setCreditCard((Creditcard)null);
 				return;
-			case HotelManagementClassDiagramPackage.BOOKING__CUSTOMER:
-				setCustomer((Customer)null);
-				return;
 			case HotelManagementClassDiagramPackage.BOOKING__ADDONS:
 				getAddons().clear();
 				return;
@@ -884,6 +930,12 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case HotelManagementClassDiagramPackage.BOOKING__DISCOUNTS:
 				getDiscounts().clear();
 				return;
+			case HotelManagementClassDiagramPackage.BOOKING__ROOM_TYPES:
+				getRoomTypes().clear();
+				return;
+			case HotelManagementClassDiagramPackage.BOOKING__FINAL_BILL:
+				setFinalBill((Bill)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -906,8 +958,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return CREATED_EDEFAULT == null ? created != null : !CREATED_EDEFAULT.equals(created);
 			case HotelManagementClassDiagramPackage.BOOKING__CREDIT_CARD:
 				return creditCard != null;
-			case HotelManagementClassDiagramPackage.BOOKING__CUSTOMER:
-				return customer != null;
 			case HotelManagementClassDiagramPackage.BOOKING__ADDONS:
 				return addons != null && !addons.isEmpty();
 			case HotelManagementClassDiagramPackage.BOOKING__BOOKED_ROOMS:
@@ -924,6 +974,10 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return paymentMaster != null;
 			case HotelManagementClassDiagramPackage.BOOKING__DISCOUNTS:
 				return discounts != null && !discounts.isEmpty();
+			case HotelManagementClassDiagramPackage.BOOKING__ROOM_TYPES:
+				return roomTypes != null && !roomTypes.isEmpty();
+			case HotelManagementClassDiagramPackage.BOOKING__FINAL_BILL:
+				return finalBill != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -970,31 +1024,13 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (bookingId: ");
-		result.append(bookingId);
-		result.append(", startDate: ");
-		result.append(startDate);
-		result.append(", endDate: ");
-		result.append(endDate);
-		result.append(", created: ");
-		result.append(created);
-		result.append(", internalComments: ");
-		result.append(internalComments);
-		result.append(", externalComments: ");
-		result.append(externalComments);
-		result.append(", checkedIn: ");
-		result.append(checkedIn);
-		result.append(", checkedOut: ");
-		result.append(checkedOut);
-		result.append(')');
-		return result.toString();
+		return "ID: " + bookingId + ", NumberOfRooms: " + bookedRooms.size() + ", paymentMaster: " + paymentMaster.getName();
 	}
 	/**
 	 * <!-- begin-user-doc -->

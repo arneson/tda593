@@ -4,16 +4,12 @@ package HotelManagementClassDiagram.impl;
 
 import HotelManagementClassDiagram.Customer;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import java.lang.reflect.InvocationTargetException;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +22,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link HotelManagementClassDiagram.impl.CustomerImpl#getCustomerID <em>Customer ID</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.CustomerImpl#getBonusPoints <em>Bonus Points</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.CustomerImpl#getMiscInfo <em>Misc Info</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.impl.CustomerImpl#getRank <em>Rank</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,26 +88,6 @@ public class CustomerImpl extends PersonImpl implements Customer {
 	protected String miscInfo = MISC_INFO_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRank() <em>Rank</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRank()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double RANK_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getRank() <em>Rank</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRank()
-	 * @generated
-	 * @ordered
-	 */
-	protected double rank = RANK_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -124,10 +99,10 @@ public class CustomerImpl extends PersonImpl implements Customer {
 	/**
 	 * @generated NOT
 	 */
-	public CustomerImpl(int id, String name, String city,String country, String gender, String phoneNumber, String postalCode,
+	public CustomerImpl(String name, String city,String country, String gender, String phoneNumber, String postalCode,
 						String ssnumber, String street, String title){
 		super(name, title, gender, ssnumber, phoneNumber, country, city, postalCode, street);
-		this.customerID = id;
+		this.customerID = name.hashCode();
 	}
 
 	/**
@@ -152,13 +127,10 @@ public class CustomerImpl extends PersonImpl implements Customer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setCustomerID(int newCustomerID) {
-		int oldCustomerID = customerID;
-		customerID = newCustomerID;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.CUSTOMER__CUSTOMER_ID, oldCustomerID, customerID));
+		throw new UnsupportedOperationException("Operation not supported");
 	}
 
 	/**
@@ -206,27 +178,6 @@ public class CustomerImpl extends PersonImpl implements Customer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public double getRank() {
-		return rank;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRank(double newRank) {
-		double oldRank = rank;
-		rank = newRank;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.CUSTOMER__RANK, oldRank, rank));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public void addBonusPoints(int bonusPoints) {
@@ -247,8 +198,6 @@ public class CustomerImpl extends PersonImpl implements Customer {
 				return getBonusPoints();
 			case HotelManagementClassDiagramPackage.CUSTOMER__MISC_INFO:
 				return getMiscInfo();
-			case HotelManagementClassDiagramPackage.CUSTOMER__RANK:
-				return getRank();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -269,9 +218,6 @@ public class CustomerImpl extends PersonImpl implements Customer {
 				return;
 			case HotelManagementClassDiagramPackage.CUSTOMER__MISC_INFO:
 				setMiscInfo((String)newValue);
-				return;
-			case HotelManagementClassDiagramPackage.CUSTOMER__RANK:
-				setRank((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -294,9 +240,6 @@ public class CustomerImpl extends PersonImpl implements Customer {
 			case HotelManagementClassDiagramPackage.CUSTOMER__MISC_INFO:
 				setMiscInfo(MISC_INFO_EDEFAULT);
 				return;
-			case HotelManagementClassDiagramPackage.CUSTOMER__RANK:
-				setRank(RANK_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -315,8 +258,6 @@ public class CustomerImpl extends PersonImpl implements Customer {
 				return bonusPoints != BONUS_POINTS_EDEFAULT;
 			case HotelManagementClassDiagramPackage.CUSTOMER__MISC_INFO:
 				return MISC_INFO_EDEFAULT == null ? miscInfo != null : !MISC_INFO_EDEFAULT.equals(miscInfo);
-			case HotelManagementClassDiagramPackage.CUSTOMER__RANK:
-				return rank != RANK_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -352,8 +293,6 @@ public class CustomerImpl extends PersonImpl implements Customer {
 		result.append(bonusPoints);
 		result.append(", miscInfo: ");
 		result.append(miscInfo);
-		result.append(", rank: ");
-		result.append(rank);
 		result.append(')');
 		return result.toString();
 	}

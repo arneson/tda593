@@ -15,7 +15,6 @@ package HotelManagementClassDiagram;
  *   <li>{@link HotelManagementClassDiagram.Customer#getCustomerID <em>Customer ID</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Customer#getBonusPoints <em>Bonus Points</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Customer#getMiscInfo <em>Misc Info</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Customer#getRank <em>Rank</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getCustomer()
@@ -100,32 +99,6 @@ public interface Customer extends Person {
 	 * @generated
 	 */
 	void setMiscInfo(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Rank</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Rank</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rank</em>' attribute.
-	 * @see #setRank(double)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getCustomer_Rank()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	double getRank();
-
-	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Customer#getRank <em>Rank</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rank</em>' attribute.
-	 * @see #getRank()
-	 * @generated
-	 */
-	void setRank(double value);
 
 	/**
 	 * <!-- begin-user-doc -->

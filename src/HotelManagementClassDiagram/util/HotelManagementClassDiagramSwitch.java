@@ -97,17 +97,11 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HotelManagementClassDiagramPackage.CUSTOMER: {
-				Customer customer = (Customer)theEObject;
-				T result = caseCustomer(customer);
-				if (result == null) result = casePerson(customer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case HotelManagementClassDiagramPackage.ADDON: {
 				Addon addon = (Addon)theEObject;
 				T result = caseAddon(addon);
 				if (result == null) result = caseExtra(addon);
+				if (result == null) result = caseCostable(addon);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -117,15 +111,9 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HotelManagementClassDiagramPackage.BOOKED_ROOM: {
-				BookedRoom bookedRoom = (BookedRoom)theEObject;
-				T result = caseBookedRoom(bookedRoom);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HotelManagementClassDiagramPackage.ROOM: {
-				Room room = (Room)theEObject;
-				T result = caseRoom(room);
+			case HotelManagementClassDiagramPackage.COSTABLE: {
+				Costable costable = (Costable)theEObject;
+				T result = caseCostable(costable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -135,15 +123,23 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HotelManagementClassDiagramPackage.BILL: {
-				Bill bill = (Bill)theEObject;
-				T result = caseBill(bill);
+			case HotelManagementClassDiagramPackage.ROOM: {
+				Room room = (Room)theEObject;
+				T result = caseRoom(room);
+				if (result == null) result = caseCostable(room);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HotelManagementClassDiagramPackage.COSTABLE: {
-				Costable costable = (Costable)theEObject;
-				T result = caseCostable(costable);
+			case HotelManagementClassDiagramPackage.CUSTOMER: {
+				Customer customer = (Customer)theEObject;
+				T result = caseCustomer(customer);
+				if (result == null) result = casePerson(customer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HotelManagementClassDiagramPackage.BILL: {
+				Bill bill = (Bill)theEObject;
+				T result = caseBill(bill);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -171,33 +167,16 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HotelManagementClassDiagramPackage.INTERACTION1: {
-				Interaction1 interaction1 = (Interaction1)theEObject;
-				T result = caseInteraction1(interaction1);
+			case HotelManagementClassDiagramPackage.DB_INTERFACE: {
+				DBInterface dbInterface = (DBInterface)theEObject;
+				T result = caseDBInterface(dbInterface);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HotelManagementClassDiagramPackage.INTERACTION2: {
-				Interaction2 interaction2 = (Interaction2)theEObject;
-				T result = caseInteraction2(interaction2);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HotelManagementClassDiagramPackage.INTERACTION3: {
-				Interaction3 interaction3 = (Interaction3)theEObject;
-				T result = caseInteraction3(interaction3);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HotelManagementClassDiagramPackage.INTERACTION4: {
-				Interaction4 interaction4 = (Interaction4)theEObject;
-				T result = caseInteraction4(interaction4);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HotelManagementClassDiagramPackage.INTERACTION5: {
-				Interaction5 interaction5 = (Interaction5)theEObject;
-				T result = caseInteraction5(interaction5);
+			case HotelManagementClassDiagramPackage.FAKE_DB_CONTEXT: {
+				FakeDBContext fakeDBContext = (FakeDBContext)theEObject;
+				T result = caseFakeDBContext(fakeDBContext);
+				if (result == null) result = caseDBInterface(fakeDBContext);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -446,92 +425,32 @@ public class HotelManagementClassDiagramSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Booked Room</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>DB Interface</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Booked Room</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>DB Interface</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBookedRoom(BookedRoom object) {
+	public T caseDBInterface(DBInterface object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Interaction1</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fake DB Context</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Interaction1</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fake DB Context</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseInteraction1(Interaction1 object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Interaction2</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Interaction2</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseInteraction2(Interaction2 object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Interaction3</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Interaction3</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseInteraction3(Interaction3 object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Interaction4</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Interaction4</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseInteraction4(Interaction4 object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Interaction5</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Interaction5</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseInteraction5(Interaction5 object) {
+	public T caseFakeDBContext(FakeDBContext object) {
 		return null;
 	}
 

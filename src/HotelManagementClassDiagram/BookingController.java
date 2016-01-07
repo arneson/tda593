@@ -3,8 +3,6 @@
 package HotelManagementClassDiagram;
 
 import java.util.Date;
-
-import HotelManagementClassDiagram.exceptions.NoSuchBookingException;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -31,26 +29,10 @@ public interface BookingController extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" roomTypesRequired="true" roomTypesMany="true" roomTypesOrdered="false"
-	 * @generated
-	 */
-	boolean createBooking(EList<RoomType> roomTypes);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false"
 	 * @generated
 	 */
 	boolean sendConfirmation(Booking booking);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false"
-	 * @generated
-	 */
-	boolean updateBooking(Booking booking);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,26 +45,10 @@ public interface BookingController extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false"
-	 * @generated
-	 */
-	boolean confirm(Booking booking);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model bookingRequired="true" bookingOrdered="false"
 	 * @generated
 	 */
 	void checkIn(Booking booking);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model roomRequired="true" roomOrdered="false"
-	 * @generated
-	 */
-	void createKeyCard(Room room);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,5 +81,45 @@ public interface BookingController extends EObject {
 	 * @generated
 	 */
 	void assignRoom(Room room);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" SSNDataType="org.eclipse.uml2.types.String" SSNRequired="true" SSNOrdered="false"
+	 * @generated
+	 */
+	Customer getCustomer(String SSN);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model customerRequired="true" customerOrdered="false"
+	 * @generated
+	 */
+	void updateOrAddCustomer(Customer customer);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model bookingRequired="true" bookingOrdered="false"
+	 * @generated
+	 */
+	void updateOrAddBooking(Booking booking);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	EList<Booking> getAllBookings();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	EList<Customer> getAllCustomers();
 
 } // BookingController

@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link HotelManagementClassDiagram.Bill#getCostables <em>Costables</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Bill#getTotalPrice <em>Total Price</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Bill#getCustomer <em>Customer</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Bill#getValueAddedTax <em>Value Added Tax</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Bill#isFinal <em>Final</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Bill#isPaid <em>Paid</em>}</li>
  * </ul>
@@ -95,32 +94,6 @@ public interface Bill extends EObject {
 	 * @generated
 	 */
 	void setCustomer(Customer value);
-
-	/**
-	 * Returns the value of the '<em><b>Value Added Tax</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Value Added Tax</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value Added Tax</em>' attribute.
-	 * @see #setValueAddedTax(double)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getBill_ValueAddedTax()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	double getValueAddedTax();
-
-	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Bill#getValueAddedTax <em>Value Added Tax</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value Added Tax</em>' attribute.
-	 * @see #getValueAddedTax()
-	 * @generated
-	 */
-	void setValueAddedTax(double value);
 
 	/**
 	 * Returns the value of the '<em><b>Final</b></em>' attribute.

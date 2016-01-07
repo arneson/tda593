@@ -88,10 +88,6 @@ public class HotelManagementClassDiagramAdapterFactory extends AdapterFactoryImp
 				return createCreditcardAdapter();
 			}
 			@Override
-			public Adapter caseCustomer(Customer object) {
-				return createCustomerAdapter();
-			}
-			@Override
 			public Adapter caseAddon(Addon object) {
 				return createAddonAdapter();
 			}
@@ -100,24 +96,24 @@ public class HotelManagementClassDiagramAdapterFactory extends AdapterFactoryImp
 				return createExtraAdapter();
 			}
 			@Override
-			public Adapter caseBookedRoom(BookedRoom object) {
-				return createBookedRoomAdapter();
-			}
-			@Override
-			public Adapter caseRoom(Room object) {
-				return createRoomAdapter();
+			public Adapter caseCostable(Costable object) {
+				return createCostableAdapter();
 			}
 			@Override
 			public Adapter caseDiscount(Discount object) {
 				return createDiscountAdapter();
 			}
 			@Override
-			public Adapter caseBill(Bill object) {
-				return createBillAdapter();
+			public Adapter caseRoom(Room object) {
+				return createRoomAdapter();
 			}
 			@Override
-			public Adapter caseCostable(Costable object) {
-				return createCostableAdapter();
+			public Adapter caseCustomer(Customer object) {
+				return createCustomerAdapter();
+			}
+			@Override
+			public Adapter caseBill(Bill object) {
+				return createBillAdapter();
 			}
 			@Override
 			public Adapter caseBookingController(BookingController object) {
@@ -136,24 +132,12 @@ public class HotelManagementClassDiagramAdapterFactory extends AdapterFactoryImp
 				return createHotelAdapter();
 			}
 			@Override
-			public Adapter caseInteraction1(Interaction1 object) {
-				return createInteraction1Adapter();
+			public Adapter caseDBInterface(DBInterface object) {
+				return createDBInterfaceAdapter();
 			}
 			@Override
-			public Adapter caseInteraction2(Interaction2 object) {
-				return createInteraction2Adapter();
-			}
-			@Override
-			public Adapter caseInteraction3(Interaction3 object) {
-				return createInteraction3Adapter();
-			}
-			@Override
-			public Adapter caseInteraction4(Interaction4 object) {
-				return createInteraction4Adapter();
-			}
-			@Override
-			public Adapter caseInteraction5(Interaction5 object) {
-				return createInteraction5Adapter();
+			public Adapter caseFakeDBContext(FakeDBContext object) {
+				return createFakeDBContextAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -400,20 +384,6 @@ public class HotelManagementClassDiagramAdapterFactory extends AdapterFactoryImp
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link HotelManagementClassDiagram.BookedRoom <em>Booked Room</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see HotelManagementClassDiagram.BookedRoom
-	 * @generated
-	 */
-	public Adapter createBookedRoomAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link HotelManagementClassDiagram.Interaction1 <em>Interaction1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -480,6 +450,34 @@ public class HotelManagementClassDiagramAdapterFactory extends AdapterFactoryImp
 	 * @generated
 	 */
 	public Adapter createInteraction5Adapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link HotelManagementClassDiagram.DBInterface <em>DB Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see HotelManagementClassDiagram.DBInterface
+	 * @generated
+	 */
+	public Adapter createDBInterfaceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link HotelManagementClassDiagram.FakeDBContext <em>Fake DB Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see HotelManagementClassDiagram.FakeDBContext
+	 * @generated
+	 */
+	public Adapter createFakeDBContextAdapter() {
 		return null;
 	}
 

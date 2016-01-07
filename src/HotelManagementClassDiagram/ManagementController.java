@@ -2,8 +2,7 @@
  */
 package HotelManagementClassDiagram;
 
-import java.util.Date;
-
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -20,34 +19,42 @@ public interface ManagementController extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model employeeRequired="true" employeeOrdered="false"
+	 * @generated
+	 */
+	void updateOrAddEmployee(Employee employee);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model employeeTypeRequired="true" employeeTypeOrdered="false"
+	 * @generated
+	 */
+	void updateOrAddEmployeeType(EmployeeType employeeType);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model roomRequired="true" roomOrdered="false"
+	 * @generated
+	 */
+	void updateOrAddRoom(Room room);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model roomTypeRequired="true" roomTypeOrdered="false"
+	 * @generated
+	 */
+	void updateOrAddRoomType(RoomType roomType);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model discountRequired="true" discountOrdered="false"
 	 * @generated
 	 */
-	void registerDiscount(Discount discount);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model bookingRequired="true" bookingOrdered="false"
-	 * @generated
-	 */
-	void modifyBooking(Booking booking);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model costableRequired="true" costableOrdered="false" startDateRequired="true" startDateOrdered="false" endDateRequired="true" endDateOrdered="false" priceChangeRequired="true" priceChangeOrdered="false"
-	 * @generated
-	 */
-	void setDateSpecificPrices(Costable costable, Date startDate, Date endDate, double priceChange);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model roomRequired="true" roomOrdered="false"
-	 * @generated
-	 */
-	void registerRoom(Room room);
+	void updateOrAddDiscount(Discount discount);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -55,22 +62,54 @@ public interface ManagementController extends EObject {
 	 * @model addonRequired="true" addonOrdered="false"
 	 * @generated
 	 */
-	void registerAddon(Addon addon);
+	void updateOrAddAddon(Addon addon);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model roomRequired="true" roomOrdered="false"
+	 * @model extraRequired="true" extraOrdered="false"
 	 * @generated
 	 */
-	void updateRoom(Room room);
+	void updateOrAddExtra(Extra extra);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model addonRequired="true" addonOrdered="false"
+	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
-	void updateAddon(Addon addon);
+	EList<Employee> getAllEmployees();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	EList<Addon> getAllAddons();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	EList<Extra> getAllExtras();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	EList<Discount> getAllDiscounts();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" SSNDataType="org.eclipse.uml2.types.String" SSNRequired="true" SSNOrdered="false"
+	 * @generated
+	 */
+	Employee getEmployee(String SSN);
 
 } // ManagementController

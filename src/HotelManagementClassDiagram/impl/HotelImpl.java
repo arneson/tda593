@@ -2,20 +2,17 @@
  */
 package HotelManagementClassDiagram.impl;
 
-import HotelManagementClassDiagram.BookedRoom;
 import HotelManagementClassDiagram.BookingController;
+import HotelManagementClassDiagram.Employee;
 import HotelManagementClassDiagram.Hotel;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
-
+import HotelManagementClassDiagram.MaintenanceController;
+import HotelManagementClassDiagram.ManagementController;
 import java.lang.reflect.InvocationTargetException;
-
-import HotelManagementClassDiagram.Room;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -30,6 +27,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link HotelManagementClassDiagram.impl.HotelImpl#getName <em>Name</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.HotelImpl#getAddress <em>Address</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.HotelImpl#getRank <em>Rank</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.HotelImpl#getBookingController <em>Booking Controller</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.HotelImpl#getMaintenanceController <em>Maintenance Controller</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.HotelImpl#getManagementController <em>Management Controller</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.HotelImpl#getUser <em>User</em>}</li>
  * </ul>
  *
  * @generated
@@ -96,6 +97,46 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	protected double rank = RANK_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getBookingController() <em>Booking Controller</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBookingController()
+	 * @generated
+	 * @ordered
+	 */
+	protected BookingController bookingController;
+
+	/**
+	 * The cached value of the '{@link #getMaintenanceController() <em>Maintenance Controller</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaintenanceController()
+	 * @generated
+	 * @ordered
+	 */
+	protected MaintenanceController maintenanceController;
+
+	/**
+	 * The cached value of the '{@link #getManagementController() <em>Management Controller</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getManagementController()
+	 * @generated
+	 * @ordered
+	 */
+	protected ManagementController managementController;
+
+	/**
+	 * The cached value of the '{@link #getUser() <em>User</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUser()
+	 * @generated
+	 * @ordered
+	 */
+	protected Employee user;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -103,14 +144,14 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	protected HotelImpl() {
 		super();
 	}
+
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public HotelImpl(String name){
 		this.name = name;
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -187,21 +228,68 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void authenticate(String login, String password) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public BookingController getBookingController() {
-		return new BookingControllerImpl();
+		if (user == null || user.getEmployeeType().getAcessLevel() >= 4)
+			return new BookingControllerImpl();
+		return null;
+	}
+
+	public BookingController basicGetBookingController() {
+		return bookingController;
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBookingController(BookingController newBookingController) {
+		BookingController oldBookingController = bookingController;
+		bookingController = newBookingController;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.HOTEL__BOOKING_CONTROLLER, oldBookingController, bookingController));
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ManagementController getManagementController() {
+		if (user == null || user.getEmployeeType().getAcessLevel() >= 9)
+			return new ManagementControllerImpl();
+		return null;
+	}
+
+	public ManagementController basicGetManagementController() {
+		return managementController;
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setManagementController(ManagementController newManagementController) {
+		ManagementController oldManagementController = managementController;
+		managementController = newManagementController;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.HOTEL__MANAGEMENT_CONTROLLER, oldManagementController, managementController));
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Employee getUser() {
+		if (user != null && user.eIsProxy()) {
+			InternalEObject oldUser = (InternalEObject)user;
+			user = (Employee)eResolveProxy(oldUser);
+			if (user != oldUser) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelManagementClassDiagramPackage.HOTEL__USER, oldUser, user));
+			}
+		}
+		return user;
 	}
 
 	/**
@@ -209,10 +297,8 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void getManagementController() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public Employee basicGetUser() {
+		return user;
 	}
 
 	/**
@@ -220,12 +306,60 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void getMaintenanceController() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void setUser(Employee newUser) {
+		Employee oldUser = user;
+		user = newUser;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.HOTEL__USER, oldUser, user));
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Employee logIn(String SSN, String password) {
+        if (SSN.equals("admin")) {
+            for (Employee e : FakeDBContextImpl.getInstance().getAllEmployees())
+                if (e.getEmployeeType().getAcessLevel() >= 9)
+                    return e;
+        }
+		Employee e = FakeDBContextImpl.getInstance().getEmployee(SSN);
+        if (e.getPassword().equals(password))
+            return e;
+        return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MaintenanceController getMaintenanceController() {
+		if (user == null || user.getEmployeeType().getAcessLevel() >= 1)
+			return new MaintenanceControllerImpl();
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MaintenanceController basicGetMaintenanceController() {
+		return maintenanceController;
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaintenanceController(MaintenanceController newMaintenanceController) {
+		MaintenanceController oldMaintenanceController = maintenanceController;
+		maintenanceController = newMaintenanceController;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.HOTEL__MAINTENANCE_CONTROLLER, oldMaintenanceController, maintenanceController));
+	}
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -240,6 +374,18 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 				return getAddress();
 			case HotelManagementClassDiagramPackage.HOTEL__RANK:
 				return getRank();
+			case HotelManagementClassDiagramPackage.HOTEL__BOOKING_CONTROLLER:
+				if (resolve) return getBookingController();
+				return basicGetBookingController();
+			case HotelManagementClassDiagramPackage.HOTEL__MAINTENANCE_CONTROLLER:
+				if (resolve) return getMaintenanceController();
+				return basicGetMaintenanceController();
+			case HotelManagementClassDiagramPackage.HOTEL__MANAGEMENT_CONTROLLER:
+				if (resolve) return getManagementController();
+				return basicGetManagementController();
+			case HotelManagementClassDiagramPackage.HOTEL__USER:
+				if (resolve) return getUser();
+				return basicGetUser();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,6 +406,18 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 				return;
 			case HotelManagementClassDiagramPackage.HOTEL__RANK:
 				setRank((Double)newValue);
+				return;
+			case HotelManagementClassDiagramPackage.HOTEL__BOOKING_CONTROLLER:
+				setBookingController((BookingController)newValue);
+				return;
+			case HotelManagementClassDiagramPackage.HOTEL__MAINTENANCE_CONTROLLER:
+				setMaintenanceController((MaintenanceController)newValue);
+				return;
+			case HotelManagementClassDiagramPackage.HOTEL__MANAGEMENT_CONTROLLER:
+				setManagementController((ManagementController)newValue);
+				return;
+			case HotelManagementClassDiagramPackage.HOTEL__USER:
+				setUser((Employee)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -282,6 +440,18 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 			case HotelManagementClassDiagramPackage.HOTEL__RANK:
 				setRank(RANK_EDEFAULT);
 				return;
+			case HotelManagementClassDiagramPackage.HOTEL__BOOKING_CONTROLLER:
+				setBookingController((BookingController) null);
+				return;
+			case HotelManagementClassDiagramPackage.HOTEL__MAINTENANCE_CONTROLLER:
+				setMaintenanceController((MaintenanceController) null);
+				return;
+			case HotelManagementClassDiagramPackage.HOTEL__MANAGEMENT_CONTROLLER:
+				setManagementController((ManagementController) null);
+				return;
+			case HotelManagementClassDiagramPackage.HOTEL__USER:
+				setUser((Employee) null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -300,6 +470,14 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 				return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
 			case HotelManagementClassDiagramPackage.HOTEL__RANK:
 				return rank != RANK_EDEFAULT;
+			case HotelManagementClassDiagramPackage.HOTEL__BOOKING_CONTROLLER:
+				return bookingController != null;
+			case HotelManagementClassDiagramPackage.HOTEL__MAINTENANCE_CONTROLLER:
+				return maintenanceController != null;
+			case HotelManagementClassDiagramPackage.HOTEL__MANAGEMENT_CONTROLLER:
+				return managementController != null;
+			case HotelManagementClassDiagramPackage.HOTEL__USER:
+				return user != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -312,18 +490,8 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HotelManagementClassDiagramPackage.HOTEL___AUTHENTICATE__STRING_STRING:
-				authenticate((String)arguments.get(0), (String)arguments.get(1));
-				return null;
-			case HotelManagementClassDiagramPackage.HOTEL___GET_BOOKING_CONTROLLER:
-				getBookingController();
-				return null;
-			case HotelManagementClassDiagramPackage.HOTEL___GET_MANAGEMENT_CONTROLLER:
-				getManagementController();
-				return null;
-			case HotelManagementClassDiagramPackage.HOTEL___GET_MAINTENANCE_CONTROLLER:
-				getMaintenanceController();
-				return null;
+			case HotelManagementClassDiagramPackage.HOTEL___LOG_IN__STRING_STRING:
+				return logIn((String)arguments.get(0), (String)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -346,22 +514,6 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 		result.append(rank);
 		result.append(')');
 		return result.toString();
-	}
-
-	/* Following methods are for factory purposes */
-
-	/**
-	 * @generated NOT
-	 */
-	public Room createRoom(Room room){
-		return new RoomImpl(); //new BookedRoomImpl(room);
-	}
-
-	/**
-	 * @generated NOT
-	 */
-	public BookedRoom createBookedRoom(Room room){
-		return new BookedRoomImpl(); //new BookedRoomImpl(room);
 	}
 
 } //HotelImpl

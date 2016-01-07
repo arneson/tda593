@@ -4,11 +4,8 @@ package HotelManagementClassDiagram.impl;
 
 import HotelManagementClassDiagram.Creditcard;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -24,7 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link HotelManagementClassDiagram.impl.CreditcardImpl#getCvc <em>Cvc</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.CreditcardImpl#getOwner <em>Owner</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.impl.CreditcardImpl#getExpirationMonth <em>Expiration Month</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.impl.CreditcardImpl#getExpirationDay <em>Expiration Day</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.impl.CreditcardImpl#getExpirationYear <em>Expiration Year</em>}</li>
  * </ul>
  *
  * @generated
@@ -111,24 +108,24 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 	protected int expirationMonth = EXPIRATION_MONTH_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getExpirationDay() <em>Expiration Day</em>}' attribute.
+	 * The default value of the '{@link #getExpirationYear() <em>Expiration Year</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getExpirationDay()
+	 * @see #getExpirationYear()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int EXPIRATION_DAY_EDEFAULT = 0;
+	protected static final int EXPIRATION_YEAR_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getExpirationDay() <em>Expiration Day</em>}' attribute.
+	 * The cached value of the '{@link #getExpirationYear() <em>Expiration Year</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getExpirationDay()
+	 * @see #getExpirationYear()
 	 * @generated
 	 * @ordered
 	 */
-	protected int expirationDay = EXPIRATION_DAY_EDEFAULT;
+	protected int expirationYear = EXPIRATION_YEAR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,7 +145,8 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 		this.number = number;
 		this.cvc = cvc;
 		this.expirationMonth = expirationMonth;
-		this.expirationDay = expirationYear;
+		this.expirationYear = expirationYear;
+		this.owner = owner;
 	}
 
 	/**
@@ -250,22 +248,20 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getExpirationDay() {
-		return expirationDay;
+	public int getExpirationYear() {
+		return expirationYear;
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setExpirationDay(int newExpirationDay) {
-		int oldExpirationDay = expirationDay;
-		expirationDay = newExpirationDay;
+	public void setExpirationYear(int newExpirationYear) {
+		int oldExpirationYear = expirationYear;
+		expirationYear = newExpirationYear;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_DAY, oldExpirationDay, expirationDay));
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_YEAR, oldExpirationYear, expirationYear));
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -282,8 +278,8 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 				return getOwner();
 			case HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_MONTH:
 				return getExpirationMonth();
-			case HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_DAY:
-				return getExpirationDay();
+			case HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_YEAR:
+				return getExpirationYear();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -308,8 +304,8 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 			case HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_MONTH:
 				setExpirationMonth((Integer)newValue);
 				return;
-			case HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_DAY:
-				setExpirationDay((Integer)newValue);
+			case HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_YEAR:
+				setExpirationYear((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -335,8 +331,8 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 			case HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_MONTH:
 				setExpirationMonth(EXPIRATION_MONTH_EDEFAULT);
 				return;
-			case HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_DAY:
-				setExpirationDay(EXPIRATION_DAY_EDEFAULT);
+			case HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_YEAR:
+				setExpirationYear(EXPIRATION_YEAR_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -358,8 +354,8 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 				return OWNER_EDEFAULT == null ? owner != null : !OWNER_EDEFAULT.equals(owner);
 			case HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_MONTH:
 				return expirationMonth != EXPIRATION_MONTH_EDEFAULT;
-			case HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_DAY:
-				return expirationDay != EXPIRATION_DAY_EDEFAULT;
+			case HotelManagementClassDiagramPackage.CREDITCARD__EXPIRATION_YEAR:
+				return expirationYear != EXPIRATION_YEAR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -382,8 +378,8 @@ public class CreditcardImpl extends MinimalEObjectImpl.Container implements Cred
 		result.append(owner);
 		result.append(", expirationMonth: ");
 		result.append(expirationMonth);
-		result.append(", expirationDay: ");
-		result.append(expirationDay);
+		result.append(", expirationYear: ");
+		result.append(expirationYear);
 		result.append(')');
 		return result.toString();
 	}

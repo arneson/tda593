@@ -5,11 +5,8 @@ package HotelManagementClassDiagram.impl;
 import HotelManagementClassDiagram.EType;
 import HotelManagementClassDiagram.EmployeeType;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -80,8 +77,8 @@ public class EmployeeTypeImpl extends MinimalEObjectImpl.Container implements Em
 	/**
 	 * @generated NOT
 	 */
-	public EmployeeTypeImpl(EType type, int acessLevel){
-		this.acessLevel = acessLevel;
+	public EmployeeTypeImpl(EType type, int accessLevel){
+		this.acessLevel = accessLevel;
 		this.type = type;
 	}
 

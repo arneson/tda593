@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link HotelManagementClassDiagram.MaintenanceController#getRoomStack <em>Room Stack</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.MaintenanceController#getRoomQueue <em>Room Queue</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getMaintenanceController()
@@ -24,20 +24,20 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface MaintenanceController extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Room Stack</b></em>' reference list.
+	 * Returns the value of the '<em><b>Room Queue</b></em>' reference list.
 	 * The list contents are of type {@link HotelManagementClassDiagram.Room}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Room Stack</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Room Queue</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Room Stack</em>' reference list.
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getMaintenanceController_RoomStack()
-	 * @model ordered="false"
+	 * @return the value of the '<em>Room Queue</em>' reference list.
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getMaintenanceController_RoomQueue()
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	EList<Room> getRoomStack();
+	EList<Room> getRoomQueue();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,7 +45,7 @@ public interface MaintenanceController extends EObject {
 	 * @model roomRequired="true" roomOrdered="false"
 	 * @generated
 	 */
-	void addToStack(Room room);
+	void addToQueue(Room room);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -58,18 +58,10 @@ public interface MaintenanceController extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model workerRequired="true" workerOrdered="false"
-	 * @generated
-	 */
-	void notifyWorker(EmployeeType worker);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model roomRequired="true" roomOrdered="false"
 	 * @generated
 	 */
-	void removeFromStack(Room room);
+	void removeFromQueue(Room room);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -86,5 +78,13 @@ public interface MaintenanceController extends EObject {
 	 * @generated
 	 */
 	void setRepairedStatus(Room room, boolean repaired);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	Room getNextRoomToClean();
 
 } // MaintenanceController

@@ -2,10 +2,6 @@
  */
 package HotelManagementClassDiagram;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Room</b></em>'.
@@ -18,19 +14,17 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link HotelManagementClassDiagram.Room#getRoomNumber <em>Room Number</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Room#getSize <em>Size</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Room#getInternalComment <em>Internal Comment</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Room#isBooked <em>Booked</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Room#getMaxNbrPeople <em>Max Nbr People</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Room#isUnderCleaning <em>Under Cleaning</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Room#isUnderRepair <em>Under Repair</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Room#getTypes <em>Types</em>}</li>
- *   <li>{@link HotelManagementClassDiagram.Room#getRoomName <em>Room Name</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Room#getType <em>Type</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom()
  * @model
  * @generated
  */
-public interface Room extends EObject {
+public interface Room extends Costable {
 	/**
 	 * Returns the value of the '<em><b>Room Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -108,32 +102,6 @@ public interface Room extends EObject {
 	 * @generated
 	 */
 	void setInternalComment(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Booked</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Booked</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Booked</em>' attribute.
-	 * @see #setBooked(boolean)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_Booked()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	boolean isBooked();
-
-	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Room#isBooked <em>Booked</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Booked</em>' attribute.
-	 * @see #isBooked()
-	 * @generated
-	 */
-	void setBooked(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Max Nbr People</b></em>' attribute.
@@ -214,47 +182,32 @@ public interface Room extends EObject {
 	void setUnderRepair(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Types</b></em>' attribute list.
-	 * The list contents are of type {@link HotelManagementClassDiagram.RoomType}.
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link HotelManagementClassDiagram.RoomType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Types</em>' attribute list isn't clear,
+	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Types</em>' attribute list.
+	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see HotelManagementClassDiagram.RoomType
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_Types()
+	 * @see #setType(RoomType)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_Type()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	EList<RoomType> getTypes();
+	RoomType getType();
 
 	/**
-	 * Returns the value of the '<em><b>Room Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Room Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Room Name</em>' attribute.
-	 * @see #setRoomName(String)
-	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getRoom_RoomName()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
-	 * @generated
-	 */
-	String getRoomName();
-
-	/**
-	 * Sets the value of the '{@link HotelManagementClassDiagram.Room#getRoomName <em>Room Name</em>}' attribute.
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Room#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Room Name</em>' attribute.
-	 * @see #getRoomName()
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see HotelManagementClassDiagram.RoomType
+	 * @see #getType()
 	 * @generated
 	 */
-	void setRoomName(String value);
+	void setType(RoomType value);
 
 } // Room

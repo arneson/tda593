@@ -4,42 +4,34 @@ package HotelManagementClassDiagram.impl;
 
 import HotelManagementClassDiagram.Addon;
 import HotelManagementClassDiagram.Bill;
-import HotelManagementClassDiagram.BookedRoom;
 import HotelManagementClassDiagram.Booking;
 import HotelManagementClassDiagram.BookingController;
 import HotelManagementClassDiagram.Costable;
 import HotelManagementClassDiagram.Creditcard;
 import HotelManagementClassDiagram.Customer;
+import HotelManagementClassDiagram.DBInterface;
 import HotelManagementClassDiagram.Discount;
 import HotelManagementClassDiagram.EType;
 import HotelManagementClassDiagram.Employee;
 import HotelManagementClassDiagram.EmployeeType;
 import HotelManagementClassDiagram.Extra;
+import HotelManagementClassDiagram.FakeDBContext;
 import HotelManagementClassDiagram.Hotel;
 import HotelManagementClassDiagram.HotelManagementClassDiagramFactory;
 import HotelManagementClassDiagram.HotelManagementClassDiagramPackage;
-import HotelManagementClassDiagram.Interaction1;
-import HotelManagementClassDiagram.Interaction2;
-import HotelManagementClassDiagram.Interaction3;
-import HotelManagementClassDiagram.Interaction4;
-import HotelManagementClassDiagram.Interaction5;
 import HotelManagementClassDiagram.MaintenanceController;
 import HotelManagementClassDiagram.ManagementController;
 import HotelManagementClassDiagram.Person;
 import HotelManagementClassDiagram.Room;
 import HotelManagementClassDiagram.RoomType;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.uml2.types.TypesPackage;
-
 import org.eclipse.uml2.types.impl.TypesPackageImpl;
 
 /**
@@ -166,13 +158,6 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass bookedRoomEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass interaction1EClass = null;
 
 	/**
@@ -202,6 +187,20 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * @generated
 	 */
 	private EClass interaction5EClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dbInterfaceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass fakeDBContextEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -326,6 +325,15 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 */
 	public EAttribute getEmployee_Salary() {
 		return (EAttribute)employeeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEmployee_Password() {
+		return (EAttribute)employeeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -531,7 +539,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBooking_Customer() {
+	public EReference getBooking_Addons() {
 		return (EReference)bookingEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -540,7 +548,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBooking_Addons() {
+	public EReference getBooking_BookedRooms() {
 		return (EReference)bookingEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -549,17 +557,8 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBooking_BookedRooms() {
-		return (EReference)bookingEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getBooking_InternalComments() {
-		return (EAttribute)bookingEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)bookingEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -568,7 +567,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * @generated
 	 */
 	public EAttribute getBooking_ExternalComments() {
-		return (EAttribute)bookingEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)bookingEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -577,7 +576,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * @generated
 	 */
 	public EAttribute getBooking_CheckedIn() {
-		return (EAttribute)bookingEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)bookingEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -586,7 +585,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * @generated
 	 */
 	public EAttribute getBooking_CheckedOut() {
-		return (EAttribute)bookingEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)bookingEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -595,7 +594,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * @generated
 	 */
 	public EReference getBooking_PaymentMaster() {
-		return (EReference)bookingEClass.getEStructuralFeatures().get(12);
+		return (EReference)bookingEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -604,7 +603,25 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * @generated
 	 */
 	public EReference getBooking_Discounts() {
-		return (EReference)bookingEClass.getEStructuralFeatures().get(13);
+		return (EReference)bookingEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBooking_RoomTypes() {
+		return (EAttribute)bookingEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBooking_FinalBill() {
+		return (EReference)bookingEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -747,7 +764,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCreditcard_ExpirationDay() {
+	public EAttribute getCreditcard_ExpirationYear() {
 		return (EAttribute)creditcardEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -785,15 +802,6 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 */
 	public EAttribute getCustomer_MiscInfo() {
 		return (EAttribute)customerEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCustomer_Rank() {
-		return (EAttribute)customerEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -882,7 +890,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoom_Booked() {
+	public EAttribute getRoom_MaxNbrPeople() {
 		return (EAttribute)roomEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -891,7 +899,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoom_MaxNbrPeople() {
+	public EAttribute getRoom_UnderCleaning() {
 		return (EAttribute)roomEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -900,7 +908,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoom_UnderCleaning() {
+	public EAttribute getRoom_UnderRepair() {
 		return (EAttribute)roomEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -909,26 +917,8 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoom_UnderRepair() {
+	public EAttribute getRoom_Type() {
 		return (EAttribute)roomEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoom_Types() {
-		return (EAttribute)roomEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoom_RoomName() {
-		return (EAttribute)roomEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -956,6 +946,15 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 */
 	public EAttribute getDiscount_Amount() {
 		return (EAttribute)discountEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDiscount_Name() {
+		return (EAttribute)discountEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -999,7 +998,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBill_ValueAddedTax() {
+	public EAttribute getBill_Final() {
 		return (EAttribute)billEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1008,17 +1007,8 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBill_Final() {
-		return (EAttribute)billEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getBill_Paid() {
-		return (EAttribute)billEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)billEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1062,7 +1052,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCostable__AddDiscount() {
+	public EOperation getCostable__AddDiscount__Discount() {
 		return costableEClass.getEOperations().get(0);
 	}
 
@@ -1071,7 +1061,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCostable__RemoveDiscount() {
+	public EOperation getCostable__RemoveDiscount__Discount() {
 		return costableEClass.getEOperations().get(1);
 	}
 
@@ -1098,7 +1088,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingController__CreateBooking__EList() {
+	public EOperation getBookingController__SendConfirmation__Booking() {
 		return bookingControllerEClass.getEOperations().get(1);
 	}
 
@@ -1107,7 +1097,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingController__SendConfirmation__Booking() {
+	public EOperation getBookingController__GetBooking__int() {
 		return bookingControllerEClass.getEOperations().get(2);
 	}
 
@@ -1116,7 +1106,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingController__UpdateBooking__Booking() {
+	public EOperation getBookingController__CheckIn__Booking() {
 		return bookingControllerEClass.getEOperations().get(3);
 	}
 
@@ -1125,7 +1115,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingController__GetBooking__int() {
+	public EOperation getBookingController__CheckOut__Booking() {
 		return bookingControllerEClass.getEOperations().get(4);
 	}
 
@@ -1134,7 +1124,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingController__Confirm__Booking() {
+	public EOperation getBookingController__SaveCustomer__Customer() {
 		return bookingControllerEClass.getEOperations().get(5);
 	}
 
@@ -1143,7 +1133,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingController__CheckIn__Booking() {
+	public EOperation getBookingController__FindCustomer__String() {
 		return bookingControllerEClass.getEOperations().get(6);
 	}
 
@@ -1152,7 +1142,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingController__CreateKeyCard__Room() {
+	public EOperation getBookingController__AssignRoom__Room() {
 		return bookingControllerEClass.getEOperations().get(7);
 	}
 
@@ -1161,7 +1151,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingController__CheckOut__Booking() {
+	public EOperation getBookingController__GetCustomer__String() {
 		return bookingControllerEClass.getEOperations().get(8);
 	}
 
@@ -1170,7 +1160,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingController__SaveCustomer__Customer() {
+	public EOperation getBookingController__UpdateOrAddCustomer__Customer() {
 		return bookingControllerEClass.getEOperations().get(9);
 	}
 
@@ -1179,7 +1169,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingController__FindCustomer__String() {
+	public EOperation getBookingController__UpdateOrAddBooking__Booking() {
 		return bookingControllerEClass.getEOperations().get(10);
 	}
 
@@ -1188,8 +1178,17 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingController__AssignRoom__Room() {
+	public EOperation getBookingController__GetAllBookings() {
 		return bookingControllerEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBookingController__GetAllCustomers() {
+		return bookingControllerEClass.getEOperations().get(12);
 	}
 
 	/**
@@ -1206,7 +1205,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getManagementController__RegisterDiscount__Discount() {
+	public EOperation getManagementController__UpdateOrAddEmployee__Employee() {
 		return managementControllerEClass.getEOperations().get(0);
 	}
 
@@ -1215,7 +1214,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getManagementController__ModifyBooking__Booking() {
+	public EOperation getManagementController__UpdateOrAddEmployeeType__EmployeeType() {
 		return managementControllerEClass.getEOperations().get(1);
 	}
 
@@ -1224,7 +1223,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getManagementController__SetDateSpecificPrices__Costable_Date_Date_double() {
+	public EOperation getManagementController__UpdateOrAddRoom__Room() {
 		return managementControllerEClass.getEOperations().get(2);
 	}
 
@@ -1233,7 +1232,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getManagementController__RegisterRoom__Room() {
+	public EOperation getManagementController__UpdateOrAddRoomType__RoomType() {
 		return managementControllerEClass.getEOperations().get(3);
 	}
 
@@ -1242,7 +1241,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getManagementController__RegisterAddon__Addon() {
+	public EOperation getManagementController__UpdateOrAddDiscount__Discount() {
 		return managementControllerEClass.getEOperations().get(4);
 	}
 
@@ -1251,7 +1250,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getManagementController__UpdateRoom__Room() {
+	public EOperation getManagementController__UpdateOrAddAddon__Addon() {
 		return managementControllerEClass.getEOperations().get(5);
 	}
 
@@ -1260,8 +1259,53 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getManagementController__UpdateAddon__Addon() {
+	public EOperation getManagementController__UpdateOrAddExtra__Extra() {
 		return managementControllerEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getManagementController__GetAllEmployees() {
+		return managementControllerEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getManagementController__GetAllAddons() {
+		return managementControllerEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getManagementController__GetAllExtras() {
+		return managementControllerEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getManagementController__GetAllDiscounts() {
+		return managementControllerEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getManagementController__GetEmployee__String() {
+		return managementControllerEClass.getEOperations().get(11);
 	}
 
 	/**
@@ -1278,7 +1322,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMaintenanceController_RoomStack() {
+	public EReference getMaintenanceController_RoomQueue() {
 		return (EReference)maintenanceControllerEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1287,7 +1331,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getMaintenanceController__AddToStack__Room() {
+	public EOperation getMaintenanceController__AddToQueue__Room() {
 		return maintenanceControllerEClass.getEOperations().get(0);
 	}
 
@@ -1305,7 +1349,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getMaintenanceController__NotifyWorker__EmployeeType() {
+	public EOperation getMaintenanceController__RemoveFromQueue__Room() {
 		return maintenanceControllerEClass.getEOperations().get(2);
 	}
 
@@ -1314,7 +1358,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getMaintenanceController__RemoveFromStack__Room() {
+	public EOperation getMaintenanceController__GetNextRoomToClean__Room() {
 		return maintenanceControllerEClass.getEOperations().get(3);
 	}
 
@@ -1323,7 +1367,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getMaintenanceController__GetNextRoomToClean__Room() {
+	public EOperation getMaintenanceController__SetRepairedStatus__Room_boolean() {
 		return maintenanceControllerEClass.getEOperations().get(4);
 	}
 
@@ -1332,7 +1376,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getMaintenanceController__SetRepairedStatus__Room_boolean() {
+	public EOperation getMaintenanceController__GetNextRoomToClean() {
 		return maintenanceControllerEClass.getEOperations().get(5);
 	}
 
@@ -1377,80 +1421,44 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getHotel__Authenticate__String_String() {
+	public EReference getHotel_BookingController() {
+		return (EReference)hotelEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHotel_MaintenanceController() {
+		return (EReference)hotelEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHotel_ManagementController() {
+		return (EReference)hotelEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHotel_User() {
+		return (EReference)hotelEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getHotel__LogIn__String_String() {
 		return hotelEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getHotel__GetBookingController() {
-		return hotelEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getHotel__GetManagementController() {
-		return hotelEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getHotel__GetMaintenanceController() {
-		return hotelEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getBookedRoom() {
-		return bookedRoomEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBookedRoom_Addons() {
-		return (EReference)bookedRoomEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBookedRoom_Room() {
-		return (EReference)bookedRoomEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getBookedRoom__AddAddon__Addon() {
-		return bookedRoomEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getBookedRoom__RemoveAddon__Addon() {
-		return bookedRoomEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1548,6 +1556,330 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getDBInterface() {
+		return dbInterfaceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface___getAllRooms() {
+		return dbInterfaceEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetRoom__int() {
+		return dbInterfaceEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetAllRoomTypes() {
+		return dbInterfaceEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetAvaliableRoomTypes__Date_Date() {
+		return dbInterfaceEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetAllAddons() {
+		return dbInterfaceEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetAddon__String() {
+		return dbInterfaceEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetAllDiscounts() {
+		return dbInterfaceEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetDiscount__String() {
+		return dbInterfaceEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetAllBookings() {
+		return dbInterfaceEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetBookings__Date_Date() {
+		return dbInterfaceEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetPastBookings() {
+		return dbInterfaceEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetFutureBookings() {
+		return dbInterfaceEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetCurrentBookings() {
+		return dbInterfaceEClass.getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__FindBookings__String() {
+		return dbInterfaceEClass.getEOperations().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetAllCustomers() {
+		return dbInterfaceEClass.getEOperations().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetCustomer__String() {
+		return dbInterfaceEClass.getEOperations().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__FindCustomers__String() {
+		return dbInterfaceEClass.getEOperations().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetAllEmployees() {
+		return dbInterfaceEClass.getEOperations().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetEmployee__String() {
+		return dbInterfaceEClass.getEOperations().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetAllCleaners() {
+		return dbInterfaceEClass.getEOperations().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetAllManagers() {
+		return dbInterfaceEClass.getEOperations().get(20);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetAllReceptionists() {
+		return dbInterfaceEClass.getEOperations().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__UpdateOrAddRoom__Room() {
+		return dbInterfaceEClass.getEOperations().get(22);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__UpdateOrAddCustomer__Customer() {
+		return dbInterfaceEClass.getEOperations().get(23);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__UpdateOrAddBooking__Booking() {
+		return dbInterfaceEClass.getEOperations().get(24);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__UpdateOrAddDiscount__Discount() {
+		return dbInterfaceEClass.getEOperations().get(25);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__UpdateOrAddAddon__Addon() {
+		return dbInterfaceEClass.getEOperations().get(26);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__UpdateOrAddEmployee__Employee() {
+		return dbInterfaceEClass.getEOperations().get(27);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__UpdateOrAddRoomType__RoomType() {
+		return dbInterfaceEClass.getEOperations().get(28);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__UpdateOrAddEmployeeType__EmployeeType() {
+		return dbInterfaceEClass.getEOperations().get(29);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__UpdateOrAddExtra__Extra() {
+		return dbInterfaceEClass.getEOperations().get(30);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetAvailableRooms__RoomType_Date_Date() {
+		return dbInterfaceEClass.getEOperations().get(31);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetRooms__RoomType() {
+		return dbInterfaceEClass.getEOperations().get(32);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDBInterface__GetBooking__int() {
+		return dbInterfaceEClass.getEOperations().get(33);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFakeDBContext() {
+		return fakeDBContextEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getEType() {
 		return eTypeEEnum;
 	}
@@ -1594,6 +1926,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		createEAttribute(employeeEClass, EMPLOYEE__EMPLOYEE_ID);
 		createEAttribute(employeeEClass, EMPLOYEE__WORK_RATE);
 		createEAttribute(employeeEClass, EMPLOYEE__SALARY);
+		createEAttribute(employeeEClass, EMPLOYEE__PASSWORD);
 		createEOperation(employeeEClass, EMPLOYEE___BOOKING);
 		createEOperation(employeeEClass, EMPLOYEE___BOOLEAN);
 		createEOperation(employeeEClass, EMPLOYEE___ROOM_TYPES);
@@ -1619,7 +1952,6 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		createEAttribute(bookingEClass, BOOKING__END_DATE);
 		createEAttribute(bookingEClass, BOOKING__CREATED);
 		createEReference(bookingEClass, BOOKING__CREDIT_CARD);
-		createEReference(bookingEClass, BOOKING__CUSTOMER);
 		createEReference(bookingEClass, BOOKING__ADDONS);
 		createEReference(bookingEClass, BOOKING__BOOKED_ROOMS);
 		createEAttribute(bookingEClass, BOOKING__INTERNAL_COMMENTS);
@@ -1628,6 +1960,8 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		createEAttribute(bookingEClass, BOOKING__CHECKED_OUT);
 		createEReference(bookingEClass, BOOKING__PAYMENT_MASTER);
 		createEReference(bookingEClass, BOOKING__DISCOUNTS);
+		createEAttribute(bookingEClass, BOOKING__ROOM_TYPES);
+		createEReference(bookingEClass, BOOKING__FINAL_BILL);
 		createEOperation(bookingEClass, BOOKING___CHECK_IN);
 		createEOperation(bookingEClass, BOOKING___CHECK_OUT);
 		createEOperation(bookingEClass, BOOKING___ADD_ADDON__ADDON);
@@ -1644,14 +1978,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		createEAttribute(creditcardEClass, CREDITCARD__CVC);
 		createEAttribute(creditcardEClass, CREDITCARD__OWNER);
 		createEAttribute(creditcardEClass, CREDITCARD__EXPIRATION_MONTH);
-		createEAttribute(creditcardEClass, CREDITCARD__EXPIRATION_DAY);
-
-		customerEClass = createEClass(CUSTOMER);
-		createEAttribute(customerEClass, CUSTOMER__CUSTOMER_ID);
-		createEAttribute(customerEClass, CUSTOMER__BONUS_POINTS);
-		createEAttribute(customerEClass, CUSTOMER__MISC_INFO);
-		createEAttribute(customerEClass, CUSTOMER__RANK);
-		createEOperation(customerEClass, CUSTOMER___ADD_BONUS_POINTS__INT);
+		createEAttribute(creditcardEClass, CREDITCARD__EXPIRATION_YEAR);
 
 		addonEClass = createEClass(ADDON);
 
@@ -1659,82 +1986,87 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		createEAttribute(extraEClass, EXTRA__NAME);
 		createEAttribute(extraEClass, EXTRA__DESCRIPTION);
 
-		bookedRoomEClass = createEClass(BOOKED_ROOM);
-		createEReference(bookedRoomEClass, BOOKED_ROOM__ADDONS);
-		createEReference(bookedRoomEClass, BOOKED_ROOM__ROOM);
-		createEOperation(bookedRoomEClass, BOOKED_ROOM___ADD_ADDON__ADDON);
-		createEOperation(bookedRoomEClass, BOOKED_ROOM___REMOVE_ADDON__ADDON);
+		costableEClass = createEClass(COSTABLE);
+		createEAttribute(costableEClass, COSTABLE__PRICE);
+		createEReference(costableEClass, COSTABLE__DISCOUNTS);
+		createEOperation(costableEClass, COSTABLE___ADD_DISCOUNT__DISCOUNT);
+		createEOperation(costableEClass, COSTABLE___REMOVE_DISCOUNT__DISCOUNT);
+
+		discountEClass = createEClass(DISCOUNT);
+		createEAttribute(discountEClass, DISCOUNT__IS_PERCENTAGE);
+		createEAttribute(discountEClass, DISCOUNT__AMOUNT);
+		createEAttribute(discountEClass, DISCOUNT__NAME);
 
 		roomEClass = createEClass(ROOM);
 		createEAttribute(roomEClass, ROOM__ROOM_NUMBER);
 		createEAttribute(roomEClass, ROOM__SIZE);
 		createEAttribute(roomEClass, ROOM__INTERNAL_COMMENT);
-		createEAttribute(roomEClass, ROOM__BOOKED);
 		createEAttribute(roomEClass, ROOM__MAX_NBR_PEOPLE);
 		createEAttribute(roomEClass, ROOM__UNDER_CLEANING);
 		createEAttribute(roomEClass, ROOM__UNDER_REPAIR);
-		createEAttribute(roomEClass, ROOM__TYPES);
-		createEAttribute(roomEClass, ROOM__ROOM_NAME);
+		createEAttribute(roomEClass, ROOM__TYPE);
 
-		discountEClass = createEClass(DISCOUNT);
-		createEAttribute(discountEClass, DISCOUNT__IS_PERCENTAGE);
-		createEAttribute(discountEClass, DISCOUNT__AMOUNT);
+		customerEClass = createEClass(CUSTOMER);
+		createEAttribute(customerEClass, CUSTOMER__CUSTOMER_ID);
+		createEAttribute(customerEClass, CUSTOMER__BONUS_POINTS);
+		createEAttribute(customerEClass, CUSTOMER__MISC_INFO);
+		createEOperation(customerEClass, CUSTOMER___ADD_BONUS_POINTS__INT);
 
 		billEClass = createEClass(BILL);
 		createEReference(billEClass, BILL__COSTABLES);
 		createEAttribute(billEClass, BILL__TOTAL_PRICE);
 		createEReference(billEClass, BILL__CUSTOMER);
-		createEAttribute(billEClass, BILL__VALUE_ADDED_TAX);
 		createEAttribute(billEClass, BILL__FINAL);
 		createEAttribute(billEClass, BILL__PAID);
 		createEOperation(billEClass, BILL___ADD_COSTABLE__COSTABLE);
 
-		costableEClass = createEClass(COSTABLE);
-		createEAttribute(costableEClass, COSTABLE__PRICE);
-		createEReference(costableEClass, COSTABLE__DISCOUNTS);
-		createEOperation(costableEClass, COSTABLE___ADD_DISCOUNT);
-		createEOperation(costableEClass, COSTABLE___REMOVE_DISCOUNT);
-
 		bookingControllerEClass = createEClass(BOOKING_CONTROLLER);
 		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___SEARCH_AVAILABLE_ROOM_TYPES__DATE_DATE_INT_INT);
-		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___CREATE_BOOKING__ELIST);
 		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___SEND_CONFIRMATION__BOOKING);
-		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___UPDATE_BOOKING__BOOKING);
 		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___GET_BOOKING__INT);
-		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___CONFIRM__BOOKING);
 		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___CHECK_IN__BOOKING);
-		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___CREATE_KEY_CARD__ROOM);
 		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___CHECK_OUT__BOOKING);
 		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___SAVE_CUSTOMER__CUSTOMER);
 		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___FIND_CUSTOMER__STRING);
 		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___ASSIGN_ROOM__ROOM);
+		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___GET_CUSTOMER__STRING);
+		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___UPDATE_OR_ADD_CUSTOMER__CUSTOMER);
+		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___UPDATE_OR_ADD_BOOKING__BOOKING);
+		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___GET_ALL_BOOKINGS);
+		createEOperation(bookingControllerEClass, BOOKING_CONTROLLER___GET_ALL_CUSTOMERS);
 
 		managementControllerEClass = createEClass(MANAGEMENT_CONTROLLER);
-		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___REGISTER_DISCOUNT__DISCOUNT);
-		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___MODIFY_BOOKING__BOOKING);
-		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___SET_DATE_SPECIFIC_PRICES__COSTABLE_DATE_DATE_DOUBLE);
-		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___REGISTER_ROOM__ROOM);
-		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___REGISTER_ADDON__ADDON);
-		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___UPDATE_ROOM__ROOM);
-		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___UPDATE_ADDON__ADDON);
+		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EMPLOYEE__EMPLOYEE);
+		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EMPLOYEE_TYPE__EMPLOYEETYPE);
+		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ROOM__ROOM);
+		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ROOM_TYPE__ROOMTYPE);
+		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_DISCOUNT__DISCOUNT);
+		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_ADDON__ADDON);
+		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___UPDATE_OR_ADD_EXTRA__EXTRA);
+		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___GET_ALL_EMPLOYEES);
+		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___GET_ALL_ADDONS);
+		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___GET_ALL_EXTRAS);
+		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___GET_ALL_DISCOUNTS);
+		createEOperation(managementControllerEClass, MANAGEMENT_CONTROLLER___GET_EMPLOYEE__STRING);
 
 		maintenanceControllerEClass = createEClass(MAINTENANCE_CONTROLLER);
-		createEReference(maintenanceControllerEClass, MAINTENANCE_CONTROLLER__ROOM_STACK);
-		createEOperation(maintenanceControllerEClass, MAINTENANCE_CONTROLLER___ADD_TO_STACK__ROOM);
+		createEReference(maintenanceControllerEClass, MAINTENANCE_CONTROLLER__ROOM_QUEUE);
+		createEOperation(maintenanceControllerEClass, MAINTENANCE_CONTROLLER___ADD_TO_QUEUE__ROOM);
 		createEOperation(maintenanceControllerEClass, MAINTENANCE_CONTROLLER___SET_CLEANED_STATUS__ROOM_BOOLEAN);
-		createEOperation(maintenanceControllerEClass, MAINTENANCE_CONTROLLER___NOTIFY_WORKER__EMPLOYEETYPE);
-		createEOperation(maintenanceControllerEClass, MAINTENANCE_CONTROLLER___REMOVE_FROM_STACK__ROOM);
+		createEOperation(maintenanceControllerEClass, MAINTENANCE_CONTROLLER___REMOVE_FROM_QUEUE__ROOM);
 		createEOperation(maintenanceControllerEClass, MAINTENANCE_CONTROLLER___GET_NEXT_ROOM_TO_CLEAN__ROOM);
 		createEOperation(maintenanceControllerEClass, MAINTENANCE_CONTROLLER___SET_REPAIRED_STATUS__ROOM_BOOLEAN);
+		createEOperation(maintenanceControllerEClass, MAINTENANCE_CONTROLLER___GET_NEXT_ROOM_TO_CLEAN);
 
 		hotelEClass = createEClass(HOTEL);
 		createEAttribute(hotelEClass, HOTEL__NAME);
 		createEAttribute(hotelEClass, HOTEL__ADDRESS);
 		createEAttribute(hotelEClass, HOTEL__RANK);
-		createEOperation(hotelEClass, HOTEL___AUTHENTICATE__STRING_STRING);
-		createEOperation(hotelEClass, HOTEL___GET_BOOKING_CONTROLLER);
-		createEOperation(hotelEClass, HOTEL___GET_MANAGEMENT_CONTROLLER);
-		createEOperation(hotelEClass, HOTEL___GET_MAINTENANCE_CONTROLLER);
+		createEReference(hotelEClass, HOTEL__BOOKING_CONTROLLER);
+		createEReference(hotelEClass, HOTEL__MAINTENANCE_CONTROLLER);
+		createEReference(hotelEClass, HOTEL__MANAGEMENT_CONTROLLER);
+		createEReference(hotelEClass, HOTEL__USER);
+		createEOperation(hotelEClass, HOTEL___LOG_IN__STRING_STRING);
 
 		interaction1EClass = createEClass(INTERACTION1);
 		createEReference(interaction1EClass, INTERACTION1__);
@@ -1750,6 +2082,44 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 
 		interaction5EClass = createEClass(INTERACTION5);
 		createEReference(interaction5EClass, INTERACTION5__);
+
+		dbInterfaceEClass = createEClass(DB_INTERFACE);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_ALL_ROOMS);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_ROOM__INT);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_ALL_ROOM_TYPES);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_AVALIABLE_ROOM_TYPES__DATE_DATE);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_ALL_ADDONS);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_ADDON__STRING);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_ALL_DISCOUNTS);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_DISCOUNT__STRING);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_ALL_BOOKINGS);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_BOOKINGS__DATE_DATE);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_PAST_BOOKINGS);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_FUTURE_BOOKINGS);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_CURRENT_BOOKINGS);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___FIND_BOOKINGS__STRING);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_ALL_CUSTOMERS);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_CUSTOMER__STRING);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___FIND_CUSTOMERS__STRING);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_ALL_EMPLOYEES);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_EMPLOYEE__STRING);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_ALL_CLEANERS);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_ALL_MANAGERS);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_ALL_RECEPTIONISTS);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___UPDATE_OR_ADD_ROOM__ROOM);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___UPDATE_OR_ADD_CUSTOMER__CUSTOMER);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___UPDATE_OR_ADD_BOOKING__BOOKING);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___UPDATE_OR_ADD_DISCOUNT__DISCOUNT);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___UPDATE_OR_ADD_ADDON__ADDON);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___UPDATE_OR_ADD_EMPLOYEE__EMPLOYEE);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___UPDATE_OR_ADD_ROOM_TYPE__ROOMTYPE);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___UPDATE_OR_ADD_EMPLOYEE_TYPE__EMPLOYEETYPE);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___UPDATE_OR_ADD_EXTRA__EXTRA);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_AVAILABLE_ROOMS__ROOMTYPE_DATE_DATE);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_ROOMS__ROOMTYPE);
+		createEOperation(dbInterfaceEClass, DB_INTERFACE___GET_BOOKING__INT);
+
+		fakeDBContextEClass = createEClass(FAKE_DB_CONTEXT);
 
 		// Create enums
 		eTypeEEnum = createEEnum(ETYPE);
@@ -1788,8 +2158,11 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 
 		// Add supertypes to classes
 		employeeEClass.getESuperTypes().add(this.getPerson());
-		customerEClass.getESuperTypes().add(this.getPerson());
 		addonEClass.getESuperTypes().add(this.getExtra());
+		addonEClass.getESuperTypes().add(this.getCostable());
+		roomEClass.getESuperTypes().add(this.getCostable());
+		customerEClass.getESuperTypes().add(this.getPerson());
+		fakeDBContextEClass.getESuperTypes().add(this.getDBInterface());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(employeeEClass, Employee.class, "Employee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1797,6 +2170,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		initEAttribute(getEmployee_EmployeeID(), ecorePackage.getEInt(), "employeeID", null, 1, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getEmployee_WorkRate(), ecorePackage.getEDouble(), "workRate", null, 0, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getEmployee_Salary(), ecorePackage.getEDouble(), "salary", null, 1, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getEmployee_Password(), theTypesPackage.getString(), "password", null, 1, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEOperation(getEmployee__Booking(), null, "Booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -1825,15 +2199,16 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		initEAttribute(getBooking_EndDate(), ecorePackage.getEDate(), "endDate", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBooking_Created(), ecorePackage.getEDate(), "created", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_CreditCard(), this.getCreditcard(), null, "creditCard", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBooking_Customer(), this.getCustomer(), null, "customer", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_Addons(), this.getAddon(), null, "addons", null, 0, -1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBooking_BookedRooms(), this.getBookedRoom(), null, "bookedRooms", null, 1, -1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBooking_BookedRooms(), this.getRoom(), null, "bookedRooms", null, 1, -1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBooking_InternalComments(), theTypesPackage.getString(), "internalComments", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBooking_ExternalComments(), theTypesPackage.getString(), "externalComments", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBooking_CheckedIn(), ecorePackage.getEBoolean(), "checkedIn", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBooking_CheckedOut(), ecorePackage.getEBoolean(), "checkedOut", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_PaymentMaster(), this.getCustomer(), null, "paymentMaster", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_Discounts(), this.getDiscount(), null, "discounts", null, 1, -1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getBooking_RoomTypes(), this.getRoomType(), "roomTypes", null, 1, -1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBooking_FinalBill(), this.getBill(), null, "finalBill", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEOperation(getBooking__CheckIn(), null, "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -1867,16 +2242,7 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		initEAttribute(getCreditcard_Cvc(), ecorePackage.getEInt(), "cvc", null, 1, 1, Creditcard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCreditcard_Owner(), theTypesPackage.getString(), "owner", null, 1, 1, Creditcard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCreditcard_ExpirationMonth(), ecorePackage.getEInt(), "expirationMonth", null, 1, 1, Creditcard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCreditcard_ExpirationDay(), ecorePackage.getEInt(), "expirationDay", null, 1, 1, Creditcard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(customerEClass, Customer.class, "Customer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCustomer_CustomerID(), ecorePackage.getEInt(), "customerID", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCustomer_BonusPoints(), ecorePackage.getEInt(), "bonusPoints", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCustomer_MiscInfo(), theTypesPackage.getString(), "miscInfo", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCustomer_Rank(), ecorePackage.getEDouble(), "rank", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		op = initEOperation(getCustomer__AddBonusPoints__int(), null, "addBonusPoints", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "bonusPoints", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEAttribute(getCreditcard_ExpirationYear(), ecorePackage.getEInt(), "expirationYear", null, 1, 1, Creditcard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(addonEClass, Addon.class, "Addon", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1884,49 +2250,47 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		initEAttribute(getExtra_Name(), theTypesPackage.getString(), "name", null, 1, 1, Extra.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getExtra_Description(), theTypesPackage.getString(), "description", null, 1, 1, Extra.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(bookedRoomEClass, BookedRoom.class, "BookedRoom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBookedRoom_Addons(), this.getAddon(), null, "addons", null, 0, -1, BookedRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBookedRoom_Room(), this.getRoom(), null, "room", null, 1, 1, BookedRoom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(costableEClass, Costable.class, "Costable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCostable_Price(), ecorePackage.getEDouble(), "price", null, 1, 1, Costable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getCostable_Discounts(), this.getDiscount(), null, "discounts", null, 1, -1, Costable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		op = initEOperation(getBookedRoom__AddAddon__Addon(), null, "addAddon", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getAddon(), "addon", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getCostable__AddDiscount__Discount(), null, "addDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getBookedRoom__RemoveAddon__Addon(), null, "removeAddon", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getAddon(), "addon", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getCostable__RemoveDiscount__Discount(), null, "removeDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(discountEClass, Discount.class, "Discount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDiscount_IsPercentage(), theTypesPackage.getBoolean(), "isPercentage", null, 1, 1, Discount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getDiscount_Amount(), ecorePackage.getEDouble(), "amount", null, 1, 1, Discount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getDiscount_Name(), theTypesPackage.getString(), "name", null, 1, 1, Discount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roomEClass, Room.class, "Room", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoom_RoomNumber(), ecorePackage.getEInt(), "roomNumber", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_Size(), ecorePackage.getEDouble(), "size", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_InternalComment(), theTypesPackage.getString(), "internalComment", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoom_Booked(), ecorePackage.getEBoolean(), "booked", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_MaxNbrPeople(), ecorePackage.getEInt(), "maxNbrPeople", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_UnderCleaning(), ecorePackage.getEBoolean(), "underCleaning", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_UnderRepair(), ecorePackage.getEBoolean(), "underRepair", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoom_Types(), this.getRoomType(), "types", null, 1, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoom_RoomName(), theTypesPackage.getString(), "roomName", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoom_Type(), this.getRoomType(), "type", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(discountEClass, Discount.class, "Discount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDiscount_IsPercentage(), theTypesPackage.getBoolean(), "isPercentage", null, 1, 1, Discount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getDiscount_Amount(), ecorePackage.getEDouble(), "amount", null, 1, 1, Discount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(customerEClass, Customer.class, "Customer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCustomer_CustomerID(), ecorePackage.getEInt(), "customerID", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCustomer_BonusPoints(), ecorePackage.getEInt(), "bonusPoints", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCustomer_MiscInfo(), theTypesPackage.getString(), "miscInfo", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		op = initEOperation(getCustomer__AddBonusPoints__int(), null, "addBonusPoints", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "bonusPoints", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(billEClass, Bill.class, "Bill", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBill_Costables(), this.getCostable(), null, "costables", null, 1, -1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBill_TotalPrice(), ecorePackage.getEDouble(), "totalPrice", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBill_Customer(), this.getCustomer(), null, "customer", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getBill_ValueAddedTax(), ecorePackage.getEDouble(), "valueAddedTax", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBill_Final(), ecorePackage.getEBoolean(), "final", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBill_Paid(), ecorePackage.getEBoolean(), "paid", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getBill__AddCostable__Costable(), null, "addCostable", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getCostable(), "costable", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEClass(costableEClass, Costable.class, "Costable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCostable_Price(), ecorePackage.getEDouble(), "price", null, 1, 1, Costable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getCostable_Discounts(), this.getDiscount(), null, "discounts", null, 1, -1, Costable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEOperation(getCostable__AddDiscount(), null, "addDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getCostable__RemoveDiscount(), null, "removeDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(bookingControllerEClass, BookingController.class, "BookingController", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1936,26 +2300,14 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		addEParameter(op, ecorePackage.getEInt(), "nbrOfAdults", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "nbrOfChildren", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getBookingController__CreateBooking__EList(), ecorePackage.getEBoolean(), "createBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getRoomType(), "roomTypes", 1, -1, IS_UNIQUE, !IS_ORDERED);
-
 		op = initEOperation(getBookingController__SendConfirmation__Booking(), ecorePackage.getEBoolean(), "sendConfirmation", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getBookingController__UpdateBooking__Booking(), ecorePackage.getEBoolean(), "updateBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBookingController__GetBooking__int(), this.getBooking(), "getBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "bookingId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getBookingController__Confirm__Booking(), ecorePackage.getEBoolean(), "confirm", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
 		op = initEOperation(getBookingController__CheckIn__Booking(), null, "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getBookingController__CreateKeyCard__Room(), null, "createKeyCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getBookingController__CheckOut__Booking(), null, "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1969,46 +2321,64 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		op = initEOperation(getBookingController__AssignRoom__Room(), null, "assignRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(managementControllerEClass, ManagementController.class, "ManagementController", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		op = initEOperation(getBookingController__GetCustomer__String(), this.getCustomer(), "getCustomer", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "SSN", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getManagementController__RegisterDiscount__Discount(), null, "registerDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getBookingController__UpdateOrAddCustomer__Customer(), null, "updateOrAddCustomer", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getCustomer(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getManagementController__ModifyBooking__Booking(), null, "modifyBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getBookingController__UpdateOrAddBooking__Booking(), null, "updateOrAddBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getManagementController__SetDateSpecificPrices__Costable_Date_Date_double(), null, "setDateSpecificPrices", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getCostable(), "costable", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDate(), "startDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDate(), "endDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDouble(), "priceChange", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getBookingController__GetAllBookings(), this.getBooking(), "getAllBookings", 1, -1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getManagementController__RegisterRoom__Room(), null, "registerRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getBookingController__GetAllCustomers(), this.getCustomer(), "getAllCustomers", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(managementControllerEClass, ManagementController.class, "ManagementController", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getManagementController__UpdateOrAddEmployee__Employee(), null, "updateOrAddEmployee", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getEmployee(), "employee", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getManagementController__UpdateOrAddEmployeeType__EmployeeType(), null, "updateOrAddEmployeeType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getEmployeeType(), "employeeType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getManagementController__UpdateOrAddRoom__Room(), null, "updateOrAddRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getManagementController__RegisterAddon__Addon(), null, "registerAddon", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getManagementController__UpdateOrAddRoomType__RoomType(), null, "updateOrAddRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getManagementController__UpdateOrAddDiscount__Discount(), null, "updateOrAddDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getManagementController__UpdateOrAddAddon__Addon(), null, "updateOrAddAddon", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getAddon(), "addon", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getManagementController__UpdateRoom__Room(), null, "updateRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getManagementController__UpdateOrAddExtra__Extra(), null, "updateOrAddExtra", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getExtra(), "extra", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getManagementController__UpdateAddon__Addon(), null, "updateAddon", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getAddon(), "addon", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getManagementController__GetAllEmployees(), this.getEmployee(), "getAllEmployees", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getManagementController__GetAllAddons(), this.getAddon(), "getAllAddons", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getManagementController__GetAllExtras(), this.getExtra(), "getAllExtras", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getManagementController__GetAllDiscounts(), this.getDiscount(), "getAllDiscounts", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getManagementController__GetEmployee__String(), this.getEmployee(), "getEmployee", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "SSN", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(maintenanceControllerEClass, MaintenanceController.class, "MaintenanceController", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMaintenanceController_RoomStack(), this.getRoom(), null, "roomStack", null, 0, -1, MaintenanceController.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMaintenanceController_RoomQueue(), this.getRoom(), null, "roomQueue", null, 1, -1, MaintenanceController.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		op = initEOperation(getMaintenanceController__AddToStack__Room(), null, "addToStack", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getMaintenanceController__AddToQueue__Room(), null, "addToQueue", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getMaintenanceController__SetCleanedStatus__Room_boolean(), null, "setCleanedStatus", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "status", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getMaintenanceController__NotifyWorker__EmployeeType(), null, "notifyWorker", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getEmployeeType(), "worker", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getMaintenanceController__RemoveFromStack__Room(), null, "removeFromStack", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getMaintenanceController__RemoveFromQueue__Room(), null, "removeFromQueue", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getMaintenanceController__GetNextRoomToClean__Room(), null, "getNextRoomToClean", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -2018,35 +2388,117 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "repaired", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		initEOperation(getMaintenanceController__GetNextRoomToClean(), this.getRoom(), "getNextRoomToClean", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(hotelEClass, Hotel.class, "Hotel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHotel_Name(), theTypesPackage.getString(), "name", null, 1, 1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getHotel_Address(), theTypesPackage.getString(), "address", null, 1, 1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getHotel_Rank(), ecorePackage.getEDouble(), "rank", null, 1, 1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHotel_BookingController(), this.getBookingController(), null, "bookingController", null, 1, 1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHotel_MaintenanceController(), this.getMaintenanceController(), null, "maintenanceController", null, 1, 1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHotel_ManagementController(), this.getManagementController(), null, "managementController", null, 1, 1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHotel_User(), this.getEmployee(), null, "user", null, 1, 1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		op = initEOperation(getHotel__Authenticate__String_String(), null, "authenticate", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theTypesPackage.getString(), "login", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getHotel__LogIn__String_String(), this.getEmployee(), "logIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "SSN", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getString(), "password", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getHotel__GetBookingController(), null, "getBookingController", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEClass(dbInterfaceEClass, DBInterface.class, "DBInterface", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEOperation(getHotel__GetManagementController(), null, "getManagementController", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getDBInterface___getAllRooms(), this.getRoom(), "_getAllRooms", 1, -1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getHotel__GetMaintenanceController(), null, "getMaintenanceController", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getDBInterface__GetRoom__int(), this.getRoom(), "getRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(interaction1EClass, Interaction1.class, "Interaction1", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInteraction1__(), this.getEmployee(), null, "_", null, 1, 1, Interaction1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEOperation(getDBInterface__GetAllRoomTypes(), this.getRoomType(), "getAllRoomTypes", 1, -1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(interaction2EClass, Interaction2.class, "Interaction2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInteraction2__(), this.getEmployee(), null, "_", null, 1, 1, Interaction2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		op = initEOperation(getDBInterface__GetAvaliableRoomTypes__Date_Date(), this.getRoomType(), "getAvaliableRoomTypes", 1, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(interaction3EClass, Interaction3.class, "Interaction3", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInteraction3__(), this.getMaintenanceController(), null, "_", null, 1, 1, Interaction3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEOperation(getDBInterface__GetAllAddons(), this.getAddon(), "getAllAddons", 1, -1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(interaction4EClass, Interaction4.class, "Interaction4", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInteraction4__(), this.getEmployee(), null, "_", null, 1, 1, Interaction4.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		op = initEOperation(getDBInterface__GetAddon__String(), this.getAddon(), "getAddon", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "addonName", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(interaction5EClass, Interaction5.class, "Interaction5", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInteraction5__(), this.getBooking(), null, "_", null, 1, 1, Interaction5.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEOperation(getDBInterface__GetAllDiscounts(), this.getDiscount(), "getAllDiscounts", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getDBInterface__GetDiscount__String(), this.getDiscount(), "getDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "discountName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getDBInterface__GetAllBookings(), this.getBooking(), "getAllBookings", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getDBInterface__GetBookings__Date_Date(), this.getBooking(), "getBookings", 1, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "fromDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "toDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getDBInterface__GetPastBookings(), this.getBooking(), "getPastBookings", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getDBInterface__GetFutureBookings(), this.getBooking(), "getFutureBookings", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getDBInterface__GetCurrentBookings(), this.getBooking(), "getCurrentBookings", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getDBInterface__FindBookings__String(), this.getBooking(), "findBookings", 1, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "customerName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getDBInterface__GetAllCustomers(), this.getCustomer(), "getAllCustomers", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getDBInterface__GetCustomer__String(), this.getCustomer(), "getCustomer", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "customerSSNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getDBInterface__FindCustomers__String(), this.getCustomer(), "findCustomers", 1, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "partOfCustomerName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getDBInterface__GetAllEmployees(), this.getEmployee(), "getAllEmployees", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getDBInterface__GetEmployee__String(), this.getEmployee(), "getEmployee", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "employeeSSNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getDBInterface__GetAllCleaners(), this.getEmployee(), "getAllCleaners", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getDBInterface__GetAllManagers(), this.getEmployee(), "getAllManagers", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getDBInterface__GetAllReceptionists(), this.getEmployee(), "getAllReceptionists", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getDBInterface__UpdateOrAddRoom__Room(), null, "updateOrAddRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getDBInterface__UpdateOrAddCustomer__Customer(), null, "updateOrAddCustomer", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getCustomer(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getDBInterface__UpdateOrAddBooking__Booking(), null, "updateOrAddBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getDBInterface__UpdateOrAddDiscount__Discount(), null, "updateOrAddDiscount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getDiscount(), "discount", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getDBInterface__UpdateOrAddAddon__Addon(), null, "updateOrAddAddon", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getAddon(), "addon", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getDBInterface__UpdateOrAddEmployee__Employee(), null, "updateOrAddEmployee", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getEmployee(), "employee", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getDBInterface__UpdateOrAddRoomType__RoomType(), null, "updateOrAddRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoomType(), "type", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getDBInterface__UpdateOrAddEmployeeType__EmployeeType(), null, "updateOrAddEmployeeType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getEmployeeType(), "type", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getDBInterface__UpdateOrAddExtra__Extra(), null, "updateOrAddExtra", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getExtra(), "extra", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getDBInterface__GetAvailableRooms__RoomType_Date_Date(), this.getRoom(), "getAvailableRooms", 1, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoomType(), "type", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "from", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "to", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getDBInterface__GetRooms__RoomType(), this.getRoom(), "getRooms", 1, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoomType(), "type", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getDBInterface__GetBooking__int(), this.getBooking(), "getBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(fakeDBContextEClass, FakeDBContext.class, "FakeDBContext", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(eTypeEEnum, EType.class, "EType");
@@ -2055,10 +2507,10 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		addEEnumLiteral(eTypeEEnum, EType.MANAGER);
 
 		initEEnum(roomTypeEEnum, RoomType.class, "RoomType");
-		addEEnumLiteral(roomTypeEEnum, RoomType.HANDICAPABLE);
 		addEEnumLiteral(roomTypeEEnum, RoomType.DOUBLE);
 		addEEnumLiteral(roomTypeEEnum, RoomType.SINGLE);
 		addEEnumLiteral(roomTypeEEnum, RoomType.SUITE);
+		addEEnumLiteral(roomTypeEEnum, RoomType.FAMILY);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -2105,6 +2557,12 @@ public class HotelManagementClassDiagramPackageImpl extends EPackageImpl impleme
 		   source, 
 		   new String[] {
 			 "originalName", ""
+		   });	
+		addAnnotation
+		  (getDBInterface___getAllRooms(), 
+		   source, 
+		   new String[] {
+			 "originalName", " getAllRooms"
 		   });
 	}
 

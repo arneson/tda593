@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link HotelManagementClassDiagram.Discount#isPercentage <em>Is Percentage</em>}</li>
  *   <li>{@link HotelManagementClassDiagram.Discount#getAmount <em>Amount</em>}</li>
+ *   <li>{@link HotelManagementClassDiagram.Discount#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getDiscount()
@@ -73,5 +74,31 @@ public interface Discount extends EObject {
 	 * @generated
 	 */
 	void setAmount(double value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see HotelManagementClassDiagram.HotelManagementClassDiagramPackage#getDiscount_Name()
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link HotelManagementClassDiagram.Discount#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // Discount
